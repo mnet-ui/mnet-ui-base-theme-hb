@@ -36,9 +36,9 @@ var Up = _mnetIcons.NeoComponents.Up,
     TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
-var brandColor = '#E15151';
-var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
-var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
+var brandColor = 'blue';
+var accentColors = ['blue', '#8F94A6', '#739FFC', '#439ADC'];
+var neutralColors = ['#519bff', '#99742E', '#00739D', 'blue'];
 var statusColors = {
   critical: '#e35e59',
   error: '#e35e59',

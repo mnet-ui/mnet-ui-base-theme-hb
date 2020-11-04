@@ -25,19 +25,19 @@ var Up = NeoComponents.Up,
     TickCircle = NeoComponents.TickCircle,
     Error = NeoComponents.Error;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
-var brandColor = '#E15151';
-var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
-var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
+var brandColor = '#3367D6';
+var accentColors = ['#3367D6', '#8F94A6', '#739FFC', '#439ADC'];
+var neutralColors = ['#3367D6', '#E3A21D', '#00739D', '#A2423D'];
 var statusColors = {
-  critical: '#e35e59',
-  error: '#e35e59',
-  warning: '#FFAA15',
-  ok: '#44b88d',
+  critical: '#DB4545',
+  error: '#DB4545',
+  warning: '#E3A21D ',
+  ok: '#16B037',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
 };
-var darkColors = ['#313340', '#4b4d59', '#65707d', '#8691a8', '#999999', '#999999'];
-var lightColors = ['#fbfbfb', '#f6f6f8', '#f5f6f8', '#e1e3ef', '#dfdfdf', '#DADADA'];
+var darkColors = ['#333333', '#9DA2AD', '#65707d', '#8691a8', '#999999', '#999999'];
+var lightColors = ['#F2F5FC', '#E0E0E0', '#f5f6f8', '#e1e3ef', '#dfdfdf', '#DADADA'];
 var focusColor = '#B1C2FE';
 var colors = {
   active: rgba(221, 221, 221, 0.5),

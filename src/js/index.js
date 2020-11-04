@@ -9,29 +9,29 @@ import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 const { Up, Down, Close, LongArrowDown, TickCircle, Error } = NeoComponents;
 const p = 'https://fonts.gstatic.com/s/opensans/v17';
 
-const brandColor = '#E15151';
-const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
-const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
+const brandColor = '#3367D6';
+const accentColors = ['#3367D6', '#8F94A6', '#739FFC', '#439ADC'];
+const neutralColors = ['#3367D6', '#E3A21D', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#e35e59',
-  error: '#e35e59',
-  warning: '#FFAA15',
-  ok: '#44b88d',
+  critical: '#DB4545',
+  error: '#DB4545',
+  warning: '#E3A21D ',
+  ok: '#16B037',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
 
 const darkColors = [
-  '#313340',
-  '#4b4d59',
+  '#333333',
+  '#9DA2AD',
   '#65707d',
   '#8691a8',
   '#999999',
   '#999999',
 ];
 const lightColors = [
-  '#fbfbfb',
-  '#f6f6f8',
+  '#F2F5FC',
+  '#E0E0E0',
   '#f5f6f8',
   '#e1e3ef',
   '#dfdfdf',
