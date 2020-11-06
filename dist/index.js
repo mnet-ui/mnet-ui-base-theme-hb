@@ -15,8 +15,20 @@ var _colors = require("mnet-ui-base/utils/colors");
 
 var _mixins = require("mnet-ui-base/utils/mixins");
 
-function _templateObject() {
+function _templateObject2() {
   var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\n        :focus {\n          outline: none;\n        }\n      "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -27,8 +39,6 @@ function _templateObject() {
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var Up = _mnetIcons.NeoComponents.Up,
     Down = _mnetIcons.NeoComponents.Down,
     Close = _mnetIcons.NeoComponents.Close,
@@ -36,9 +46,9 @@ var Up = _mnetIcons.NeoComponents.Up,
     TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
-var brandColor = 'blue';
-var accentColors = ['blue', '#8F94A6', '#739FFC', '#439ADC'];
-var neutralColors = ['#519bff', '#99742E', '#00739D', 'blue'];
+var brandColor = '#E15151';
+var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
+var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
   critical: '#e35e59',
   error: '#e35e59',
@@ -47,8 +57,8 @@ var statusColors = {
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
 };
-var darkColors = ['#313340', '#4b4d59', '#65707d', '#8691a8', '#999999', '#999999'];
-var lightColors = ['#fbfbfb', '#f6f6f8', '#f5f6f8', '#e1e3ef', '#dfdfdf', '#DADADA'];
+var darkColors = ['#333333', '#9DA2AD', '#9DA2AD', '#9DA2AD', '#9DA2AD', '#9DA2AD'];
+var lightColors = ['#F2F5FC', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0'];
 var focusColor = '#B1C2FE';
 var colors = {
   active: (0, _polished.rgba)(221, 221, 221, 0.5),
@@ -82,8 +92,8 @@ var colors = {
   'graph-2': 'neutral-2',
   'graph-3': 'neutral-3',
   'graph-4': 'neutral-4',
-  placeholder: '#e0e4ee',
-  selected: 'dark-2',
+  placeholder: '#9DA2AD',
+  selected: '#F2F5FC',
   text: {
     dark: '#f8f8f8',
     light: '#444444'
@@ -317,8 +327,8 @@ var generate = function generate(baseSpacing, scale) {
           opacity: 'medium'
         },
         color: {
-          dark: 'white',
-          light: 'black'
+          dark: 'red',
+          light: 'green'
         }
       },
       input: {
@@ -831,7 +841,9 @@ var generate = function generate(baseSpacing, scale) {
       } // round: undefined,
 
     },
-    mnet: {// extend: undefined
+    mnet: {
+      // extend: undefined
+      global: (0, _styledComponents.css)(_templateObject())
     },
     heading: {
       font: {// family: undefined
@@ -1238,7 +1250,7 @@ var generate = function generate(baseSpacing, scale) {
     rangeInput: {
       track: {
         height: '4px',
-        color: (0, _styledComponents.css)(_templateObject(), function (props) {
+        color: (0, _styledComponents.css)(_templateObject2(), function (props) {
           return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
         })
       },
@@ -1256,30 +1268,46 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      // background: undefined,
-      background: 'dark-2',
-      activeColor: lightColors[4],
+      background: 'light-1',
+      activeColor: 'light-1',
+      extend: {
+        text: {
+          color: 'red'
+        }
+      },
       container: {
-        extend: undefined
+        extend: function extend(props) {
+          return {
+            borderColor: 'red'
+          };
+        }
       },
-      control: {// extend: undefined,
+      control: {
         // open: undefined,
-      },
-      icons: {
-        color: 'white',
-        margin: {
-          horizontal: 'small'
-        } // up: undefined
-
+        extend: {
+          border: 'none',
+          text: {
+            color: 'dark-1'
+          }
+        }
       },
       options: {
         container: {
           align: 'start',
-          pad: 'small'
+          pad: 'small',
+          round: 'false'
         },
         text: {
-          margin: 'none'
+          size: 'medium',
+          margin: 'small'
         }
+      },
+      icons: {
+        color: 'icon',
+        margin: 'none',
+        pad: 'small',
+        background: 'background-contrast' // extend: {},
+
       },
       // searchInput: undefined,
       step: 20
@@ -1392,8 +1420,10 @@ var generate = function generate(baseSpacing, scale) {
     textArea: {// extend: undefined,
       // disabled: { opacity: undefined },
     },
-    textInput: {// extend: undefined,
+    textInput: {
+      color: 'red' // extend: undefined,
       // disabled: { opacity: undefined },
+
     },
     tooptip: {
       background: 'dark-1',

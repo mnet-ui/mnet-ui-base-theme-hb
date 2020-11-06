@@ -1167,7 +1167,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       extend: {
         text: {
           color: 'red',
-        }
+        },
       },
       container: {
         extend: (props) => ({
@@ -1180,7 +1180,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: 'none',
           text: {
             color: 'dark-1',
-          }
+          },
         },
       },
       options: {
@@ -1192,7 +1192,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         text: {
           size: 'medium',
           margin: 'small',
-          color: 'dark-1',
         },
       },
       icons: {
@@ -1306,7 +1305,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
-      color: 'red'
+      color: 'red',
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
