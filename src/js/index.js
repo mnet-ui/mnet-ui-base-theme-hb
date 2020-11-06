@@ -9,14 +9,14 @@ import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 const { Up, Down, Close, LongArrowDown, TickCircle, Error } = NeoComponents;
 const p = 'https://fonts.gstatic.com/s/opensans/v17';
 
-const brandColor = '#3367D6';
-const accentColors = ['#3367D6', '#8F94A6', '#739FFC', '#439ADC'];
-const neutralColors = ['#3367D6', '#E3A21D', '#00739D', '#A2423D'];
+const brandColor = '#E15151';
+const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
+const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#DB4545',
-  error: '#DB4545',
-  warning: '#E3A21D ',
-  ok: '#16B037',
+  critical: '#e35e59',
+  error: '#e35e59',
+  warning: '#FFAA15',
+  ok: '#44b88d',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
@@ -24,18 +24,18 @@ const statusColors = {
 const darkColors = [
   '#333333',
   '#9DA2AD',
-  '#65707d',
-  '#8691a8',
-  '#999999',
-  '#999999',
+  '#9DA2AD',
+  '#9DA2AD',
+  '#9DA2AD',
+  '#9DA2AD',
 ];
 const lightColors = [
   '#F2F5FC',
   '#E0E0E0',
-  '#f5f6f8',
-  '#e1e3ef',
-  '#dfdfdf',
-  '#DADADA',
+  '#E0E0E0',
+  '#E0E0E0',
+  '#E0E0E0',
+  '#E0E0E0',
 ];
 const focusColor = '#B1C2FE';
 
@@ -71,8 +71,8 @@ const colors = {
   'graph-2': 'neutral-2',
   'graph-3': 'neutral-3',
   'graph-4': 'neutral-4',
-  placeholder: '#e0e4ee',
-  selected: 'dark-2',
+  placeholder: '#9DA2AD',
+  selected: '#F2F5FC',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
@@ -277,8 +277,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           opacity: 'medium',
         },
         color: {
-          dark: 'white',
-          light: 'black',
+          dark: 'red',
+          light: 'green',
         },
       },
       input: {
@@ -736,6 +736,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     mnet: {
       // extend: undefined
+      global: css`
+        :focus {
+          outline: none;
+        }
+      `,
     },
     heading: {
       font: {
@@ -1157,29 +1162,45 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
     },
     select: {
-      // background: undefined,
-      background: 'dark-2',
-      activeColor: lightColors[4],
+      background: 'light-1',
+      activeColor: 'light-1',
+      extend: {
+        text: {
+          color: 'red',
+        }
+      },
       container: {
-        extend: undefined,
+        extend: (props) => ({
+          borderColor: 'red',
+        }),
       },
       control: {
-        // extend: undefined,
         // open: undefined,
-      },
-      icons: {
-        color: 'white',
-        margin: { horizontal: 'small' },
-        // up: undefined
+        extend: {
+          border: 'none',
+          text: {
+            color: 'dark-1',
+          }
+        },
       },
       options: {
         container: {
           align: 'start',
           pad: 'small',
+          round: 'false',
         },
         text: {
-          margin: 'none',
+          size: 'medium',
+          margin: 'small',
+          color: 'dark-1',
         },
+      },
+      icons: {
+        color: 'icon',
+        margin: 'none',
+        pad: 'small',
+        background: 'background-contrast',
+        // extend: {},
       },
       // searchInput: undefined,
       step: 20,
@@ -1285,6 +1306,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
+      color: 'red'
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
