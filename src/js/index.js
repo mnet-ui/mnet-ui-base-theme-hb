@@ -278,7 +278,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         color: {
           dark: 'red',
-          light: 'green',
+          light: '#3367D6',
         },
       },
       input: {
@@ -307,7 +307,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       selected: {
         background: 'selected',
-        color: 'white',
+        color: '#3367D6',
       },
       spacing: `${baseSpacing}px`,
       size: {
@@ -382,83 +382,102 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       size: {
         small: {
           border: {
-            radius: `${baseSpacing * 0.75}px`,
+            radius: `${baseSpacing * 0.12}px`, // 3px
           },
           pad: {
-            vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
+            vertical: `${baseSpacing / (1.780 * 2) - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
         },
         medium: {
           border: {
-            radius: `${baseSpacing * 0.75}px`, // 18px
+            radius: `${baseSpacing * 0.12}px`, // 3px
           },
           pad: {
-            vertical: `${baseSpacing / 4 - borderWidth}px`, // 4px
-            horizontal: `${baseSpacing - borderWidth}px`, // 22px
+            vertical: `${baseSpacing / 1.780 - borderWidth}px`,
+            horizontal: `${baseSpacing - borderWidth * 1.4}px`,
           },
         },
         large: {
           border: {
-            radius: `${baseSpacing}px`, // 24px
+            radius: `${baseSpacing * 0.12}px`, // 3px
           },
           pad: {
-            vertical: `${baseSpacing / 4 + borderWidth}px`, // 8px
-            horizontal: `${baseSpacing + borderWidth * 4}px`, // 32px,
+            vertical: `${baseSpacing / (1.618 / 2) + borderWidth}px`, // 8px
+            horizontal: `${baseSpacing * 2.8 - borderWidth}px`, // 32px,
           },
+        },
+      },
+      hover: {
+        extend: {
+          'box-shadow': '0 4px 9px 0 rgba(247, 186, 186, 0.4)',
+          // bottom: `${1.5 * baseSpacing}px`,
         },
       },
       border: {
         // color: { dark: undefined, light: undefined }
         width: `${borderWidth}px`,
-        radius: `${baseSpacing * 0.2}px`,
+        radius: `${baseSpacing * 0.12}px`,
       },
-      // color: { dark: undefined, light: undefined }
-      // default: {
-      //   background: undefined,
-      //   border: undefined,
-      //   color: undefined,
-      //   padding: {
-      //     vertical: undefined,
-      //     horizontal: undefined,
-      //   },
-      //   extend: undefined,
-      // },
-      // primary: {
-      //   background: undefined,
-      //   border: undefined,
-      //   color: undefined,
-      //   padding: {
-      //     vertical: undefined,
-      //     horizontal: undefined,
-      //   },
-      //   extend: undefined,
-      // },
-      // secondary: {
-      //   background: undefined,
-      //   border: undefined,
-      //   color: undefined,
-      //   padding: {
-      //     vertical: undefined,
-      //     horizontal: undefined,
-      //   },
-      //   extend: undefined,
-      // },
+      color: { dark: undefined, light: undefined },
+      default: {
+      },
+      primary: {
+        background: 'brand',
+        border: {
+          color: { dark: 'accent-1', light: 'accent-1' },
+        },
+        color: 'white',
+        // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        // extend: undefined,
+      },
+      secondary: {
+        background: 'accent-2',
+        border: {
+          color: { dark: 'accent-2', light: 'accent-2' },
+        },
+        color: 'white',
+        // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        // extend: undefined,
+      },
+      tertiary: {
+        background: 'light-3',
+        border: {
+          color: { dark: 'light-3', light: 'light-3' },
+        },
+        // color: 'white',
+        // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        // extend: undefined,
+      },
       active: {
-        background: 'active-background',
-        //   border: undefined,
-        color: 'active-text',
+        background: undefined,
+        border: {
+          color: { dark: 'brand', light: 'brand' },
+          width: `${borderWidth}px`,
+          radius: `${baseSpacing * 0.12}px`,
+        },
+        color: undefined,
         //   extend: undefined,
         //   default: {},
         //   primary: {},
         //   secondary: {},
       },
       disabled: {
-        //   background: undefined,
-        //   border: undefined,
-        //   color: undefined,
-        opacity: 0.3,
-        //   extend: undefined,
+        background: 'brand',
+        border: {
+          color: { dark: 'accent-1', light: 'accent-1' },
+        },
+        color: 'white',
+        opacity: 0.6,
         //   default: {},
         //   primary: {},
         //   secondary: {},
@@ -473,8 +492,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   secondary: {},
       // },
       padding: {
-        vertical: `${baseSpacing / 4 - borderWidth}px`,
-        horizontal: `${baseSpacing - borderWidth}px`,
+        vertical: `${baseSpacing / 1.618 - borderWidth}px`,
+        horizontal: `${baseSpacing - borderWidth * 1.4}px`,
       },
       transition: {
         timing: 'ease-in-out',
@@ -1197,8 +1216,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icons: {
         color: 'icon',
         margin: 'none',
-        pad: 'small',
+        pad: 'medium',
         background: 'background-contrast',
+        size: 'medium',
+        up: Up,
+        down: Down,
         // extend: {},
       },
       // searchInput: undefined,
