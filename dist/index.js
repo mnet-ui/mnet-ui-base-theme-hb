@@ -96,7 +96,7 @@ var colors = {
   selected: '#F2F5FC',
   text: {
     dark: '#f8f8f8',
-    light: '#444444'
+    light: 'brand'
   },
   'text-strong': {
     dark: '#FFFFFF',
@@ -318,8 +318,8 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       font: {
-        family: "'Open Sans', Arial, sans-serif",
-        face: "\n          @font-face {\n            font-family: 'Open Sans';\n            src:\n              font-display: swap,\n              local('Open Sans Regular'),\n              local('OpenSans-Regular'),\n              url(\"" + p + "//mem8YaGs126MiZpBA-UFUZ0bf8pkAp6a.woff2\") format('woff2'),\n              unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;\n          }\n        "
+        family: "'Inter', sans-serif",
+        face: "\n          @font-face {\n            font-family: 'Inter';\n            src:\n              font-display: swap,\n              url(\"/font/Inter-VariableFont_slnt_wght.ttf\") format('ttf'),\n              unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;\n          }\n        "
       },
       hover: {
         background: {
@@ -328,7 +328,7 @@ var generate = function generate(baseSpacing, scale) {
         },
         color: {
           dark: 'red',
-          light: 'green'
+          light: '#3367D6'
         }
       },
       input: {
@@ -351,7 +351,7 @@ var generate = function generate(baseSpacing, scale) {
       },
       selected: {
         background: 'selected',
-        color: 'white'
+        color: 'brand'
       },
       spacing: baseSpacing + "px",
       size: {
@@ -440,10 +440,11 @@ var generate = function generate(baseSpacing, scale) {
       size: {
         small: {
           border: {
-            radius: baseSpacing * 0.75 + "px"
+            radius: baseSpacing * 0.12 + "px" // 3px
+
           },
           pad: {
-            vertical: baseSpacing / 4 - borderWidth + "px",
+            vertical: baseSpacing / (1.78 * 2) - borderWidth + "px",
             // 4px
             horizontal: baseSpacing - borderWidth * 2 + "px" // 20px,
 
@@ -451,80 +452,115 @@ var generate = function generate(baseSpacing, scale) {
         },
         medium: {
           border: {
-            radius: baseSpacing * 0.75 + "px" // 18px
+            radius: baseSpacing * 0.12 + "px" // 3px
 
           },
           pad: {
-            vertical: baseSpacing / 4 - borderWidth + "px",
-            // 4px
-            horizontal: baseSpacing - borderWidth + "px" // 22px
-
+            vertical: baseSpacing / 1.78 - borderWidth + "px",
+            horizontal: baseSpacing - borderWidth * 1.4 + "px"
           }
         },
         large: {
           border: {
-            radius: baseSpacing + "px" // 24px
+            radius: baseSpacing * 0.12 + "px" // 3px
 
           },
           pad: {
-            vertical: baseSpacing / 4 + borderWidth + "px",
+            vertical: baseSpacing / (1.618 / 2) + borderWidth + "px",
             // 8px
-            horizontal: baseSpacing + borderWidth * 4 + "px" // 32px,
+            horizontal: baseSpacing * 2.8 - borderWidth + "px" // 32px,
 
           }
+        }
+      },
+      hover: {
+        extend: {// 'box-shadow': '0 4px 9px 0 rgba(247, 186, 186, 0.4)',
+          // bottom: `${1.5 * baseSpacing}px`,
         }
       },
       border: {
         // color: { dark: undefined, light: undefined }
         width: borderWidth + "px",
-        radius: baseSpacing * 0.2 + "px"
+        radius: baseSpacing * 0.12 + "px"
       },
-      // color: { dark: undefined, light: undefined }
-      // default: {
-      //   background: undefined,
-      //   border: undefined,
-      //   color: undefined,
-      //   padding: {
-      //     vertical: undefined,
-      //     horizontal: undefined,
-      //   },
-      //   extend: undefined,
-      // },
-      // primary: {
-      //   background: undefined,
-      //   border: undefined,
-      //   color: undefined,
-      //   padding: {
-      //     vertical: undefined,
-      //     horizontal: undefined,
-      //   },
-      //   extend: undefined,
-      // },
-      // secondary: {
-      //   background: undefined,
-      //   border: undefined,
-      //   color: undefined,
-      //   padding: {
-      //     vertical: undefined,
-      //     horizontal: undefined,
-      //   },
-      //   extend: undefined,
-      // },
+      color: {
+        dark: undefined,
+        light: undefined
+      },
+      "default": {},
+      primary: {
+        background: 'brand',
+        border: {
+          color: {
+            dark: 'brand',
+            light: 'brand'
+          }
+        },
+        color: 'white',
+        padding: {
+          vertical: undefined,
+          horizontal: undefined
+        } // extend: undefined,
+
+      },
+      secondary: {
+        background: 'light-1',
+        border: {
+          color: {
+            dark: 'light-1',
+            light: 'light-1'
+          }
+        },
+        color: 'dark-1' // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        // extend: undefined,
+
+      },
+      tertiary: {
+        background: 'transparent',
+        border: {
+          color: {
+            dark: 'brand',
+            light: 'brand'
+          }
+        },
+        color: 'brand',
+        // padding: {
+        //   vertical: undefined,
+        //   horizontal: undefined,
+        // },
+        extend: {
+          border: '1px solid'
+        }
+      },
       active: {
-        background: 'active-background',
-        //   border: undefined,
-        color: 'active-text' //   extend: undefined,
+        background: undefined,
+        border: {
+          color: {
+            dark: 'brand',
+            light: 'brand'
+          },
+          width: borderWidth + "px",
+          radius: baseSpacing * 0.12 + "px"
+        },
+        color: undefined //   extend: undefined,
         //   default: {},
         //   primary: {},
         //   secondary: {},
 
       },
       disabled: {
-        //   background: undefined,
-        //   border: undefined,
-        //   color: undefined,
-        opacity: 0.3 //   extend: undefined,
-        //   default: {},
+        background: 'brand',
+        border: {
+          color: {
+            dark: 'accent-1',
+            light: 'accent-1'
+          }
+        },
+        color: 'white',
+        opacity: 0.4 //   default: {},
         //   primary: {},
         //   secondary: {},
 
@@ -538,9 +574,8 @@ var generate = function generate(baseSpacing, scale) {
       //   primary: {},
       //   secondary: {},
       // },
-      padding: {
-        vertical: baseSpacing / 4 - borderWidth + "px",
-        horizontal: baseSpacing - borderWidth + "px"
+      padding: {// vertical: `${baseSpacing / 1.618 - borderWidth}px`,
+        // horizontal: `${baseSpacing - borderWidth * 1.4}px`,
       },
       transition: {
         timing: 'ease-in-out',
@@ -1231,6 +1266,13 @@ var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
 
       },
+      checked: {
+        extend: {
+          check: {
+            radius: '20%'
+          }
+        }
+      },
       hover: {
         border: {
           color: {
@@ -1270,32 +1312,22 @@ var generate = function generate(baseSpacing, scale) {
     select: {
       background: 'light-1',
       activeColor: 'light-1',
-      extend: {
-        text: {
-          color: 'red'
-        }
-      },
       container: {
-        extend: function extend(props) {
-          return {
-            borderColor: 'red'
-          };
-        }
+        extend: null
       },
       control: {
         // open: undefined,
         extend: {
           border: 'none',
-          text: {
-            color: 'dark-1'
-          }
+          padding: '0 4px',
+          text: {}
         }
       },
       options: {
         container: {
           align: 'start',
           pad: 'small',
-          round: 'false'
+          round: 'true'
         },
         text: {
           size: 'medium',
@@ -1305,8 +1337,11 @@ var generate = function generate(baseSpacing, scale) {
       icons: {
         color: 'icon',
         margin: 'none',
-        pad: 'small',
-        background: 'background-contrast' // extend: {},
+        pad: 'medium',
+        background: 'background-contrast',
+        size: 'small',
+        up: Up,
+        down: Down // extend: {},
 
       },
       // searchInput: undefined,
@@ -1420,10 +1455,8 @@ var generate = function generate(baseSpacing, scale) {
     textArea: {// extend: undefined,
       // disabled: { opacity: undefined },
     },
-    textInput: {
-      color: 'red' // extend: undefined,
+    textInput: {// extend: undefined,
       // disabled: { opacity: undefined },
-
     },
     tooptip: {
       background: 'dark-1',

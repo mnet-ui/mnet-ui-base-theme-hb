@@ -75,7 +75,7 @@ const colors = {
   selected: '#F2F5FC',
   text: {
     dark: '#f8f8f8',
-    light: '#444444',
+    light: 'brand',
   },
   'text-strong': {
     dark: '#FFFFFF',
@@ -111,7 +111,7 @@ Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
-export const generate = (baseSpacing = 24, scale = 6) => {
+export const generate = (baseSpacing = 16, scale = 6) => {
   // 24
   const baseFontSize = baseSpacing * 0.75; // 12
   const fontScale = baseSpacing / scale; // 16
@@ -258,16 +258,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       font: {
-        family: "'Open Sans', Arial, sans-serif",
+        family: "'Inter', sans-serif",
         face: `
           @font-face {
-            font-family: 'Open Sans';
+            font-family: 'Inter';
             src:
               font-display: swap,
-              local('Open Sans Regular'),
-              local('OpenSans-Regular'),
-              url("${p}//mem8YaGs126MiZpBA-UFUZ0bf8pkAp6a.woff2") format('woff2'),
-              unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+              local('Inter-Regular'),
+              local('Inter-Medium'),
+              local('Inter-Bold'),
+              url("/font/Inter-Regular.ttf") format('ttf'),
+              url("/font/Inter-Medium.ttf") format('ttf'),
+              url("/font/Inter-Bold.ttf") format('ttf');
           }
         `,
       },
@@ -307,7 +309,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       selected: {
         background: 'selected',
-        color: '#3367D6',
+        color: 'brand',
       },
       spacing: `${baseSpacing}px`,
       size: {
@@ -385,7 +387,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             radius: `${baseSpacing * 0.12}px`, // 3px
           },
           pad: {
-            vertical: `${baseSpacing / (1.780 * 2) - borderWidth}px`, // 4px
+            vertical: `${baseSpacing / (1.78 * 2) - borderWidth}px`, // 4px
             horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
           },
         },
@@ -394,7 +396,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             radius: `${baseSpacing * 0.12}px`, // 3px
           },
           pad: {
-            vertical: `${baseSpacing / 1.780 - borderWidth}px`,
+            vertical: `${baseSpacing / 1.78 - borderWidth}px`,
             horizontal: `${baseSpacing - borderWidth * 1.4}px`,
           },
         },
@@ -420,26 +422,25 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: `${baseSpacing * 0.12}px`,
       },
       color: { dark: undefined, light: undefined },
-      default: {
-      },
+      default: {},
       primary: {
         background: 'brand',
         border: {
-          color: { dark: 'accent-1', light: 'accent-1' },
+          color: { dark: 'brand', light: 'brand' },
         },
         color: 'white',
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
+        padding: {
+          vertical: undefined,
+          horizontal: undefined,
+        },
         // extend: undefined,
       },
       secondary: {
-        background: 'accent-2',
+        background: 'light-1',
         border: {
-          color: { dark: 'accent-2', light: 'accent-2' },
+          color: { dark: 'light-1', light: 'light-1' },
         },
-        color: 'white',
+        color: 'dark-1',
         // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
@@ -447,16 +448,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       tertiary: {
-        background: 'light-3',
+        background: 'transparent',
         border: {
-          color: { dark: 'light-3', light: 'light-3' },
+          color: { dark: 'brand', light: 'brand' },
         },
-        // color: 'white',
+        color: 'brand',
         // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
-        // extend: undefined,
+        extend: {
+          border: '1px solid',
+        },
       },
       active: {
         background: undefined,
@@ -477,7 +480,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: { dark: 'accent-1', light: 'accent-1' },
         },
         color: 'white',
-        opacity: 0.6,
+        opacity: 0.4,
         //   default: {},
         //   primary: {},
         //   secondary: {},
@@ -763,7 +766,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     heading: {
       font: {
-        // family: undefined
+        family: 'Inter',
       },
       level: {
         1: {
@@ -1142,11 +1145,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
       checked: {
-        extend:{
-          check:{
-            radius:'20%'
-          }
-        }
+        extend: {
+          check: {
+            radius: '20%',
+          },
+        },
       },
       hover: {
         border: {
@@ -1190,30 +1193,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     select: {
       background: 'light-1',
       activeColor: 'light-1',
-      extend: {
-        text: {
-          color: 'red',
-        },
-      },
       container: {
-        extend: (props) => ({
-          pad: 'large',
-        }),
+        extend: null,
       },
       control: {
         // open: undefined,
         extend: {
           border: 'none',
-          text: {
-            color: 'dark-1',
-          },
+          padding: '0 4px',
+          text: {},
         },
       },
       options: {
         container: {
           align: 'start',
           pad: 'small',
-          round: 'false',
+          round: 'true',
         },
         text: {
           size: 'medium',
@@ -1223,7 +1218,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icons: {
         color: 'icon',
         margin: 'none',
-        pad: 'small',
+        pad: 'medium',
         background: 'background-contrast',
         size: 'small',
         up: Up,
