@@ -410,7 +410,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       hover: {
         extend: {
-          'box-shadow': '0 4px 9px 0 rgba(247, 186, 186, 0.4)',
+          // 'box-shadow': '0 4px 9px 0 rgba(247, 186, 186, 0.4)',
           // bottom: `${1.5 * baseSpacing}px`,
         },
       },
@@ -492,8 +492,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   secondary: {},
       // },
       padding: {
-        vertical: `${baseSpacing / 1.618 - borderWidth}px`,
-        horizontal: `${baseSpacing - borderWidth * 1.4}px`,
+        // vertical: `${baseSpacing / 1.618 - borderWidth}px`,
+        // horizontal: `${baseSpacing - borderWidth * 1.4}px`,
       },
       transition: {
         timing: 'ease-in-out',
@@ -1141,6 +1141,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },
+      checked: {
+        extend:{
+          check:{
+            radius:'20%'
+          }
+        }
+      },
       hover: {
         border: {
           color: {
@@ -1190,7 +1197,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       container: {
         extend: (props) => ({
-          borderColor: 'red',
+          pad: 'large',
         }),
       },
       control: {
@@ -1216,9 +1223,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icons: {
         color: 'icon',
         margin: 'none',
-        pad: 'medium',
+        pad: 'small',
         background: 'background-contrast',
-        size: 'medium',
+        size: 'small',
         up: Up,
         down: Down,
         // extend: {},
@@ -1327,7 +1334,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
-      color: 'red',
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
