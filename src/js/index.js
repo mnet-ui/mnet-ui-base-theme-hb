@@ -13,10 +13,11 @@ const brandColor = '#E15151';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#e35e59',
-  error: '#e35e59',
-  warning: '#FFAA15',
-  ok: '#44b88d',
+  critical: '#DB4545',
+  error: '#DB4545',
+  warning: '#E3A21D',
+  ok: '#16B037',
+  info: '#3367D6',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
@@ -75,7 +76,7 @@ const colors = {
   selected: '#F2F5FC',
   text: {
     dark: '#f8f8f8',
-    light: 'brand',
+    light: 'dark-1',
   },
   'text-strong': {
     dark: '#FFFFFF',
@@ -1137,11 +1138,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(0, 0, 0, 0.15)',
         },
-        width: '2px',
+        width: '1px',
       },
       check: {
         radius: '100%',
-        // color: { dark: undefined, light: undefined },
+        color: { dark: 'brand', light: 'brand' },
         // extend: undefined,
       },
       checked: {
@@ -1154,8 +1155,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       hover: {
         border: {
           color: {
-            dark: 'white',
-            light: 'black',
+            dark: 'brand',
+            light: 'brand',
           },
         },
       },
@@ -1166,8 +1167,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       icons: {
         // circle: undefined,
       },
-      gap: 'small',
-      size: `${baseSpacing}px`,
+      gap: 'medium',
+      size: `${baseSpacing + 1}px`,
     },
     rangeInput: {
       track: {

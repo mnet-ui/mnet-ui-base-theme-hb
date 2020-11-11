@@ -54,6 +54,7 @@ var statusColors = {
   error: '#e35e59',
   warning: '#FFAA15',
   ok: '#44b88d',
+  info: '#3367D6',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
 };
@@ -96,7 +97,7 @@ var colors = {
   selected: '#F2F5FC',
   text: {
     dark: '#f8f8f8',
-    light: 'brand'
+    light: 'dark-1'
   },
   'text-strong': {
     dark: '#FFFFFF',
@@ -135,7 +136,7 @@ Object.keys(statusColors).forEach(function (color) {
 
 var generate = function generate(baseSpacing, scale) {
   if (baseSpacing === void 0) {
-    baseSpacing = 24;
+    baseSpacing = 16;
   }
 
   if (scale === void 0) {
@@ -319,7 +320,7 @@ var generate = function generate(baseSpacing, scale) {
       },
       font: {
         family: "'Inter', sans-serif",
-        face: "\n          @font-face {\n            font-family: 'Inter';\n            src:\n              font-display: swap,\n              url(\"/font/Inter-VariableFont_slnt_wght.ttf\") format('ttf'),\n              unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;\n          }\n        "
+        face: "\n          @font-face {\n            font-family: 'Inter';\n            src:\n              font-display: swap,\n              local('Inter-Regular'),\n              local('Inter-Medium'),\n              local('Inter-Bold'),\n              url(\"/font/Inter-Regular.ttf\") format('ttf'),\n              url(\"/font/Inter-Medium.ttf\") format('ttf'),\n              url(\"/font/Inter-Bold.ttf\") format('ttf');\n          }\n        "
       },
       hover: {
         background: {
@@ -881,7 +882,8 @@ var generate = function generate(baseSpacing, scale) {
       global: (0, _styledComponents.css)(_templateObject())
     },
     heading: {
-      font: {// family: undefined
+      font: {
+        family: 'Inter'
       },
       level: {
         1: {
