@@ -1,12 +1,19 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { NeoComponents } from 'mnet-icons';
+import { HbAdminComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
-const { Up, Down, Close, LongArrowDown, TickCircle, Error } = NeoComponents;
+const {
+  UpArrow,
+  DownArrow,
+  Close,
+  LongArrowDown,
+  TickCircle,
+  Error,
+} = HbAdminComponents;
 const p = 'https://fonts.gstatic.com/s/opensans/v17';
 
 const brandColor = '#E15151';
@@ -1224,8 +1231,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         pad: 'medium',
         background: 'background-contrast',
         size: 'small',
-        up: Up,
-        down: Down,
+        up: UpArrow,
+        down: DownArrow,
         // extend: {},
       },
       // searchInput: undefined,
@@ -1419,8 +1426,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         primary: 'accent-3',
       },
       icons: {
-        up: Up,
-        down: Down,
+        up: UpArrow,
+        down: DownArrow,
         changeArrow: LongArrowDown,
         close: Close,
       },

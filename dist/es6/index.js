@@ -24,16 +24,16 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { NeoComponents } from 'mnet-icons';
+import { HbAdminComponents } from 'mnet-icons';
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
-var Up = NeoComponents.Up,
-    Down = NeoComponents.Down,
-    Close = NeoComponents.Close,
-    LongArrowDown = NeoComponents.LongArrowDown,
-    TickCircle = NeoComponents.TickCircle,
-    Error = NeoComponents.Error;
+var UpArrow = HbAdminComponents.UpArrow,
+    DownArrow = HbAdminComponents.DownArrow,
+    Close = HbAdminComponents.Close,
+    LongArrowDown = HbAdminComponents.LongArrowDown,
+    TickCircle = HbAdminComponents.TickCircle,
+    Error = HbAdminComponents.Error;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -1335,8 +1335,8 @@ export var generate = function generate(baseSpacing, scale) {
         pad: 'medium',
         background: 'background-contrast',
         size: 'small',
-        up: Up,
-        down: Down // extend: {},
+        up: UpArrow,
+        down: DownArrow // extend: {},
 
       },
       // searchInput: undefined,
@@ -1547,8 +1547,8 @@ export var generate = function generate(baseSpacing, scale) {
         primary: 'accent-3'
       },
       icons: {
-        up: Up,
-        down: Down,
+        up: UpArrow,
+        down: DownArrow,
         changeArrow: LongArrowDown,
         close: Close
       }

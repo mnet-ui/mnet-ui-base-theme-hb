@@ -39,12 +39,12 @@ function _templateObject() {
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
-var Up = _mnetIcons.NeoComponents.Up,
-    Down = _mnetIcons.NeoComponents.Down,
-    Close = _mnetIcons.NeoComponents.Close,
-    LongArrowDown = _mnetIcons.NeoComponents.LongArrowDown,
-    TickCircle = _mnetIcons.NeoComponents.TickCircle,
-    Error = _mnetIcons.NeoComponents.Error;
+var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
+    DownArrow = _mnetIcons.HbAdminComponents.DownArrow,
+    Close = _mnetIcons.HbAdminComponents.Close,
+    LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
+    TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
+    Error = _mnetIcons.HbAdminComponents.Error;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -1347,8 +1347,8 @@ var generate = function generate(baseSpacing, scale) {
         pad: 'medium',
         background: 'background-contrast',
         size: 'small',
-        up: Up,
-        down: Down // extend: {},
+        up: UpArrow,
+        down: DownArrow // extend: {},
 
       },
       // searchInput: undefined,
@@ -1559,8 +1559,8 @@ var generate = function generate(baseSpacing, scale) {
         primary: 'accent-3'
       },
       icons: {
-        up: Up,
-        down: Down,
+        up: UpArrow,
+        down: DownArrow,
         changeArrow: LongArrowDown,
         close: Close
       }
