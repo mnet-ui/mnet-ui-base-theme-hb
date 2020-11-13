@@ -882,17 +882,18 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         wrapper: {
           pad: {
             horizontal: 'large',
-            vertical: 'small',
+            vertical: 'large',
           },
           border: {
             side: 'bottom',
-            color: 'dark-6',
+            color: 'light-2',
           },
         },
         text: {
+          margin: 'none',
           level: 3,
           size: 'small',
-          color: 'dark-3',
+          color: 'dark-1',
         },
       },
       message: {
@@ -900,8 +901,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           pad: 'large',
         },
         text: {
-          size: 'medium',
-          color: 'dark-3',
+          size: 'large',
+          color: 'dark-1',
         },
       },
       buttons: {
@@ -913,6 +914,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           direction: 'row',
         },
         button: {
+          size: 'medium',
           margin: {
             right: 'medium',
           },
@@ -1359,9 +1361,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       toast: {
         closeIcon: Close,
         position: 'top-right',
-        zIndex: 999,
+        zIndex: 9999,
         width: '60%',
-        timeout: 2000,
+        timeout: 3000,
         icon: {
           size: 'xlarge',
           default: TickCircle,
@@ -1373,12 +1375,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             weight: 600,
           },
           ok: {
-            color: '#38C18B',
             weight: 600,
             margin: { horizontal: 'small' },
           },
           error: {
-            color: '#E9716C',
             weight: 600,
             margin: { horizontal: 'small' },
           },

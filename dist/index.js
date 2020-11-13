@@ -50,10 +50,10 @@ var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
-  critical: '#e35e59',
-  error: '#e35e59',
-  warning: '#FFAA15',
-  ok: '#44b88d',
+  critical: '#DB4545',
+  error: '#DB4545',
+  warning: '#E3A21D',
+  ok: '#16B037',
   info: '#3367D6',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
@@ -995,17 +995,18 @@ var generate = function generate(baseSpacing, scale) {
         wrapper: {
           pad: {
             horizontal: 'large',
-            vertical: 'small'
+            vertical: 'large'
           },
           border: {
             side: 'bottom',
-            color: 'dark-6'
+            color: 'light-2'
           }
         },
         text: {
+          margin: 'none',
           level: 3,
           size: 'small',
-          color: 'dark-3'
+          color: 'dark-1'
         }
       },
       message: {
@@ -1013,8 +1014,8 @@ var generate = function generate(baseSpacing, scale) {
           pad: 'large'
         },
         text: {
-          size: 'medium',
-          color: 'dark-3'
+          size: 'large',
+          color: 'dark-1'
         }
       },
       buttons: {
@@ -1026,6 +1027,7 @@ var generate = function generate(baseSpacing, scale) {
           direction: 'row'
         },
         button: {
+          size: 'medium',
           margin: {
             right: 'medium'
           }
@@ -1261,11 +1263,14 @@ var generate = function generate(baseSpacing, scale) {
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(0, 0, 0, 0.15)'
         },
-        width: '2px'
+        width: '1px'
       },
       check: {
-        radius: '100%' // color: { dark: undefined, light: undefined },
-        // extend: undefined,
+        radius: '100%',
+        color: {
+          dark: 'brand',
+          light: 'brand'
+        } // extend: undefined,
 
       },
       checked: {
@@ -1278,8 +1283,8 @@ var generate = function generate(baseSpacing, scale) {
       hover: {
         border: {
           color: {
-            dark: 'white',
-            light: 'black'
+            dark: 'brand',
+            light: 'brand'
           }
         }
       },
@@ -1288,8 +1293,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {// circle: undefined,
       },
-      gap: 'small',
-      size: baseSpacing + "px"
+      gap: 'medium',
+      size: baseSpacing + 1 + "px"
     },
     rangeInput: {
       track: {
@@ -1486,9 +1491,9 @@ var generate = function generate(baseSpacing, scale) {
       toast: {
         closeIcon: Close,
         position: 'top-right',
-        zIndex: 999,
+        zIndex: 9999,
         width: '60%',
-        timeout: 2000,
+        timeout: 3000,
         icon: {
           size: 'xlarge',
           "default": TickCircle,
@@ -1500,14 +1505,12 @@ var generate = function generate(baseSpacing, scale) {
             weight: 600
           },
           ok: {
-            color: '#38C18B',
             weight: 600,
             margin: {
               horizontal: 'small'
             }
           },
           error: {
-            color: '#E9716C',
             weight: 600,
             margin: {
               horizontal: 'small'

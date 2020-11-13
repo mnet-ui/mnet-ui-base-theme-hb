@@ -983,17 +983,18 @@ export var generate = function generate(baseSpacing, scale) {
         wrapper: {
           pad: {
             horizontal: 'large',
-            vertical: 'small'
+            vertical: 'large'
           },
           border: {
             side: 'bottom',
-            color: 'dark-6'
+            color: 'light-2'
           }
         },
         text: {
+          margin: 'none',
           level: 3,
           size: 'small',
-          color: 'dark-3'
+          color: 'dark-1'
         }
       },
       message: {
@@ -1001,8 +1002,8 @@ export var generate = function generate(baseSpacing, scale) {
           pad: 'large'
         },
         text: {
-          size: 'medium',
-          color: 'dark-3'
+          size: 'large',
+          color: 'dark-1'
         }
       },
       buttons: {
@@ -1014,6 +1015,7 @@ export var generate = function generate(baseSpacing, scale) {
           direction: 'row'
         },
         button: {
+          size: 'medium',
           margin: {
             right: 'medium'
           }
@@ -1477,9 +1479,9 @@ export var generate = function generate(baseSpacing, scale) {
       toast: {
         closeIcon: Close,
         position: 'top-right',
-        zIndex: 999,
+        zIndex: 9999,
         width: '60%',
-        timeout: 2000,
+        timeout: 3000,
         icon: {
           size: 'xlarge',
           "default": TickCircle,
@@ -1491,14 +1493,12 @@ export var generate = function generate(baseSpacing, scale) {
             weight: 600
           },
           ok: {
-            color: '#38C18B',
             weight: 600,
             margin: {
               horizontal: 'small'
             }
           },
           error: {
-            color: '#E9716C',
             weight: 600,
             margin: {
               horizontal: 'small'
