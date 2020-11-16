@@ -1464,14 +1464,22 @@ export var generate = function generate(baseSpacing, scale) {
       background: 'white',
       round: 'small',
       border: {
-        color: 'dark-6'
+        color: 'light-2'
       },
-      pad: 'xlarge',
+      pad: 'xsmall',
       active: {
-        color: '#e7eaf1'
+        background: '#E15151',
+        color: 'white'
+      },
+      list: {
+        border: {
+          color: 'light-2',
+          side: 'right'
+        },
+        color: 'dark-1'
       },
       icon: {
-        bgColor: 'light-2',
+        bgColor: 'white',
         pad: 'xsmall'
       }
     },
