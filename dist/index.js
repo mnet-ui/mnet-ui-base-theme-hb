@@ -1420,7 +1420,7 @@ var generate = function generate(baseSpacing, scale) {
         },
         verticalAlign: 'bottom',
         background: {
-          color: 'dark-2'
+          color: 'light-2'
         } // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
@@ -1605,6 +1605,9 @@ var generate = function generate(baseSpacing, scale) {
       },
       table: {
         container: {
+          overflow: {
+            vertical: 'auto'
+          },
           height: 'medium'
         }
       }

@@ -1303,7 +1303,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         pad: { horizontal: 'large', vertical: 'medium' },
         verticalAlign: 'bottom',
         background: {
-          color: 'dark-2',
+          color: '#F5F6F8',
         },
         // verticalAlign: undefined,
         // background: undefined,
@@ -1312,7 +1312,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       body: {
         align: 'start',
         pad: { horizontal: 'large', vertical: 'medium' },
-        border: 'light-2',
+        border: 'light-1',
         // background: undefined,
         // border: undefined,
         // extend: undefined,

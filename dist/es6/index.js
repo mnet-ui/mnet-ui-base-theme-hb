@@ -1408,7 +1408,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         verticalAlign: 'bottom',
         background: {
-          color: 'dark-2'
+          color: '#F5F6F8'
         } // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
@@ -1420,7 +1420,7 @@ export var generate = function generate(baseSpacing, scale) {
           horizontal: 'large',
           vertical: 'medium'
         },
-        border: 'light-2' // background: undefined,
+        border: 'light-1' // background: undefined,
         // border: undefined,
         // extend: undefined,
 
