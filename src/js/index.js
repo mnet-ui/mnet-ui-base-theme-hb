@@ -1467,6 +1467,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           weight: 'bold',
         },
       },
+      table: {
+        container: {
+          overflow: { vertical: 'auto' },
+          height: 'medium',
+        },
+      },
     },
   };
 

@@ -1590,6 +1590,14 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'neutral-1',
           weight: 'bold'
         }
+      },
+      table: {
+        container: {
+          overflow: {
+            vertical: 'auto'
+          },
+          height: 'medium'
+        }
       }
     }
   };

@@ -1602,6 +1602,11 @@ var generate = function generate(baseSpacing, scale) {
           color: 'neutral-1',
           weight: 'bold'
         }
+      },
+      table: {
+        container: {
+          height: 'medium'
+        }
       }
     }
   };
