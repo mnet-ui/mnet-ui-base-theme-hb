@@ -1298,25 +1298,31 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     table: {
       header: {
         align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-        border: 'bottom',
+        border: 'light-2',
+        fill: 'horizontal',
+        pad: { horizontal: 'large', vertical: 'medium' },
+        verticalAlign: 'bottom',
+        background: {
+          color: 'dark-2',
+        },
         // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },
       body: {
         align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
+        pad: { horizontal: 'large', vertical: 'medium' },
+        border: 'light-2',
         // background: undefined,
         // border: undefined,
         // extend: undefined,
       },
-      // row: {
-      //   hover: {
-      //     background: undefined,
-      //     color: undefined,
-      //   },
-      // },
+      row: {
+        hover: {
+          background: undefined,
+          color: undefined,
+        },
+      },
       footer: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1438,6 +1444,28 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         down: DownArrow,
         changeArrow: LongArrowDown,
         close: Close,
+      },
+    },
+    upload: {
+      form: {
+        container: {
+          pad: 'large',
+          border: { style: 'dashed', color: 'dark-2' },
+          height: 'medium',
+          align: 'center',
+          justify: 'center',
+        },
+        header: {
+          color: 'dark-1',
+          size: 'large',
+          weight: 600,
+          margin: 'small',
+        },
+        text: {},
+        sampleText: {
+          color: 'neutral-1',
+          weight: 'bold',
+        },
       },
     },
   };
