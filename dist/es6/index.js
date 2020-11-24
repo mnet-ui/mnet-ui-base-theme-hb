@@ -316,8 +316,8 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 'medium'
         },
         color: {
-          dark: 'red',
-          light: '#3367D6'
+          dark: 'light-2',
+          light: 'light-2'
         }
       },
       input: {
@@ -966,7 +966,7 @@ export var generate = function generate(baseSpacing, scale) {
     },
     menu: {
       // background: undefined,
-      // extend: undefined,
+      extend: undefined,
       icons: {// color: { dark: undefined, light: undefined },
       }
     },
