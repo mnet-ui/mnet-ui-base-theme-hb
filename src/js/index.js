@@ -267,19 +267,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       font: {
         family: "'Inter', sans-serif",
-        face: `
-          @font-face {
-            font-family: 'Inter';
-            src:
-              font-display: swap,
-              local('Inter-Regular'),
-              local('Inter-Medium'),
-              local('Inter-Bold'),
-              url("/font/Inter-Regular.ttf") format('ttf'),
-              url("/font/Inter-Medium.ttf") format('ttf'),
-              url("/font/Inter-Bold.ttf") format('ttf');
-          }
-        `,
       },
       hover: {
         background: {

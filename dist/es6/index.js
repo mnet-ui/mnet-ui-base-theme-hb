@@ -307,8 +307,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       font: {
-        family: "'Inter', sans-serif",
-        face: "\n          @font-face {\n            font-family: 'Inter';\n            src:\n              font-display: swap,\n              local('Inter-Regular'),\n              local('Inter-Medium'),\n              local('Inter-Bold'),\n              url(\"/font/Inter-Regular.ttf\") format('ttf'),\n              url(\"/font/Inter-Medium.ttf\") format('ttf'),\n              url(\"/font/Inter-Bold.ttf\") format('ttf');\n          }\n        "
+        family: "'Inter', sans-serif"
       },
       hover: {
         background: {
