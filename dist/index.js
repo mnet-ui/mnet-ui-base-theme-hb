@@ -44,7 +44,10 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     Close = _mnetIcons.HbAdminComponents.Close,
     LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
-    Error = _mnetIcons.HbAdminComponents.Error;
+    Error = _mnetIcons.HbAdminComponents.Error,
+    StartOutline = _mnetIcons.HbAdminComponents.StartOutline,
+    StartFilled = _mnetIcons.HbAdminComponents.StartFilled,
+    More = _mnetIcons.HbAdminComponents.More;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -1478,7 +1481,10 @@ var generate = function generate(baseSpacing, scale) {
       maxWidth: '20%'
     },
     publisherLabel: {
-      background: 'red'
+      background: 'red',
+      favOnIcon: StartFilled,
+      favOffIcon: StartOutline,
+      menuIcon: More
     },
     pagination: {
       background: 'white',

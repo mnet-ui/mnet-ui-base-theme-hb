@@ -13,6 +13,9 @@ const {
   LongArrowDown,
   TickCircle,
   Error,
+  StartOutline,
+  StartFilled,
+  More,
 } = HbAdminComponents;
 const p = 'https://fonts.gstatic.com/s/opensans/v17';
 
@@ -1344,6 +1347,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     publisherLabel: {
       background: 'red',
+      favOnIcon: StartFilled,
+      favOffIcon: StartOutline,
+      menuIcon: More,
     },
     pagination: {
       background: 'white',
