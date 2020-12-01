@@ -45,8 +45,8 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
     Error = _mnetIcons.HbAdminComponents.Error,
-    StartOutline = _mnetIcons.HbAdminComponents.StartOutline,
-    StartFilled = _mnetIcons.HbAdminComponents.StartFilled,
+    StarOutline = _mnetIcons.HbAdminComponents.StarOutline,
+    StarFilled = _mnetIcons.HbAdminComponents.StarFilled,
     More = _mnetIcons.HbAdminComponents.More;
 console.log(_mnetIcons.HbAdminComponents);
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
@@ -1483,8 +1483,8 @@ var generate = function generate(baseSpacing, scale) {
     },
     publisherLabel: {
       background: 'red',
-      favOnIcon: StartFilled,
-      favOffIcon: StartOutline,
+      favOnIcon: StarFilled,
+      favOffIcon: StarOutline,
       menuIcon: More
     },
     pagination: {

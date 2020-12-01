@@ -13,8 +13,8 @@ const {
   LongArrowDown,
   TickCircle,
   Error,
-  StartOutline,
-  StartFilled,
+  StarOutline,
+  StarFilled,
   More,
 } = HbAdminComponents;
 console.log(HbAdminComponents);
@@ -1348,8 +1348,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     publisherLabel: {
       background: 'red',
-      favOnIcon: StartFilled,
-      favOffIcon: StartOutline,
+      favOnIcon: StarFilled,
+      favOffIcon: StarOutline,
       menuIcon: More,
     },
     pagination: {
