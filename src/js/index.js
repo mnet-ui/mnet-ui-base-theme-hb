@@ -17,7 +17,6 @@ const {
   StarFilled,
   More,
 } = HbAdminComponents;
-console.log(HbAdminComponents);
 const p = 'https://fonts.gstatic.com/s/opensans/v17';
 
 const brandColor = '#E15151';
