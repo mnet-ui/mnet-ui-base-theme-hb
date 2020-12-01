@@ -33,7 +33,10 @@ var UpArrow = HbAdminComponents.UpArrow,
     Close = HbAdminComponents.Close,
     LongArrowDown = HbAdminComponents.LongArrowDown,
     TickCircle = HbAdminComponents.TickCircle,
-    Error = HbAdminComponents.Error;
+    Error = HbAdminComponents.Error,
+    StartOutline = HbAdminComponents.StartOutline,
+    StartFilled = HbAdminComponents.StartFilled,
+    More = HbAdminComponents.More;
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -1466,7 +1469,10 @@ export var generate = function generate(baseSpacing, scale) {
       maxWidth: '20%'
     },
     publisherLabel: {
-      background: 'red'
+      background: 'red',
+      favOnIcon: StartFilled,
+      favOffIcon: StartOutline,
+      menuIcon: More
     },
     pagination: {
       background: 'white',
