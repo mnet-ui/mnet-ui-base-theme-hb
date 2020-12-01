@@ -1477,6 +1477,9 @@ var generate = function generate(baseSpacing, scale) {
       round: 'small',
       maxWidth: '20%'
     },
+    publisherLabel: {
+      background: 'red'
+    },
     pagination: {
       background: 'white',
       round: 'small',

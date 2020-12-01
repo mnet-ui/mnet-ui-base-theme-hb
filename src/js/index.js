@@ -1342,6 +1342,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       round: 'small',
       maxWidth: '20%',
     },
+    publisherLabel: {
+      background: 'red',
+    },
     pagination: {
       background: 'white',
       round: 'small',
