@@ -37,6 +37,7 @@ var UpArrow = HbAdminComponents.UpArrow,
     StartOutline = HbAdminComponents.StartOutline,
     StartFilled = HbAdminComponents.StartFilled,
     More = HbAdminComponents.More;
+console.log(HbAdminComponents);
 var p = 'https://fonts.gstatic.com/s/opensans/v17';
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
