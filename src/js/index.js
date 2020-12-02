@@ -1346,10 +1346,29 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       maxWidth: '20%',
     },
     publisherLabel: {
-      background: 'red',
-      favOnIcon: StarFilled,
-      favOffIcon: StarOutline,
-      menuIcon: More,
+      iconWrapper: {
+        on: StarFilled,
+        off: StarOutline,
+        color: 'dark-6',
+        disableColor: 'dark-1',
+        size: 'xxlarge',
+        extend: {
+          pad: 'medium',
+        },
+      },
+      menu: {
+        icon: More,
+        dropProps: {
+          align: { top: 'bottom', left: 'left' },
+          elevation: 'xlarge',
+        },
+      },
+      container: {
+        height: 'xxsmall',
+        gap: 'small',
+        align: 'center',
+        direction: 'row',
+      }
     },
     pagination: {
       background: 'white',
