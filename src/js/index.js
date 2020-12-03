@@ -32,15 +32,15 @@ const statusColors = {
 const darkColors = [
   '#333333',
   '#9DA2AD',
-  '#9DA2AD',
+  '#8A90A6',
   '#9DA2AD',
   '#9DA2AD',
   '#9DA2AD',
 ];
 const lightColors = [
   '#F2F5FC',
-  '#E0E0E0',
-  '#E0E0E0',
+  '#F2F3F6',
+  '#E0E4ED',
   '#E0E0E0',
   '#E0E0E0',
   '#E0E0E0',
