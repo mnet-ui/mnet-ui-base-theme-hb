@@ -1479,6 +1479,16 @@ export var generate = function generate(baseSpacing, scale) {
           pad: 'medium'
         }
       },
+      label: {
+        pubName: {
+          pad: 'medium',
+          weight: 600,
+          size: 'large'
+        },
+        pubId: {
+          size: 'large'
+        }
+      },
       menu: {
         icon: More,
         dropProps: {

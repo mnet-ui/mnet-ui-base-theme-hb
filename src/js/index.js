@@ -1356,6 +1356,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           pad: 'medium',
         },
       },
+      label: {
+        pubName: {
+          pad: 'medium',
+          weight: 600,
+          size: 'large',
+        },
+        pubId: {
+          size: 'large',
+        },
+      },
       menu: {
         icon: More,
         dropProps: {
