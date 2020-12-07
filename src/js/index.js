@@ -1355,6 +1355,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         extend: {
           pad: 'medium',
         },
+        btnProps: {},
       },
       label: {
         pubName: {

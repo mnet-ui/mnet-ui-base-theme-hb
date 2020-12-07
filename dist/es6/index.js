@@ -1477,7 +1477,8 @@ export var generate = function generate(baseSpacing, scale) {
         size: 'xxlarge',
         extend: {
           pad: 'medium'
-        }
+        },
+        btnProps: {}
       },
       label: {
         pubName: {
