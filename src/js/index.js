@@ -39,7 +39,7 @@ const darkColors = [
 ];
 const lightColors = [
   '#F2F5FC',
-  '#E0E0E0',
+  '#F1F3F5',
   '#E0E0E0',
   '#E0E0E0',
   '#E0E0E0',

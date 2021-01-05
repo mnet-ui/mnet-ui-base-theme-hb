@@ -48,7 +48,7 @@ var statusColors = {
   disabled: '#CCCCCC'
 };
 var darkColors = ['#333333', '#9DA2AD', '#9DA2AD', '#9DA2AD', '#9DA2AD', '#9DA2AD'];
-var lightColors = ['#F2F5FC', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0'];
+var lightColors = ['#F2F5FC', '#F1F3F5', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0'];
 var focusColor = '#B1C2FE';
 var colors = {
   active: rgba(221, 221, 221, 0.5),
