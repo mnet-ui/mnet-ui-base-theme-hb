@@ -994,8 +994,11 @@ var generate = function generate(baseSpacing, scale) {
         wrapper: {
           pad: {
             horizontal: 'large',
-            vertical: 'large'
+            vertical: 'medium'
           },
+          direction: 'row',
+          justify: 'between',
+          align: 'center',
           border: {
             side: 'bottom',
             color: 'light-2'
@@ -1006,6 +1009,11 @@ var generate = function generate(baseSpacing, scale) {
           level: 3,
           size: 'small',
           color: 'dark-1'
+        },
+        close: {
+          icon: Close,
+          size: 'xxlarge',
+          color: 'dark-2'
         }
       },
       message: {

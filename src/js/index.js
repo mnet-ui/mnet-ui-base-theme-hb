@@ -876,8 +876,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         wrapper: {
           pad: {
             horizontal: 'large',
-            vertical: 'large',
+            vertical: 'medium',
           },
+          direction: 'row',
+          justify: 'between',
+          align: 'center',
           border: {
             side: 'bottom',
             color: 'light-2',
@@ -888,6 +891,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           level: 3,
           size: 'small',
           color: 'dark-1',
+        },
+        close: {
+          icon: Close,
+          size: 'xxlarge',
+          color: 'dark-2',
         },
       },
       message: {
