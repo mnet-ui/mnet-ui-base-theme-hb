@@ -45,7 +45,6 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
     Error = _mnetIcons.HbAdminComponents.Error;
-var p = 'https://fonts.gstatic.com/s/opensans/v17';
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -56,7 +55,11 @@ var statusColors = {
   ok: '#16B037',
   info: '#3367D6',
   unknown: '#CCCCCC',
-  disabled: '#CCCCCC'
+  disabled: '#CCCCCC',
+  'warning-background': '#FFFCF4',
+  'info-background': '#F5F9FF',
+  'warning-border': '#F9DE9E',
+  'info-border': '#BCD1FF'
 };
 var darkColors = ['#333333', '#9DA2AD', '#8A90A6', '#9DA2AD', '#9DA2AD', '#9DA2AD'];
 var lightColors = ['#F2F5FC', '#F1F3F5', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0'];
