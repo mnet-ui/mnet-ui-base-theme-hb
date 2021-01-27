@@ -257,7 +257,7 @@ export var generate = function generate(baseSpacing, scale) {
         border: {
           radius: '0px'
         },
-        shadowSize: 'small',
+        shadowSize: '0',
         zIndex: '20',
         marginTop: '4px'
       },
@@ -330,7 +330,7 @@ export var generate = function generate(baseSpacing, scale) {
         font: {
           // size: undefined,
           // height: undefined,
-          weight: 600
+          weight: 400
         } // deprecate in v3
         // weight: undefined,
 
@@ -1033,6 +1033,18 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     multiselect: {
+      container: {
+        border: {
+          color: 'light-3'
+        },
+        round: 'small'
+      },
+      includeBtn: {
+        color: 'status-ok'
+      },
+      excludeBtn: {
+        color: 'status-error'
+      },
       option: {
         width: 'full',
         direction: 'row',
@@ -1058,31 +1070,10 @@ export var generate = function generate(baseSpacing, scale) {
           margin: 'auto',
           round: 'small',
           align: 'center',
+          justify: 'center',
           background: 'white',
           border: {
             color: 'light-6'
-          },
-          extend: function extend(props) {
-            var getBackground = function getBackground() {
-              switch (props.isExcluded) {
-                case null:
-                  return accentColors[2];
-
-                case false:
-                  return '#38C18B';
-
-                case true:
-                  return '#FC564F';
-
-                default:
-                  return accentColors[2];
-              }
-            };
-
-            return {
-              background: props.active ? getBackground() : 'white',
-              'border-color': props.active ? 'transparent' : lightColors[5]
-            };
           }
         }
       },
@@ -1092,7 +1083,6 @@ export var generate = function generate(baseSpacing, scale) {
           direction: 'row',
           extend: function extend(props) {
             return {
-              padding: props.twoColumnLayout ? 0 : baseSpacing / 1.618 + "px",
               'border-bottom': props.twoColumnLayout ? 'none' : '1px solid #D9DBE5'
             };
           }
@@ -1101,7 +1091,7 @@ export var generate = function generate(baseSpacing, scale) {
           background: 'light-3',
           round: 'small',
           pad: {
-            vertical: 'small',
+            vertical: 'medium',
             horizontal: 'medium'
           },
           margin: 'small',
@@ -1112,37 +1102,16 @@ export var generate = function generate(baseSpacing, scale) {
               width: props.twoColumnLayout ? '100%' : 'auto',
               margin: props.twoColumnLayout ? 0 : baseSpacing / (1.618 * 2) + "px",
               background: props.twoColumnLayout ? 'white' : lightColors[2],
-              padding: props.twoColumnLayout ? baseSpacing / 1.618 + "px" : baseSpacing / (1.618 * 2) + "px " + baseSpacing / 1.618 + "px",
-              'border-radius': props.twoColumnLayout ? 0 : baseSpacing / (1.618 * 2) + "px",
-              'border-bottom': props.twoColumnLayout ? '1px solid #D9DBE5' : 'none',
               'justify-content': props.twoColumnLayout ? 'space-between' : 'flex-start'
             };
           }
         },
         label: {
-          color: 'dark-3',
+          color: 'dark-1',
           size: 'medium',
-          weight: 600,
+          weight: 400,
           margin: {
             right: 'small'
-          },
-          extend: function extend(props) {
-            var getTextColor = function getTextColor() {
-              switch (props.isExcluded) {
-                case false:
-                  return '#38C18B';
-
-                case true:
-                  return '#FC564F';
-
-                default:
-                  return darkColors[2];
-              }
-            };
-
-            return {
-              color: getTextColor()
-            };
           }
         },
         icon: {
@@ -1150,8 +1119,16 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'dark-3'
         },
         clear: {
-          color: 'accent-2',
-          size: 'small'
+          margin: 'medium',
+          border: {
+            side: 'top',
+            color: 'light-3'
+          },
+          color: 'dark-2',
+          size: 'medium',
+          alignSelf: 'end',
+          weight: '600',
+          height: '30px'
         }
       },
       controls: {
@@ -1170,27 +1147,23 @@ export var generate = function generate(baseSpacing, scale) {
       searchbox: {
         container: {
           height: {
-            min: 'xxsmall',
-            max: 'xxsmall'
+            min: '40px',
+            max: '40px'
           },
           direction: 'row',
           align: 'center',
-          background: 'light-2',
+          background: 'transparent',
           pad: {
-            right: 'medium',
-            vertical: 'small'
+            horizontal: 'medium',
+            vertical: 'medium'
           },
-          extend: function extend(props) {
-            return {
-              background: props.layout === 'double-column' ? 'white' : lightColors[1],
-              'flex-direction': props.layout === 'double-column' ? 'row-reverse' : 'row',
-              'padding-left': props.layout === 'double-column' ? baseSpacing / 1.618 + "px" : 0,
-              'border-bottom': props.layout === 'double-column' ? '1px solid #D9DBE5' : 'none'
-            };
+          border: {
+            side: 'bottom',
+            color: 'light-3'
           }
         },
         placeholder: {
-          color: 'dark-5',
+          color: 'dark-4',
           size: 'medium'
         },
         icon: {
@@ -1199,51 +1172,73 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       rightPanel: {
-        border: '#D9DBE5',
+        border: 'light-3',
         incExcHeader: {
           box: {
             direction: 'row',
-            justify: 'between',
-            pad: 'medium',
-            background: 'background-back',
+            justify: 'start',
+            align: 'center',
+            pad: 'large',
+            background: 'white',
             border: {
               side: 'bottom',
-              color: '#D9DBE5'
+              color: 'light-3'
             }
           },
           text: {
-            color: 'accent-2',
+            color: 'dark-1',
             size: 'medium',
-            weight: 600
+            weight: '400'
+          },
+          count: {
+            margin: {
+              left: 'small'
+            },
+            background: 'brand',
+            round: 'medium',
+            pad: {
+              horizontal: 'medium'
+            },
+            justify: 'center'
           }
         }
       },
       custom: {
         wrapper: {
-          direction: 'row'
+          direction: 'row',
+          border: {
+            color: 'light-3'
+          },
+          round: 'small'
         },
         textAreaWrap: {
           border: {
-            side: 'right'
+            side: 'right',
+            color: 'transparent'
           },
-          pad: 'large'
-        },
-        label: {
-          weight: 600
-        },
-        textAreaContainer: {
-          minHeight: '140px',
-          margin: {
-            vertical: 'medium'
+          pad: '0',
+          height: '100%',
+          extend: {
+            '*': {
+              border: 'none',
+              height: '100%'
+            }
           }
         },
         actions: {
           wrapper: {
             direction: 'row',
-            margin: {
-              vertical: 'small'
+            gap: '0',
+            margin: '0',
+            justify: 'evenly',
+            align: 'center',
+            border: {
+              side: 'top',
+              color: 'light-3'
             },
-            gap: 'medium'
+            height: {
+              min: '30px'
+            }
           }
         }
       }
@@ -1463,8 +1458,11 @@ export var generate = function generate(baseSpacing, scale) {
       xlarge: _extends({}, fontSizing(2)),
       xxlarge: _extends({}, fontSizing(4))
     },
-    textArea: {// extend: undefined,
-      // disabled: { opacity: undefined },
+    textArea: {
+      extend: {
+        'box-shadow': 'none'
+      } // disabled: { opacity: undefined },
+
     },
     textInput: {// extend: undefined,
       // disabled: { opacity: undefined },
