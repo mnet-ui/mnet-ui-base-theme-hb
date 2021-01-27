@@ -645,9 +645,7 @@ export var generate = function generate(baseSpacing, scale) {
       gap: 'medium',
       hover: {
         border: {
-          border: {
-            color: undefined
-          }
+          color: undefined
         }
       },
       icon: {

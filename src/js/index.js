@@ -573,9 +573,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       gap: 'medium',
       hover: {
         border: {
-          border: {
-            color: undefined,
-          },
+          color: undefined,
         },
       },
       icon: {
