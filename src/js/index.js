@@ -1209,15 +1209,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      background: 'light-1',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null,
       },
       control: {
-        // open: undefined,
+        open: colors.white,
         extend: {
-          border: 'none',
+          border: `1px solid ${lightColors[2]};`,
           padding: '0 4px',
           text: {},
         },
