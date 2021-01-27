@@ -44,7 +44,8 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     Close = _mnetIcons.HbAdminComponents.Close,
     LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
-    Error = _mnetIcons.HbAdminComponents.Error;
+    Error = _mnetIcons.HbAdminComponents.Error,
+    Tick = _mnetIcons.HbAdminComponents.Tick;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -631,31 +632,43 @@ var generate = function generate(baseSpacing, scale) {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)'
+          light: 'rgba(224, 224, 224, 1)'
         },
-        width: '2px'
+        width: '2px',
+        radius: '3px'
       },
       check: {
         // extend: undefined,
+        extend: function extend(_ref) {
+          var checked = _ref.checked;
+          return "\n          " + (checked ? "\n            background-color: #3367D6;border: unset;" : '') + "\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+        },
         radius: '4px',
         thickness: '4px'
       },
       // color: { dark: undefined, light: undefined },
+      color: {
+        light: 'neutral-3',
+        dark: 'neutral-3'
+      },
       // extend: undefined,
+      extend: 'color: #9C9C9C;',
       // gap: undefined
+      gap: 'medium',
       hover: {
         border: {
-          color: {
-            dark: 'white',
-            light: 'black'
+          border: {
+            color: undefined
           }
         }
       },
-      icon: {// size: undefined,
-        // extend: undefined,
+      icon: {
+        size: '18px',
+        extend: 'stroke: white;'
       },
-      icons: {// checked: undefined,
-        // indeterminate: undefined,
+      icons: {
+        checked: Tick // indeterminate: undefined,
+
       },
       size: baseSpacing + "px",
       toggle: {

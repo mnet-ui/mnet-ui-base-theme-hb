@@ -13,6 +13,7 @@ const {
   LongArrowDown,
   TickCircle,
   Error,
+  Tick,
 } = HbAdminComponents;
 
 const brandColor = '#E15151';
@@ -545,32 +546,44 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)',
+          light: 'rgba(224, 224, 224, 1)',
         },
         width: '2px',
+        radius: '3px',
       },
       check: {
         // extend: undefined,
+        extend: ({ checked }) => `
+          ${checked ? `
+            background-color: #3367D6;border: unset;` : ''}
+          box-shadow: unset;
+          border-radius: 3px;
+        `,
         radius: '4px',
         thickness: '4px',
       },
       // color: { dark: undefined, light: undefined },
+      color: {
+        light: 'neutral-3',
+        dark: 'neutral-3',
+      },
       // extend: undefined,
+      extend: 'color: #9C9C9C;',
       // gap: undefined
+      gap: 'medium',
       hover: {
         border: {
-          color: {
-            dark: 'white',
-            light: 'black',
+          border: {
+            color: undefined,
           },
         },
       },
       icon: {
-        // size: undefined,
-        // extend: undefined,
+        size: '18px',
+        extend: 'stroke: white;',
       },
       icons: {
-        // checked: undefined,
+        checked: Tick,
         // indeterminate: undefined,
       },
       size: `${baseSpacing}px`,
