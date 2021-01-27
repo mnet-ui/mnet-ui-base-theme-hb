@@ -629,7 +629,7 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
         extend: function extend(_ref) {
           var checked = _ref.checked;
-          return "\n          " + (checked ? "\n            background-color: #3367D6;border: unset;" : '') + "\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+          return "\n          " + (checked ? "\n            background-color: " + statusColors.info + ";border: unset;" : '') + "\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
         },
         radius: '4px',
         thickness: '4px'
@@ -1477,8 +1477,15 @@ export var generate = function generate(baseSpacing, scale) {
     textArea: {// extend: undefined,
       // disabled: { opacity: undefined },
     },
-    textInput: {// extend: undefined,
-      // disabled: { opacity: undefined },
+    textInput: {
+      // extend: undefined,
+      extendCustom: function extendCustom(_ref2) {
+        var focus = _ref2.focus,
+            error = _ref2.error,
+            width = _ref2.width;
+        return "\n      box-shadow: none;\n      " + (width ? "width: " + width + ";" : '') + "\n      " + (focus ? "border: none;\n        border-bottom:2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n        " : "border: 1px solid " + lightColors[2] + ";\n        border-bottom-width: 2px") + ";\n      " + (error ? "border-bottom:2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;" : '') + "\n      transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s\n      ";
+      } // disabled: { opacity: undefined },
+
     },
     tooptip: {
       background: 'dark-1',
