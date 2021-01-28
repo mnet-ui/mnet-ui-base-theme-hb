@@ -640,7 +640,7 @@ export var generate = function generate(baseSpacing, scale) {
         dark: 'neutral-3'
       },
       // extend: undefined,
-      extend: 'color: #9C9C9C;',
+      extend: "color: " + colors.white + ";",
       // gap: undefined
       gap: 'medium',
       hover: {
