@@ -72,7 +72,7 @@ var colors = {
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
-    light: rgba(205, 211, 227, 1)
+    light: 'light-3'
   },
   brand: brandColor,
   control: {
@@ -1176,7 +1176,7 @@ export var generate = function generate(baseSpacing, scale) {
         incExcHeader: {
           box: {
             direction: 'row',
-            justify: 'start',
+            justify: 'between',
             align: 'center',
             pad: 'large',
             background: 'white',
@@ -1310,17 +1310,17 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: 'light-1',
+      background: 'white',
       activeColor: 'light-1',
       container: {
         extend: null
       },
       control: {
-        // open: undefined,
+        open: undefined,
         extend: {
-          border: 'none',
-          padding: '0 4px',
-          text: {}
+          'border-bottom': '2px solid #E0E0E0',
+          'text-align': 'left',
+          padding: '4px 10px'
         }
       },
       options: {
@@ -1335,11 +1335,14 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       icons: {
-        color: 'icon',
+        color: 'dark-2',
         margin: 'none',
-        pad: 'medium',
+        pad: {
+          vertical: 'small',
+          horizontal: 'small'
+        },
         background: 'background-contrast',
-        size: 'small',
+        size: 'xlarge',
         up: UpArrow,
         down: DownArrow // extend: {},
 

@@ -1051,6 +1051,12 @@ var generate = function generate(baseSpacing, scale) {
         },
         round: 'small'
       },
+      includeBtn: {
+        color: 'status-ok'
+      },
+      excludeBtn: {
+        color: 'status-error'
+      },
       option: {
         width: 'full',
         direction: 'row',
@@ -1133,7 +1139,8 @@ var generate = function generate(baseSpacing, scale) {
           color: 'dark-2',
           size: 'medium',
           alignSelf: 'end',
-          weight: '600'
+          weight: '600',
+          height: '30px'
         }
       },
       controls: {
@@ -1217,19 +1224,33 @@ var generate = function generate(baseSpacing, scale) {
           round: 'small'
         },
         textAreaWrap: {
+          border: {
+            side: 'right',
+            color: 'transparent'
+          },
           pad: '0',
+          height: '100%',
           extend: {
             '*': {
-              border: 'none'
+              border: 'none',
+              height: '100%'
             }
           }
         },
         actions: {
           wrapper: {
             direction: 'row',
-            gap: 0,
+            gap: '0',
+            margin: '0',
             justify: 'evenly',
-            align: 'center'
+            align: 'center',
+            border: {
+              side: 'top',
+              color: 'light-3'
+            },
+            height: {
+              min: '30px'
+            }
           }
         }
       }
