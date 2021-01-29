@@ -224,7 +224,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border: {
           radius: '0px',
         },
-        shadowSize: '0',
+        shadowSize: 'small',
         zIndex: '20',
         marginTop: '4px',
       },
@@ -1209,8 +1209,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       background: colors.white,
       activeColor: 'light-1',
       container: {
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 4px;',
-        margin: '0 2px 2px 2px',
+        extend: null,
       },
       control: {
         open: undefined,
