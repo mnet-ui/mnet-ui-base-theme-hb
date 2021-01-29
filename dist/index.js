@@ -1336,7 +1336,8 @@ var generate = function generate(baseSpacing, scale) {
       background: colors.white,
       activeColor: 'light-1',
       container: {
-        extend: null
+        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 4px;',
+        margin: '0 2px 2px 2px'
       },
       control: {
         open: undefined,
