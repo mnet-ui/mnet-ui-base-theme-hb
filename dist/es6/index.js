@@ -33,7 +33,8 @@ var UpArrow = HbAdminComponents.UpArrow,
     Close = HbAdminComponents.Close,
     LongArrowDown = HbAdminComponents.LongArrowDown,
     TickCircle = HbAdminComponents.TickCircle,
-    Error = HbAdminComponents.Error;
+    Error = HbAdminComponents.Error,
+    Tick = HbAdminComponents.Tick;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -619,31 +620,41 @@ export var generate = function generate(baseSpacing, scale) {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)'
+          light: 'rgba(224, 224, 224, 1)'
         },
-        width: '2px'
+        width: '2px',
+        radius: '3px'
       },
       check: {
         // extend: undefined,
+        extend: function extend(_ref) {
+          var checked = _ref.checked;
+          return "\n          " + (checked ? " background-color: " + statusColors.info + "; border: unset;" : '') + "\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+        },
         radius: '4px',
         thickness: '4px'
       },
       // color: { dark: undefined, light: undefined },
+      color: {
+        light: 'neutral-3',
+        dark: 'neutral-3'
+      },
       // extend: undefined,
+      extend: "color: " + colors.white + ";",
       // gap: undefined
+      gap: 'medium',
       hover: {
         border: {
-          color: {
-            dark: 'white',
-            light: 'black'
-          }
+          color: undefined
         }
       },
-      icon: {// size: undefined,
-        // extend: undefined,
+      icon: {
+        size: '18px',
+        extend: 'stroke: white;'
       },
-      icons: {// checked: undefined,
-        // indeterminate: undefined,
+      icons: {
+        checked: Tick // indeterminate: undefined,
+
       },
       size: baseSpacing + "px",
       toggle: {
@@ -1310,7 +1321,7 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: 'white',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null
@@ -1318,7 +1329,7 @@ export var generate = function generate(baseSpacing, scale) {
       control: {
         open: undefined,
         extend: {
-          'border-bottom': '2px solid #E0E0E0',
+          'border-bottom': "2px solid " + lightColors[2] + ";",
           'text-align': 'left',
           padding: '4px 10px'
         }
@@ -1467,8 +1478,15 @@ export var generate = function generate(baseSpacing, scale) {
       } // disabled: { opacity: undefined },
 
     },
-    textInput: {// extend: undefined,
-      // disabled: { opacity: undefined },
+    textInput: {
+      // extend: undefined,
+      extendCustom: function extendCustom(_ref2) {
+        var focus = _ref2.focus,
+            error = _ref2.error,
+            width = _ref2.width;
+        return "\n      box-shadow: none;\n      " + (width ? "width: " + width + ";" : '') + "\n      " + (focus ? "border: none;\n        border-bottom:2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n        " : "border: 1px solid " + lightColors[2] + ";\n        border-bottom-width: 2px") + ";\n      " + (error ? "border-bottom:2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;" : '') + "\n      transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s\n      ";
+      } // disabled: { opacity: undefined },
+
     },
     tooptip: {
       background: 'dark-1',

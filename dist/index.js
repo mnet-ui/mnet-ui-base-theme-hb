@@ -44,7 +44,8 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     Close = _mnetIcons.HbAdminComponents.Close,
     LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
-    Error = _mnetIcons.HbAdminComponents.Error;
+    Error = _mnetIcons.HbAdminComponents.Error,
+    Tick = _mnetIcons.HbAdminComponents.Tick;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -83,7 +84,7 @@ var colors = {
   black: '#000000',
   border: {
     dark: (0, _polished.rgba)(255, 255, 255, 0.33),
-    light: (0, _polished.rgba)(205, 211, 227, 1)
+    light: 'light-3'
   },
   brand: brandColor,
   control: {
@@ -631,31 +632,41 @@ var generate = function generate(baseSpacing, scale) {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)'
+          light: 'rgba(224, 224, 224, 1)'
         },
-        width: '2px'
+        width: '2px',
+        radius: '3px'
       },
       check: {
         // extend: undefined,
+        extend: function extend(_ref) {
+          var checked = _ref.checked;
+          return "\n          " + (checked ? " background-color: " + statusColors.info + "; border: unset;" : '') + "\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+        },
         radius: '4px',
         thickness: '4px'
       },
       // color: { dark: undefined, light: undefined },
+      color: {
+        light: 'neutral-3',
+        dark: 'neutral-3'
+      },
       // extend: undefined,
+      extend: "color: " + colors.white + ";",
       // gap: undefined
+      gap: 'medium',
       hover: {
         border: {
-          color: {
-            dark: 'white',
-            light: 'black'
-          }
+          color: undefined
         }
       },
-      icon: {// size: undefined,
-        // extend: undefined,
+      icon: {
+        size: '18px',
+        extend: 'stroke: white;'
       },
-      icons: {// checked: undefined,
-        // indeterminate: undefined,
+      icons: {
+        checked: Tick // indeterminate: undefined,
+
       },
       size: baseSpacing + "px",
       toggle: {
@@ -1188,7 +1199,7 @@ var generate = function generate(baseSpacing, scale) {
         incExcHeader: {
           box: {
             direction: 'row',
-            justify: 'start',
+            justify: 'between',
             align: 'center',
             pad: 'large',
             background: 'white',
@@ -1322,17 +1333,17 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: 'light-1',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null
       },
       control: {
-        // open: undefined,
+        open: undefined,
         extend: {
-          border: 'none',
-          padding: '0 4px',
-          text: {}
+          'border-bottom': "2px solid " + lightColors[2] + ";",
+          'text-align': 'left',
+          padding: '4px 10px'
         }
       },
       options: {
@@ -1347,11 +1358,14 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       icons: {
-        color: 'icon',
+        color: 'dark-2',
         margin: 'none',
-        pad: 'medium',
+        pad: {
+          vertical: 'small',
+          horizontal: 'small'
+        },
         background: 'background-contrast',
-        size: 'small',
+        size: 'xlarge',
         up: UpArrow,
         down: DownArrow // extend: {},
 
@@ -1476,8 +1490,15 @@ var generate = function generate(baseSpacing, scale) {
       } // disabled: { opacity: undefined },
 
     },
-    textInput: {// extend: undefined,
-      // disabled: { opacity: undefined },
+    textInput: {
+      // extend: undefined,
+      extendCustom: function extendCustom(_ref2) {
+        var focus = _ref2.focus,
+            error = _ref2.error,
+            width = _ref2.width;
+        return "\n      box-shadow: none;\n      " + (width ? "width: " + width + ";" : '') + "\n      " + (focus ? "border: none;\n        border-bottom:2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n        " : "border: 1px solid " + lightColors[2] + ";\n        border-bottom-width: 2px") + ";\n      " + (error ? "border-bottom:2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;" : '') + "\n      transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s\n      ";
+      } // disabled: { opacity: undefined },
+
     },
     tooptip: {
       background: 'dark-1',

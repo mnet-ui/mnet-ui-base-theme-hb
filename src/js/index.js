@@ -13,6 +13,7 @@ const {
   LongArrowDown,
   TickCircle,
   Error,
+  Tick,
 } = HbAdminComponents;
 
 const brandColor = '#E15151';
@@ -546,32 +547,45 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)',
+          light: 'rgba(224, 224, 224, 1)',
         },
         width: '2px',
+        radius: '3px',
       },
       check: {
         // extend: undefined,
+        extend: ({ checked }) => `
+          ${
+            checked
+              ? ` background-color: ${statusColors.info}; border: unset;`
+              : ''
+          }
+          box-shadow: unset;
+          border-radius: 3px;
+        `,
         radius: '4px',
         thickness: '4px',
       },
       // color: { dark: undefined, light: undefined },
+      color: {
+        light: 'neutral-3',
+        dark: 'neutral-3',
+      },
       // extend: undefined,
+      extend: `color: ${colors.white};`,
       // gap: undefined
+      gap: 'medium',
       hover: {
         border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
+          color: undefined,
         },
       },
       icon: {
-        // size: undefined,
-        // extend: undefined,
+        size: '18px',
+        extend: 'stroke: white;',
       },
       icons: {
-        // checked: undefined,
+        checked: Tick,
         // indeterminate: undefined,
       },
       size: `${baseSpacing}px`,
@@ -1195,7 +1209,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      background: 'white',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null,
@@ -1203,7 +1217,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       control: {
         open: undefined,
         extend: {
-          'border-bottom': '2px solid #E0E0E0',
+          'border-bottom': `2px solid ${lightColors[2]};`,
           'text-align': 'left',
           padding: '4px 10px',
         },
@@ -1345,6 +1359,29 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     textInput: {
       // extend: undefined,
+      extendCustom: ({ focus, error, width }) => `
+      box-shadow: none;
+      ${width ? `width: ${width};` : ''}
+      ${
+        focus
+          ? `border: none;
+        border-bottom:2px solid ${statusColors.info};
+        background: ${lightColors[0]};
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        `
+          : `border: 1px solid ${lightColors[2]};
+        border-bottom-width: 2px`
+      };
+      ${
+        error
+          ? `border-bottom:2px solid red;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;`
+          : ''
+      }
+      transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s
+      `,
       // disabled: { opacity: undefined },
     },
     tooptip: {
