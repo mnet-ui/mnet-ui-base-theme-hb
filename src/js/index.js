@@ -555,11 +555,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       check: {
         // extend: undefined,
         extend: ({ checked }) => `
-          ${
-            checked
-              ? ` background-color: ${statusColors.info}; border: unset;`
-              : ''
-          }
+          ${checked && 'background-color: #3367D6;'}
+          border: unset;
           box-shadow: unset;
           border-radius: 3px;
         `,
@@ -1361,25 +1358,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // extend: undefined,
       extendCustom: ({ focus, error, width }) => `
       box-shadow: none;
-      ${width ? `width: ${width};` : ''}
-      ${
-        focus
-          ? `border: none;
+      ${width && `width: ${width};`}
+      ${focus && `
+        border: none;
         border-bottom:2px solid ${statusColors.info};
         background: ${lightColors[0]};
         border-bottom-right-radius: 0px;
         border-bottom-left-radius: 0px;
-        `
-          : `border: 1px solid ${lightColors[2]};
-        border-bottom-width: 2px`
-      };
-      ${
-        error
-          ? `border-bottom:2px solid red;
+        `}
+      ${!focus && `
+        border: 1px solid ${lightColors[2]};
+        border-bottom-width: 2px;`}
+      ${error && `border-bottom: 2px solid red;
         border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;`
-          : ''
-      }
+        border-bottom-left-radius: 0px;`}
       transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s
       `,
       // disabled: { opacity: undefined },
