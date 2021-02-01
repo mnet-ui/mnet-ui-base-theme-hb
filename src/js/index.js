@@ -1363,7 +1363,19 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: 'brand',
           margin: { vertical: 'small' }
         },
+        extend: `
+        border-bottom: 2px solid red;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;`,
       },
+      focus: `
+        border-color: transparent;
+        border-bottom: 2px solid ${statusColors.info};
+        background: ${lightColors[0]};
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+      `,
+      border: `1px solid ${lightColors[2]}`
       // disabled: { opacity: undefined },
     },
     tooptip: {
