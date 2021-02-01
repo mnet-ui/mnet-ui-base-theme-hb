@@ -14,6 +14,7 @@ const {
   TickCircle,
   Error,
   Tick,
+  Info,
 } = HbAdminComponents;
 
 const brandColor = '#E15151';
@@ -1356,24 +1357,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     textInput: {
       // extend: undefined,
-      extendCustom: ({ focus, error, width }) => `
-      box-shadow: none;
-      ${width && `width: ${width};`}
-      ${focus && `
-        border: none;
-        border-bottom:2px solid ${statusColors.info};
-        background: ${lightColors[0]};
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;
-        `}
-      ${!focus && `
-        border: 1px solid ${lightColors[2]};
-        border-bottom-width: 2px;`}
-      ${error && `border-bottom: 2px solid red;
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;`}
-      transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s
-      `,
+      error: {
+        icon: Info,
+        text: {
+          color: 'brand',
+          margin: { vertical: 'small' }
+        },
+      },
       // disabled: { opacity: undefined },
     },
     tooptip: {

@@ -45,7 +45,8 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
     Error = _mnetIcons.HbAdminComponents.Error,
-    Tick = _mnetIcons.HbAdminComponents.Tick;
+    Tick = _mnetIcons.HbAdminComponents.Tick,
+    Info = _mnetIcons.HbAdminComponents.Info;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -1492,11 +1493,14 @@ var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // extend: undefined,
-      extendCustom: function extendCustom(_ref2) {
-        var focus = _ref2.focus,
-            error = _ref2.error,
-            width = _ref2.width;
-        return "\n      box-shadow: none;\n      " + (width && "width: " + width + ";") + "\n      " + (focus && "\n        border: none;\n        border-bottom:2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n        ") + "\n      " + (!focus && "\n        border: 1px solid " + lightColors[2] + ";\n        border-bottom-width: 2px;") + "\n      " + (error && "border-bottom: 2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;") + "\n      transition: width 0.2s ease 0s, background 0.2s ease 0s, left 0.2s ease 0s\n      ";
+      error: {
+        icon: Info,
+        text: {
+          color: 'brand',
+          margin: {
+            vertical: 'small'
+          }
+        }
       } // disabled: { opacity: undefined },
 
     },
