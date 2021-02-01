@@ -1492,7 +1492,7 @@ export var generate = function generate(baseSpacing, scale) {
         extend: "\n        border-bottom: 2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;"
       },
       focus: "\n        border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n      ",
-      border: "1px solid " + lightColors[2] // disabled: { opacity: undefined },
+      border: "1px solid " + lightColors[2] + ";" // disabled: { opacity: undefined },
 
     },
     tooptip: {
