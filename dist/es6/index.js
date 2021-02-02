@@ -1157,6 +1157,14 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       searchbox: {
+        textWrapper: {
+          flex: 'grow'
+        },
+        iconWrapper: {
+          gap: 'medium',
+          width: 'xxsmall',
+          direction: 'row'
+        },
         container: {
           height: {
             min: '40px',

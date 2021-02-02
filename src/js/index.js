@@ -1049,6 +1049,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       searchbox: {
+        textWrapper: {
+          flex: 'grow',
+        },
+        iconWrapper: {
+          gap: 'medium',
+          width: 'xxsmall',
+          direction: 'row',
+        },
         container: {
           height: {
             min: '40px',
