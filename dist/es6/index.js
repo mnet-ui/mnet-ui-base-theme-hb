@@ -873,8 +873,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       extend: {
         button: {
-          flex: 1,
-          border: 'none'
+          flex: 1
         }
       } // round: undefined,
 
