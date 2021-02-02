@@ -760,10 +760,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       extend: {
         button: {
           flex: 1,
-          border: 'none',
         },
       },
-
       // round: undefined,
     },
     mnet: {
