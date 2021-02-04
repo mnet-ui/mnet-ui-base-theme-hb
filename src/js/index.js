@@ -765,11 +765,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       tooltip: {
         extend: {
-          position: 'right'
+          position: 'right-end',
         },
         icon: Info,
         iconProps: {
-          pad: { horizontal: 'medium' }
+          margin: { horizontal: 'small' },
+          size: 'large',
         },
       },
       // round: undefined,
@@ -874,6 +875,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // extend: undefined,
       },
       // extend: undefined,
+    },
+    tooltip: {
+      background: "#FFFFFF"
     },
     maskedInput: {
       // extend: undefined,

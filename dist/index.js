@@ -891,13 +891,14 @@ var generate = function generate(baseSpacing, scale) {
       },
       tooltip: {
         extend: {
-          position: 'right'
+          position: 'right-end'
         },
         icon: Info,
         iconProps: {
-          pad: {
-            horizontal: 'medium'
-          }
+          margin: {
+            horizontal: 'small'
+          },
+          size: 'large'
         }
       } // round: undefined,
 
@@ -997,6 +998,9 @@ var generate = function generate(baseSpacing, scale) {
 
       } // extend: undefined,
 
+    },
+    tooltip: {
+      background: "#FFFFFF"
     },
     maskedInput: {// extend: undefined,
       // disabled: { opacity: undefined },
