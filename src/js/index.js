@@ -743,6 +743,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
         width: 'xxsmall',
+        direction: "row"
       },
       margin: { bottom: 'small' },
       postfix: {
@@ -767,7 +768,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           position: 'right'
         },
         icon: Info,
-      }
+        iconProps: {
+
+        },
+      },
       // round: undefined,
     },
     mnet: {

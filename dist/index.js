@@ -860,7 +860,8 @@ var generate = function generate(baseSpacing, scale) {
           vertical: 'xsmall',
           horizontal: 'small'
         },
-        width: 'xxsmall'
+        width: 'xxsmall',
+        direction: "row"
       },
       margin: {
         bottom: 'small'
@@ -892,7 +893,8 @@ var generate = function generate(baseSpacing, scale) {
         extend: {
           position: 'right'
         },
-        icon: Info
+        icon: Info,
+        iconProps: {}
       } // round: undefined,
 
     },
