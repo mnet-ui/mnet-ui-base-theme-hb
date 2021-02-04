@@ -762,6 +762,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           flex: 1,
         },
       },
+      tooltip: {
+        extend: {
+          position: 'right'
+        },
+        icon: Info,
+      }
       // round: undefined,
     },
     mnet: {

@@ -887,6 +887,12 @@ var generate = function generate(baseSpacing, scale) {
         button: {
           flex: 1
         }
+      },
+      tooltip: {
+        extend: {
+          position: 'right'
+        },
+        icon: Info
       } // round: undefined,
 
     },
