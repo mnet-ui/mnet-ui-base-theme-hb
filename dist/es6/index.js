@@ -882,7 +882,11 @@ export var generate = function generate(baseSpacing, scale) {
           position: 'right'
         },
         icon: Info,
-        iconProps: {}
+        iconProps: {
+          pad: {
+            horizontal: 'medium'
+          }
+        }
       } // round: undefined,
 
     },

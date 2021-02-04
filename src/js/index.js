@@ -769,7 +769,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         icon: Info,
         iconProps: {
-
+          pad: { horizontal: 'medium' }
         },
       },
       // round: undefined,
