@@ -987,9 +987,6 @@ export var generate = function generate(baseSpacing, scale) {
       } // extend: undefined,
 
     },
-    tooltip: {
-      background: "#FFFFFF"
-    },
     maskedInput: {// extend: undefined,
       // disabled: { opacity: undefined },
     },
@@ -1519,11 +1516,26 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     tooptip: {
-      background: 'dark-1',
-      color: 'white',
+      background: '#FFF',
+      color: '#333333',
       tipSize: '5px',
       round: 'small',
-      maxWidth: '20%'
+      maxWidth: '20%',
+      dropProps: {
+        left: 'right',
+        top: 'bottom'
+      },
+      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
+      pad: {
+        horizontal: 'large',
+        vertical: 'medium'
+      },
+      titleProps: {
+        weight: 'bold',
+        margin: {
+          vertical: 'medium'
+        }
+      }
     },
     pagination: {
       background: 'white',

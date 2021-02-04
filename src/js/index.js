@@ -876,9 +876,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       // extend: undefined,
     },
-    tooltip: {
-      background: "#FFFFFF"
-    },
     maskedInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
@@ -1399,11 +1396,23 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     tooptip: {
-      background: 'dark-1',
-      color: 'white',
+      background: '#FFF',
+      color: '#333333',
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',
+      dropProps: { left: 'right', top: 'bottom' },
+      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
+      pad: { 
+        horizontal: 'large',
+        vertical: 'medium',
+      },
+      titleProps: {
+        weight: 'bold',
+        margin: {
+          vertical: 'medium',
+        },
+      },
     },
     pagination: {
       background: 'white',
