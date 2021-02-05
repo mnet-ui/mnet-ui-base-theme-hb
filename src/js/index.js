@@ -766,6 +766,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       tooltip: {
         extend: {
           position: 'right-end',
+          background: "#FFFFFF"
         },
         icon: Info,
         iconProps: {
@@ -773,7 +774,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           size: 'large',
         },
       },
-      round: 'medium',
+      round: 'small',
     },
     mnet: {
       // extend: undefined
@@ -1373,7 +1374,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
-      // extend: undefined,
+      extend: 'border-bottom: 2px solid white;',
       error: {
         icon: Info,
         text: {

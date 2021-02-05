@@ -891,7 +891,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       tooltip: {
         extend: {
-          position: 'right-end'
+          position: 'right-end',
+          background: "#FFFFFF"
         },
         icon: Info,
         iconProps: {
@@ -901,7 +902,7 @@ var generate = function generate(baseSpacing, scale) {
           size: 'large'
         }
       },
-      round: 'medium'
+      round: 'small'
     },
     mnet: {
       // extend: undefined
@@ -1512,7 +1513,7 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     textInput: {
-      // extend: undefined,
+      extend: 'border-bottom: 2px solid white;',
       error: {
         icon: Info,
         text: {
