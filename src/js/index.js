@@ -773,7 +773,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           size: 'large',
         },
       },
-      // round: undefined,
+      round: 'medium',
     },
     mnet: {
       // extend: undefined

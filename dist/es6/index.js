@@ -888,8 +888,8 @@ export var generate = function generate(baseSpacing, scale) {
           },
           size: 'large'
         }
-      } // round: undefined,
-
+      },
+      round: 'medium'
     },
     mnet: {
       // extend: undefined
