@@ -653,7 +653,6 @@ var generate = function generate(baseSpacing, scale) {
         dark: 'neutral-3'
       },
       // extend: undefined,
-      extend: "color: " + colors.white + ";",
       // gap: undefined
       gap: 'medium',
       hover: {
@@ -861,7 +860,7 @@ var generate = function generate(baseSpacing, scale) {
           horizontal: 'small'
         },
         width: 'xxsmall',
-        direction: "row"
+        direction: 'row'
       },
       margin: {
         bottom: 'small'
@@ -892,7 +891,7 @@ var generate = function generate(baseSpacing, scale) {
       tooltip: {
         extend: {
           position: 'right-end',
-          background: "#FFFFFF"
+          background: '#FFFFFF'
         },
         icon: Info,
         iconProps: {

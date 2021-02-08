@@ -570,7 +570,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         dark: 'neutral-3',
       },
       // extend: undefined,
-      extend: `color: ${colors.white};`,
       // gap: undefined
       gap: 'medium',
       hover: {
@@ -743,7 +742,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
         width: 'xxsmall',
-        direction: "row"
+        direction: 'row',
       },
       margin: { bottom: 'small' },
       postfix: {
@@ -766,7 +765,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       tooltip: {
         extend: {
           position: 'right-end',
-          background: "#FFFFFF"
+          background: '#FFFFFF',
         },
         icon: Info,
         iconProps: {
@@ -1404,7 +1403,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       maxWidth: '20%',
       dropProps: { left: 'right', top: 'bottom' },
       boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
-      pad: { 
+      pad: {
         horizontal: 'large',
         vertical: 'medium',
       },
