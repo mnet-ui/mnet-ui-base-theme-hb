@@ -570,6 +570,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         dark: 'neutral-3',
       },
       // extend: undefined,
+      extend: `color: ${colors.white};`,
       // gap: undefined
       gap: 'medium',
       hover: {
