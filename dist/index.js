@@ -683,6 +683,12 @@ var generate = function generate(baseSpacing, scale) {
 
       }
     },
+    CheckBoxGroup: {
+      label: {
+        color: "dark-1",
+        size: "medium"
+      }
+    },
     clock: {
       analog: {
         // extend: undefined,
