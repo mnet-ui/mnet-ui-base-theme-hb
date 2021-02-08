@@ -603,8 +603,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     CheckBoxGroup: {
       label: {
-        color: "dark-1",
-        size: "medium",
+        color: 'dark-1',
+        size: 'medium',
+        weight: 400,
       },
     },
     clock: {
