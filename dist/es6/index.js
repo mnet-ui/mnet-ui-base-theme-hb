@@ -669,6 +669,11 @@ export var generate = function generate(baseSpacing, scale) {
         radius: baseSpacing + "px",
         size: baseSpacing * 2 + "px" // extend: undefined,
 
+      },
+      label: {
+        color: 'dark-1',
+        size: 'medium',
+        weight: 400
       }
     },
     CheckBoxGroup: {

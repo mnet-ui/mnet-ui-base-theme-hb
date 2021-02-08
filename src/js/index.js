@@ -600,6 +600,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         size: `${baseSpacing * 2}px`,
         // extend: undefined,
       },
+      label: {
+        color: 'dark-1',
+        size: 'medium',
+        weight: 400,
+      },
     },
     CheckBoxGroup: {
       label: {
