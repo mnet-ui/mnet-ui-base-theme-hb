@@ -36,7 +36,7 @@ var UpArrow = HbAdminComponents.UpArrow,
     Error = HbAdminComponents.Error,
     Tick = HbAdminComponents.Tick,
     Info = HbAdminComponents.Info;
-var brandColor = '#E15151';
+var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
@@ -630,7 +630,7 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
         extend: function extend(_ref) {
           var checked = _ref.checked;
-          return "\n          " + (checked && 'background-color: #3367D6;') + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+          return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
         },
         radius: '4px',
         thickness: '4px'
