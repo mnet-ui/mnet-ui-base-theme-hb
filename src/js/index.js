@@ -17,7 +17,7 @@ const {
   Info,
 } = HbAdminComponents;
 
-const brandColor = '#3367D6';
+const brandColor = '#E15151';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
