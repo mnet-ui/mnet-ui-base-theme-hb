@@ -3,8 +3,8 @@ import { css } from 'styled-components';
 import { HbAdminComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist//utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist//utils/mixins';
+import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
 
 const {
   UpArrow,
