@@ -1265,8 +1265,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'dark-2',
         margin: 'none',
         pad: {
-          vertical: 'small',
-          horizontal: 'xsmall',
+          top: 'xsmall',
+          bottom: 'xsmall',
+          horizontal: 'small',
         },
         background: 'background-contrast',
         size: 'xlarge',

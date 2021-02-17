@@ -1393,8 +1393,9 @@ var generate = function generate(baseSpacing, scale) {
         color: 'dark-2',
         margin: 'none',
         pad: {
-          vertical: 'small',
-          horizontal: 'xsmall'
+          top: 'xsmall',
+          bottom: 'xsmall',
+          horizontal: 'small'
         },
         background: 'background-contrast',
         size: 'xlarge',
