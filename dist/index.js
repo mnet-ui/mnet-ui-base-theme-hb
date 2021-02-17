@@ -1197,7 +1197,8 @@ var generate = function generate(baseSpacing, scale) {
         iconWrapper: {
           gap: 'medium',
           width: 'xxsmall',
-          direction: 'row'
+          direction: 'row',
+          justify: 'center'
         },
         container: {
           height: '40px',

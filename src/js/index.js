@@ -1077,6 +1077,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           gap: 'medium',
           width: 'xxsmall',
           direction: 'row',
+          justify: 'center',
         },
         container: {
           height: '40px',
