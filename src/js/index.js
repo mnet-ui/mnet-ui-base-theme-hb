@@ -1088,6 +1088,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             side: 'bottom',
             color: 'light-3',
           },
+          style: {
+            minHeight: '40px',
+          },
         },
         placeholder: {
           color: 'dark-4',
