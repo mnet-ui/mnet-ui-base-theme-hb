@@ -1264,11 +1264,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       icons: {
         color: 'dark-2',
         margin: 'none',
-        pad: 'none',
-        // pad: {
-        //   vertical: 'small',
-        //   horizontal: 'small',
-        // },
+        pad: {
+          vertical: 'small',
+          horizontal: 'xsmall',
+        },
         background: 'background-contrast',
         size: 'xlarge',
         up: UpArrow,
