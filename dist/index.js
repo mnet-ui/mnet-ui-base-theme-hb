@@ -338,7 +338,7 @@ var generate = function generate(baseSpacing, scale) {
       },
       input: {
         padding: {
-          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
+          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
           vertical: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px"
         },
         font: {
@@ -1521,7 +1521,7 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white; padding-left: 15px;',
+      extend: 'border-bottom: 2px solid white;',
       error: {
         icon: Info,
         text: {

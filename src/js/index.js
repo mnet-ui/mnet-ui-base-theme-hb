@@ -285,7 +285,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       input: {
         padding: {
           horizontal: `${
-            parseMetricToNum(`${baseSpacing / 2}px`)
+            parseMetricToNum(`${baseSpacing}px`)
             - parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
           vertical: `${
@@ -1387,7 +1387,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white; padding-left: 15px;',
+      extend: 'border-bottom: 2px solid white;',
       error: {
         icon: Info,
         text: {

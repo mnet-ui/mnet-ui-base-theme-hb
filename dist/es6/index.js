@@ -326,7 +326,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       input: {
         padding: {
-          horizontal: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px",
+          horizontal: parseMetricToNum(baseSpacing + "px") - parseMetricToNum(controlBorderWidth + "px") + "px",
           vertical: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px"
         },
         font: {
@@ -1509,7 +1509,7 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white; padding-left: 15px;',
+      extend: 'border-bottom: 2px solid white;',
       error: {
         icon: Info,
         text: {
