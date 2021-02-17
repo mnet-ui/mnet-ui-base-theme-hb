@@ -1198,10 +1198,7 @@ export var generate = function generate(baseSpacing, scale) {
           direction: 'row',
           align: 'center',
           background: 'transparent',
-          pad: {
-            horizontal: 'medium',
-            vertical: 'medium'
-          },
+          // pad: { horizontal: 'medium', vertical: 'medium' },
           border: {
             side: 'bottom',
             color: 'light-3'
