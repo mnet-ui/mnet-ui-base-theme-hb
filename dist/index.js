@@ -1392,10 +1392,11 @@ var generate = function generate(baseSpacing, scale) {
       icons: {
         color: 'dark-2',
         margin: 'none',
-        pad: {
-          vertical: 'small',
-          horizontal: 'small'
-        },
+        pad: 'none',
+        // pad: {
+        //   vertical: 'small',
+        //   horizontal: 'small',
+        // },
         background: 'background-contrast',
         size: 'xlarge',
         up: UpArrow,
