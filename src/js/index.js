@@ -1084,6 +1084,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           align: 'center',
           background: 'transparent',
           // pad: { horizontal: 'medium', vertical: 'medium' },
+          pad: 'none',
           border: {
             side: 'bottom',
             color: 'light-3',

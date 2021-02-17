@@ -1208,6 +1208,7 @@ var generate = function generate(baseSpacing, scale) {
           align: 'center',
           background: 'transparent',
           // pad: { horizontal: 'medium', vertical: 'medium' },
+          pad: 'none',
           border: {
             side: 'bottom',
             color: 'light-3'
