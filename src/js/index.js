@@ -1408,9 +1408,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       `,
       border: `1px solid ${lightColors[2]};`,
       // disabled: { opacity: undefined },
-      placeholder: {
-        extend: 'padding-left: 10px;',
-      },
+      // placeholder: {},
     },
     tooptip: {
       background: '#FFF',
