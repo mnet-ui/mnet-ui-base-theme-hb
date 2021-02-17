@@ -752,7 +752,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         margin: { vertical: 'xsmall', left: 'medium' },
       },
       label: {
-        margin: { vertical: 'xsmall', horizontal: 'small' },
+        margin: 'none',
         width: 'xxsmall',
         direction: 'row',
       },
