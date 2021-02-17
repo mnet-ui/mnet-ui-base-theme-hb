@@ -1079,10 +1079,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           direction: 'row',
         },
         container: {
-          height: {
-            min: '40px',
-            max: '40px',
-          },
+          height: '40px',
           direction: 'row',
           align: 'center',
           background: 'transparent',
@@ -1385,7 +1382,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white;',
+      extend: 'border-bottom: 2px solid white; padding-left: 15px;',
       error: {
         icon: Info,
         text: {
@@ -1406,6 +1403,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       `,
       border: `1px solid ${lightColors[2]};`,
       // disabled: { opacity: undefined },
+      placeholder: {
+        extend: 'padding-left: 10px;',
+      },
     },
     tooptip: {
       background: '#FFF',
