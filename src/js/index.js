@@ -751,10 +751,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'text-xweak',
         margin: { vertical: 'xsmall', left: 'medium' },
       },
-      label: {
+      labelWrap: {
         margin: 'none',
         width: 'xxsmall',
         direction: 'row',
+      },
+      label: {
+        weight: 400,
       },
       margin: { bottom: 'small' },
       postfix: {

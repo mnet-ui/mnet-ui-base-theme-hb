@@ -867,10 +867,13 @@ var generate = function generate(baseSpacing, scale) {
           left: 'medium'
         }
       },
-      label: {
+      labelWrap: {
         margin: 'none',
         width: 'xxsmall',
         direction: 'row'
+      },
+      label: {
+        weight: 400
       },
       margin: {
         bottom: 'small'
