@@ -861,7 +861,11 @@ export var generate = function generate(baseSpacing, scale) {
         direction: 'row'
       },
       label: {
-        weight: 400
+        weight: 400,
+        margin: {
+          bottom: 'medium',
+          left: 'none'
+        }
       },
       margin: {
         bottom: 'small'

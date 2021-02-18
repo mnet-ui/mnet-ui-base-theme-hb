@@ -758,6 +758,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       label: {
         weight: 400,
+        margin: {
+          bottom: 'medium',
+          left: 'none',
+        },
       },
       margin: { bottom: 'small' },
       postfix: {
