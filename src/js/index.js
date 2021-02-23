@@ -1255,7 +1255,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         extend: {
           'border-bottom': `2px solid ${lightColors[2]};`,
           'text-align': 'left',
-          padding: '4px 10px',
+          padding: '4px 10px 4px 0px',
         },
       },
       options: {
