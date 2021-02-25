@@ -1664,7 +1664,7 @@ var generate = function generate(baseSpacing, scale) {
       icons: {
         up: UpArrow,
         down: DownArrow,
-        changeArrow: LongArrowDown,
+        changeArrow: DownArrow,
         close: Close
       }
     },

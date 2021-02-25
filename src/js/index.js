@@ -1524,7 +1524,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       icons: {
         up: UpArrow,
         down: DownArrow,
-        changeArrow: LongArrowDown,
+        changeArrow: DownArrow,
         close: Close,
       },
     },
