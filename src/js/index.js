@@ -111,15 +111,16 @@ const colors = {
   white: '#FFFFFF',
 };
 
-const colorArray = (array, prefix) => array.forEach((color, index) => {
-  colors[`${prefix}-${index + 1}`] = color;
-});
+const colorArray = (array, prefix) =>
+  array.forEach((color, index) => {
+    colors[`${prefix}-${index + 1}`] = color;
+  });
 
 colorArray(accentColors, 'accent');
 colorArray(darkColors, 'dark');
 colorArray(lightColors, 'light');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach(color => {
+Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
@@ -128,7 +129,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
   const baseFontSize = baseSpacing * 0.75; // 12
   const fontScale = baseSpacing / scale; // 16
 
-  const fontSizing = factor => ({
+  const fontSizing = (factor) => ({
     size: `${baseFontSize + factor * fontScale}px`,
     height: `${baseSpacing + factor * fontScale}px`,
     // maxWidth chosen to be ~50 characters wide
@@ -285,12 +286,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       input: {
         padding: {
           horizontal: `${
-            parseMetricToNum(`${baseSpacing}px`)
-            - parseMetricToNum(`${controlBorderWidth}px`)
+            parseMetricToNum(`${baseSpacing}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
           vertical: `${
-            parseMetricToNum(`${baseSpacing / 2}px`)
-            - parseMetricToNum(`${controlBorderWidth}px`)
+            parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
         },
         font: {
@@ -478,8 +479,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border: {
           color: { dark: 'accent-1', light: 'accent-1' },
         },
-        color: 'white',
-        opacity: 0.4,
+        color: 'dark-2',
+        opacity: 0.8,
         //   default: {},
         //   primary: {},
         //   secondary: {},
@@ -1011,7 +1012,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         wrapper: {
           pad: 'medium',
           direction: 'row',
-          extend: props => ({
+          extend: (props) => ({
             'border-bottom': props.twoColumnLayout
               ? 'none'
               : '1px solid #D9DBE5',
@@ -1027,7 +1028,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: 'small',
           direction: 'row',
           align: 'center',
-          extend: props => ({
+          extend: (props) => ({
             width: props.twoColumnLayout ? '100%' : 'auto',
             margin: props.twoColumnLayout
               ? 0
@@ -1227,7 +1228,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       track: {
         height: '4px',
         color: css`
-          ${props => rgba(normalizeColor('border', props.theme), 0.2)};
+          ${(props) => rgba(normalizeColor('border', props.theme), 0.2)};
         `,
       },
       thumb: {

@@ -552,8 +552,8 @@ export var generate = function generate(baseSpacing, scale) {
             light: 'accent-1'
           }
         },
-        color: 'white',
-        opacity: 0.4 //   default: {},
+        color: 'dark-2',
+        opacity: 0.8 //   default: {},
         //   primary: {},
         //   secondary: {},
 
