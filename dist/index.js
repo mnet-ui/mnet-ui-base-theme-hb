@@ -41,12 +41,11 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     DownArrow = _mnetIcons.HbAdminComponents.DownArrow,
-    Close = _mnetIcons.HbAdminComponents.Close,
-    LongArrowDown = _mnetIcons.HbAdminComponents.LongArrowDown,
-    TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
-    Error = _mnetIcons.HbAdminComponents.Error,
     Tick = _mnetIcons.HbAdminComponents.Tick,
     Info = _mnetIcons.HbAdminComponents.Info;
+var TickCircle = _mnetIcons.NeoComponents.TickCircle,
+    Error = _mnetIcons.NeoComponents.Error,
+    Close = _mnetIcons.NeoComponents.Close;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -60,8 +59,12 @@ var statusColors = {
   disabled: '#CCCCCC',
   'warning-background': '#FFFCF4',
   'info-background': '#F5F9FF',
-  'warning-border': '#F9DE9E',
-  'info-border': '#BCD1FF'
+  'ok-background': '#E8FFED',
+  'error-background': '#FFF6F6',
+  'warning-border': '#FDEDC5',
+  'info-border': '#E0EDFF',
+  'ok-border': '#BEF5CA',
+  'error-border': '#FFE9E9'
 };
 var darkColors = ['#333333', '#9DA2AD', '#8A90A6', '#9DA2AD', '#9DA2AD', '#9DA2AD'];
 var lightColors = ['#F2F5FC', '#F1F3F5', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0'];
@@ -1601,19 +1604,29 @@ var generate = function generate(baseSpacing, scale) {
           size: 'xlarge',
           "default": TickCircle,
           ok: TickCircle,
-          error: Error
+          error: Error,
+          warning: Error
         },
         text: {
           "default": {
             weight: 600
           },
           ok: {
+            color: 'status-ok',
             weight: 600,
             margin: {
               horizontal: 'small'
             }
           },
           error: {
+            color: 'status-error',
+            weight: 600,
+            margin: {
+              horizontal: 'small'
+            }
+          },
+          warning: {
+            color: 'status-warning',
             weight: 600,
             margin: {
               horizontal: 'small'
@@ -1640,19 +1653,39 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         ok: {
-          background: 'status-ok' // text: {},
+          background: 'status-ok-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-ok-border'
+          } // text: {},
 
         },
         critical: {
-          background: 'status-critical' // text: {},
+          background: 'status-error-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-error-border'
+          } // text: {},
 
         },
         error: {
-          background: 'status-error' // text: {},
+          background: 'status-error-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-error-border'
+          } // text: {},
 
         },
         warning: {
-          background: 'status-warning' // text: {},
+          background: 'status-warning-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-warning-border'
+          } // text: {},
 
         }
       }
