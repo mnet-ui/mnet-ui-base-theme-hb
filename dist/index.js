@@ -45,7 +45,8 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     Info = _mnetIcons.HbAdminComponents.Info;
 var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
-    Close = _mnetIcons.NeoComponents.Close;
+    Close = _mnetIcons.NeoComponents.Close,
+    AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -1605,7 +1606,7 @@ var generate = function generate(baseSpacing, scale) {
           "default": TickCircle,
           ok: TickCircle,
           error: Error,
-          warning: Error
+          warning: AlertTriangle
         },
         text: {
           "default": {

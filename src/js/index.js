@@ -7,7 +7,7 @@ import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
 
 const { UpArrow, DownArrow, Tick, Info } = HbAdminComponents;
-const { TickCircle, Error, Close } = NeoComponents;
+const { TickCircle, Error, Close, AlertTriangle } = NeoComponents;
 
 const brandColor = '#E15151';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -1469,7 +1469,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           default: TickCircle,
           ok: TickCircle,
           error: Error,
-          warning: Error,
+          warning: AlertTriangle,
         },
         text: {
           default: {
