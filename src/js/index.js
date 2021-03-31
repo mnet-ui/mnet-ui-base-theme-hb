@@ -1,23 +1,17 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { HbAdminComponents } from 'mnet-icons';
+import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
 import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
 
 const {
-  UpArrow,
-  DownArrow,
-  Close,
-  LongArrowDown,
-  TickCircle,
-  Error,
-  Tick,
-  Info,
-  Success,
-  Block,
+  UpArrow, DownArrow, Tick, Info, Success, Block,
 } = HbAdminComponents;
+const {
+  TickCircle, Error, Close, AlertTriangle,
+} = NeoComponents;
 
 const brandColor = '#E15151';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -32,8 +26,12 @@ const statusColors = {
   disabled: '#CCCCCC',
   'warning-background': '#FFFCF4',
   'info-background': '#F5F9FF',
-  'warning-border': '#F9DE9E',
-  'info-border': '#BCD1FF',
+  'ok-background': '#E8FFED',
+  'error-background': '#FFF6F6',
+  'warning-border': '#FDEDC5',
+  'info-border': '#E0EDFF',
+  'ok-border': '#BEF5CA',
+  'error-border': '#FFE9E9',
 };
 
 const darkColors = [
@@ -1491,16 +1489,24 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           default: TickCircle,
           ok: TickCircle,
           error: Error,
+          warning: AlertTriangle,
         },
         text: {
           default: {
             weight: 600,
           },
           ok: {
+            color: 'status-ok',
             weight: 600,
             margin: { horizontal: 'small' },
           },
           error: {
+            color: 'status-error',
+            weight: 600,
+            margin: { horizontal: 'small' },
+          },
+          warning: {
+            color: 'status-warning',
             weight: 600,
             margin: { horizontal: 'small' },
           },
@@ -1519,19 +1525,39 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: { vertical: 'small', horizontal: 'large' },
         },
         ok: {
-          background: 'status-ok',
+          background: 'status-ok-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-ok-border',
+          },
           // text: {},
         },
         critical: {
-          background: 'status-critical',
+          background: 'status-error-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-error-border',
+          },
           // text: {},
         },
         error: {
-          background: 'status-error',
+          background: 'status-error-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-error-border',
+          },
           // text: {},
         },
         warning: {
-          background: 'status-warning',
+          background: 'status-warning-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-warning-border',
+          },
           // text: {},
         },
       },
