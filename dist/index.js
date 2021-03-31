@@ -46,7 +46,9 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     TickCircle = _mnetIcons.HbAdminComponents.TickCircle,
     Error = _mnetIcons.HbAdminComponents.Error,
     Tick = _mnetIcons.HbAdminComponents.Tick,
-    Info = _mnetIcons.HbAdminComponents.Info;
+    Info = _mnetIcons.HbAdminComponents.Info,
+    Success = _mnetIcons.HbAdminComponents.Success,
+    Block = _mnetIcons.HbAdminComponents.Block;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -1299,6 +1301,22 @@ var generate = function generate(baseSpacing, scale) {
             height: {
               min: '30px'
             }
+          }
+        }
+      },
+      icons: {
+        include: {
+          icon: Success,
+          extend: {
+            color: 'status-ok',
+            size: 'large'
+          }
+        },
+        exclude: {
+          icon: Block,
+          extend: {
+            color: 'status-error',
+            size: 'large'
           }
         }
       }

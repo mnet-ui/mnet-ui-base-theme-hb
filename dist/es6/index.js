@@ -35,7 +35,9 @@ var UpArrow = HbAdminComponents.UpArrow,
     TickCircle = HbAdminComponents.TickCircle,
     Error = HbAdminComponents.Error,
     Tick = HbAdminComponents.Tick,
-    Info = HbAdminComponents.Info;
+    Info = HbAdminComponents.Info,
+    Success = HbAdminComponents.Success,
+    Block = HbAdminComponents.Block;
 var brandColor = '#E15151';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -1287,6 +1289,22 @@ export var generate = function generate(baseSpacing, scale) {
             height: {
               min: '30px'
             }
+          }
+        }
+      },
+      icons: {
+        include: {
+          icon: Success,
+          extend: {
+            color: 'status-ok',
+            size: 'large'
+          }
+        },
+        exclude: {
+          icon: Block,
+          extend: {
+            color: 'status-error',
+            size: 'large'
           }
         }
       }

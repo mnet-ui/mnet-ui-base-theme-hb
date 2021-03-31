@@ -15,6 +15,8 @@ const {
   Error,
   Tick,
   Info,
+  Success,
+  Block,
 } = HbAdminComponents;
 
 const brandColor = '#E15151';
@@ -1175,6 +1177,22 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             height: {
               min: '30px',
             },
+          },
+        },
+      },
+      icons: {
+        include: {
+          icon: Success,
+          extend: {
+            color: 'status-ok',
+            size: 'large',
+          },
+        },
+        exclude: {
+          icon: Block,
+          extend: {
+            color: 'status-error',
+            size: 'large',
           },
         },
       },
