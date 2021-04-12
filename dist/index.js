@@ -1183,7 +1183,7 @@ var generate = function generate(baseSpacing, scale) {
             side: 'top',
             color: 'light-3'
           },
-          color: 'dark-2',
+          color: 'dark-1',
           size: 'medium',
           alignSelf: 'end',
           weight: '600',
@@ -1260,7 +1260,7 @@ var generate = function generate(baseSpacing, scale) {
             margin: {
               left: 'small'
             },
-            background: 'brand',
+            background: statusColors.info,
             round: 'medium',
             pad: {
               horizontal: 'medium'
@@ -1563,9 +1563,13 @@ var generate = function generate(baseSpacing, scale) {
         extend: "\n        border-bottom: 2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;"
       },
       focus: "\n        border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n      ",
-      border: "1px solid " + lightColors[2] + ";" // disabled: { opacity: undefined },
-      // placeholder: {},
-
+      border: "1px solid " + lightColors[2] + ";",
+      // disabled: { opacity: undefined },
+      placeholder: {
+        extend: {
+          left: '35px'
+        }
+      }
     },
     tooptip: {
       background: '#FFF',

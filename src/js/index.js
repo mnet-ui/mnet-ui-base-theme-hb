@@ -1057,7 +1057,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             side: 'top',
             color: 'light-3',
           },
-          color: 'dark-2',
+          color: 'dark-1',
           size: 'medium',
           alignSelf: 'end',
           weight: '600',
@@ -1132,7 +1132,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
           count: {
             margin: { left: 'small' },
-            background: 'brand',
+            background: statusColors.info,
             round: 'medium',
             pad: { horizontal: 'medium' },
             justify: 'center',
@@ -1433,7 +1433,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       `,
       border: `1px solid ${lightColors[2]};`,
       // disabled: { opacity: undefined },
-      // placeholder: {},
+      placeholder: {
+        extend: {
+          left: '35px',
+        },
+      },
     },
     tooptip: {
       background: '#FFF',
