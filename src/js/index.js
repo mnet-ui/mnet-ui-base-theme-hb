@@ -914,6 +914,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     modalpopup: {
       container: {
         width: 'large',
+        margin: 'large',
       },
       title: {
         wrapper: {

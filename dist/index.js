@@ -1038,7 +1038,8 @@ var generate = function generate(baseSpacing, scale) {
     },
     modalpopup: {
       container: {
-        width: 'large'
+        width: 'large',
+        margin: 'large'
       },
       title: {
         wrapper: {
