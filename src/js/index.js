@@ -236,7 +236,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         small: `${baseSpacing / 4}px`, // 12
         medium: `${baseSpacing / 2}px`, // 24
         large: `${baseSpacing}px`, // 48
-        xlarge: `${baseSpacing}px`, // 96
+        xlarge: `${baseSpacing * 2}px`, // 96
         responsiveBreakpoint: 'small',
       },
       elevation: {
@@ -1009,7 +1009,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       chips: {
         wrapper: {
-          pad: 'medium',
+          pad: { vertical: 'medium', left: 'medium', right: 'small' },
           direction: 'row',
           extend: props => ({
             'border-bottom': props.twoColumnLayout
@@ -1434,7 +1434,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
       placeholder: {
         extend: {
-          left: '35px',
+          left: '32px',
         },
       },
     },
