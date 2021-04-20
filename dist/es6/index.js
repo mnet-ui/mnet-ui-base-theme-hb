@@ -25,9 +25,9 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
     Tick = HbAdminComponents.Tick,
