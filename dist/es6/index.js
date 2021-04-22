@@ -819,6 +819,10 @@ export var generate = function generate(baseSpacing, scale) {
       content: {
         pad: 'small'
       },
+      field: {
+        "default": "border-width: 1px 1px 2px;",
+        focus: "border-color: white;"
+      },
       disabled: {
         background: {
           color: 'status-disabled',
@@ -1544,7 +1548,17 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white;',
+      extend: function extend(_ref2) {
+        var plain = _ref2.plain,
+            focus = _ref2.focus,
+            reverse = _ref2.reverse,
+            icon = _ref2.icon;
+        return "\n        border-bottom: 2px solid white;\n        padding-top: 9px;\n        padding-bottom: 9px;\n        box-shadow: none;\n        height: 100%;\n        " + function (_ref3) {
+          var reverse = _ref3.reverse,
+              icon = _ref3.icon;
+          return !reverse && icon && 'padding-left: 32px;';
+        } + "\n        " + (!plain && "border: 1px solid " + lightColors[2] + ";") + "\n        border-bottom-width: 2px;\n        " + (focus && "border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;");
+      },
       error: {
         icon: Info,
         text: {
@@ -1621,7 +1635,12 @@ export var generate = function generate(baseSpacing, scale) {
           "default": TickCircle,
           ok: TickCircle,
           error: Error,
-          warning: AlertTriangle
+          warning: AlertTriangle,
+          container: {
+            margin: {
+              right: 'medium'
+            }
+          }
         },
         text: {
           "default": {

@@ -717,6 +717,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       content: {
         pad: 'small',
       },
+      field: {
+        default: `border-width: 1px 1px 2px;`,
+        focus: `border-color: white;`
+      },
       disabled: {
         background: {
           color: 'status-disabled',
@@ -1414,7 +1418,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white;',
+      extend: ({ plain, focus, reverse, icon }) => `
+        border-bottom: 2px solid white;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        box-shadow: none;
+        height: 100%;
+        ${(!reverse && icon) && 'padding-left: 32px;'}
+        ${!plain && `border: 1px solid ${lightColors[2]};`}
+        border-bottom-width: 2px;
+        ${focus && `border-color: transparent;
+        border-bottom: 2px solid ${statusColors.info};
+        background: ${lightColors[0]};
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;`}`,
       error: {
         icon: Info,
         text: {
@@ -1496,6 +1513,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           ok: TickCircle,
           error: Error,
           warning: AlertTriangle,
+          container: {
+            margin: { right: 'medium' },
+          },
         },
         text: {
           default: {
