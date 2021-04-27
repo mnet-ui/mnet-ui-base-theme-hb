@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const {
   UpArrow, DownArrow, Tick, Info, Success, Block,
@@ -14,6 +14,7 @@ const {
 } = NeoComponents;
 
 const brandColor = '#3367D6';
+// const brandColor = '#0000ff';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
@@ -1363,12 +1364,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     table: {
       header: {
         align: 'start',
-        border: 'light-2',
+        border: 'light-3',
         fill: 'horizontal',
-        pad: { horizontal: 'large', vertical: 'medium' },
+        pad: { horizontal: 'large', vertical: 'large' },
         verticalAlign: 'bottom',
         background: {
-          color: '#F5F6F8',
+          // color: 'accent-1',
+          color: lightColors[0],
+          // opacity: 'strong',
         },
         // verticalAlign: undefined,
         // background: undefined,
@@ -1376,8 +1379,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       body: {
         align: 'start',
-        pad: { horizontal: 'large', vertical: 'medium' },
-        border: 'light-1',
+        pad: { horizontal: 'large', vertical: 'large' },
+        // border: 'dark-3',
+        border: 'horizontal',
+        // border: 'light-1',
         // background: undefined,
         // border: undefined,
         // extend: undefined,

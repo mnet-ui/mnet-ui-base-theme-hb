@@ -25,9 +25,9 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
     Tick = HbAdminComponents.Tick,
@@ -38,7 +38,8 @@ var TickCircle = NeoComponents.TickCircle,
     Error = NeoComponents.Error,
     Close = NeoComponents.Close,
     AlertTriangle = NeoComponents.AlertTriangle;
-var brandColor = '#3367D6';
+var brandColor = '#3367D6'; // const brandColor = '#0000ff';
+
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
@@ -1484,15 +1485,17 @@ export var generate = function generate(baseSpacing, scale) {
     table: {
       header: {
         align: 'start',
-        border: 'light-2',
+        border: 'light-3',
         fill: 'horizontal',
         pad: {
           horizontal: 'large',
-          vertical: 'medium'
+          vertical: 'large'
         },
         verticalAlign: 'bottom',
         background: {
-          color: '#F5F6F8'
+          // color: 'accent-1',
+          color: lightColors[0] // opacity: 'strong',
+
         } // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
@@ -1502,9 +1505,11 @@ export var generate = function generate(baseSpacing, scale) {
         align: 'start',
         pad: {
           horizontal: 'large',
-          vertical: 'medium'
+          vertical: 'large'
         },
-        border: 'light-1' // background: undefined,
+        // border: 'dark-3',
+        border: 'horizontal' // border: 'light-1',
+        // background: undefined,
         // border: undefined,
         // extend: undefined,
 

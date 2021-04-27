@@ -9,11 +9,11 @@ var _styledComponents = require("styled-components");
 
 var _mnetIcons = require("mnet-icons");
 
-var _object = require("mnet-ui-base/dist/utils/object");
+var _object = require("mnet-ui-base/utils/object");
 
-var _colors = require("mnet-ui-base/dist/utils/colors");
+var _colors = require("mnet-ui-base/utils/colors");
 
-var _mixins = require("mnet-ui-base/dist/utils/mixins");
+var _mixins = require("mnet-ui-base/utils/mixins");
 
 function _templateObject2() {
   var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
@@ -49,7 +49,7 @@ var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
     Close = _mnetIcons.NeoComponents.Close,
     AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
-var brandColor = '#3367D6';
+var brandColor = '#00ff00';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
@@ -1514,9 +1514,10 @@ var generate = function generate(baseSpacing, scale) {
         align: 'start',
         pad: {
           horizontal: 'large',
-          vertical: 'medium'
+          vertical: 'large'
         },
-        border: 'light-1' // background: undefined,
+        border: 'dark-3' // border: 'light-1',
+        // background: undefined,
         // border: undefined,
         // extend: undefined,
 
