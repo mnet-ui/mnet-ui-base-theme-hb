@@ -1263,7 +1263,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      background: colors.white,
+      // background: colors.white,
+      background: 'light-1',
       activeColor: 'light-1',
       container: {
         extend: null,
@@ -1271,9 +1272,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       control: {
         open: undefined,
         extend: {
-          'border-bottom': `2px solid ${lightColors[2]};`,
-          'text-align': 'left',
-          padding: '4px 10px 4px 0px',
+          // 'border-bottom': `2px solid ${lightColors[2]};`,
+          // 'text-align': 'left',
+          // padding: '4px 10px 4px 0px',
         },
       },
       options: {

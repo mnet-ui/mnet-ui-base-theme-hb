@@ -1386,17 +1386,17 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: colors.white,
+      // background: colors.white,
+      background: 'light-1',
       activeColor: 'light-1',
       container: {
         extend: null
       },
       control: {
         open: undefined,
-        extend: {
-          'border-bottom': "2px solid " + lightColors[2] + ";",
-          'text-align': 'left',
-          padding: '4px 10px 4px 0px'
+        extend: {// 'border-bottom': `2px solid ${lightColors[2]};`,
+          // 'text-align': 'left',
+          // padding: '4px 10px 4px 0px',
         }
       },
       options: {

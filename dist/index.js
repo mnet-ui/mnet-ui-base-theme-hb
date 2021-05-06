@@ -49,7 +49,8 @@ var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
     Close = _mnetIcons.NeoComponents.Close,
     AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
-var brandColor = '#00ff00';
+var brandColor = '#3367D6'; // const brandColor = '#0000ff';
+
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
@@ -1397,17 +1398,17 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: colors.white,
+      // background: colors.white,
+      background: 'light-1',
       activeColor: 'light-1',
       container: {
         extend: null
       },
       control: {
         open: undefined,
-        extend: {
-          'border-bottom': "2px solid " + lightColors[2] + ";",
-          'text-align': 'left',
-          padding: '4px 10px 4px 0px'
+        extend: {// 'border-bottom': `2px solid ${lightColors[2]};`,
+          // 'text-align': 'left',
+          // padding: '4px 10px 4px 0px',
         }
       },
       options: {
@@ -1496,15 +1497,17 @@ var generate = function generate(baseSpacing, scale) {
     table: {
       header: {
         align: 'start',
-        border: 'light-2',
+        border: 'light-3',
         fill: 'horizontal',
         pad: {
           horizontal: 'large',
-          vertical: 'medium'
+          vertical: 'large'
         },
         verticalAlign: 'bottom',
         background: {
-          color: '#F5F6F8'
+          // color: 'accent-1',
+          color: lightColors[0] // opacity: 'strong',
+
         } // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
@@ -1516,7 +1519,8 @@ var generate = function generate(baseSpacing, scale) {
           horizontal: 'large',
           vertical: 'large'
         },
-        border: 'dark-3' // border: 'light-1',
+        // border: 'dark-3',
+        border: 'horizontal' // border: 'light-1',
         // background: undefined,
         // border: undefined,
         // extend: undefined,
