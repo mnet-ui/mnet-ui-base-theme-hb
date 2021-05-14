@@ -7,10 +7,10 @@ import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const {
-  UpArrow, DownArrow, Tick, Info, Success, Block,
+  UpArrow, DownArrow, Tick, Info, Success, Block, Close,
 } = HbAdminComponents;
 const {
-  TickCircle, Error, Close, AlertTriangle,
+  TickCircle, Error, AlertTriangle,
 } = NeoComponents;
 
 const brandColor = '#3367D6';
@@ -285,7 +285,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       input: {
         padding: {
           horizontal: `${
-            parseMetricToNum(`${baseSpacing}px`)
+            parseMetricToNum(`${baseSpacing / 2}px`)
             - parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
           vertical: `${
@@ -296,7 +296,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         font: {
           // size: undefined,
           // height: undefined,
-          weight: 400,
+          weight: 600,
         },
         // deprecate in v3
         // weight: undefined,
@@ -718,8 +718,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         pad: 'small',
       },
       field: {
-        default: `border-width: 1px 1px 2px;`,
-        focus: `border-color: white;`
+        default: 'border-width: 1px 1px 2px;',
+        focus: 'border-color: white;',
       },
       disabled: {
         background: {
@@ -758,7 +758,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         margin: { vertical: 'xsmall', left: 'medium' },
       },
       labelWrap: {
-        margin: 'none',
         width: 'xxsmall',
         direction: 'row',
       },
@@ -1411,13 +1410,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     textArea: {
-      extend: {
-        'box-shadow': 'none',
-      },
+      extend: undefined,
       // disabled: { opacity: undefined },
     },
     textInput: {
-      extend: ({ plain, focus, reverse, icon }) => `
+      extend: ({
+        plain, focus, reverse, icon,
+      }) => `
         border-bottom: 2px solid white;
         padding-top: 9px;
         padding-bottom: 9px;
@@ -1451,11 +1450,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       `,
       border: `1px solid ${lightColors[2]};`,
       // disabled: { opacity: undefined },
-      placeholder: {
-        extend: {
-          left: '32px',
-        },
-      },
+      // placeholder: {},
     },
     tooptip: {
       background: '#FFF',
@@ -1484,7 +1479,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        background: '#3367D6',
         color: 'white',
       },
       list: {

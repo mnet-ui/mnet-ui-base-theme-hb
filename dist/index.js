@@ -44,10 +44,10 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     Tick = _mnetIcons.HbAdminComponents.Tick,
     Info = _mnetIcons.HbAdminComponents.Info,
     Success = _mnetIcons.HbAdminComponents.Success,
-    Block = _mnetIcons.HbAdminComponents.Block;
+    Block = _mnetIcons.HbAdminComponents.Block,
+    Close = _mnetIcons.HbAdminComponents.Close;
 var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
-    Close = _mnetIcons.NeoComponents.Close,
     AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -344,13 +344,13 @@ var generate = function generate(baseSpacing, scale) {
       },
       input: {
         padding: {
-          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
+          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
           vertical: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px"
         },
         font: {
           // size: undefined,
           // height: undefined,
-          weight: 400
+          weight: 600
         } // deprecate in v3
         // weight: undefined,
 
@@ -878,7 +878,7 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       labelWrap: {
-        margin: 'none',
+        // margin: 'none',
         width: 'xxsmall',
         direction: 'row'
       },
@@ -1553,9 +1553,7 @@ var generate = function generate(baseSpacing, scale) {
       xxlarge: _extends({}, fontSizing(4))
     },
     textArea: {
-      extend: {
-        'box-shadow': 'none'
-      } // disabled: { opacity: undefined },
+      extend: undefined // disabled: { opacity: undefined },
 
     },
     textInput: {
@@ -1577,13 +1575,9 @@ var generate = function generate(baseSpacing, scale) {
         extend: "\n        border-bottom: 2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;"
       },
       focus: "\n        border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n      ",
-      border: "1px solid " + lightColors[2] + ";",
-      // disabled: { opacity: undefined },
-      placeholder: {
-        extend: {
-          left: '32px'
-        }
-      }
+      border: "1px solid " + lightColors[2] + ";" // disabled: { opacity: undefined },
+      // placeholder: {},
+
     },
     tooptip: {
       background: '#FFF',
@@ -1615,7 +1609,7 @@ var generate = function generate(baseSpacing, scale) {
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        background: '#3367D6',
         color: 'white'
       },
       list: {
