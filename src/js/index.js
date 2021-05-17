@@ -411,6 +411,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       hover: {
+        primary: {
+          color: 'white',
+        },
         extend: {
           // 'box-shadow': '0 4px 9px 0 rgba(247, 186, 186, 0.4)',
           // bottom: `${1.5 * baseSpacing}px`,
@@ -450,16 +453,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       tertiary: {
         background: 'transparent',
         border: {
-          color: { dark: 'brand', light: 'brand' },
+          color: { dark: 'transparent', light: 'transparent' },
         },
         color: 'brand',
         // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
-        extend: {
-          border: '1px solid',
-        },
+        // extend: {
+        //   border: '1px solid',
+        // },
       },
       active: {
         background: undefined,
@@ -468,7 +471,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           width: `${borderWidth}px`,
           radius: `${baseSpacing * 0.12}px`,
         },
-        color: undefined,
+        // color: undefined,
+        // extend: `color: black`,
         //   extend: undefined,
         //   default: {},
         //   primary: {},
@@ -549,28 +553,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(224, 224, 224, 1)',
+          // dark: 'brand',
+          // light: 'brand',
         },
         width: '2px',
         radius: '3px',
       },
       check: {
         // extend: undefined,
-        extend: ({ checked }) => `
-          ${checked && `background-color: ${colors.brand};`}
-          border: unset;
-          box-shadow: unset;
-          border-radius: 3px;
-        `,
         radius: '4px',
         thickness: '4px',
+        extend: `color: ${colors.brand};`,
       },
       // color: { dark: undefined, light: undefined },
       color: {
-        light: 'neutral-3',
-        dark: 'neutral-3',
+        // light: 'neutral-3',
+        // dark: 'neutral-3',
+        light: colors.brand,
+        dark: colors.brand,
       },
       // extend: undefined,
-      extend: `color: ${colors.white};`,
+      // extend: `color: ${colors.white};`,
       // gap: undefined
       gap: 'medium',
       hover: {
@@ -590,21 +593,34 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       toggle: {
         // background: undefined
         color: {
-          dark: '#d9d9d9',
-          light: '#d9d9d9',
+          // dark: '#d9d9d9',
+          // light: '#d9d9d9',
+          dark: 'white',
+          light: 'white',
         },
         knob: {
           // extend: undefined,
+          extend: ({ checked }) => `${checked ? `border: 2px solid ${brandColor};` : 'background: #d9d9d9'}`,
         },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
         // extend: undefined,
+        // extend: ({ checked }) => `${checked && `border-color: ${colors.brand};`}`,
+        extend: ({ checked }) => `
+        ${checked && `background-color: ${colors.brand};`}
+        border-radius: 16px;
+        color: ${colors.brand};
+        ${checked && `border-color: ${colors.brand};`}
+      `,
       },
       label: {
         color: 'dark-1',
         size: 'medium',
         weight: 400,
       },
+      extend: () => `
+        margin-bottom: 0;
+      `,
     },
     CheckBoxGroup: {
       label: {
@@ -1008,6 +1024,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           background: 'white',
           border: { color: 'light-6' },
         },
+        label: {
+          margin: {
+            bottom: 'none',
+          },
+        },
       },
       chips: {
         wrapper: {
@@ -1365,7 +1386,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     table: {
       header: {
         align: 'start',
-        border: 'light-3',
+        // border: 'light-3',
+        border: false,
         fill: 'horizontal',
         pad: { horizontal: 'large', vertical: 'large' },
         verticalAlign: 'bottom',
@@ -1380,7 +1402,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       body: {
         align: 'start',
-        pad: { horizontal: 'large', vertical: 'large' },
+        // pad: { horizontal: 'large', vertical: 'large' },
+        pad: { horizontal: 'large', vertical: 'small' },
         // border: 'dark-3',
         border: 'horizontal',
         // border: 'light-1',
@@ -1468,16 +1491,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       background: 'white',
       round: 'small',
       border: {
-        color: 'light-2',
+        color: 'light-3',
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        // background: '#E15151',
+        background: colors.brand,
         color: 'white',
       },
       list: {
         border: {
-          color: 'light-2',
+          color: 'light-3',
           side: 'right',
         },
         color: 'dark-1',
