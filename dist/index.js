@@ -486,6 +486,9 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       hover: {
+        primary: {
+          color: 'white'
+        },
         extend: {// 'box-shadow': '0 4px 9px 0 rgba(247, 186, 186, 0.4)',
           // bottom: `${1.5 * baseSpacing}px`,
         }
@@ -534,18 +537,18 @@ var generate = function generate(baseSpacing, scale) {
         background: 'transparent',
         border: {
           color: {
-            dark: 'brand',
-            light: 'brand'
+            dark: 'transparent',
+            light: 'transparent'
           }
         },
-        color: 'brand',
-        // padding: {
+        color: 'brand' // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
-        extend: {
-          border: '1px solid'
-        }
+        // extend: {
+        //   border: '1px solid',
+        // },
+
       },
       active: {
         background: undefined,
@@ -556,8 +559,9 @@ var generate = function generate(baseSpacing, scale) {
           },
           width: borderWidth + "px",
           radius: baseSpacing * 0.12 + "px"
-        },
-        color: undefined //   extend: undefined,
+        } // color: undefined,
+        // extend: `color: black`,
+        //   extend: undefined,
         //   default: {},
         //   primary: {},
         //   secondary: {},
@@ -640,27 +644,28 @@ var generate = function generate(baseSpacing, scale) {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(224, 224, 224, 1)'
+          light: 'rgba(224, 224, 224, 1)' // dark: 'brand',
+          // light: 'brand',
+
         },
         width: '2px',
         radius: '3px'
       },
       check: {
         // extend: undefined,
-        extend: function extend(_ref) {
-          var checked = _ref.checked;
-          return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
-        },
         radius: '4px',
-        thickness: '4px'
+        thickness: '4px',
+        extend: "color: " + colors.brand + ";"
       },
       // color: { dark: undefined, light: undefined },
       color: {
-        light: 'neutral-3',
-        dark: 'neutral-3'
+        // light: 'neutral-3',
+        // dark: 'neutral-3',
+        light: colors.brand,
+        dark: colors.brand
       },
       // extend: undefined,
-      extend: "color: " + colors.white + ";",
+      // extend: `color: ${colors.white};`,
       // gap: undefined
       gap: 'medium',
       hover: {
@@ -680,19 +685,34 @@ var generate = function generate(baseSpacing, scale) {
       toggle: {
         // background: undefined
         color: {
-          dark: '#d9d9d9',
-          light: '#d9d9d9'
+          // dark: '#d9d9d9',
+          // light: '#d9d9d9',
+          dark: 'white',
+          light: 'white'
         },
-        knob: {// extend: undefined,
+        knob: {
+          // extend: undefined,
+          extend: function extend(_ref) {
+            var checked = _ref.checked;
+            return "" + (checked ? "border: 2px solid " + brandColor + ";" : 'background: #d9d9d9');
+          }
         },
         radius: baseSpacing + "px",
-        size: baseSpacing * 2 + "px" // extend: undefined,
-
+        size: baseSpacing * 2 + "px",
+        // extend: undefined,
+        // extend: ({ checked }) => `${checked && `border-color: ${colors.brand};`}`,
+        extend: function extend(_ref2) {
+          var checked = _ref2.checked;
+          return "\n        " + (checked && "background-color: " + colors.brand + ";") + "\n        border-radius: 16px;\n        color: " + colors.brand + ";\n        " + (checked && "border-color: " + colors.brand + ";") + "\n      ";
+        }
       },
       label: {
         color: 'dark-1',
         size: 'medium',
         weight: 400
+      },
+      extend: function extend() {
+        return "\n        margin-bottom: 0;\n      ";
       }
     },
     CheckBoxGroup: {
@@ -1136,6 +1156,11 @@ var generate = function generate(baseSpacing, scale) {
           border: {
             color: 'light-6'
           }
+        },
+        label: {
+          margin: {
+            bottom: 'none'
+          }
         }
       },
       chips: {
@@ -1498,7 +1523,7 @@ var generate = function generate(baseSpacing, scale) {
       header: {
         align: 'start',
         // border: 'light-3',
-        border: "none",
+        border: false,
         fill: 'horizontal',
         pad: {
           horizontal: 'large',
@@ -1516,9 +1541,10 @@ var generate = function generate(baseSpacing, scale) {
       },
       body: {
         align: 'start',
+        // pad: { horizontal: 'large', vertical: 'large' },
         pad: {
           horizontal: 'large',
-          vertical: 'large'
+          vertical: 'small'
         },
         // border: 'dark-3',
         border: 'horizontal' // border: 'light-1',
@@ -1608,16 +1634,17 @@ var generate = function generate(baseSpacing, scale) {
       background: 'white',
       round: 'small',
       border: {
-        color: 'light-2'
+        color: 'light-3'
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        // background: '#E15151',
+        background: colors.brand,
         color: 'white'
       },
       list: {
         border: {
-          color: 'light-2',
+          color: 'light-3',
           side: 'right'
         },
         color: 'dark-1'
