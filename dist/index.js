@@ -9,11 +9,11 @@ var _styledComponents = require("styled-components");
 
 var _mnetIcons = require("mnet-icons");
 
-var _object = require("mnet-ui-base/dist/utils/object");
+var _object = require("mnet-ui-base/utils/object");
 
-var _colors = require("mnet-ui-base/dist/utils/colors");
+var _colors = require("mnet-ui-base/utils/colors");
 
-var _mixins = require("mnet-ui-base/dist/utils/mixins");
+var _mixins = require("mnet-ui-base/utils/mixins");
 
 function _templateObject2() {
   var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
@@ -248,7 +248,8 @@ var generate = function generate(baseSpacing, scale) {
         medium: {
           value: baseSpacing * 64 // 1536
 
-        }
+        },
+        large: {}
       },
       // Breakpoints used at Server Side Rendering for the initial rendering
       // These values correspond to the theme breakpoints
@@ -380,6 +381,7 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     accordion: {
+      panel: {},
       border: {
         side: 'bottom',
         color: 'border'
@@ -411,7 +413,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       hover: {
         textDecoration: 'underline'
-      }
+      },
+      icons: {}
     },
     avatar: {
       size: {
@@ -421,7 +424,8 @@ var generate = function generate(baseSpacing, scale) {
         // default 48
         large: baseSpacing * 3 + "px",
         xlarge: baseSpacing * 4 + "px"
-      }
+      },
+      text: {}
     },
     box: {
       responsiveBreakpoint: 'small' // when we switch rows to columns
@@ -467,7 +471,8 @@ var generate = function generate(baseSpacing, scale) {
       hover: {
         primary: {
           color: 'white'
-        }
+        },
+        extend: {}
       },
       border: {
         // color: { dark: undefined, light: undefined }
@@ -478,6 +483,7 @@ var generate = function generate(baseSpacing, scale) {
         dark: undefined,
         light: undefined
       },
+      "default": {},
       primary: {
         background: 'brand',
         border: {
@@ -532,7 +538,18 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         color: 'dark-2',
-        opacity: 0.8
+        opacity: 0.8,
+        primary: {
+          background: 'brand',
+          border: {
+            color: {
+              dark: 'brand',
+              light: 'brand'
+            }
+          },
+          opacity: 0.4,
+          color: 'white'
+        }
       },
       transition: {
         timing: 'ease-in-out',
@@ -560,12 +577,14 @@ var generate = function generate(baseSpacing, scale) {
         daySize: baseSpacing * 32 / 7 + "px",
         slideDuration: '0.8s'
       },
+      icons: {},
       heading: {
         level: '4'
       } // level ranges from 1-6
 
     },
     carousel: {
+      icons: {},
       animation: {
         duration: 1000
       }
@@ -613,15 +632,11 @@ var generate = function generate(baseSpacing, scale) {
       },
       size: baseSpacing + "px",
       toggle: {
-        // background: undefined
         color: {
-          // dark: '#d9d9d9',
-          // light: '#d9d9d9',
           dark: 'white',
           light: 'white'
         },
         knob: {
-          // extend: undefined,
           extend: function extend(_ref2) {
             var checked = _ref2.checked;
             return "" + (checked ? "border: 2px solid " + brandColor + ";" : 'background: #d9d9d9');
@@ -629,8 +644,6 @@ var generate = function generate(baseSpacing, scale) {
         },
         radius: baseSpacing + "px",
         size: baseSpacing * 2 + "px",
-        // extend: undefined,
-        // extend: ({ checked }) => `${checked && `border-color: ${colors.brand};`}`,
         extend: function extend(_ref3) {
           var checked = _ref3.checked;
           return "\n        " + (checked && "background-color: " + colors.brand + ";") + "\n        border-radius: 16px;\n        color: " + colors.brand + ";\n        " + (checked && "border-color: " + colors.brand + ";") + "\n      ";
@@ -740,6 +753,8 @@ var generate = function generate(baseSpacing, scale) {
           size: 'xsmall'
         }
       },
+      header: {},
+      icons: {},
       primary: {
         weight: 'bold'
       },
@@ -859,36 +874,42 @@ var generate = function generate(baseSpacing, scale) {
       },
       level: {
         1: {
+          font: {},
           small: _extends({}, fontSizing(4)),
           medium: _extends({}, fontSizing(8)),
           large: _extends({}, fontSizing(16)),
           xlarge: _extends({}, fontSizing(24))
         },
         2: {
+          font: {},
           small: _extends({}, fontSizing(2)),
           medium: _extends({}, fontSizing(4)),
           large: _extends({}, fontSizing(8)),
           xlarge: _extends({}, fontSizing(12))
         },
         3: {
+          font: {},
           small: _extends({}, fontSizing(1)),
           medium: _extends({}, fontSizing(2)),
           large: _extends({}, fontSizing(4)),
           xlarge: _extends({}, fontSizing(6))
         },
         4: {
+          font: {},
           small: _extends({}, fontSizing(0)),
           medium: _extends({}, fontSizing(0)),
           large: _extends({}, fontSizing(0)),
           xlarge: _extends({}, fontSizing(0))
         },
         5: {
+          font: {},
           small: _extends({}, fontSizing(-0.5)),
           medium: _extends({}, fontSizing(-0.5)),
           large: _extends({}, fontSizing(-0.5)),
           xlarge: _extends({}, fontSizing(-0.5))
         },
         6: {
+          font: {},
           small: _extends({}, fontSizing(-1)),
           medium: _extends({}, fontSizing(-1)),
           large: _extends({}, fontSizing(-1)),
@@ -924,7 +945,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     menu: {
-      extend: undefined
+      extend: undefined,
+      icons: {}
     },
     meter: {
       color: 'graph-0'
@@ -932,20 +954,21 @@ var generate = function generate(baseSpacing, scale) {
     modalpopup: {
       container: {
         width: 'large',
-        margin: 'large'
+        margin: 0
       },
       title: {
         wrapper: {
           pad: {
-            horizontal: 'large',
-            vertical: 'medium'
+            bottom: 'medium',
+            top: 'large',
+            horizontal: 'large'
           },
           direction: 'row',
           justify: 'between',
           align: 'center',
           border: {
             side: 'bottom',
-            color: 'light-2'
+            color: 'light-3'
           }
         },
         text: {
@@ -956,7 +979,7 @@ var generate = function generate(baseSpacing, scale) {
         },
         close: {
           icon: Close,
-          size: 'xxlarge',
+          size: 'large',
           color: 'dark-2'
         }
       },
@@ -1262,6 +1285,8 @@ var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      icon: {},
+      icons: {},
       gap: 'medium',
       size: baseSpacing + 1 + "px"
     },
@@ -1271,7 +1296,8 @@ var generate = function generate(baseSpacing, scale) {
         color: (0, _styledComponents.css)(_templateObject2(), function (props) {
           return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
         })
-      }
+      },
+      thumb: {}
     },
     rangeSelector: {
       background: {
@@ -1359,7 +1385,10 @@ var generate = function generate(baseSpacing, scale) {
         bottom: 'xsmall'
       }
     },
-    tabs: {},
+    tabs: {
+      header: {},
+      panel: {}
+    },
     table: {
       header: {
         align: 'start',
@@ -1598,6 +1627,7 @@ var generate = function generate(baseSpacing, scale) {
           weight: 600,
           margin: 'small'
         },
+        text: {},
         sampleText: {
           color: 'neutral-1',
           weight: 'bold'

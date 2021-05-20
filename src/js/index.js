@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const {
   UpArrow, DownArrow, Tick, Info, Success, Block,
@@ -197,6 +197,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         medium: {
           value: baseSpacing * 64, // 1536
         },
+        large: {},
       },
       // Breakpoints used at Server Side Rendering for the initial rendering
       // These values correspond to the theme breakpoints
@@ -320,6 +321,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     accordion: {
+      panel: {
+      },
       border: {
         side: 'bottom',
         color: 'border',
@@ -344,6 +347,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       hover: {
         textDecoration: 'underline',
       },
+      icons: {
+      },
     },
     avatar: {
       size: {
@@ -352,6 +357,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         medium: `${baseSpacing * 2}px`, // default 48
         large: `${baseSpacing * 3}px`,
         xlarge: `${baseSpacing * 4}px`,
+      },
+      text: {
       },
     },
     box: {
@@ -391,6 +398,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         primary: {
           color: 'white',
         },
+        extend: {
+        },
       },
       border: {
         // color: { dark: undefined, light: undefined }
@@ -398,6 +407,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing * 0.12}px`,
       },
       color: { dark: undefined, light: undefined },
+      default: {},
       primary: {
         background: 'brand',
         border: {
@@ -438,6 +448,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         color: 'dark-2',
         opacity: 0.8,
+        primary: {
+          background: 'brand',
+          border: {
+            color: { dark: 'brand', light: 'brand' },
+          },
+          opacity: 0.4,
+          color: 'white',
+        },
       },
       transition: {
         timing: 'ease-in-out',
@@ -465,9 +483,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         daySize: `${(baseSpacing * 32) / 7}px`,
         slideDuration: '0.8s',
       },
+      icons: {},
       heading: { level: '4' }, // level ranges from 1-6
     },
     carousel: {
+      icons: {
+      },
       animation: {
         duration: 1000,
       },
@@ -518,21 +539,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       size: `${baseSpacing}px`,
       toggle: {
-        // background: undefined
         color: {
-          // dark: '#d9d9d9',
-          // light: '#d9d9d9',
           dark: 'white',
           light: 'white',
         },
         knob: {
-          // extend: undefined,
           extend: ({ checked }) => `${checked ? `border: 2px solid ${brandColor};` : 'background: #d9d9d9'}`,
         },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
-        // extend: undefined,
-        // extend: ({ checked }) => `${checked && `border-color: ${colors.brand};`}`,
         extend: ({ checked }) => `
         ${checked && `background-color: ${colors.brand};`}
         border-radius: 16px;
@@ -617,6 +632,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       groupEnd: {
         border: { side: 'bottom', size: 'xsmall' },
       },
+      header: {},
+      icons: {},
       primary: {
         weight: 'bold',
       },
@@ -724,36 +741,48 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       level: {
         1: {
+          font: {
+          },
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
           large: { ...fontSizing(16) },
           xlarge: { ...fontSizing(24) },
         },
         2: {
+          font: {
+          },
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
           large: { ...fontSizing(8) },
           xlarge: { ...fontSizing(12) },
         },
         3: {
+          font: {
+          },
           small: { ...fontSizing(1) },
           medium: { ...fontSizing(2) },
           large: { ...fontSizing(4) },
           xlarge: { ...fontSizing(6) },
         },
         4: {
+          font: {
+          },
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
           large: { ...fontSizing(0) },
           xlarge: { ...fontSizing(0) },
         },
         5: {
+          font: {
+          },
           small: { ...fontSizing(-0.5) },
           medium: { ...fontSizing(-0.5) },
           large: { ...fontSizing(-0.5) },
           xlarge: { ...fontSizing(-0.5) },
         },
         6: {
+          font: {
+          },
           small: { ...fontSizing(-1) },
           medium: { ...fontSizing(-1) },
           large: { ...fontSizing(-1) },
@@ -785,6 +814,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     menu: {
       extend: undefined,
+      icons: {
+      },
     },
     meter: {
       color: 'graph-0',
@@ -792,20 +823,21 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     modalpopup: {
       container: {
         width: 'large',
-        margin: 'large',
+        margin: 0,
       },
       title: {
         wrapper: {
           pad: {
+            bottom: 'medium',
+            top: 'large',
             horizontal: 'large',
-            vertical: 'medium',
           },
           direction: 'row',
           justify: 'between',
           align: 'center',
           border: {
             side: 'bottom',
-            color: 'light-2',
+            color: 'light-3',
           },
         },
         text: {
@@ -816,7 +848,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         close: {
           icon: Close,
-          size: 'xxlarge',
+          size: 'large',
           color: 'dark-2',
         },
       },
@@ -1109,6 +1141,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
         },
       },
+      icon: {
+      },
+      icons: {
+      },
       gap: 'medium',
       size: `${baseSpacing + 1}px`,
     },
@@ -1118,6 +1154,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: css`
           ${props => rgba(normalizeColor('border', props.theme), 0.2)};
         `,
+      },
+      thumb: {
       },
     },
     rangeSelector: {
@@ -1207,6 +1245,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     tabs: {
+
+      header: {
+
+      },
+      panel: {
+
+      },
     },
     table: {
       header: {
@@ -1424,6 +1469,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           weight: 600,
           margin: 'small',
         },
+        text: {},
         sampleText: {
           color: 'neutral-1',
           weight: 'bold',
