@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const {
   UpArrow, DownArrow, Tick, Info, Success, Block,
@@ -384,7 +384,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       size: {
         small: {
           border: {
-            radius: `${baseSpacing * 0.12}px`, // 3px
+            // radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px`, // 3px
           },
           pad: {
             vertical: `${baseSpacing / (1.78 * 2) - borderWidth}px`, // 4px
@@ -393,7 +394,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         medium: {
           border: {
-            radius: `${baseSpacing * 0.12}px`, // 3px
+            // radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px`, // 3px
           },
           pad: {
             vertical: `${baseSpacing / 1.78 - borderWidth}px`,
@@ -402,7 +404,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         large: {
           border: {
-            radius: `${baseSpacing * 0.12}px`, // 3px
+            // radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px`, // 3px
           },
           pad: {
             vertical: `${baseSpacing / (1.618 / 2) + borderWidth}px`, // 8px
@@ -1284,8 +1287,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      // background: colors.white,
-      background: 'light-1',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null,
@@ -1293,9 +1295,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       control: {
         open: undefined,
         extend: {
-          // 'border-bottom': `2px solid ${lightColors[2]};`,
-          // 'text-align': 'left',
-          // padding: '4px 10px 4px 0px',
+          'border-bottom': `2px solid ${lightColors[2]};`,
+          'text-align': 'left',
+          padding: '4px 10px 4px 0px',
         },
       },
       options: {

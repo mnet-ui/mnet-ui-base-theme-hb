@@ -25,9 +25,9 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
     Tick = HbAdminComponents.Tick,
@@ -440,7 +440,8 @@ export var generate = function generate(baseSpacing, scale) {
       size: {
         small: {
           border: {
-            radius: baseSpacing * 0.12 + "px" // 3px
+            // radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: baseSpacing * 0.1875 + "px" // 3px
 
           },
           pad: {
@@ -452,7 +453,8 @@ export var generate = function generate(baseSpacing, scale) {
         },
         medium: {
           border: {
-            radius: baseSpacing * 0.12 + "px" // 3px
+            // radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: baseSpacing * 0.1875 + "px" // 3px
 
           },
           pad: {
@@ -462,7 +464,8 @@ export var generate = function generate(baseSpacing, scale) {
         },
         large: {
           border: {
-            radius: baseSpacing * 0.12 + "px" // 3px
+            // radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: baseSpacing * 0.1875 + "px" // 3px
 
           },
           pad: {
@@ -1411,17 +1414,17 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      // background: colors.white,
-      background: 'light-1',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null
       },
       control: {
         open: undefined,
-        extend: {// 'border-bottom': `2px solid ${lightColors[2]};`,
-          // 'text-align': 'left',
-          // padding: '4px 10px 4px 0px',
+        extend: {
+          'border-bottom': "2px solid " + lightColors[2] + ";",
+          'text-align': 'left',
+          padding: '4px 10px 4px 0px'
         }
       },
       options: {
