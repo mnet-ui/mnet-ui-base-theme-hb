@@ -7,10 +7,11 @@ import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
 
 const {
-  UpArrow, DownArrow, Tick, Info, Success, Block,
+  UpArrow, DownArrow, Tick, Info, Success, Block, Close
 } = HbAdminComponents;
 const {
-  TickCircle, Error, Close, AlertTriangle,
+  TickCircle, Error,
+  AlertTriangle,
 } = NeoComponents;
 
 const brandColor = '#3367D6';
@@ -823,21 +824,19 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     modalpopup: {
       container: {
         width: 'large',
-        margin: 0,
       },
       title: {
         wrapper: {
           pad: {
-            bottom: 'medium',
-            top: 'large',
             horizontal: 'large',
+            vertical: 'medium',
           },
           direction: 'row',
           justify: 'between',
           align: 'center',
           border: {
             side: 'bottom',
-            color: 'light-3',
+            color: 'light-2',
           },
         },
         text: {
@@ -848,7 +847,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         close: {
           icon: Close,
-          size: 'large',
+          size: 'xxlarge',
           color: 'dark-2',
         },
       },
@@ -857,7 +856,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           pad: 'large',
         },
         text: {
-          size: 'large',
+          size: 'medium',
           color: 'dark-1',
         },
       },
@@ -870,7 +869,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           direction: 'row',
         },
         button: {
-          size: 'medium',
           margin: {
             right: 'medium',
           },
@@ -1462,6 +1460,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           height: 'medium',
           align: 'center',
           justify: 'center',
+          background: 'red'
         },
         header: {
           color: 'dark-1',

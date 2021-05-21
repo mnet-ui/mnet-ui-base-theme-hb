@@ -44,10 +44,10 @@ var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
     Tick = _mnetIcons.HbAdminComponents.Tick,
     Info = _mnetIcons.HbAdminComponents.Info,
     Success = _mnetIcons.HbAdminComponents.Success,
-    Block = _mnetIcons.HbAdminComponents.Block;
+    Block = _mnetIcons.HbAdminComponents.Block,
+    Close = _mnetIcons.HbAdminComponents.Close;
 var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
-    Close = _mnetIcons.NeoComponents.Close,
     AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -953,22 +953,20 @@ var generate = function generate(baseSpacing, scale) {
     },
     modalpopup: {
       container: {
-        width: 'large',
-        margin: 0
+        width: 'large'
       },
       title: {
         wrapper: {
           pad: {
-            bottom: 'medium',
-            top: 'large',
-            horizontal: 'large'
+            horizontal: 'large',
+            vertical: 'medium'
           },
           direction: 'row',
           justify: 'between',
           align: 'center',
           border: {
             side: 'bottom',
-            color: 'light-3'
+            color: 'light-2'
           }
         },
         text: {
@@ -979,7 +977,7 @@ var generate = function generate(baseSpacing, scale) {
         },
         close: {
           icon: Close,
-          size: 'large',
+          size: 'xxlarge',
           color: 'dark-2'
         }
       },
@@ -988,7 +986,7 @@ var generate = function generate(baseSpacing, scale) {
           pad: 'large'
         },
         text: {
-          size: 'large',
+          size: 'medium',
           color: 'dark-1'
         }
       },
@@ -1001,7 +999,6 @@ var generate = function generate(baseSpacing, scale) {
           direction: 'row'
         },
         button: {
-          size: 'medium',
           margin: {
             right: 'medium'
           }
@@ -1619,7 +1616,8 @@ var generate = function generate(baseSpacing, scale) {
           },
           height: 'medium',
           align: 'center',
-          justify: 'center'
+          justify: 'center',
+          background: 'red'
         },
         header: {
           color: 'dark-1',
