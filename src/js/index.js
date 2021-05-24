@@ -13,6 +13,8 @@ const {
   TickCircle, Error, AlertTriangle,
 } = NeoComponents;
 
+Tick.notSvg = true;
+
 const brandColor = '#3367D6';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -285,7 +287,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       input: {
         padding: {
           horizontal: `${
-            parseMetricToNum(`${baseSpacing / 2}px`)
+            parseMetricToNum(`${baseSpacing}px`)
             - parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
           vertical: `${
@@ -296,7 +298,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         font: {
           // size: undefined,
           // height: undefined,
-          weight: 600,
+          weight: 400,
         },
         // deprecate in v3
         // weight: undefined,
@@ -554,11 +556,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       check: {
         // extend: undefined,
-        extend: ({ checked }) => `
+        extend: ({ checked }) => ` 
           ${checked && `background-color: ${colors.brand};`}
           border: unset;
           box-shadow: unset;
           border-radius: 3px;
+          color: white;
         `,
         radius: '4px',
         thickness: '4px',
@@ -569,9 +572,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         dark: 'neutral-3',
       },
       // extend: undefined,
-      extend: `color: 'dark-1',
-        size: 'medium',
-        weight: 400,`,
+      extend: `color: ${darkColors[0]};
+        font-weight: 400;`,
       // gap: undefined
       gap: 'medium',
       hover: {
@@ -718,8 +720,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         pad: 'small',
       },
       field: {
-        default: 'border-width: 1px 1px 2px;',
-        focus: 'border-color: white;',
+        default: {
+          border: 'none',
+        },
+        // focus: 'border-color: white;',
       },
       disabled: {
         background: {
@@ -763,10 +767,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       label: {
         weight: 400,
-        margin: {
-          bottom: 'medium',
-          left: 'none',
-        },
+        margin: 'none',
       },
       margin: { bottom: 'small' },
       postfix: {
@@ -1156,7 +1157,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             side: 'right',
             color: 'transparent',
           },
-          pad: '0',
+          pad: 'medium',
           height: '100%',
           extend: {
             '*': {
@@ -1414,10 +1415,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     textInput: {
+      container: {
+        extend: () => `
+          height: 100%;
+        `,
+      },
       extend: ({
         plain, focus, reverse, icon,
       }) => `
-        border-bottom: 2px solid white;
         padding-top: 9px;
         padding-bottom: 9px;
         box-shadow: none;
@@ -1453,8 +1458,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // placeholder: {},
     },
     tooptip: {
-      background: '#FFF',
-      color: '#333333',
+      background: 'white',
+      color: 'dark-1',
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',

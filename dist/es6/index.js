@@ -38,6 +38,7 @@ var UpArrow = HbAdminComponents.UpArrow,
 var TickCircle = NeoComponents.TickCircle,
     Error = NeoComponents.Error,
     AlertTriangle = NeoComponents.AlertTriangle;
+Tick.notSvg = true;
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -332,13 +333,13 @@ export var generate = function generate(baseSpacing, scale) {
       },
       input: {
         padding: {
-          horizontal: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px",
+          horizontal: parseMetricToNum(baseSpacing + "px") - parseMetricToNum(controlBorderWidth + "px") + "px",
           vertical: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px"
         },
         font: {
           // size: undefined,
           // height: undefined,
-          weight: 600
+          weight: 400
         } // deprecate in v3
         // weight: undefined,
 
@@ -636,7 +637,7 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
         extend: function extend(_ref) {
           var checked = _ref.checked;
-          return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+          return " \n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n          color: white;\n        ";
         },
         radius: '4px',
         thickness: '4px'
@@ -647,7 +648,7 @@ export var generate = function generate(baseSpacing, scale) {
         dark: 'neutral-3'
       },
       // extend: undefined,
-      extend: "color: 'dark-1',\n        size: 'medium',\n        weight: 400,",
+      extend: "color: " + darkColors[0] + ";\n        font-weight: 400;",
       // gap: undefined
       gap: 'medium',
       hover: {
@@ -820,8 +821,10 @@ export var generate = function generate(baseSpacing, scale) {
         pad: 'small'
       },
       field: {
-        "default": "border-width: 1px 1px 2px;",
-        focus: "border-color: white;"
+        "default": {
+          border: 'none'
+        } // focus: 'border-color: white;',
+
       },
       disabled: {
         background: {
@@ -866,16 +869,12 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       labelWrap: {
-        // margin: 'none',
         width: 'xxsmall',
         direction: 'row'
       },
       label: {
         weight: 400,
-        margin: {
-          bottom: 'medium',
-          left: 'none'
-        }
+        margin: 'none'
       },
       margin: {
         bottom: 'small'
@@ -1278,7 +1277,7 @@ export var generate = function generate(baseSpacing, scale) {
             side: 'right',
             color: 'transparent'
           },
-          pad: '0',
+          pad: 'medium',
           height: '100%',
           extend: {
             '*': {
@@ -1545,12 +1544,17 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     textInput: {
+      container: {
+        extend: function extend() {
+          return "\n          height: 100%;\n        ";
+        }
+      },
       extend: function extend(_ref2) {
         var plain = _ref2.plain,
             focus = _ref2.focus,
             reverse = _ref2.reverse,
             icon = _ref2.icon;
-        return "\n        border-bottom: 2px solid white;\n        padding-top: 9px;\n        padding-bottom: 9px;\n        box-shadow: none;\n        height: 100%;\n        " + (!reverse && icon && 'padding-left: 32px;') + "\n        " + (!plain && "border: 1px solid " + lightColors[2] + ";") + "\n        border-bottom-width: 2px;\n        " + (focus && "border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;");
+        return "\n        padding-top: 9px;\n        padding-bottom: 9px;\n        box-shadow: none;\n        height: 100%;\n        " + (!reverse && icon && 'padding-left: 32px;') + "\n        " + (!plain && "border: 1px solid " + lightColors[2] + ";") + "\n        border-bottom-width: 2px;\n        " + (focus && "border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;");
       },
       error: {
         icon: Info,
@@ -1568,8 +1572,8 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     tooptip: {
-      background: '#FFF',
-      color: '#333333',
+      background: 'white',
+      color: 'dark-1',
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',
