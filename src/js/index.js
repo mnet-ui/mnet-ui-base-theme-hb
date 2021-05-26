@@ -1105,6 +1105,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
           style: {
             minHeight: '40px',
+            position: 'absolute',
           },
         },
         placeholder: {

@@ -1220,7 +1220,8 @@ export var generate = function generate(baseSpacing, scale) {
             color: 'light-3'
           },
           style: {
-            minHeight: '40px'
+            minHeight: '40px',
+            position: 'absolute'
           }
         },
         placeholder: {
