@@ -1233,7 +1233,7 @@ var generate = function generate(baseSpacing, scale) {
           },
           style: {
             minHeight: '40px',
-            position: 'absolute'
+            position: 'relative'
           }
         },
         placeholder: {
