@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/utils/object';
-import { normalizeColor } from 'mnet-ui-base/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
+import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
 
 const {
   UpArrow, DownArrow, Tick, Info, Success, Block, Close,
@@ -989,6 +989,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         width: 'full',
         direction: 'row',
         justify: 'between',
+        align: 'center',
         pad: { horizontal: 'medium' },
       },
       checkbox: {
