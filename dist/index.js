@@ -9,11 +9,11 @@ var _styledComponents = require("styled-components");
 
 var _mnetIcons = require("mnet-icons");
 
-var _object = require("mnet-ui-base/dist/utils/object");
+var _object = require("mnet-ui-base/utils/object");
 
-var _colors = require("mnet-ui-base/dist/utils/colors");
+var _colors = require("mnet-ui-base/utils/colors");
 
-var _mixins = require("mnet-ui-base/dist/utils/mixins");
+var _mixins = require("mnet-ui-base/utils/mixins");
 
 function _templateObject2() {
   var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
