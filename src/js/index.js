@@ -1,21 +1,21 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { HbAdminComponents } from 'mnet-icons';
+import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const {
-  UpArrow,
-  DownArrow,
-  Close,
-  LongArrowDown,
-  TickCircle,
-  Error,
+  UpArrow, DownArrow, Tick, Info, Success, Block, Close,
 } = HbAdminComponents;
+const {
+  TickCircle, Error, AlertTriangle,
+} = NeoComponents;
 
-const brandColor = '#E15151';
+Tick.notSvg = true;
+
+const brandColor = '#3367D6';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
@@ -28,8 +28,12 @@ const statusColors = {
   disabled: '#CCCCCC',
   'warning-background': '#FFFCF4',
   'info-background': '#F5F9FF',
-  'warning-border': '#F9DE9E',
-  'info-border': '#BCD1FF',
+  'ok-background': '#E8FFED',
+  'error-background': '#FFF6F6',
+  'warning-border': '#FDEDC5',
+  'info-border': '#E0EDFF',
+  'ok-border': '#BEF5CA',
+  'error-border': '#FFE9E9',
 };
 
 const darkColors = [
@@ -69,7 +73,7 @@ const colors = {
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
-    light: rgba(205, 211, 227, 1),
+    light: 'light-3',
   },
   brand: brandColor,
   control: {
@@ -234,7 +238,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         small: `${baseSpacing / 4}px`, // 12
         medium: `${baseSpacing / 2}px`, // 24
         large: `${baseSpacing}px`, // 48
-        xlarge: `${baseSpacing}px`, // 96
+        xlarge: `${baseSpacing * 2}px`, // 96
         responsiveBreakpoint: 'small',
       },
       elevation: {
@@ -283,7 +287,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       input: {
         padding: {
           horizontal: `${
-            parseMetricToNum(`${baseSpacing / 2}px`)
+            parseMetricToNum(`${baseSpacing}px`)
             - parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
           vertical: `${
@@ -294,7 +298,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         font: {
           // size: undefined,
           // height: undefined,
-          weight: 600,
+          weight: 400,
         },
         // deprecate in v3
         // weight: undefined,
@@ -476,8 +480,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border: {
           color: { dark: 'accent-1', light: 'accent-1' },
         },
-        color: 'white',
-        opacity: 0.4,
+        color: 'dark-2',
+        opacity: 0.8,
         //   default: {},
         //   primary: {},
         //   secondary: {},
@@ -545,32 +549,44 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)',
+          light: 'rgba(224, 224, 224, 1)',
         },
         width: '2px',
+        radius: '3px',
       },
       check: {
         // extend: undefined,
+        extend: ({ checked }) => ` 
+          ${checked && `background-color: ${colors.brand};`}
+          border: unset;
+          box-shadow: unset;
+          border-radius: 3px;
+          color: white;
+        `,
         radius: '4px',
         thickness: '4px',
       },
       // color: { dark: undefined, light: undefined },
+      color: {
+        light: 'neutral-3',
+        dark: 'neutral-3',
+      },
       // extend: undefined,
+      extend: `color: ${darkColors[0]};
+        font-weight: 400;`,
       // gap: undefined
+      gap: 'medium',
       hover: {
         border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
+          color: undefined,
         },
       },
       icon: {
-        // size: undefined,
-        // extend: undefined,
+        size: '18px',
+        extend: 'stroke: white;',
       },
       icons: {
-        // checked: undefined,
+        checked: Tick,
         // indeterminate: undefined,
       },
       size: `${baseSpacing}px`,
@@ -586,6 +602,18 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
         // extend: undefined,
+      },
+      label: {
+        color: 'dark-1',
+        size: 'medium',
+        weight: 400,
+      },
+    },
+    CheckBoxGroup: {
+      label: {
+        color: 'dark-1',
+        size: 'medium',
+        weight: 400,
       },
     },
     clock: {
@@ -691,6 +719,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       content: {
         pad: 'small',
       },
+      field: {
+        default: {
+          border: 'none',
+        },
+        // focus: 'border-color: white;',
+      },
       disabled: {
         background: {
           color: 'status-disabled',
@@ -727,9 +761,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'text-xweak',
         margin: { vertical: 'xsmall', left: 'medium' },
       },
-      label: {
-        margin: { vertical: 'xsmall', horizontal: 'small' },
+      labelWrap: {
         width: 'xxsmall',
+        direction: 'row',
+      },
+      label: {
+        weight: 400,
+        margin: 'none',
       },
       margin: { bottom: 'small' },
       postfix: {
@@ -747,11 +785,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       extend: {
         button: {
           flex: 1,
-          border: 'none',
         },
       },
-
-      // round: undefined,
+      tooltip: {
+        extend: {
+          position: 'right-end',
+          background: '#FFFFFF',
+        },
+        icon: Info,
+        iconProps: {
+          margin: { horizontal: 'small' },
+          size: 'large',
+        },
+      },
+      round: 'small',
     },
     mnet: {
       // extend: undefined
@@ -926,10 +973,23 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     multiselect: {
+      container: {
+        border: {
+          color: 'light-3',
+        },
+        round: 'small',
+      },
+      includeBtn: {
+        color: 'status-ok',
+      },
+      excludeBtn: {
+        color: 'status-error',
+      },
       option: {
         width: 'full',
         direction: 'row',
         justify: 'between',
+        align: 'center',
         pad: { horizontal: 'medium' },
       },
       checkbox: {
@@ -949,34 +1009,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: 'auto',
           round: 'small',
           align: 'center',
+          justify: 'center',
           background: 'white',
           border: { color: 'light-6' },
-          extend: props => {
-            const getBackground = () => {
-              switch (props.isExcluded) {
-                case null:
-                  return accentColors[2];
-                case false:
-                  return '#38C18B';
-                case true:
-                  return '#FC564F';
-                default:
-                  return accentColors[2];
-              }
-            };
-            return {
-              background: props.active ? getBackground() : 'white',
-              'border-color': props.active ? 'transparent' : lightColors[5],
-            };
-          },
         },
       },
       chips: {
         wrapper: {
-          pad: 'medium',
+          pad: { vertical: 'medium', left: 'medium', right: 'small' },
           direction: 'row',
           extend: props => ({
-            padding: props.twoColumnLayout ? 0 : `${baseSpacing / 1.618}px`,
             'border-bottom': props.twoColumnLayout
               ? 'none'
               : '1px solid #D9DBE5',
@@ -986,7 +1028,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           background: 'light-3',
           round: 'small',
           pad: {
-            vertical: 'small',
+            vertical: 'medium',
             horizontal: 'medium',
           },
           margin: 'small',
@@ -998,41 +1040,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               ? 0
               : `${baseSpacing / (1.618 * 2)}px`,
             background: props.twoColumnLayout ? 'white' : lightColors[2],
-            padding: props.twoColumnLayout
-              ? `${baseSpacing / 1.618}px`
-              : `${baseSpacing / (1.618 * 2)}px ${baseSpacing / 1.618}px`,
-            'border-radius': props.twoColumnLayout
-              ? 0
-              : `${baseSpacing / (1.618 * 2)}px`,
-            'border-bottom': props.twoColumnLayout
-              ? '1px solid #D9DBE5'
-              : 'none',
             'justify-content': props.twoColumnLayout
               ? 'space-between'
               : 'flex-start',
           }),
         },
         label: {
-          color: 'dark-3',
+          color: 'dark-1',
           size: 'medium',
-          weight: 600,
+          weight: 400,
           margin: {
             right: 'small',
-          },
-          extend: props => {
-            const getTextColor = () => {
-              switch (props.isExcluded) {
-                case false:
-                  return '#38C18B';
-                case true:
-                  return '#FC564F';
-                default:
-                  return darkColors[2];
-              }
-            };
-            return {
-              color: getTextColor(),
-            };
           },
         },
         icon: {
@@ -1040,8 +1058,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: 'dark-3',
         },
         clear: {
-          color: 'accent-2',
-          size: 'small',
+          margin: 'medium',
+          border: {
+            side: 'top',
+            color: 'light-3',
+          },
+          color: 'dark-1',
+          size: 'medium',
+          alignSelf: 'end',
+          weight: '600',
+          height: '30px',
         },
       },
       controls: {
@@ -1058,28 +1084,33 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       searchbox: {
+        textWrapper: {
+          flex: 'grow',
+        },
+        iconWrapper: {
+          gap: 'medium',
+          width: 'xxsmall',
+          direction: 'row',
+          justify: 'center',
+        },
         container: {
-          height: {
-            min: 'xxsmall',
-            max: 'xxsmall',
-          },
+          height: '40px',
           direction: 'row',
           align: 'center',
-          background: 'light-2',
-          pad: { right: 'medium', vertical: 'small' },
-          extend: props => ({
-            background:
-              props.layout === 'double-column' ? 'white' : lightColors[1],
-            'flex-direction':
-              props.layout === 'double-column' ? 'row-reverse' : 'row',
-            'padding-left':
-              props.layout === 'double-column' ? `${baseSpacing / 1.618}px` : 0,
-            'border-bottom':
-              props.layout === 'double-column' ? '1px solid #D9DBE5' : 'none',
-          }),
+          background: 'transparent',
+          // pad: { horizontal: 'medium', vertical: 'medium' },
+          pad: 'none',
+          border: {
+            side: 'bottom',
+            color: 'light-3',
+          },
+          style: {
+            minHeight: '40px',
+            position: 'relative',
+          },
         },
         placeholder: {
-          color: 'dark-5',
+          color: 'dark-4',
           size: 'medium',
         },
         icon: {
@@ -1088,45 +1119,85 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       rightPanel: {
-        border: '#D9DBE5',
+        border: 'light-3',
         incExcHeader: {
           box: {
             direction: 'row',
             justify: 'between',
-            pad: 'medium',
-            background: 'background-back',
+            align: 'center',
+            pad: 'large',
+            background: 'white',
             border: {
               side: 'bottom',
-              color: '#D9DBE5',
+              color: 'light-3',
             },
           },
           text: {
-            color: 'accent-2',
+            color: 'dark-1',
             size: 'medium',
-            weight: 600,
+            weight: '400',
+          },
+          count: {
+            margin: { left: 'small' },
+            background: statusColors.info,
+            round: 'medium',
+            pad: { horizontal: 'medium' },
+            justify: 'center',
           },
         },
       },
       custom: {
         wrapper: {
           direction: 'row',
+          border: {
+            color: 'light-3',
+          },
+          round: 'small',
         },
         textAreaWrap: {
-          border: { side: 'right' },
-          pad: 'large',
-        },
-        label: {
-          weight: 600,
-        },
-        textAreaContainer: {
-          minHeight: '140px',
-          margin: { vertical: 'medium' },
+          border: {
+            side: 'right',
+            color: 'transparent',
+          },
+          pad: 'medium',
+          height: '100%',
+          extend: {
+            '*': {
+              border: 'none',
+              height: '100%',
+            },
+          },
         },
         actions: {
           wrapper: {
             direction: 'row',
-            margin: { vertical: 'small' },
-            gap: 'medium',
+            gap: '0',
+            margin: '0',
+            justify: 'evenly',
+            align: 'center',
+            border: {
+              side: 'top',
+              color: 'light-3',
+            },
+            height: {
+              min: '30px',
+            },
+          },
+        },
+      },
+      icons: {
+        include: {
+          icon: Success,
+          extend: {
+            color: 'status-ok',
+            size: 'large',
+          },
+        },
+        exclude: {
+          icon: Block,
+          extend: {
+            color: 'status-error',
+            size: 'large',
           },
         },
       },
@@ -1198,17 +1269,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      background: 'light-1',
+      background: colors.white,
       activeColor: 'light-1',
       container: {
         extend: null,
       },
       control: {
-        // open: undefined,
+        open: undefined,
         extend: {
-          border: 'none',
-          padding: '0 4px',
-          text: {},
+          'border-bottom': `2px solid ${lightColors[2]};`,
+          'text-align': 'left',
+          padding: '4px 10px 4px 0px',
         },
       },
       options: {
@@ -1223,11 +1294,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       icons: {
-        color: 'icon',
+        color: 'dark-2',
         margin: 'none',
-        pad: 'medium',
+        pad: {
+          top: 'xsmall',
+          bottom: 'xsmall',
+          horizontal: 'small',
+        },
         background: 'background-contrast',
-        size: 'small',
+        size: 'xlarge',
         up: UpArrow,
         down: DownArrow,
         // extend: {},
@@ -1338,19 +1413,70 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     textArea: {
-      // extend: undefined,
+      extend: undefined,
       // disabled: { opacity: undefined },
     },
     textInput: {
-      // extend: undefined,
+      container: {
+        extend: () => `
+          height: 100%;
+        `,
+      },
+      extend: ({
+        plain, focus, reverse, icon,
+      }) => `
+        padding-top: 9px;
+        padding-bottom: 9px;
+        box-shadow: none;
+        height: 100%;
+        ${(!reverse && icon) && 'padding-left: 32px;'}
+        ${!plain && `border: 1px solid ${lightColors[2]};`}
+        border-bottom-width: 2px;
+        ${focus && `border-color: transparent;
+        border-bottom: 2px solid ${statusColors.info};
+        background: ${lightColors[0]};
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;`}`,
+      error: {
+        icon: Info,
+        text: {
+          color: 'brand',
+          margin: { vertical: 'small' },
+        },
+        extend: `
+        border-bottom: 2px solid red;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;`,
+      },
+      focus: `
+        border-color: transparent;
+        border-bottom: 2px solid ${statusColors.info};
+        background: ${lightColors[0]};
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+      `,
+      border: `1px solid ${lightColors[2]};`,
       // disabled: { opacity: undefined },
+      // placeholder: {},
     },
     tooptip: {
-      background: 'dark-1',
-      color: 'white',
+      background: 'white',
+      color: 'dark-1',
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',
+      dropProps: { left: 'right', top: 'bottom' },
+      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
+      pad: {
+        horizontal: 'large',
+        vertical: 'medium',
+      },
+      titleProps: {
+        weight: 'bold',
+        margin: {
+          vertical: 'medium',
+        },
+      },
     },
     pagination: {
       background: 'white',
@@ -1360,7 +1486,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        background: '#3367D6',
         color: 'white',
       },
       list: {
@@ -1387,16 +1513,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           default: TickCircle,
           ok: TickCircle,
           error: Error,
+          warning: AlertTriangle,
+          container: {
+            margin: { right: 'medium' },
+          },
         },
         text: {
           default: {
             weight: 600,
           },
           ok: {
+            color: 'status-ok',
             weight: 600,
             margin: { horizontal: 'small' },
           },
           error: {
+            color: 'status-error',
+            weight: 600,
+            margin: { horizontal: 'small' },
+          },
+          warning: {
+            color: 'status-warning',
             weight: 600,
             margin: { horizontal: 'small' },
           },
@@ -1415,19 +1552,39 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: { vertical: 'small', horizontal: 'large' },
         },
         ok: {
-          background: 'status-ok',
+          background: 'status-ok-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-ok-border',
+          },
           // text: {},
         },
         critical: {
-          background: 'status-critical',
+          background: 'status-error-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-error-border',
+          },
           // text: {},
         },
         error: {
-          background: 'status-error',
+          background: 'status-error-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-error-border',
+          },
           // text: {},
         },
         warning: {
-          background: 'status-warning',
+          background: 'status-warning-background',
+          pad: 'large',
+          border: {
+            side: 'all',
+            color: 'status-warning-border',
+          },
           // text: {},
         },
       },
@@ -1439,7 +1596,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       icons: {
         up: UpArrow,
         down: DownArrow,
-        changeArrow: LongArrowDown,
+        changeArrow: DownArrow,
         close: Close,
       },
     },
