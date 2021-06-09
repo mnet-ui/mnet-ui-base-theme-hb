@@ -1063,10 +1063,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             side: 'top',
             color: 'light-3',
           },
-          color: 'dark-1',
+          color: 'dark-3',
           size: 'medium',
           alignSelf: 'end',
-          weight: '600',
+          weight: '400',
           height: '30px',
         },
       },
@@ -1077,6 +1077,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           height: {
             min: 'auto',
           },
+          border: 'top',
           // extend: undefined,
         },
         button: {
