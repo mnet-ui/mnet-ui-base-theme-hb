@@ -1179,10 +1179,10 @@ export var generate = function generate(baseSpacing, scale) {
             side: 'top',
             color: 'light-3'
           },
-          color: 'dark-1',
+          color: 'dark-3',
           size: 'medium',
           alignSelf: 'end',
-          weight: '600',
+          weight: '400',
           height: '30px'
         }
       },
@@ -1192,7 +1192,8 @@ export var generate = function generate(baseSpacing, scale) {
           direction: 'row',
           height: {
             min: 'auto'
-          } // extend: undefined,
+          },
+          border: 'top' // extend: undefined,
 
         },
         button: {
