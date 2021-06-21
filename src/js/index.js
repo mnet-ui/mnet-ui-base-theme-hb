@@ -6,13 +6,9 @@ import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
 import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
 
-const {
-  UpArrow, DownArrow, Tick, Info, Success, Block, Close
-} = HbAdminComponents;
-const {
-  TickCircle, Error,
-  AlertTriangle,
-} = NeoComponents;
+const { UpArrow, DownArrow, Tick, Info, Success, Block, Close } =
+  HbAdminComponents;
+const { TickCircle, Error, AlertTriangle } = NeoComponents;
 
 const brandColor = '#3367D6';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
@@ -112,15 +108,16 @@ const colors = {
   white: '#FFFFFF',
 };
 
-const colorArray = (array, prefix) => array.forEach((color, index) => {
-  colors[`${prefix}-${index + 1}`] = color;
-});
+const colorArray = (array, prefix) =>
+  array.forEach((color, index) => {
+    colors[`${prefix}-${index + 1}`] = color;
+  });
 
 colorArray(accentColors, 'accent');
 colorArray(darkColors, 'dark');
 colorArray(lightColors, 'light');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach(color => {
+Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
@@ -129,7 +126,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
   const baseFontSize = baseSpacing * 0.75; // 12
   const fontScale = baseSpacing / scale; // 16
 
-  const fontSizing = factor => ({
+  const fontSizing = (factor) => ({
     size: `${baseFontSize + factor * fontScale}px`,
     height: `${baseSpacing + factor * fontScale}px`,
     // maxWidth chosen to be ~50 characters wide
@@ -286,12 +283,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       input: {
         padding: {
           horizontal: `${
-            parseMetricToNum(`${baseSpacing}px`)
-            - parseMetricToNum(`${controlBorderWidth}px`)
+            parseMetricToNum(`${baseSpacing}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
           vertical: `${
-            parseMetricToNum(`${baseSpacing / 2}px`)
-            - parseMetricToNum(`${controlBorderWidth}px`)
+            parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)
           }px`,
         },
         font: {
@@ -322,8 +319,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     accordion: {
-      panel: {
-      },
+      panel: {},
       border: {
         side: 'bottom',
         color: 'border',
@@ -348,8 +344,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       hover: {
         textDecoration: 'underline',
       },
-      icons: {
-      },
+      icons: {},
     },
     avatar: {
       size: {
@@ -359,8 +354,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         large: `${baseSpacing * 3}px`,
         xlarge: `${baseSpacing * 4}px`,
       },
-      text: {
-      },
+      text: {},
     },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns
@@ -399,8 +393,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         primary: {
           color: 'white',
         },
-        extend: {
-        },
+        extend: {},
       },
       border: {
         // color: { dark: undefined, light: undefined }
@@ -488,8 +481,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       heading: { level: '4' }, // level ranges from 1-6
     },
     carousel: {
-      icons: {
-      },
+      icons: {},
       animation: {
         duration: 1000,
       },
@@ -545,7 +537,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           light: 'white',
         },
         knob: {
-          extend: ({ checked }) => `${checked ? `border: 2px solid ${brandColor};` : 'background: #d9d9d9'}`,
+          extend: ({ checked }) =>
+            `${
+              checked
+                ? `border: 2px solid ${brandColor};`
+                : 'background: #d9d9d9'
+            }`,
         },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
@@ -742,48 +739,42 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       level: {
         1: {
-          font: {
-          },
+          font: {},
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
           large: { ...fontSizing(16) },
           xlarge: { ...fontSizing(24) },
         },
         2: {
-          font: {
-          },
+          font: {},
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
           large: { ...fontSizing(8) },
           xlarge: { ...fontSizing(12) },
         },
         3: {
-          font: {
-          },
+          font: {},
           small: { ...fontSizing(1) },
           medium: { ...fontSizing(2) },
           large: { ...fontSizing(4) },
           xlarge: { ...fontSizing(6) },
         },
         4: {
-          font: {
-          },
+          font: {},
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
           large: { ...fontSizing(0) },
           xlarge: { ...fontSizing(0) },
         },
         5: {
-          font: {
-          },
+          font: {},
           small: { ...fontSizing(-0.5) },
           medium: { ...fontSizing(-0.5) },
           large: { ...fontSizing(-0.5) },
           xlarge: { ...fontSizing(-0.5) },
         },
         6: {
-          font: {
-          },
+          font: {},
           small: { ...fontSizing(-1) },
           medium: { ...fontSizing(-1) },
           large: { ...fontSizing(-1) },
@@ -805,7 +796,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
-      zIndex: '1031',
+      zIndex: '10',
     },
     list: {
       item: {
@@ -815,8 +806,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     menu: {
       extend: undefined,
-      icons: {
-      },
+      icons: {},
     },
     meter: {
       color: 'graph-0',
@@ -924,7 +914,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         wrapper: {
           pad: { vertical: 'medium', left: 'medium', right: 'small' },
           direction: 'row',
-          extend: props => ({
+          extend: (props) => ({
             'border-bottom': props.twoColumnLayout
               ? 'none'
               : '1px solid #D9DBE5',
@@ -940,7 +930,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: 'small',
           direction: 'row',
           align: 'center',
-          extend: props => ({
+          extend: (props) => ({
             width: props.twoColumnLayout ? '100%' : 'auto',
             margin: props.twoColumnLayout
               ? 0
@@ -1139,10 +1129,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
         },
       },
-      icon: {
-      },
-      icons: {
-      },
+      icon: {},
+      icons: {},
       gap: 'medium',
       size: `${baseSpacing + 1}px`,
     },
@@ -1150,11 +1138,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       track: {
         height: '4px',
         color: css`
-          ${props => rgba(normalizeColor('border', props.theme), 0.2)};
+          ${(props) => rgba(normalizeColor('border', props.theme), 0.2)};
         `,
       },
-      thumb: {
-      },
+      thumb: {},
     },
     rangeSelector: {
       background: {
@@ -1243,13 +1230,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     tabs: {
-
-      header: {
-
-      },
-      panel: {
-
-      },
+      header: {},
+      panel: {},
     },
     table: {
       header: {
@@ -1460,7 +1442,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           height: 'medium',
           align: 'center',
           justify: 'center',
-          background: 'red'
+          background: 'red',
         },
         header: {
           color: 'dark-1',
