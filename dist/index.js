@@ -943,7 +943,7 @@ var generate = function generate(baseSpacing, scale) {
       },
       responsiveBreakpoint: 'small',
       // when Layer takes over the full screen
-      zIndex: '1031'
+      zIndex: '10'
     },
     list: {
       item: {
