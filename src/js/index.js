@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const {
   UpArrow, DownArrow, Tick, Info, Success, Block, Close
@@ -50,6 +50,8 @@ const lightColors = [
   '#E0E0E0',
   '#E0E0E0',
   '#E0E0E0',
+  '#C9CBCE',
+  '#F3F4F4',
 ];
 const focusColor = '#B1C2FE';
 
@@ -456,6 +458,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
           opacity: 0.4,
           color: 'white',
+        },
+        default: {
+          background: 'light-8',
+          border: {
+            color: { dark: 'light-8', light: 'light-8' },
+          },
+          opacity: 1,
         },
       },
       transition: {

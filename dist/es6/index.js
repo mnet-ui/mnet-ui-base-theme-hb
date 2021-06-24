@@ -25,9 +25,9 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
     Tick = HbAdminComponents.Tick,
@@ -59,7 +59,7 @@ var statusColors = {
   'error-border': '#FFE9E9'
 };
 var darkColors = ['#333333', '#9DA2AD', '#8A90A6', '#9DA2AD', '#9DA2AD', '#9DA2AD'];
-var lightColors = ['#F2F5FC', '#F1F3F5', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0'];
+var lightColors = ['#F2F5FC', '#F1F3F5', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#E0E0E0', '#C9CBCE', '#F3F4F4'];
 var focusColor = '#B1C2FE';
 var colors = {
   active: rgba(221, 221, 221, 0.5),
@@ -537,6 +537,16 @@ export var generate = function generate(baseSpacing, scale) {
           },
           opacity: 0.4,
           color: 'white'
+        },
+        "default": {
+          background: 'light-8',
+          border: {
+            color: {
+              dark: 'light-8',
+              light: 'light-8'
+            }
+          },
+          opacity: 1
         }
       },
       transition: {
