@@ -805,7 +805,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
-      zIndex: '10',
+      zIndex: '1031',
     },
     list: {
       item: {
