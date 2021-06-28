@@ -277,7 +277,7 @@ var generate = function generate(baseSpacing, scale) {
           radius: '0px'
         },
         shadowSize: 'small',
-        zIndex: '20',
+        zIndex: '1031',
         marginTop: '4px'
       },
       edgeSize: {
