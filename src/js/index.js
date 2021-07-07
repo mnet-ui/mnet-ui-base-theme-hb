@@ -1466,7 +1466,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        background: '#3367D6',
         color: 'white',
       },
       list: {

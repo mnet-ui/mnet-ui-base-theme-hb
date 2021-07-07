@@ -1594,7 +1594,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       pad: 'xsmall',
       active: {
-        background: '#E15151',
+        background: '#3367D6',
         color: 'white'
       },
       list: {
