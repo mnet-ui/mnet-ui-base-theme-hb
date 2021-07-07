@@ -383,7 +383,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       size: {
         small: {
           border: {
-            radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px`, // 3px
           },
           pad: {
             vertical: `${baseSpacing / (1.78 * 2) - borderWidth}px`, // 4px
@@ -392,7 +392,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         medium: {
           border: {
-            radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px`, // 3px
           },
           pad: {
             vertical: `${baseSpacing / 1.78 - borderWidth}px`,
@@ -401,7 +401,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         large: {
           border: {
-            radius: `${baseSpacing * 0.12}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px`, // 3px
           },
           pad: {
             vertical: `${baseSpacing / (1.618 / 2) + borderWidth}px`, // 8px

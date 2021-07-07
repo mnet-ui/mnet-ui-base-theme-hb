@@ -439,7 +439,7 @@ export var generate = function generate(baseSpacing, scale) {
       size: {
         small: {
           border: {
-            radius: baseSpacing * 0.12 + "px" // 3px
+            radius: baseSpacing * 0.1875 + "px" // 3px
 
           },
           pad: {
@@ -451,7 +451,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         medium: {
           border: {
-            radius: baseSpacing * 0.12 + "px" // 3px
+            radius: baseSpacing * 0.1875 + "px" // 3px
 
           },
           pad: {
@@ -461,7 +461,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         large: {
           border: {
-            radius: baseSpacing * 0.12 + "px" // 3px
+            radius: baseSpacing * 0.1875 + "px" // 3px
 
           },
           pad: {
