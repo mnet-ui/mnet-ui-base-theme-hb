@@ -25,9 +25,9 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
     Tick = HbAdminComponents.Tick,
@@ -1396,6 +1396,16 @@ export var generate = function generate(baseSpacing, scale) {
         verticalAlign: 'bottom',
         background: {
           color: lightColors[0]
+        },
+        extend: function extend(props) {
+          var _props$children, _props$children$props, _props$children2, _props$children2$prop, _props$children3, _props$children3$prop;
+
+          return (props == null ? void 0 : (_props$children = props.children) == null ? void 0 : (_props$children$props = _props$children.props) == null ? void 0 : _props$children$props.top) && {
+            position: 'sticky',
+            top: (props == null ? void 0 : (_props$children2 = props.children) == null ? void 0 : (_props$children2$prop = _props$children2.props) == null ? void 0 : _props$children2$prop.top) + ((props == null ? void 0 : (_props$children3 = props.children) == null ? void 0 : (_props$children3$prop = _props$children3.props) == null ? void 0 : _props$children3$prop.offsetTop) || 0) + "px",
+            zIndex: 1,
+            boxShadow: 'inset 0 -1px 0px 0 #e0e0e0'
+          };
         }
       },
       body: {

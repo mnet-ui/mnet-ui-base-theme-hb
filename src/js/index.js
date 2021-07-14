@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const { UpArrow, DownArrow, Tick, Info, Success, Block, Close } =
   HbAdminComponents;
@@ -144,25 +144,25 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       active: {
         background: {
           color: 'active',
-          opacity: 'medium',
+          opacity: 'medium'
         },
         color: {
           dark: 'white',
-          light: 'black',
-        },
+          light: 'black'
+        }
       },
       animation: {
         duration: '1s',
         jiggle: {
-          duration: '0.1s',
-        },
+          duration: '0.1s'
+        }
       },
       borderSize: {
         xsmall: '1px',
         small: '2px',
         medium: `${baseSpacing / 6}px`, // 4
         large: `${baseSpacing / 2}px`, // 12
-        xlarge: `${baseSpacing}px`, // 24
+        xlarge: `${baseSpacing}px` // 24
       },
       breakpoints: {
         small: {
@@ -172,7 +172,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             small: '2px',
             medium: `${baseSpacing / 6}px`, // 4
             large: `${baseSpacing / 4}px`, // 6
-            xlarge: `${baseSpacing / 2}px`, // 12
+            xlarge: `${baseSpacing / 2}px` // 12
           },
           edgeSize: {
             none: '0px',
@@ -182,7 +182,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             small: `${baseSpacing / 4}px`, // 6
             medium: `${baseSpacing / 2}px`, // 12
             large: `${baseSpacing}px`, // 24
-            xlarge: `${baseSpacing * 2}px`, // 48
+            xlarge: `${baseSpacing * 2}px` // 48
           },
           size: {
             xxsmall: `${baseSpacing}px`, // 24
@@ -191,42 +191,42 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             medium: `${baseSpacing * 8}px`, // 192
             large: `${baseSpacing * 16}px`, // 384
             xlarge: `${baseSpacing * 32}px`, // 768
-            full: '100%',
-          },
+            full: '100%'
+          }
         },
         medium: {
-          value: baseSpacing * 64, // 1536
+          value: baseSpacing * 64 // 1536
         },
-        large: {},
+        large: {}
       },
       // Breakpoints used at Server Side Rendering for the initial rendering
       // These values correspond to the theme breakpoints
       deviceBreakpoints: {
         phone: 'small',
         tablet: 'medium',
-        computer: 'large',
+        computer: 'large'
       },
       colors,
       control: {
         border: {
           width: `${controlBorderWidth}px`,
           radius: '4px',
-          color: 'border',
+          color: 'border'
         },
         disabled: {
-          opacity: 0.3,
-        },
+          opacity: 0.3
+        }
       },
       // The time to wait after the user stopped typing, measured in ms.
       debounceDelay: 300,
       drop: {
         background: '#ffffff',
         border: {
-          radius: '0px',
+          radius: '0px'
         },
         shadowSize: 'small',
         zIndex: '1031',
-        marginTop: '4px',
+        marginTop: '4px'
       },
       edgeSize: {
         none: '0px',
@@ -237,7 +237,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         medium: `${baseSpacing / 2}px`, // 24
         large: `${baseSpacing}px`, // 48
         xlarge: `${baseSpacing * 2}px`, // 96
-        responsiveBreakpoint: 'small',
+        responsiveBreakpoint: 'small'
       },
       elevation: {
         light: {
@@ -246,7 +246,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           small: '0px 2px 4px rgba(0, 0, 0, 0.20)',
           medium: '0px 4px 8px rgba(0, 0, 0, 0.20)',
           large: '0px 8px 16px rgba(0, 0, 0, 0.20)',
-          xlarge: '0px 12px 24px rgba(0, 0, 0, 0.20)',
+          xlarge: '0px 12px 24px rgba(0, 0, 0, 0.20)'
         },
         dark: {
           none: 'none',
@@ -254,59 +254,55 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
           medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
           large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
-          xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)',
-        },
+          xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)'
+        }
       },
       focus: {
         // shadow or outline are required for accessibility
         border: {
           // remove to only have shadow
-          color: 'focus',
+          color: 'focus'
         },
         // outline: { color: undefined, size: undefined },
         shadow: {
           color: 'focus',
-          size: '2px',
-        },
+          size: '2px'
+        }
       },
       font: {
-        family: "'Inter', sans-serif",
+        family: "'Inter', sans-serif"
       },
       hover: {
         background: {
           color: 'active',
-          opacity: 'medium',
+          opacity: 'medium'
         },
         color: {
           dark: 'light-2',
-          light: 'light-2',
-        },
+          light: 'light-2'
+        }
       },
       input: {
         padding: {
-          horizontal: `${
-            parseMetricToNum(`${baseSpacing}px`) -
-            parseMetricToNum(`${controlBorderWidth}px`)
-          }px`,
-          vertical: `${
-            parseMetricToNum(`${baseSpacing / 2}px`) -
-            parseMetricToNum(`${controlBorderWidth}px`)
-          }px`,
+          horizontal: `${parseMetricToNum(`${baseSpacing}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)}px`,
+          vertical: `${parseMetricToNum(`${baseSpacing / 2}px`) -
+            parseMetricToNum(`${controlBorderWidth}px`)}px`
         },
         font: {
-          weight: 400,
-        },
+          weight: 400
+        }
         // deprecate in v3
         // weight: undefined,
       },
       opacity: {
         strong: 0.8,
         medium: 0.4,
-        weak: 0.1,
+        weak: 0.1
       },
       selected: {
         background: 'selected',
-        color: 'brand',
+        color: 'brand'
       },
       spacing: `${baseSpacing}px`,
       size: {
@@ -317,36 +313,36 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         large: `${baseSpacing * 32}px`, // 768
         xlarge: `${baseSpacing * 48}px`, // 1152
         xxlarge: `${baseSpacing * 64}px`, // 1536
-        full: '100%',
-      },
+        full: '100%'
+      }
     },
     accordion: {
       panel: {},
       border: {
         side: 'bottom',
-        color: 'border',
+        color: 'border'
       },
       heading: {
-        level: '4', // level ranges from 1-6
+        level: '4' // level ranges from 1-6
       },
       hover: {
         color: { dark: 'light-4', light: 'dark-3' }, // deprecated
         heading: {
-          color: { dark: 'light-4', light: 'dark-3' },
-        },
-      },
+          color: { dark: 'light-4', light: 'dark-3' }
+        }
+      }
     },
     anchor: {
       textDecoration: 'none',
       fontWeight: 600,
       color: {
         dark: 'brand',
-        light: 'brand',
+        light: 'brand'
       },
       hover: {
-        textDecoration: 'underline',
+        textDecoration: 'underline'
       },
-      icons: {},
+      icons: {}
     },
     avatar: {
       size: {
@@ -354,117 +350,117 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         small: `${baseSpacing}px`,
         medium: `${baseSpacing * 2}px`, // default 48
         large: `${baseSpacing * 3}px`,
-        xlarge: `${baseSpacing * 4}px`,
+        xlarge: `${baseSpacing * 4}px`
       },
-      text: {},
+      text: {}
     },
     box: {
-      responsiveBreakpoint: 'small', // when we switch rows to columns
+      responsiveBreakpoint: 'small' // when we switch rows to columns
     },
     button: {
       size: {
         small: {
           border: {
-            radius: `${baseSpacing * 0.1875}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px` // 3px
           },
           pad: {
             vertical: `${baseSpacing / (1.78 * 2) - borderWidth}px`, // 4px
-            horizontal: `${baseSpacing - borderWidth * 2}px`, // 20px,
-          },
+            horizontal: `${baseSpacing - borderWidth * 2}px` // 20px,
+          }
         },
         medium: {
           border: {
-            radius: `${baseSpacing * 0.1875}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px` // 3px
           },
           pad: {
             vertical: `${baseSpacing / 1.78 - borderWidth}px`,
-            horizontal: `${baseSpacing - borderWidth * 1.4}px`,
-          },
+            horizontal: `${baseSpacing - borderWidth * 1.4}px`
+          }
         },
         large: {
           border: {
-            radius: `${baseSpacing * 0.1875}px`, // 3px
+            radius: `${baseSpacing * 0.1875}px` // 3px
           },
           pad: {
             vertical: `${baseSpacing / (1.618 / 2) + borderWidth}px`, // 8px
-            horizontal: `${baseSpacing * 2.8 - borderWidth}px`, // 32px,
-          },
-        },
+            horizontal: `${baseSpacing * 2.8 - borderWidth}px` // 32px,
+          }
+        }
       },
       hover: {
         primary: {
-          color: 'white',
+          color: 'white'
         },
-        extend: {},
+        extend: {}
       },
       border: {
         // color: { dark: undefined, light: undefined }
         width: `${borderWidth}px`,
-        radius: `${baseSpacing * 0.12}px`,
+        radius: `${baseSpacing * 0.12}px`
       },
       color: { dark: undefined, light: undefined },
       default: {},
       primary: {
         background: 'brand',
         border: {
-          color: { dark: 'brand', light: 'brand' },
+          color: { dark: 'brand', light: 'brand' }
         },
         color: 'white',
         padding: {
           vertical: undefined,
-          horizontal: undefined,
-        },
+          horizontal: undefined
+        }
       },
       secondary: {
         background: 'light-1',
         border: {
-          color: { dark: 'light-1', light: 'light-1' },
+          color: { dark: 'light-1', light: 'light-1' }
         },
-        color: 'dark-1',
+        color: 'dark-1'
       },
       tertiary: {
         background: 'transparent',
         border: {
-          color: { dark: 'transparent', light: 'transparent' },
+          color: { dark: 'transparent', light: 'transparent' }
         },
-        color: 'brand',
+        color: 'brand'
       },
       active: {
         background: undefined,
         border: {
           color: { dark: 'brand', light: 'brand' },
           width: `${borderWidth}px`,
-          radius: `${baseSpacing * 0.12}px`,
-        },
+          radius: `${baseSpacing * 0.12}px`
+        }
       },
       disabled: {
         background: 'brand',
         border: {
-          color: { dark: 'accent-1', light: 'accent-1' },
+          color: { dark: 'accent-1', light: 'accent-1' }
         },
         color: 'dark-2',
         opacity: 0.8,
         primary: {
           background: 'brand',
           border: {
-            color: { dark: 'brand', light: 'brand' },
+            color: { dark: 'brand', light: 'brand' }
           },
           opacity: 0.4,
-          color: 'white',
+          color: 'white'
         },
         default: {
           background: 'light-8',
           border: {
-            color: { dark: 'light-8', light: 'light-8' },
+            color: { dark: 'light-8', light: 'light-8' }
           },
-          opacity: 1,
-        },
+          opacity: 1
+        }
       },
       transition: {
         timing: 'ease-in-out',
         duration: 0.1,
-        properties: ['color', 'background-color', 'border-color', 'box-shadow'],
-      },
+        properties: ['color', 'background-color', 'border-color', 'box-shadow']
+      }
     },
     calendar: {
       // daySize must align with global.size
@@ -472,40 +468,40 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         fontSize: `${baseFontSize - fontScale}px`,
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
-        slideDuration: '0.2s',
+        slideDuration: '0.2s'
       },
       medium: {
         fontSize: `${baseFontSize}px`,
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
-        slideDuration: '0.5s',
+        slideDuration: '0.5s'
       },
       large: {
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
-        slideDuration: '0.8s',
+        slideDuration: '0.8s'
       },
       icons: {},
-      heading: { level: '4' }, // level ranges from 1-6
+      heading: { level: '4' } // level ranges from 1-6
     },
     carousel: {
       icons: {},
       animation: {
-        duration: 1000,
-      },
+        duration: 1000
+      }
     },
     chart: {
-      color: 'graph-0',
+      color: 'graph-0'
     },
     checkBox: {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(224, 224, 224, 1)',
+          light: 'rgba(224, 224, 224, 1)'
         },
         width: '2px',
-        radius: '3px',
+        radius: '3px'
       },
       check: {
         extend: ({ checked }) => `
@@ -515,11 +511,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           border-radius: 3px;
         `,
         radius: '4px',
-        thickness: '4px',
+        thickness: '4px'
       },
       color: {
         light: 'neutral-3',
-        dark: 'neutral-3',
+        dark: 'neutral-3'
       },
       extend: () => `
         margin-bottom: 0;
@@ -528,22 +524,22 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       gap: 'medium',
       hover: {
         border: {
-          color: undefined,
-        },
+          color: undefined
+        }
       },
       icon: {
         size: '18px',
         extend: 'stroke: white;',
-        color: colors.white,
+        color: colors.white
       },
       icons: {
-        checked: Tick,
+        checked: Tick
       },
       size: `${baseSpacing}px`,
       toggle: {
         color: {
           dark: 'white',
-          light: 'white',
+          light: 'white'
         },
         knob: {
           extend: ({ checked }) =>
@@ -551,7 +547,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               checked
                 ? `border: 2px solid ${brandColor};`
                 : 'background: #d9d9d9'
-            }`,
+            }`
         },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
@@ -560,57 +556,57 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border-radius: 16px;
         color: ${colors.brand};
         ${checked && `border-color: ${colors.brand};`}
-      `,
+      `
       },
       label: {
         color: 'dark-1',
         size: 'medium',
-        weight: 400,
-      },
+        weight: 400
+      }
     },
     CheckBoxGroup: {
       label: {
         color: 'dark-1',
         size: 'medium',
-        weight: 400,
-      },
+        weight: 400
+      }
     },
     clock: {
       analog: {
         hour: {
           color: {
             dark: 'light-2',
-            light: 'dark-3',
+            light: 'dark-3'
           },
           width: `${baseSpacing / 3}px`,
           size: `${baseSpacing}px`,
-          shape: 'round',
+          shape: 'round'
         },
         minute: {
           color: {
             dark: 'light-4',
-            light: 'dark-3',
+            light: 'dark-3'
           },
           width: `${baseSpacing / 6}px`,
           size: `${Math.round(baseSpacing / 2)}px`,
-          shape: 'round',
+          shape: 'round'
         },
         second: {
           color: {
             dark: 'accent-1',
-            light: 'accent-1',
+            light: 'accent-1'
           },
           width: `${baseSpacing / 8}px`,
           size: `${Math.round(baseSpacing / 2.666)}px`,
-          shape: 'round',
+          shape: 'round'
         },
         size: {
           small: `${baseSpacing * 3}px`,
           medium: `${baseSpacing * 4}px`,
           large: `${baseSpacing * 6}px`,
           xlarge: `${baseSpacing * 9}px`,
-          huge: `${baseSpacing * 12}px`,
-        },
+          huge: `${baseSpacing * 12}px`
+        }
       },
       digital: {
         text: {
@@ -619,42 +615,42 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           medium: { size: `${baseFontSize}px`, height: 1.375 },
           large: { size: `${baseFontSize + fontScale}px`, height: 1.167 },
           xlarge: { size: `${baseFontSize + 2 * fontScale}px`, height: 1.1875 },
-          xxlarge: { size: `${baseFontSize + 4 * fontScale}px`, height: 1.125 },
-        },
-      },
+          xxlarge: { size: `${baseFontSize + 4 * fontScale}px`, height: 1.125 }
+        }
+      }
     },
     collapsible: {
       minSpeed: 200,
-      baseline: 500,
+      baseline: 500
     },
     dataTable: {
       groupHeader: {
         background: {
           dark: 'dark-2',
-          light: 'light-2',
+          light: 'light-2'
         },
         border: { side: 'bottom', size: 'xsmall' },
-        pad: { horizontal: 'small', vertical: 'xsmall' },
+        pad: { horizontal: 'small', vertical: 'xsmall' }
       },
       groupEnd: {
-        border: { side: 'bottom', size: 'xsmall' },
+        border: { side: 'bottom', size: 'xsmall' }
       },
       header: {},
       icons: {},
       primary: {
-        weight: 'bold',
+        weight: 'bold'
       },
       resize: {
         border: {
           color: 'border',
-          side: 'end',
-        },
-      },
+          side: 'end'
+        }
+      }
     },
     diagram: {
       line: {
-        color: 'graph-0',
-      },
+        color: 'graph-0'
+      }
     },
     formField: {
       border: {
@@ -662,89 +658,89 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         error: {
           color: {
             dark: 'white',
-            light: 'status-critical',
-          },
+            light: 'status-critical'
+          }
         },
         position: 'inner',
         side: 'all',
-        size: 'xsmall',
+        size: 'xsmall'
       },
       content: {
-        pad: 'small',
+        pad: 'small'
       },
       disabled: {
         background: {
           color: 'status-disabled',
-          opacity: 'medium',
-        },
+          opacity: 'medium'
+        }
       },
       error: {
         color: 'status-critical',
-        margin: { vertical: 'medium', horizontal: 'none' },
+        margin: { vertical: 'medium', horizontal: 'none' }
       },
       help: {
         color: 'dark-3',
         margin: {
-          start: 'small',
-        },
+          start: 'small'
+        }
       },
       info: {
         color: 'text-xweak',
-        margin: { vertical: 'xsmall', left: 'medium' },
+        margin: { vertical: 'xsmall', left: 'medium' }
       },
       labelWrap: {
         margin: 'none',
         width: 'xxsmall',
-        direction: 'row',
+        direction: 'row'
       },
       label: {
         weight: 400,
         margin: {
           bottom: 'medium',
-          left: 'none',
-        },
+          left: 'none'
+        }
       },
       margin: { bottom: 'small' },
       postfix: {
         color: 'white',
         background: 'dark-3',
         justify: 'center',
-        pad: { horizontal: 'medium', vertical: 'medium' },
+        pad: { horizontal: 'medium', vertical: 'medium' }
       },
       prefix: {
         color: 'white',
         background: 'dark-3',
         justify: 'center',
-        pad: { horizontal: 'medium', vertical: 'medium' },
+        pad: { horizontal: 'medium', vertical: 'medium' }
       },
       extend: {
         button: {
-          flex: 1,
-        },
+          flex: 1
+        }
       },
       tooltip: {
         extend: {
           position: 'right-end',
-          background: '#FFFFFF',
+          background: '#FFFFFF'
         },
         icon: Info,
         iconProps: {
           margin: { horizontal: 'small' },
-          size: 'large',
-        },
+          size: 'large'
+        }
       },
-      round: 'small',
+      round: 'small'
     },
     mnet: {
       global: css`
         :focus {
           outline: none;
         }
-      `,
+      `
     },
     heading: {
       font: {
-        family: 'Inter',
+        family: 'Inter'
       },
       level: {
         1: {
@@ -752,156 +748,156 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
           large: { ...fontSizing(16) },
-          xlarge: { ...fontSizing(24) },
+          xlarge: { ...fontSizing(24) }
         },
         2: {
           font: {},
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
           large: { ...fontSizing(8) },
-          xlarge: { ...fontSizing(12) },
+          xlarge: { ...fontSizing(12) }
         },
         3: {
           font: {},
           small: { ...fontSizing(1) },
           medium: { ...fontSizing(2) },
           large: { ...fontSizing(4) },
-          xlarge: { ...fontSizing(6) },
+          xlarge: { ...fontSizing(6) }
         },
         4: {
           font: {},
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
           large: { ...fontSizing(0) },
-          xlarge: { ...fontSizing(0) },
+          xlarge: { ...fontSizing(0) }
         },
         5: {
           font: {},
           small: { ...fontSizing(-0.5) },
           medium: { ...fontSizing(-0.5) },
           large: { ...fontSizing(-0.5) },
-          xlarge: { ...fontSizing(-0.5) },
+          xlarge: { ...fontSizing(-0.5) }
         },
         6: {
           font: {},
           small: { ...fontSizing(-1) },
           medium: { ...fontSizing(-1) },
           large: { ...fontSizing(-1) },
-          xlarge: { ...fontSizing(-1) },
-        },
+          xlarge: { ...fontSizing(-1) }
+        }
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
-      weight: 600,
+      weight: 600
     },
     layer: {
       background: 'white',
       border: {
-        radius: '4px',
+        radius: '4px'
       },
       container: {
-        zIndex: '15',
+        zIndex: '15'
       },
       overlay: {
-        background: 'rgba(0, 0, 0, 0.5)',
+        background: 'rgba(0, 0, 0, 0.5)'
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
-      zIndex: '1031',
+      zIndex: '1031'
     },
     list: {
       item: {
         border: 'horizontal',
-        pad: { horizontal: 'medium', vertical: 'small' },
-      },
+        pad: { horizontal: 'medium', vertical: 'small' }
+      }
     },
     menu: {
       extend: undefined,
-      icons: {},
+      icons: {}
     },
     meter: {
-      color: 'graph-0',
+      color: 'graph-0'
     },
     modalpopup: {
       container: {
-        width: 'large',
+        width: 'large'
       },
       title: {
         wrapper: {
           pad: {
             horizontal: 'large',
-            vertical: 'medium',
+            vertical: 'medium'
           },
           direction: 'row',
           justify: 'between',
           align: 'center',
           border: {
             side: 'bottom',
-            color: 'light-2',
-          },
+            color: 'light-2'
+          }
         },
         text: {
           margin: 'none',
           level: 3,
           size: 'small',
-          color: 'dark-1',
+          color: 'dark-1'
         },
         close: {
           icon: Close,
           size: 'xxlarge',
-          color: 'dark-2',
-        },
+          color: 'dark-2'
+        }
       },
       message: {
         wrapper: {
-          pad: 'large',
+          pad: 'large'
         },
         text: {
           size: 'medium',
-          color: 'dark-1',
-        },
+          color: 'dark-1'
+        }
       },
       buttons: {
         wrapper: {
           pad: {
             horizontal: 'large',
-            bottom: 'large',
+            bottom: 'large'
           },
-          direction: 'row',
+          direction: 'row'
         },
         button: {
           margin: {
-            right: 'medium',
-          },
-        },
-      },
+            right: 'medium'
+          }
+        }
+      }
     },
     multiselect: {
       container: {
         border: {
-          color: 'light-3',
+          color: 'light-3'
         },
-        round: 'small',
+        round: 'small'
       },
       includeBtn: {
-        color: 'status-ok',
+        color: 'status-ok'
       },
       excludeBtn: {
-        color: 'status-error',
+        color: 'status-error'
       },
       option: {
         width: 'full',
         direction: 'row',
         justify: 'between',
-        pad: { horizontal: 'medium' },
+        pad: { horizontal: 'medium' }
       },
       checkbox: {
         box: {
           margin: {
-            right: 'medium',
-          },
+            right: 'medium'
+          }
         },
         checkmark: {
           size: `${baseSpacing * 1.2}px`,
-          color: 'white',
+          color: 'white'
         },
         check: {
           height: `${baseSpacing * 1.2}px`,
@@ -911,35 +907,35 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           align: 'center',
           justify: 'center',
           background: 'white',
-          border: { color: 'light-6' },
+          border: { color: 'light-6' }
         },
         label: {
           margin: {
-            bottom: 'none',
-          },
-        },
+            bottom: 'none'
+          }
+        }
       },
       chips: {
         wrapper: {
           pad: { vertical: 'medium', left: 'medium', right: 'small' },
           direction: 'row',
-          extend: (props) => ({
+          extend: props => ({
             'border-bottom': props.twoColumnLayout
               ? 'none'
-              : '1px solid #D9DBE5',
-          }),
+              : '1px solid #D9DBE5'
+          })
         },
         option: {
           background: 'light-3',
           round: 'small',
           pad: {
             vertical: 'medium',
-            horizontal: 'medium',
+            horizontal: 'medium'
           },
           margin: 'small',
           direction: 'row',
           align: 'center',
-          extend: (props) => ({
+          extend: props => ({
             width: props.twoColumnLayout ? '100%' : 'auto',
             margin: props.twoColumnLayout
               ? 0
@@ -947,55 +943,55 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             background: props.twoColumnLayout ? 'white' : lightColors[2],
             'justify-content': props.twoColumnLayout
               ? 'space-between'
-              : 'flex-start',
-          }),
+              : 'flex-start'
+          })
         },
         label: {
           color: 'dark-1',
           size: 'medium',
           weight: 400,
           margin: {
-            right: 'small',
-          },
+            right: 'small'
+          }
         },
         icon: {
           size: 'small',
-          color: 'dark-3',
+          color: 'dark-3'
         },
         clear: {
           margin: 'medium',
           border: {
             side: 'top',
-            color: 'light-3',
+            color: 'light-3'
           },
           color: 'dark-1',
           size: 'medium',
           alignSelf: 'end',
           weight: '600',
-          height: '30px',
-        },
+          height: '30px'
+        }
       },
       controls: {
         wrapper: {
           pad: 'medium',
           direction: 'row',
           height: {
-            min: 'auto',
-          },
+            min: 'auto'
+          }
         },
         button: {
-          margin: 'small',
-        },
+          margin: 'small'
+        }
       },
       searchbox: {
         textWrapper: {
-          flex: 'grow',
+          flex: 'grow'
         },
         iconWrapper: {
           gap: 'medium',
           width: 'xxsmall',
           direction: 'row',
-          justify: 'center',
+          justify: 'center'
         },
         container: {
           height: '40px',
@@ -1005,20 +1001,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           pad: 'none',
           border: {
             side: 'bottom',
-            color: 'light-3',
+            color: 'light-3'
           },
           style: {
-            minHeight: '40px',
-          },
+            minHeight: '40px'
+          }
         },
         placeholder: {
           color: 'dark-4',
-          size: 'medium',
+          size: 'medium'
         },
         icon: {
           size: 'small',
-          color: 'dark-3',
-        },
+          color: 'dark-3'
+        }
       },
       rightPanel: {
         border: 'light-3',
@@ -1031,44 +1027,44 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             background: 'white',
             border: {
               side: 'bottom',
-              color: 'light-3',
-            },
+              color: 'light-3'
+            }
           },
           text: {
             color: 'dark-1',
             size: 'medium',
-            weight: '400',
+            weight: '400'
           },
           count: {
             margin: { left: 'small' },
             background: statusColors.info,
             round: 'medium',
             pad: { horizontal: 'medium' },
-            justify: 'center',
-          },
-        },
+            justify: 'center'
+          }
+        }
       },
       custom: {
         wrapper: {
           direction: 'row',
           border: {
-            color: 'light-3',
+            color: 'light-3'
           },
-          round: 'small',
+          round: 'small'
         },
         textAreaWrap: {
           border: {
             side: 'right',
-            color: 'transparent',
+            color: 'transparent'
           },
           pad: '0',
           height: '100%',
           extend: {
             '*': {
               border: 'none',
-              height: '100%',
-            },
-          },
+              height: '100%'
+            }
+          }
         },
         actions: {
           wrapper: {
@@ -1079,110 +1075,110 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             align: 'center',
             border: {
               side: 'top',
-              color: 'light-3',
+              color: 'light-3'
             },
             height: {
-              min: '30px',
-            },
-          },
-        },
+              min: '30px'
+            }
+          }
+        }
       },
       icons: {
         include: {
           icon: Success,
           extend: {
             color: 'status-ok',
-            size: 'large',
-          },
+            size: 'large'
+          }
         },
         exclude: {
           icon: Block,
           extend: {
             color: 'status-error',
-            size: 'large',
-          },
-        },
-      },
+            size: 'large'
+          }
+        }
+      }
     },
     paragraph: {
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
-      xxlarge: { ...fontSizing(4) },
+      xxlarge: { ...fontSizing(4) }
     },
     radioButton: {
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)',
+          light: 'rgba(0, 0, 0, 0.15)'
         },
-        width: '1px',
+        width: '1px'
       },
       check: {
         radius: '100%',
-        color: { dark: 'brand', light: 'brand' },
+        color: { dark: 'brand', light: 'brand' }
       },
       checked: {
         extend: {
           check: {
-            radius: '20%',
-          },
-        },
+            radius: '20%'
+          }
+        }
       },
       hover: {
         border: {
           color: {
             dark: 'brand',
-            light: 'brand',
-          },
-        },
+            light: 'brand'
+          }
+        }
       },
       icon: {},
       icons: {},
       gap: 'medium',
-      size: `${baseSpacing + 1}px`,
+      size: `${baseSpacing + 1}px`
     },
     rangeInput: {
       track: {
         height: '4px',
         color: css`
-          ${(props) => rgba(normalizeColor('border', props.theme), 0.2)};
-        `,
+          ${props => rgba(normalizeColor('border', props.theme), 0.2)};
+        `
       },
-      thumb: {},
+      thumb: {}
     },
     rangeSelector: {
       background: {
         invert: {
-          color: 'light-4',
-        },
-      },
+          color: 'light-4'
+        }
+      }
     },
     select: {
       background: colors.white,
       activeColor: 'light-1',
       container: {
-        extend: null,
+        extend: null
       },
       control: {
         open: undefined,
         extend: {
           'border-bottom': `2px solid ${lightColors[2]};`,
           'text-align': 'left',
-          padding: '4px 10px 4px 0px',
-        },
+          padding: '4px 10px 4px 0px'
+        }
       },
       options: {
         container: {
           align: 'start',
           pad: 'small',
-          round: 'true',
+          round: 'true'
         },
         text: {
           size: 'medium',
-          margin: 'small',
-        },
+          margin: 'small'
+        }
       },
       icons: {
         color: 'dark-2',
@@ -1190,57 +1186,57 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         pad: {
           top: 'xsmall',
           bottom: 'xsmall',
-          horizontal: 'small',
+          horizontal: 'small'
         },
         background: 'background-contrast',
         size: 'xlarge',
         up: UpArrow,
-        down: DownArrow,
+        down: DownArrow
       },
-      step: 20,
+      step: 20
     },
     tab: {
       active: {
-        color: 'text',
+        color: 'text'
       },
       border: {
         side: 'bottom',
         size: 'small',
         color: {
           dark: 'brand',
-          light: 'brand',
+          light: 'brand'
         },
         active: {
           color: {
             dark: 'white',
-            light: 'black',
-          },
+            light: 'black'
+          }
         },
         hover: {
           color: {
             dark: 'white',
-            light: 'black',
-          },
-        },
+            light: 'black'
+          }
+        }
       },
       color: 'control',
       hover: {
         color: {
           dark: 'white',
-          light: 'black',
-        },
+          light: 'black'
+        }
       },
       margin: {
         vertical: 'xxsmall',
-        horizontal: 'small',
+        horizontal: 'small'
       },
       pad: {
-        bottom: 'xsmall',
-      },
+        bottom: 'xsmall'
+      }
     },
     tabs: {
       header: {},
-      panel: {},
+      panel: {}
     },
     table: {
       header: {
@@ -1250,25 +1246,31 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         pad: { horizontal: 'large', vertical: 'large' },
         verticalAlign: 'bottom',
         background: {
-          color: lightColors[0],
+          color: lightColors[0]
         },
+        extend: props => (props?.children?.props?.top && {
+          position: 'sticky',
+          top: `${props?.children?.props?.top + (props?.children?.props?.offsetTop || 0)}px`,
+          zIndex: 1,
+          boxShadow: 'inset 0 -1px 0px 0 #e0e0e0',
+        }),
       },
       body: {
         align: 'start',
         pad: { horizontal: 'large', vertical: 'small' },
-        border: 'horizontal',
+        border: 'horizontal'
       },
       row: {
         hover: {
           background: undefined,
-          color: undefined,
-        },
+          color: undefined
+        }
       },
       footer: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
-        border: 'top',
-      },
+        border: 'top'
+      }
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },
@@ -1276,12 +1278,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       medium: { ...fontSizing(0) }, // 18px
       large: { ...fontSizing(1) }, // 22px
       xlarge: { ...fontSizing(2) },
-      xxlarge: { ...fontSizing(4) },
+      xxlarge: { ...fontSizing(4) }
     },
     textArea: {
       extend: {
-        'box-shadow': 'none',
-      },
+        'box-shadow': 'none'
+      }
     },
     textInput: {
       extend: 'border-bottom: 2px solid white;',
@@ -1289,12 +1291,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         icon: Info,
         text: {
           color: 'brand',
-          margin: { vertical: 'small' },
+          margin: { vertical: 'small' }
         },
         extend: `
         border-bottom: 2px solid red;
         border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;`,
+        border-bottom-left-radius: 0px;`
       },
       focus: `
         border-color: transparent;
@@ -1306,9 +1308,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       border: `1px solid ${lightColors[2]};`,
       placeholder: {
         extend: {
-          left: '32px',
-        },
-      },
+          left: '32px'
+        }
+      }
     },
     tooptip: {
       background: '#FFF',
@@ -1320,37 +1322,37 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
       pad: {
         horizontal: 'large',
-        vertical: 'medium',
+        vertical: 'medium'
       },
       titleProps: {
         weight: 'bold',
         margin: {
-          vertical: 'medium',
-        },
-      },
+          vertical: 'medium'
+        }
+      }
     },
     pagination: {
       background: 'white',
       round: 'small',
       border: {
-        color: 'light-3',
+        color: 'light-3'
       },
       pad: 'xsmall',
       active: {
         background: colors.brand,
-        color: 'white',
+        color: 'white'
       },
       list: {
         border: {
           color: 'light-3',
-          side: 'right',
+          side: 'right'
         },
-        color: 'dark-1',
+        color: 'dark-1'
       },
       icon: {
         bgColor: 'white',
-        pad: 'xsmall',
-      },
+        pad: 'xsmall'
+      }
     },
     notification: {
       toast: {
@@ -1364,27 +1366,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           default: TickCircle,
           ok: TickCircle,
           error: Error,
-          warning: AlertTriangle,
+          warning: AlertTriangle
         },
         text: {
           default: {
-            weight: 600,
+            weight: 600
           },
           ok: {
             color: 'status-ok',
             weight: 600,
-            margin: { horizontal: 'small' },
+            margin: { horizontal: 'small' }
           },
           error: {
             color: 'status-error',
             weight: 600,
-            margin: { horizontal: 'small' },
+            margin: { horizontal: 'small' }
           },
           warning: {
             color: 'status-warning',
             weight: 600,
-            margin: { horizontal: 'small' },
-          },
+            margin: { horizontal: 'small' }
+          }
         },
         default: {
           background: 'dark-1',
@@ -1396,52 +1398,52 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           round: 'xsmall',
           elevation: 'medium',
           pad: { vertical: 'medium', horizontal: 'medium' },
-          margin: { vertical: 'small', horizontal: 'large' },
+          margin: { vertical: 'small', horizontal: 'large' }
         },
         ok: {
           background: 'status-ok-background',
           pad: 'large',
           border: {
             side: 'all',
-            color: 'status-ok-border',
-          },
+            color: 'status-ok-border'
+          }
         },
         critical: {
           background: 'status-error-background',
           pad: 'large',
           border: {
             side: 'all',
-            color: 'status-error-border',
-          },
+            color: 'status-error-border'
+          }
         },
         error: {
           background: 'status-error-background',
           pad: 'large',
           border: {
             side: 'all',
-            color: 'status-error-border',
-          },
+            color: 'status-error-border'
+          }
         },
         warning: {
           background: 'status-warning-background',
           pad: 'large',
           border: {
             side: 'all',
-            color: 'status-warning-border',
-          },
-        },
-      },
+            color: 'status-warning-border'
+          }
+        }
+      }
     },
     changelog: {
       colors: {
-        primary: 'accent-3',
+        primary: 'accent-3'
       },
       icons: {
         up: UpArrow,
         down: DownArrow,
         changeArrow: DownArrow,
-        close: Close,
-      },
+        close: Close
+      }
     },
     upload: {
       form: {
@@ -1451,27 +1453,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           height: 'medium',
           align: 'center',
           justify: 'center',
-          background: 'red',
+          background: 'red'
         },
         header: {
           color: 'dark-1',
           size: 'large',
           weight: 600,
-          margin: 'small',
+          margin: 'small'
         },
         text: {},
         sampleText: {
           color: 'neutral-1',
-          weight: 'bold',
-        },
+          weight: 'bold'
+        }
       },
       table: {
         container: {
           overflow: { vertical: 'auto' },
-          height: 'medium',
-        },
-      },
-    },
+          height: 'medium'
+        }
+      }
+    }
   };
 
   return deepFreeze(result);
