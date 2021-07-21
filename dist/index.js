@@ -1496,7 +1496,7 @@ var generate = function generate(baseSpacing, scale) {
     table: {
       header: {
         align: 'start',
-        border: 'light-2',
+        border: false,
         fill: 'horizontal',
         pad: {
           horizontal: 'large',

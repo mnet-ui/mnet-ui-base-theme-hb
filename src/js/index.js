@@ -1363,7 +1363,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     table: {
       header: {
         align: 'start',
-        border: 'light-2',
+        border: false,
         fill: 'horizontal',
         pad: { horizontal: 'large', vertical: 'medium' },
         verticalAlign: 'bottom',
