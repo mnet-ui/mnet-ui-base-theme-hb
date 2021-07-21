@@ -1370,9 +1370,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         background: {
           color: '#F5F6F8',
         },
-        // verticalAlign: undefined,
-        // background: undefined,
-        // extend: undefined,
+        extend: props => (props?.children?.props?.top && {
+          position: 'sticky',
+          top: `${props?.children?.props?.top + (props?.children?.props?.offsetTop || 0)}px`,
+          zIndex: 1,
+          boxShadow: 'inset 0 -1px 0px 0 #e0e0e0',
+        }),
       },
       body: {
         align: 'start',

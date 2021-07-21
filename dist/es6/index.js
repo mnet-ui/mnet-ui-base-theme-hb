@@ -1493,10 +1493,17 @@ export var generate = function generate(baseSpacing, scale) {
         verticalAlign: 'bottom',
         background: {
           color: '#F5F6F8'
-        } // verticalAlign: undefined,
-        // background: undefined,
-        // extend: undefined,
+        },
+        extend: function extend(props) {
+          var _props$children, _props$children$props, _props$children2, _props$children2$prop, _props$children3, _props$children3$prop;
 
+          return (props == null ? void 0 : (_props$children = props.children) == null ? void 0 : (_props$children$props = _props$children.props) == null ? void 0 : _props$children$props.top) && {
+            position: 'sticky',
+            top: (props == null ? void 0 : (_props$children2 = props.children) == null ? void 0 : (_props$children2$prop = _props$children2.props) == null ? void 0 : _props$children2$prop.top) + ((props == null ? void 0 : (_props$children3 = props.children) == null ? void 0 : (_props$children3$prop = _props$children3.props) == null ? void 0 : _props$children3$prop.offsetTop) || 0) + "px",
+            zIndex: 1,
+            boxShadow: 'inset 0 -1px 0px 0 #e0e0e0'
+          };
+        }
       },
       body: {
         align: 'start',
