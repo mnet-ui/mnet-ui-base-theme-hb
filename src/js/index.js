@@ -1465,16 +1465,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       background: 'white',
       round: 'small',
       border: {
-        color: 'light-2',
+        color: 'light-3'
       },
       pad: 'xsmall',
       active: {
-        background: '#3367D6',
+        background: colors.brand,
         color: 'white',
       },
       list: {
         border: {
-          color: 'light-2',
+          color: 'light-3',
           side: 'right',
         },
         color: 'dark-1',
