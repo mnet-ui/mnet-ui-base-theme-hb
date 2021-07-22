@@ -135,8 +135,6 @@ Object.keys(statusColors).forEach(function (color) {
   colors["status-" + color] = statusColors[color];
 });
 export var generate = function generate(baseSpacing, scale) {
-  var _incExcHeader, _multiselect, _text;
-
   if (baseSpacing === void 0) {
     baseSpacing = 16;
   }
@@ -1026,7 +1024,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       }
     },
-    multiselect: (_multiselect = {
+    multiselect: {
       container: {
         border: {
           color: 'light-3'
@@ -1183,7 +1181,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       rightPanel: {
         border: 'light-3',
-        incExcHeader: (_incExcHeader = {
+        incExcHeader: {
           box: {
             direction: 'row',
             justify: 'between',
@@ -1211,17 +1209,7 @@ export var generate = function generate(baseSpacing, scale) {
             },
             justify: 'center'
           }
-        }, _incExcHeader["count"] = {
-          margin: {
-            left: 'small'
-          },
-          background: statusColors.info,
-          round: 'medium',
-          pad: {
-            horizontal: 'medium'
-          },
-          justify: 'center'
-        }, _incExcHeader)
+        }
       },
       custom: {
         wrapper: {
@@ -1278,22 +1266,7 @@ export var generate = function generate(baseSpacing, scale) {
           }
         }
       }
-    }, _multiselect["icons"] = {
-      include: {
-        icon: Success,
-        extend: {
-          color: 'status-ok',
-          size: 'large'
-        }
-      },
-      exclude: {
-        icon: Block,
-        extend: {
-          color: 'status-error',
-          size: 'large'
-        }
-      }
-    }, _multiselect),
+    },
     paragraph: {
       small: _extends({}, fontSizing(-1)),
       medium: _extends({}, fontSizing(0)),
@@ -1588,7 +1561,7 @@ export var generate = function generate(baseSpacing, scale) {
             }
           }
         },
-        text: (_text = {
+        text: {
           "default": {
             weight: 600
           },
@@ -1613,13 +1586,7 @@ export var generate = function generate(baseSpacing, scale) {
               horizontal: 'small'
             }
           }
-        }, _text["warning"] = {
-          color: 'status-warning',
-          weight: 600,
-          margin: {
-            horizontal: 'small'
-          }
-        }, _text),
+        },
         "default": {
           background: 'dark-1',
           size: 'medium',
