@@ -561,7 +561,8 @@ var generate = function generate(baseSpacing, scale) {
               light: 'light-8'
             }
           },
-          opacity: 1
+          opacity: 1,
+          color: 'dark-2'
         }
       },
       padding: {// vertical: `${baseSpacing / 1.618 - borderWidth}px`,
@@ -629,11 +630,11 @@ var generate = function generate(baseSpacing, scale) {
         light: 'neutral-3',
         dark: 'neutral-3'
       },
-      extend: function extend() {
-        return "\n        margin-bottom: 0;\n        color: " + colors.white + ";\n      ";
-      },
-      // extend: `color: ${darkColors[0]};
-      //   font-weight: 400;`,
+      // extend: () => `
+      //   margin-bottom: 0;
+      //   color: ${colors.white};
+      // `,
+      extend: "color: " + darkColors[0] + ";\n        font-weight: 400;",
       gap: 'medium',
       hover: {
         border: {

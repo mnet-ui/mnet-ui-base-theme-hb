@@ -464,6 +464,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             color: { dark: 'light-8', light: 'light-8' },
           },
           opacity: 1,
+          color: 'dark-2',
         },
       },
       padding: {
@@ -532,12 +533,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         light: 'neutral-3',
         dark: 'neutral-3',
       },
-      extend: () => `
-        margin-bottom: 0;
-        color: ${colors.white};
-      `,
-      // extend: `color: ${darkColors[0]};
-      //   font-weight: 400;`,
+      // extend: () => `
+      //   margin-bottom: 0;
+      //   color: ${colors.white};
+      // `,
+      extend: `color: ${darkColors[0]};
+        font-weight: 400;`,
       gap: 'medium',
       hover: {
         border: {
