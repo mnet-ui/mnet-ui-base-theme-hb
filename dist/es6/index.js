@@ -25,9 +25,9 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/dist/utils/object';
-import { normalizeColor } from 'mnet-ui-base/dist/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/dist/utils/mixins';
+import { deepFreeze } from 'mnet-ui-base/utils/object';
+import { normalizeColor } from 'mnet-ui-base/utils/colors';
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
     Tick = HbAdminComponents.Tick,
@@ -38,6 +38,7 @@ var UpArrow = HbAdminComponents.UpArrow,
 var TickCircle = NeoComponents.TickCircle,
     Error = NeoComponents.Error,
     AlertTriangle = NeoComponents.AlertTriangle;
+Tick.notSvg = true;
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -134,6 +135,8 @@ Object.keys(statusColors).forEach(function (color) {
   colors["status-" + color] = statusColors[color];
 });
 export var generate = function generate(baseSpacing, scale) {
+  var _incExcHeader, _multiselect, _text;
+
   if (baseSpacing === void 0) {
     baseSpacing = 16;
   }
@@ -335,6 +338,8 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: parseMetricToNum(baseSpacing / 2 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px"
         },
         font: {
+          // size: undefined,
+          // height: undefined,
           weight: 400
         } // deprecate in v3
         // weight: undefined,
@@ -549,6 +554,9 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 1
         }
       },
+      padding: {// vertical: `${baseSpacing / 1.618 - borderWidth}px`,
+        // horizontal: `${baseSpacing - borderWidth * 1.4}px`,
+      },
       transition: {
         timing: 'ease-in-out',
         duration: 0.1,
@@ -602,7 +610,7 @@ export var generate = function generate(baseSpacing, scale) {
       check: {
         extend: function extend(_ref) {
           var checked = _ref.checked;
-          return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n        ";
+          return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n          color: white;\n        ";
         },
         radius: '4px',
         thickness: '4px'
@@ -614,6 +622,8 @@ export var generate = function generate(baseSpacing, scale) {
       extend: function extend() {
         return "\n        margin-bottom: 0;\n        color: " + colors.white + ";\n      ";
       },
+      // extend: `color: ${darkColors[0]};
+      //   font-weight: 400;`,
       gap: 'medium',
       hover: {
         border: {
@@ -784,6 +794,12 @@ export var generate = function generate(baseSpacing, scale) {
       content: {
         pad: 'small'
       },
+      field: {
+        "default": {
+          border: 'none'
+        } // focus: 'border-color: white;',
+
+      },
       disabled: {
         background: {
           color: 'status-disabled',
@@ -846,6 +862,13 @@ export var generate = function generate(baseSpacing, scale) {
       extend: {
         button: {
           flex: 1
+        },
+        icon: Info,
+        iconProps: {
+          margin: {
+            horizontal: 'small'
+          },
+          size: 'large'
         }
       },
       tooltip: {
@@ -1003,7 +1026,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       }
     },
-    multiselect: {
+    multiselect: (_multiselect = {
       container: {
         border: {
           color: 'light-3'
@@ -1020,6 +1043,7 @@ export var generate = function generate(baseSpacing, scale) {
         width: 'full',
         direction: 'row',
         justify: 'between',
+        align: 'center',
         pad: {
           horizontal: 'medium'
         }
@@ -1137,13 +1161,15 @@ export var generate = function generate(baseSpacing, scale) {
           direction: 'row',
           align: 'center',
           background: 'transparent',
+          // pad: { horizontal: 'medium', vertical: 'medium' },
           pad: 'none',
           border: {
             side: 'bottom',
             color: 'light-3'
           },
           style: {
-            minHeight: '40px'
+            minHeight: '40px',
+            position: 'relative'
           }
         },
         placeholder: {
@@ -1157,7 +1183,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       rightPanel: {
         border: 'light-3',
-        incExcHeader: {
+        incExcHeader: (_incExcHeader = {
           box: {
             direction: 'row',
             justify: 'between',
@@ -1185,7 +1211,17 @@ export var generate = function generate(baseSpacing, scale) {
             },
             justify: 'center'
           }
-        }
+        }, _incExcHeader["count"] = {
+          margin: {
+            left: 'small'
+          },
+          background: statusColors.info,
+          round: 'medium',
+          pad: {
+            horizontal: 'medium'
+          },
+          justify: 'center'
+        }, _incExcHeader)
       },
       custom: {
         wrapper: {
@@ -1200,7 +1236,7 @@ export var generate = function generate(baseSpacing, scale) {
             side: 'right',
             color: 'transparent'
           },
-          pad: '0',
+          pad: 'medium',
           height: '100%',
           extend: {
             '*': {
@@ -1242,7 +1278,22 @@ export var generate = function generate(baseSpacing, scale) {
           }
         }
       }
-    },
+    }, _multiselect["icons"] = {
+      include: {
+        icon: Success,
+        extend: {
+          color: 'status-ok',
+          size: 'large'
+        }
+      },
+      exclude: {
+        icon: Block,
+        extend: {
+          color: 'status-error',
+          size: 'large'
+        }
+      }
+    }, _multiselect),
     paragraph: {
       small: _extends({}, fontSizing(-1)),
       medium: _extends({}, fontSizing(0)),
@@ -1442,12 +1493,22 @@ export var generate = function generate(baseSpacing, scale) {
       xxlarge: _extends({}, fontSizing(4))
     },
     textArea: {
-      extend: {
-        'box-shadow': 'none'
-      }
+      extend: undefined // disabled: { opacity: undefined },
+
     },
     textInput: {
-      extend: 'border-bottom: 2px solid white;',
+      container: {
+        extend: function extend() {
+          return "\n          height: 100%;\n        ";
+        }
+      },
+      extend: function extend(_ref4) {
+        var plain = _ref4.plain,
+            focus = _ref4.focus,
+            reverse = _ref4.reverse,
+            icon = _ref4.icon;
+        return "\n        padding-top: 9px;\n        padding-bottom: 9px;\n        box-shadow: none;\n        height: 100%;\n        " + (!reverse && icon && 'padding-left: 32px;') + "\n        " + (!plain && "border: 1px solid " + lightColors[2] + ";") + "\n        border-bottom-width: 2px;\n        " + (focus && "border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;");
+      },
       error: {
         icon: Info,
         text: {
@@ -1459,16 +1520,13 @@ export var generate = function generate(baseSpacing, scale) {
         extend: "\n        border-bottom: 2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;"
       },
       focus: "\n        border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n      ",
-      border: "1px solid " + lightColors[2] + ";",
-      placeholder: {
-        extend: {
-          left: '32px'
-        }
-      }
+      border: "1px solid " + lightColors[2] + ";" // disabled: { opacity: undefined },
+      // placeholder: {},
+
     },
     tooptip: {
-      background: '#FFF',
-      color: '#333333',
+      background: 'white',
+      color: 'dark-1',
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',
@@ -1523,9 +1581,14 @@ export var generate = function generate(baseSpacing, scale) {
           "default": TickCircle,
           ok: TickCircle,
           error: Error,
-          warning: AlertTriangle
+          warning: AlertTriangle,
+          container: {
+            margin: {
+              right: 'medium'
+            }
+          }
         },
-        text: {
+        text: (_text = {
           "default": {
             weight: 600
           },
@@ -1550,7 +1613,13 @@ export var generate = function generate(baseSpacing, scale) {
               horizontal: 'small'
             }
           }
-        },
+        }, _text["warning"] = {
+          color: 'status-warning',
+          weight: 600,
+          margin: {
+            horizontal: 'small'
+          }
+        }, _text),
         "default": {
           background: 'dark-1',
           size: 'medium',
@@ -1575,7 +1644,8 @@ export var generate = function generate(baseSpacing, scale) {
           border: {
             side: 'all',
             color: 'status-ok-border'
-          }
+          } // text: {},
+
         },
         critical: {
           background: 'status-error-background',
@@ -1583,7 +1653,8 @@ export var generate = function generate(baseSpacing, scale) {
           border: {
             side: 'all',
             color: 'status-error-border'
-          }
+          } // text: {},
+
         },
         error: {
           background: 'status-error-background',
@@ -1591,7 +1662,8 @@ export var generate = function generate(baseSpacing, scale) {
           border: {
             side: 'all',
             color: 'status-error-border'
-          }
+          } // text: {},
+
         },
         warning: {
           background: 'status-warning-background',
@@ -1599,7 +1671,8 @@ export var generate = function generate(baseSpacing, scale) {
           border: {
             side: 'all',
             color: 'status-warning-border'
-          }
+          } // text: {},
+
         }
       }
     },
