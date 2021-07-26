@@ -537,7 +537,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       //   margin-bottom: 0;
       //   color: ${colors.white};
       // `,
-      extend: `color: ${darkColors[0]};
+      extend: `
+        color: ${darkColors[0]};
+        margin-bottom: 0;
         font-weight: 400;`,
       gap: 'medium',
       hover: {
