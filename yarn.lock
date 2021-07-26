@@ -3826,18 +3826,11 @@ mixin-deep@^1.2.0:
     svg-fill-loader "^0.0.8"
     url-loader "^4.1.0"
 
-mnet-ui-base-theme-neo@sabarnix/mnet-ui-base-theme-neo:
-  version "0.0.1"
-  resolved "https://codeload.github.com/sabarnix/mnet-ui-base-theme-neo/tar.gz/8d96618ad9511944b0988b3c21d3f3d0bbd98025"
-  dependencies:
-    google-fonts "^1.0.0"
-
 mnet-ui-base@sabarnix/mnet-ui-base#release:
   version "1.0.1"
-  resolved "https://codeload.github.com/sabarnix/mnet-ui-base/tar.gz/13455eb862c0936357689f2348fadd883278084d"
+  resolved "https://codeload.github.com/sabarnix/mnet-ui-base/tar.gz/41f21b6392ae88022cec66303c41954da0d03933"
   dependencies:
     css "^2.2.3"
-    event-emitter "^0.3.5"
     grommet-icons "^4.2.0"
     hoist-non-react-statics "^3.2.0"
     markdown-to-jsx "^6.9.1"
@@ -3845,7 +3838,6 @@ mnet-ui-base@sabarnix/mnet-ui-base#release:
     polished "^3.4.1"
     prop-types "^15.7.2"
     react-desc "^4.1.2"
-    uuid "^8.2.0"
 
 ms@2.0.0:
   version "2.0.0"
@@ -4493,9 +4485,9 @@ raw-loader@^4.0.1:
     schema-utils "^3.0.0"
 
 react-desc@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.1.2.tgz#83fc4ede66b2d45ae4ef63c18421474d55972966"
-  integrity sha512-JAVe89uaLr0HZ0IKodnpTPNgNyJ/SPDQnl3VJPVwI+SpebmHvJiBNZEOwX201QmSbsVGqRY8ql/VFPlAx85WzA==
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.1.3.tgz#197b56b7b55aba702e0c912f372dea5fee86f53b"
+  integrity sha512-XqfNsg+nvAO77ja5+v3J6bMS7drnWozpiA64bUTyhqvSCJRkq45FiONl7/+74OjPw4Id6qbqVX6xkER/yTU8+w==
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
@@ -5038,9 +5030,9 @@ source-map-support@^0.5.16:
     source-map "^0.6.0"
 
 source-map-url@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
-  integrity sha1-PpNdfd1zYxuXZZlW1VEo6HtQhKM=
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.1.tgz#0af66605a745a5a2f91cf1bbf8a7afbc283dec56"
+  integrity sha512-cPiFOTLUKvJFIg4SKVScy4ilPPW6rFgMgfuZJPNoDuMs3nC1HbMUycBoJw77xFIp6z1UJQJOfx6C9GMH80DiTw==
 
 source-map@^0.4.2:
   version "0.4.4"
@@ -5461,9 +5453,9 @@ type@^1.0.1:
   integrity sha512-+5nt5AAniqsCnu2cEQQdpzCAh33kVx8n0VoFidKpB1dVVLAN/F+bgVOqOJqOnEnrhp222clB5p3vUlD+1QAnfg==
 
 type@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/type/-/type-2.1.0.tgz#9bdc22c648cf8cf86dd23d32336a41cfb6475e3f"
-  integrity sha512-G9absDWvhAWCV2gmF1zKud3OyC61nZDwWvBL2DApaVFogI07CprggiQAOOjvp2NRjYWFzPyu7vwtDrQFq8jeSA==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/type/-/type-2.5.0.tgz#0a2e78c2e77907b252abe5f298c1b01c63f0db3d"
+  integrity sha512-180WMDQaIMm3+7hGXWf12GtdniDEy7nYcyFMKJn/eZz/6tSLXrUN9V0wKSbMjej0I1WHWbpREDEKHtqPQa9NNw==
 
 typedarray@^0.0.6:
   version "0.0.6"
@@ -5568,9 +5560,9 @@ uuid@^3.3.2:
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 uuid@^8.2.0:
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
-  integrity sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8flags@^3.1.1:
   version "3.2.0"
