@@ -622,7 +622,7 @@ export var generate = function generate(baseSpacing, scale) {
       //   margin-bottom: 0;
       //   color: ${colors.white};
       // `,
-      extend: "color: " + darkColors[0] + ";\n        font-weight: 400;",
+      extend: "\n        color: " + darkColors[0] + ";\n        margin-bottom: 0;\n        font-weight: 400;",
       gap: 'medium',
       hover: {
         border: {
