@@ -1524,12 +1524,12 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     pagination: {
+      pad: 'large',
       background: 'white',
       round: 'small',
       border: {
         color: 'light-3'
       },
-      pad: 'xsmall',
       active: {
         background: colors.brand,
         color: 'white'
@@ -1543,7 +1543,9 @@ export var generate = function generate(baseSpacing, scale) {
       },
       icon: {
         bgColor: 'white',
-        pad: 'xsmall'
+        pad: {
+          horizontal: 'large'
+        }
       }
     },
     notification: {

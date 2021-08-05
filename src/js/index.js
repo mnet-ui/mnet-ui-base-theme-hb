@@ -1383,12 +1383,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     pagination: {
+      pad: 'large',
       background: 'white',
       round: 'small',
       border: {
         color: 'light-3',
       },
-      pad: 'xsmall',
       active: {
         background: colors.brand,
         color: 'white',
@@ -1402,7 +1402,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icon: {
         bgColor: 'white',
-        pad: 'xsmall',
+        pad: { horizontal: 'large' },
       },
     },
     notification: {
