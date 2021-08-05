@@ -1524,7 +1524,10 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     pagination: {
-      pad: 'large',
+      pad: {
+        horizontal: 'large',
+        vertical: 'small'
+      },
       background: 'white',
       round: 'small',
       border: {

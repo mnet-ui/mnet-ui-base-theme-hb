@@ -1383,7 +1383,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     pagination: {
-      pad: 'large',
+      pad: { horizontal: 'large', vertical: 'small' },
       background: 'white',
       round: 'small',
       border: {
