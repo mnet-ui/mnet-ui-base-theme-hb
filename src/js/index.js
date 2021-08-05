@@ -452,7 +452,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: { dark: 'accent-1', light: 'accent-1' },
         },
         color: 'dark-2',
-        // opacity: 0.8,
+        opacity: 0.8,
         primary: {
           background: 'brand',
           border: {

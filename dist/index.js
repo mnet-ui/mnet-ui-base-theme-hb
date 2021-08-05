@@ -544,7 +544,7 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         color: 'dark-2',
-        // opacity: 0.8,
+        opacity: 0.8,
         primary: {
           background: 'brand',
           border: {
