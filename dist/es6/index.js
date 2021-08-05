@@ -475,6 +475,9 @@ export var generate = function generate(baseSpacing, scale) {
         light: undefined
       },
       "default": {},
+      extend: function extend(props) {
+        return "\n        " + (props.disabled && "color: " + darkColors[1]) + "\n      ";
+      },
       primary: {
         background: 'brand',
         border: {
@@ -529,9 +532,6 @@ export var generate = function generate(baseSpacing, scale) {
           }
         },
         color: 'dark-2',
-        extend: {
-          color: 'dark-2'
-        },
         opacity: 0.8,
         primary: {
           background: 'brand',
