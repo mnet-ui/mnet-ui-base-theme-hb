@@ -1502,6 +1502,7 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     tooptip: {
+      showArrow: false,
       background: 'white',
       color: 'dark-1',
       tipSize: '5px',

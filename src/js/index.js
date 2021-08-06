@@ -1364,6 +1364,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // placeholder: {},
     },
     tooptip: {
+      showArrow: false,
       background: 'white',
       color: 'dark-1',
       tipSize: '5px',
