@@ -22,7 +22,7 @@ var TickCircle = NeoComponents.TickCircle,
     AlertTriangle = NeoComponents.AlertTriangle;
 Tick.notSvg = true;
 var brandColor = '#3367D6';
-var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C'];
+var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
   critical: '#DB4545',
