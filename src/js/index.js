@@ -16,7 +16,7 @@ const {
 Tick.notSvg = true;
 
 const brandColor = '#3367D6';
-const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
+const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#DB4545',
@@ -53,6 +53,7 @@ const lightColors = [
   '#E0E0E0',
   '#C9CBCE',
   '#F3F4F4',
+  '#B7B7B7',
 ];
 const focusColor = '#B1C2FE';
 
