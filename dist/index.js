@@ -469,6 +469,9 @@ var generate = function generate(baseSpacing, scale) {
         light: undefined
       },
       "default": {},
+      extend: function extend(props) {
+        return "\n        " + (props.disabled && "color: " + darkColors[1]) + "\n      ";
+      },
       primary: {
         background: 'brand',
         border: {
@@ -1493,6 +1496,7 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     tooptip: {
+      showArrow: false,
       background: 'white',
       color: 'dark-1',
       tipSize: '5px',
@@ -1515,12 +1519,15 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     pagination: {
+      pad: {
+        horizontal: 'large',
+        vertical: 'small'
+      },
       background: 'white',
       round: 'small',
       border: {
         color: 'light-3'
       },
-      pad: 'xsmall',
       active: {
         background: colors.brand,
         color: 'white'
@@ -1534,7 +1541,9 @@ var generate = function generate(baseSpacing, scale) {
       },
       icon: {
         bgColor: 'white',
-        pad: 'xsmall'
+        pad: {
+          horizontal: 'large'
+        }
       }
     },
     notification: {

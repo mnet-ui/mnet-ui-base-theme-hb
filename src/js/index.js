@@ -411,6 +411,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       color: { dark: undefined, light: undefined },
       default: {},
+      extend: props => `
+        ${props.disabled && `color: ${darkColors[1]}`}
+      `,
       primary: {
         background: 'brand',
         border: {
@@ -1362,6 +1365,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // placeholder: {},
     },
     tooptip: {
+      showArrow: false,
       background: 'white',
       color: 'dark-1',
       tipSize: '5px',
@@ -1381,12 +1385,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     pagination: {
+      pad: { horizontal: 'large', vertical: 'small' },
       background: 'white',
       round: 'small',
       border: {
         color: 'light-3',
       },
-      pad: 'xsmall',
       active: {
         background: colors.brand,
         color: 'white',
@@ -1400,7 +1404,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icon: {
         bgColor: 'white',
-        pad: 'xsmall',
+        pad: { horizontal: 'large' },
       },
     },
     notification: {
