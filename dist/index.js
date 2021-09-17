@@ -50,7 +50,7 @@ var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
     AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
 Tick.notSvg = true;
-var brandColor = '#3367D6';
+var brandColor = 'pink';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
@@ -1641,9 +1641,9 @@ var generate = function generate(baseSpacing, scale) {
         pad: 'none'
       },
       icons: {
-        color: 'text-xweak',
-        previous: _mnetIcons.FormPrevious,
-        next: _mnetIcons.FormNext
+        color: 'text-xweak' // previous: FormPrevious,
+        // next: FormNext,
+
       }
     },
     notification: {

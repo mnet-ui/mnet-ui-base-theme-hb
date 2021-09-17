@@ -24,7 +24,7 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { HbAdminComponents, NeoComponents, FormNext, FormPrevious } from 'mnet-icons';
+import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
@@ -39,7 +39,7 @@ var TickCircle = NeoComponents.TickCircle,
     Error = NeoComponents.Error,
     AlertTriangle = NeoComponents.AlertTriangle;
 Tick.notSvg = true;
-var brandColor = '#3367D6';
+var brandColor = 'pink';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
@@ -1629,9 +1629,9 @@ export var generate = function generate(baseSpacing, scale) {
         pad: 'none'
       },
       icons: {
-        color: 'text-xweak',
-        previous: FormPrevious,
-        next: FormNext
+        color: 'text-xweak' // previous: FormPrevious,
+        // next: FormNext,
+
       }
     },
     notification: {

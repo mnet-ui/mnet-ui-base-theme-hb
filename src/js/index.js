@@ -1,8 +1,6 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import {
-  HbAdminComponents, NeoComponents, FormNext, FormPrevious,
-} from 'mnet-icons';
+import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
@@ -17,7 +15,7 @@ const {
 
 Tick.notSvg = true;
 
-const brandColor = '#3367D6';
+const brandColor = 'pink';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
@@ -1483,8 +1481,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icons: {
         color: 'text-xweak',
-        previous: FormPrevious,
-        next: FormNext,
+        // previous: FormPrevious,
+        // next: FormNext,
       },
     },
     notification: {
