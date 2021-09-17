@@ -1,6 +1,8 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { HbAdminComponents, NeoComponents } from 'mnet-icons';
+import {
+  HbAdminComponents, NeoComponents, FormNext, FormPrevious,
+} from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
@@ -1384,7 +1386,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
     },
-    pagination: {
+    mnetPagination: {
       pad: { horizontal: 'large', vertical: 'small' },
       background: 'white',
       round: 'small',
@@ -1405,6 +1407,84 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       icon: {
         bgColor: 'white',
         pad: { horizontal: 'large' },
+      },
+    },
+    pagination: {
+      pad: { horizontal: 'large', vertical: 'small' },
+      round: 'small',
+      button: {
+        border: {
+          color: {
+            dark: 'light-4',
+            light: 'light-4',
+          },
+          width: '1px',
+        },
+        active: {
+          background: colors.brand,
+          color: 'white',
+        },
+        color: 'text-strong',
+        size: {
+          small: {
+            border: {
+              radius: `${baseSpacing / 8}px`, // 3
+              width: '2px',
+            },
+            pad: {
+              vertical: '8px',
+              horizontal: '8px',
+            },
+            font: { ...fontSizing(-1) },
+            height: `${baseSpacing * 1.25}px`,
+            width: `${baseSpacing * 1.25}px`,
+          },
+          medium: {
+            border: {
+              width: '2px',
+              color: 'light-3',
+              side: 'right',
+            },
+            pad: {
+              vertical: '8px',
+              horizontal: '8px',
+            },
+            font: { ...fontSizing(0) },
+            height: `${baseSpacing * 2}px`,
+            width: `${baseSpacing * 2}px`,
+          },
+          large: {
+            border: {
+              radius: `${baseSpacing / 4}px`, // 6
+              width: '2px',
+            },
+            pad: {
+              vertical: '4px',
+              horizontal: '4px',
+            },
+            font: { ...fontSizing(1) },
+            height: `${baseSpacing * 2}px`,
+            width: `${baseSpacing * 2}px`,
+          },
+
+        },
+      },
+      // container: {
+      //   // any box props,
+      //   extend: undefined,
+      // },
+      controls: {
+        align: 'center',
+        justify: 'center',
+        direction: 'row',
+        // gap: 'small',
+        margin: 'none',
+        pad: 'none',
+      },
+      icons: {
+        color: 'text-xweak',
+        previous: FormPrevious,
+        next: FormNext,
       },
     },
     notification: {
