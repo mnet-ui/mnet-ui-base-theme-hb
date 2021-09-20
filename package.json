@@ -18,6 +18,9 @@
     "polished": "^3.4.1",
     "styled-components": "^4.0.0"
   },
+  "resolutions": {
+    "set-value": "4.0.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
@@ -43,7 +46,8 @@
     "prepublishOnly": "npm run build",
     "build": "cross-env babel ./src/js/ --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --copy-files",
     "watch": "cross-env babel ./src/js/ --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --watch --out-dir ./dist/es6 --copy-files",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "preinstall": "npx npm-force-resolutions"
   },
   "pre-commit": [
     "lint"
