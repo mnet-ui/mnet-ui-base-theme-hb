@@ -15,7 +15,7 @@ var _colors = require("mnet-ui-base/utils/colors");
 
 var _mixins = require("mnet-ui-base/utils/mixins");
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _templateObject, _templateObject2, _templateObject3;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1552,42 +1552,77 @@ var generate = function generate(baseSpacing, scale) {
         vertical: 'small'
       },
       round: 'small',
+      control: {
+        extend: function extend(props) {
+          return (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              pad\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "])), (0, _colors.normalizeColor)('light-4', props.theme), (0, _colors.normalizeColor)('light-4', props.theme));
+        }
+      },
       button: {
-        border: {
-          color: {
-            dark: 'light-4',
-            light: 'light-4'
-          },
-          width: controlBorderWidth + "px"
-        },
+        padding: 'none',
         active: {
           background: colors.brand,
-          color: 'white'
+          color: 'white',
+          border: {
+            width: '1px',
+            color: colors.brand
+          }
+        },
+        disabled: {
+          padding: 'none'
         },
         color: 'text-strong',
-        extend: (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            border-right: none;\n        "])))
+        size: {
+          small: {
+            border: {
+              radius: baseSpacing / 8 + "px",
+              width: '2px'
+            },
+            pad: {
+              vertical: '8px',
+              horizontal: '8px'
+            },
+            font: _extends({}, fontSizing(-1)),
+            height: baseSpacing * 1.25 + "px",
+            width: baseSpacing * 1.25 + "px"
+          },
+          medium: {
+            border: {
+              width: '2px',
+              color: 'light-3',
+              side: 'right'
+            },
+            pad: {
+              vertical: '8px',
+              horizontal: '8px'
+            },
+            font: _extends({}, fontSizing(0)),
+            height: baseSpacing * 2 + "px",
+            width: baseSpacing * 2 + "px"
+          },
+          large: {
+            border: {
+              radius: baseSpacing / 4 + "px",
+              width: '2px'
+            },
+            pad: {
+              vertical: '4px',
+              horizontal: '4px'
+            },
+            font: _extends({}, fontSizing(1)),
+            height: baseSpacing * 2 + "px",
+            width: baseSpacing * 2 + "px"
+          }
+        }
       },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
       controls: {
         align: 'center',
         justify: 'center',
         direction: 'row',
-        // gap: 'small',
         margin: 'none',
         pad: 'none'
       },
       icons: {
-        color: 'text-xweak' // previous: FormPrevious,
-        // next: FormNext,
-
-      },
-      control: {
-        extend: function extend(props) {
-          return (0, _styledComponents.css)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n        &:first-child {\n          border-radius: ", "px 0 0 ", "px;\n          border: ", "px solid ", ";\n          border-right: none;\n          & button {\n            border: none;\n            padding: 0px;\n          }\n        }\n        &:last-child {\n          border-radius: 0 ", "px ", "px 0;\n          border: ", "px solid ", ";\n          & button {\n            border: none;\n            padding: 0px;\n          }\n        }\n      "])), baseSpacing / 4, baseSpacing / 4, controlBorderWidth, (0, _colors.normalizeColor)('light-4', props.theme), baseSpacing / 4, baseSpacing / 4, controlBorderWidth, (0, _colors.normalizeColor)('light-4', props.theme));
-        }
+        color: 'text-xweak'
       }
     },
     notification: {
