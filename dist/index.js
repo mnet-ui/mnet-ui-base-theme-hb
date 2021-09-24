@@ -15,27 +15,9 @@ var _colors = require("mnet-ui-base/utils/colors");
 
 var _mixins = require("mnet-ui-base/utils/mixins");
 
-function _templateObject2() {
-  var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2, _templateObject3, _templateObject4;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _templateObject() {
-  var data = _taggedTemplateLiteralLoose(["\n        :focus {\n          outline: none;\n        }\n      "]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
@@ -901,7 +883,7 @@ var generate = function generate(baseSpacing, scale) {
       round: 'small'
     },
     mnet: {
-      global: (0, _styledComponents.css)(_templateObject())
+      global: (0, _styledComponents.css)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n        :focus {\n          outline: none;\n        }\n      "])))
     },
     heading: {
       font: {
@@ -1328,7 +1310,7 @@ var generate = function generate(baseSpacing, scale) {
     rangeInput: {
       track: {
         height: '4px',
-        color: (0, _styledComponents.css)(_templateObject2(), function (props) {
+        color: (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n          ", ";\n        "])), function (props) {
           return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
         })
       },
@@ -1576,57 +1558,14 @@ var generate = function generate(baseSpacing, scale) {
             dark: 'light-4',
             light: 'light-4'
           },
-          width: '1px'
+          width: controlBorderWidth + "px"
         },
         active: {
           background: colors.brand,
           color: 'white'
         },
         color: 'text-strong',
-        size: {
-          small: {
-            border: {
-              radius: baseSpacing / 8 + "px",
-              // 3
-              width: '2px'
-            },
-            pad: {
-              vertical: '8px',
-              horizontal: '8px'
-            },
-            font: _extends({}, fontSizing(-1)),
-            height: baseSpacing * 1.25 + "px",
-            width: baseSpacing * 1.25 + "px"
-          },
-          medium: {
-            border: {
-              width: '2px',
-              color: 'light-3',
-              side: 'right'
-            },
-            pad: {
-              vertical: '8px',
-              horizontal: '8px'
-            },
-            font: _extends({}, fontSizing(0)),
-            height: baseSpacing * 2 + "px",
-            width: baseSpacing * 2 + "px"
-          },
-          large: {
-            border: {
-              radius: baseSpacing / 4 + "px",
-              // 6
-              width: '2px'
-            },
-            pad: {
-              vertical: '4px',
-              horizontal: '4px'
-            },
-            font: _extends({}, fontSizing(1)),
-            height: baseSpacing * 2 + "px",
-            width: baseSpacing * 2 + "px"
-          }
-        }
+        extend: (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            border-right: none;\n        "])))
       },
       // container: {
       //   // any box props,
@@ -1644,6 +1583,11 @@ var generate = function generate(baseSpacing, scale) {
         color: 'text-xweak' // previous: FormPrevious,
         // next: FormNext,
 
+      },
+      control: {
+        extend: function extend(props) {
+          return (0, _styledComponents.css)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n        &:first-child {\n          border-radius: ", "px 0 0 ", "px;\n          border: ", "px solid ", ";\n          border-right: none;\n          & button {\n            border: none;\n            padding: 0px;\n          }\n        }\n        &:last-child {\n          border-radius: 0 ", "px ", "px 0;\n          border: ", "px solid ", ";\n          & button {\n            border: none;\n            padding: 0px;\n          }\n        }\n      "])), baseSpacing / 4, baseSpacing / 4, controlBorderWidth, (0, _colors.normalizeColor)('light-4', props.theme), baseSpacing / 4, baseSpacing / 4, controlBorderWidth, (0, _colors.normalizeColor)('light-4', props.theme));
+        }
       }
     },
     notification: {

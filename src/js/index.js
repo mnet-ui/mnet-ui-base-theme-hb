@@ -1416,56 +1416,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             dark: 'light-4',
             light: 'light-4',
           },
-          width: '1px',
+          width: `${controlBorderWidth}px`,
         },
         active: {
           background: colors.brand,
           color: 'white',
         },
         color: 'text-strong',
-        size: {
-          small: {
-            border: {
-              radius: `${baseSpacing / 8}px`, // 3
-              width: '2px',
-            },
-            pad: {
-              vertical: '8px',
-              horizontal: '8px',
-            },
-            font: { ...fontSizing(-1) },
-            height: `${baseSpacing * 1.25}px`,
-            width: `${baseSpacing * 1.25}px`,
-          },
-          medium: {
-            border: {
-              width: '2px',
-              color: 'light-3',
-              side: 'right',
-            },
-            pad: {
-              vertical: '8px',
-              horizontal: '8px',
-            },
-            font: { ...fontSizing(0) },
-            height: `${baseSpacing * 2}px`,
-            width: `${baseSpacing * 2}px`,
-          },
-          large: {
-            border: {
-              radius: `${baseSpacing / 4}px`, // 6
-              width: '2px',
-            },
-            pad: {
-              vertical: '4px',
-              horizontal: '4px',
-            },
-            font: { ...fontSizing(1) },
-            height: `${baseSpacing * 2}px`,
-            width: `${baseSpacing * 2}px`,
-          },
-
-        },
+        extend: css`
+            border-right: none;
+        `,
       },
       // container: {
       //   // any box props,
@@ -1483,6 +1443,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'text-xweak',
         // previous: FormPrevious,
         // next: FormNext,
+      },
+      control: {
+        extend: props => css`
+        &:first-child {
+          border-radius: ${baseSpacing / 4}px 0 0 ${baseSpacing / 4}px;
+          border: ${controlBorderWidth}px solid ${normalizeColor('light-4', props.theme)};
+          border-right: none;
+          & button {
+            border: none;
+            padding: 0px;
+          }
+        }
+        &:last-child {
+          border-radius: 0 ${baseSpacing / 4}px ${baseSpacing / 4}px 0;
+          border: ${controlBorderWidth}px solid ${normalizeColor('light-4', props.theme)};
+          & button {
+            border: none;
+            padding: 0px;
+          }
+        }
+      `,
       },
     },
     notification: {
