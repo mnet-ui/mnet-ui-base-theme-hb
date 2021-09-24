@@ -18,6 +18,9 @@
     "polished": "^3.4.1",
     "styled-components": "^4.0.0"
   },
+  "resolutions": {
+    "set-value": "4.0.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
