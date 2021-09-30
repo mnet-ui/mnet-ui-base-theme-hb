@@ -1,4 +1,4 @@
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1506,7 +1506,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       }
     },
-    mnetPagination: {
+    pagination: {
       pad: {
         horizontal: 'large',
         vertical: 'small'
@@ -1532,85 +1532,6 @@ export var generate = function generate(baseSpacing, scale) {
         pad: {
           horizontal: 'large'
         }
-      }
-    },
-    pagination: {
-      pad: {
-        horizontal: 'large',
-        vertical: 'small'
-      },
-      round: 'small',
-      control: {
-        extend: function extend(props) {
-          return css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              pad\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "])), normalizeColor('light-4', props.theme), normalizeColor('light-4', props.theme));
-        }
-      },
-      button: {
-        padding: 'none',
-        active: {
-          background: colors.brand,
-          color: 'white',
-          border: {
-            width: '1px',
-            color: colors.brand
-          }
-        },
-        disabled: {
-          padding: 'none'
-        },
-        color: 'text-strong',
-        size: {
-          small: {
-            border: {
-              radius: baseSpacing / 8 + "px",
-              width: '2px'
-            },
-            pad: {
-              vertical: '8px',
-              horizontal: '8px'
-            },
-            font: _extends({}, fontSizing(-1)),
-            height: baseSpacing * 1.25 + "px",
-            width: baseSpacing * 1.25 + "px"
-          },
-          medium: {
-            border: {
-              width: '2px',
-              color: 'light-3',
-              side: 'right'
-            },
-            pad: {
-              vertical: '8px',
-              horizontal: '8px'
-            },
-            font: _extends({}, fontSizing(0)),
-            height: baseSpacing * 2 + "px",
-            width: baseSpacing * 2 + "px"
-          },
-          large: {
-            border: {
-              radius: baseSpacing / 4 + "px",
-              width: '2px'
-            },
-            pad: {
-              vertical: '4px',
-              horizontal: '4px'
-            },
-            font: _extends({}, fontSizing(1)),
-            height: baseSpacing * 2 + "px",
-            width: baseSpacing * 2 + "px"
-          }
-        }
-      },
-      controls: {
-        align: 'center',
-        justify: 'center',
-        direction: 'row',
-        margin: 'none',
-        pad: 'none'
-      },
-      icons: {
-        color: 'text-xweak'
       }
     },
     notification: {
