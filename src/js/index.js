@@ -1145,6 +1145,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     radioButton: {
+      font: {
+        weight: 400,
+      },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',

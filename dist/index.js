@@ -1273,6 +1273,9 @@ var generate = function generate(baseSpacing, scale) {
       xxlarge: _extends({}, fontSizing(4))
     },
     radioButton: {
+      font: {
+        weight: 400
+      },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
