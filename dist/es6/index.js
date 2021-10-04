@@ -1465,8 +1465,28 @@ export var generate = function generate(baseSpacing, scale) {
         var plain = _ref4.plain,
             focus = _ref4.focus,
             reverse = _ref4.reverse,
-            icon = _ref4.icon;
-        return "\n        padding-top: 9px;\n        padding-bottom: 9px;\n        box-shadow: none;\n        height: 100%;\n        " + (!reverse && icon && 'padding-left: 32px;') + "\n        " + (!plain && "border: 1px solid " + lightColors[2] + ";") + "\n        border-bottom-width: 2px;\n        " + (focus && "border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;");
+            icon = _ref4.icon,
+            theme = _ref4.theme,
+            readOnly = _ref4.readOnly;
+        return _extends({
+          paddingTop: '9px',
+          paddingBottom: '9px',
+          fontWeight: 400,
+          fontSize: 'inherit',
+          boxShadow: 'none !important',
+          height: '100%',
+          paddingLeft: !reverse && icon ? '32px' : '16px',
+          border: !plain ? {
+            border: "1px solid " + ("" + normalizeColor('light-3', theme))
+          } : 'inherit',
+          borderBottomWidth: '2px'
+        }, focus ? {
+          borderColor: 'transparent',
+          borderBottom: "2px solid " + (!readOnly && normalizeColor('accent-3', theme)),
+          background: "" + (!readOnly && normalizeColor('light-1', theme)),
+          borderBottomRightRadius: '0px',
+          borderBottomLeftRadius: '0px'
+        } : {});
       },
       error: {
         icon: Info,
