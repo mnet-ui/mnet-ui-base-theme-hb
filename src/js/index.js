@@ -1145,6 +1145,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     radioButton: {
+      font: {
+        weight: 400,
+      },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
@@ -1328,20 +1331,31 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         `,
       },
       extend: ({
-        plain, focus, reverse, icon,
-      }) => `
-        padding-top: 9px;
-        padding-bottom: 9px;
-        box-shadow: none;
-        height: 100%;
-        ${(!reverse && icon) && 'padding-left: 32px;'}
-        ${!plain && `border: 1px solid ${lightColors[2]};`}
-        border-bottom-width: 2px;
-        ${focus && `border-color: transparent;
-        border-bottom: 2px solid ${statusColors.info};
-        background: ${lightColors[0]};
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;`}`,
+        plain, focus, reverse, icon, theme, readOnly,
+      }) => ({
+        paddingTop: '9px',
+        paddingBottom: '9px',
+        fontWeight: 400,
+        fontSize: 'inherit',
+        boxShadow: 'none !important',
+        height: '100%',
+        paddingLeft: !reverse && icon ? '32px' : '16px',
+        border: !plain ? { border: `1px solid ${`${normalizeColor('light-3', theme)}`}` } : 'inherit',
+        borderBottomWidth: '2px',
+        ...(focus
+          ? {
+            borderColor: 'transparent',
+            borderBottom: `2px solid ${
+              !readOnly && normalizeColor('accent-3', theme)
+            }`,
+            background: `${
+              !readOnly && normalizeColor('light-1', theme)
+            }`,
+            borderBottomRightRadius: '0px',
+            borderBottomLeftRadius: '0px',
+          }
+          : {}),
+      }),
       error: {
         icon: Info,
         text: {
