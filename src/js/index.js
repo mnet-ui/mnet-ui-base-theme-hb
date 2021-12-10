@@ -913,9 +913,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       includeBtn: {
         color: 'status-ok',
+        showIcon: true,
+        style: {
+          letterSpacing: '1.4px',
+        },
       },
       excludeBtn: {
         color: 'status-error',
+        showIcon: true,
+        style: {
+          letterSpacing: '1.4px',
+        },
       },
       option: {
         width: 'full',
@@ -1004,6 +1012,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           alignSelf: 'end',
           weight: '600',
           height: '30px',
+          style: {
+            letterSpacing: '1.4px',
+          },
         },
       },
       controls: {
