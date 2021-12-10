@@ -1061,14 +1061,14 @@ var generate = function generate(baseSpacing, scale) {
         color: 'status-ok',
         showIcon: true,
         style: {
-          letterSpacing: '1.4px'
+          letterSpacing: baseSpacing / 11 + "px"
         }
       },
       excludeBtn: {
         color: 'status-error',
         showIcon: true,
         style: {
-          letterSpacing: '1.4px'
+          letterSpacing: baseSpacing / 11 + "px"
         }
       },
       option: {
@@ -1162,10 +1162,10 @@ var generate = function generate(baseSpacing, scale) {
           color: 'dark-1',
           size: 'medium',
           alignSelf: 'end',
-          weight: '600',
-          height: '30px',
+          weight: 600,
+          height: baseSpacing * 1.88 + "px",
           style: {
-            letterSpacing: '1.4px'
+            letterSpacing: baseSpacing / 11 + "px"
           }
         }
       },
@@ -1203,7 +1203,7 @@ var generate = function generate(baseSpacing, scale) {
             color: 'light-3'
           },
           style: {
-            minHeight: '40px',
+            minHeight: baseSpacing * 2.5 + "px",
             position: 'relative'
           }
         },
@@ -1233,7 +1233,7 @@ var generate = function generate(baseSpacing, scale) {
           text: {
             color: 'dark-1',
             size: 'medium',
-            weight: '400'
+            weight: 400
           },
           count: {
             margin: {
@@ -1282,7 +1282,7 @@ var generate = function generate(baseSpacing, scale) {
               color: 'light-3'
             },
             height: {
-              min: '30px'
+              min: baseSpacing * 1.88 + "px"
             }
           }
         }

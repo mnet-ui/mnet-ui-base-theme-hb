@@ -915,14 +915,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'status-ok',
         showIcon: true,
         style: {
-          letterSpacing: '1.4px',
+          letterSpacing: `${baseSpacing / 11}px`,
         },
       },
       excludeBtn: {
         color: 'status-error',
         showIcon: true,
         style: {
-          letterSpacing: '1.4px',
+          letterSpacing: `${baseSpacing / 11}px`,
         },
       },
       option: {
@@ -1010,10 +1010,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: 'dark-1',
           size: 'medium',
           alignSelf: 'end',
-          weight: '600',
-          height: '30px',
+          weight: 600,
+          height: `${baseSpacing * 1.88}px`,
           style: {
-            letterSpacing: '1.4px',
+            letterSpacing: `${baseSpacing / 11}px`,
           },
         },
       },
@@ -1051,7 +1051,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             color: 'light-3',
           },
           style: {
-            minHeight: '40px',
+            minHeight: `${baseSpacing * 2.5}px`,
             position: 'relative',
           },
         },
@@ -1081,7 +1081,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           text: {
             color: 'dark-1',
             size: 'medium',
-            weight: '400',
+            weight: 400,
           },
           count: {
             margin: { left: 'small' },
@@ -1126,7 +1126,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               color: 'light-3',
             },
             height: {
-              min: '30px',
+              min: `${baseSpacing * 1.88}px`,
             },
           },
         },
