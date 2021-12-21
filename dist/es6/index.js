@@ -1,6 +1,34 @@
-var _templateObject, _templateObject2, _templateObject3;
+function _templateObject3() {
+  var data = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              pad\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\n        :focus {\n          outline: none;\n        }\n      "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
@@ -871,7 +899,7 @@ export var generate = function generate(baseSpacing, scale) {
       round: 'small'
     },
     mnet: {
-      global: css(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n        :focus {\n          outline: none;\n        }\n      "])))
+      global: css(_templateObject())
     },
     heading: {
       font: {
@@ -1018,10 +1046,18 @@ export var generate = function generate(baseSpacing, scale) {
         round: 'small'
       },
       includeBtn: {
-        color: 'status-ok'
+        color: 'status-ok',
+        showIcon: true,
+        style: {
+          letterSpacing: baseSpacing / 11 + "px"
+        }
       },
       excludeBtn: {
-        color: 'status-error'
+        color: 'status-error',
+        showIcon: true,
+        style: {
+          letterSpacing: baseSpacing / 11 + "px"
+        }
       },
       option: {
         width: 'full',
@@ -1114,8 +1150,11 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'dark-1',
           size: 'medium',
           alignSelf: 'end',
-          weight: '600',
-          height: '30px'
+          weight: 600,
+          height: baseSpacing * 1.88 + "px",
+          style: {
+            letterSpacing: baseSpacing / 11 + "px"
+          }
         }
       },
       controls: {
@@ -1152,7 +1191,7 @@ export var generate = function generate(baseSpacing, scale) {
             color: 'light-3'
           },
           style: {
-            minHeight: '40px',
+            minHeight: baseSpacing * 2.5 + "px",
             position: 'relative'
           }
         },
@@ -1182,7 +1221,7 @@ export var generate = function generate(baseSpacing, scale) {
           text: {
             color: 'dark-1',
             size: 'medium',
-            weight: '400'
+            weight: 400
           },
           count: {
             margin: {
@@ -1231,7 +1270,7 @@ export var generate = function generate(baseSpacing, scale) {
               color: 'light-3'
             },
             height: {
-              min: '30px'
+              min: baseSpacing * 1.88 + "px"
             }
           }
         }
@@ -1301,7 +1340,7 @@ export var generate = function generate(baseSpacing, scale) {
     rangeInput: {
       track: {
         height: '4px',
-        color: css(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n          ", ";\n        "])), function (props) {
+        color: css(_templateObject2(), function (props) {
           return rgba(normalizeColor('border', props.theme), 0.2);
         })
       },
@@ -1565,7 +1604,7 @@ export var generate = function generate(baseSpacing, scale) {
       round: 'small',
       control: {
         extend: function extend(props) {
-          return css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              pad\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "])), normalizeColor('light-4', props.theme), normalizeColor('light-4', props.theme));
+          return css(_templateObject3(), normalizeColor('light-4', props.theme), normalizeColor('light-4', props.theme));
         }
       },
       button: {
