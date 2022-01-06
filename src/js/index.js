@@ -1389,6 +1389,26 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
       // placeholder: {},
     },
+
+    tip: {
+      wrapper: {
+        contentWrap: {
+          align: 'center',
+          justify: 'center',
+        },
+        content: {
+          background: 'dark-1',
+          direction: 'row',
+          pad: { horizontal: 'large', vertical: 'medium' },
+          round: 'small',
+          width: 'medium',
+        },
+      },
+      drop: {
+        isTooltip: true,
+        shadow: 'none',
+      },
+    },
     tooptip: {
       showArrow: false,
       background: 'white',
