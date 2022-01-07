@@ -9,11 +9,11 @@ var _styledComponents = require("styled-components");
 
 var _mnetIcons = require("mnet-icons");
 
-var _object = require("mnet-ui-base/utils/object");
+var _object = require("grommet/utils/object");
 
-var _colors = require("mnet-ui-base/utils/colors");
+var _colors = require("grommet/utils/colors");
 
-var _mixins = require("mnet-ui-base/utils/mixins");
+var _mixins = require("grommet/utils/mixins");
 
 var _templateObject, _templateObject2, _templateObject3;
 

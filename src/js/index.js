@@ -2,9 +2,9 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/utils/object';
-import { normalizeColor } from 'mnet-ui-base/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
+import { deepFreeze } from 'grommet/utils/object';
+import { normalizeColor } from 'grommet/utils/colors';
+import { parseMetricToNum } from 'grommet/utils/mixins';
 
 const {
   UpArrow, DownArrow, Tick, Info, Success, Block, Close,
