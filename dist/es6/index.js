@@ -1,8 +1,8 @@
-var _templateObject, _templateObject2, _templateObject3;
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
@@ -12,7 +12,6 @@ import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';
 var UpArrow = HbAdminComponents.UpArrow,
     DownArrow = HbAdminComponents.DownArrow,
-    Tick = HbAdminComponents.Tick,
     Info = HbAdminComponents.Info,
     Success = HbAdminComponents.Success,
     Block = HbAdminComponents.Block,
@@ -20,7 +19,6 @@ var UpArrow = HbAdminComponents.UpArrow,
 var TickCircle = NeoComponents.TickCircle,
     Error = NeoComponents.Error,
     AlertTriangle = NeoComponents.AlertTriangle;
-Tick.notSvg = true;
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -299,9 +297,9 @@ export var generate = function generate(baseSpacing, scale) {
           size: '2px'
         }
       },
-      font: {
+      font: _extends({}, fontSizing(0), {
         family: "'Inter', sans-serif"
-      },
+      }),
       hover: {
         background: {
           color: 'active',
@@ -592,15 +590,14 @@ export var generate = function generate(baseSpacing, scale) {
         radius: '3px'
       },
       check: {
+        thickness: '2px',
         extend: function extend(_ref) {
           var checked = _ref.checked;
           return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n          color: white;\n        ";
-        },
-        radius: '4px',
-        thickness: '4px'
+        }
       },
       color: {
-        light: 'neutral-3',
+        light: 'white',
         dark: 'neutral-3'
       },
       // extend: () => `
@@ -619,8 +616,7 @@ export var generate = function generate(baseSpacing, scale) {
         extend: 'stroke: white;',
         color: colors.white
       },
-      icons: {
-        checked: Tick
+      icons: {// checked: Tick,
       },
       size: baseSpacing + "px",
       toggle: {
@@ -764,7 +760,7 @@ export var generate = function generate(baseSpacing, scale) {
     },
     formField: {
       border: {
-        color: 'border',
+        color: 'white',
         error: {
           color: {
             dark: 'white',
@@ -810,11 +806,6 @@ export var generate = function generate(baseSpacing, scale) {
           left: 'medium'
         }
       },
-      labelWrap: {
-        margin: 'none',
-        width: 'xxsmall',
-        direction: 'row'
-      },
       label: {
         weight: 400,
         margin: {
@@ -844,21 +835,11 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       extend: {
-        button: {
-          flex: 1
+        button: {// flex: 1,
         },
-        icon: Info,
-        iconProps: {
-          margin: {
-            horizontal: 'small'
-          },
-          size: 'large'
-        }
-      },
-      tooltip: {
-        extend: {
-          position: 'right-end',
-          background: '#FFFFFF'
+        input: {
+          boxShadow: 'none',
+          outline: 'none'
         },
         icon: Info,
         iconProps: {
@@ -869,9 +850,6 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       round: 'small'
-    },
-    mnet: {
-      global: css(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n        :focus {\n          outline: none;\n        }\n      "])))
     },
     heading: {
       font: {
@@ -1141,6 +1119,11 @@ export var generate = function generate(baseSpacing, scale) {
           margin: 'small'
         }
       },
+      labelWrap: {
+        pad: {
+          left: 'none'
+        }
+      },
       searchbox: {
         textWrapper: {
           flex: 'grow'
@@ -1169,7 +1152,8 @@ export var generate = function generate(baseSpacing, scale) {
         },
         placeholder: {
           color: 'dark-4',
-          size: 'medium'
+          size: 'medium' // margin: { left: 'large' },
+
         },
         icon: {
           size: 'small',
@@ -1312,7 +1296,7 @@ export var generate = function generate(baseSpacing, scale) {
     rangeInput: {
       track: {
         height: '4px',
-        color: css(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n          ", ";\n        "])), function (props) {
+        color: css(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n          ", ";\n        "])), function (props) {
           return rgba(normalizeColor('border', props.theme), 0.2);
         })
       },
@@ -1326,17 +1310,29 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     select: {
-      background: colors.white,
+      background: 'transparent',
       activeColor: 'light-1',
       container: {
         extend: null
       },
       control: {
         open: undefined,
-        extend: {
-          'border-bottom': "2px solid " + lightColors[2] + ";",
-          'text-align': 'left',
-          padding: '4px 10px 4px 0px'
+        extend: function extend(_ref4) {
+          var theme = _ref4.theme,
+              disabled = _ref4.disabled,
+              plain = _ref4.callerPlain;
+          return {
+            border: !plain && "1px solid " + normalizeColor('light-3', theme),
+            input: {
+              // color: normalizeColor('dark-4', theme),
+              fontWeight: 400,
+              padding: "0px " + theme.global.edgeSize.xsmall,
+              opacity: disabled ? 0.5 : 1
+            },
+            padding: theme.global.edgeSize.medium + " 10px",
+            background: 'white',
+            borderBottomWidth: !plain && theme.global.borderSize.small
+          };
         }
       },
       options: {
@@ -1352,10 +1348,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         color: 'dark-2',
-        margin: 'none',
-        pad: {
-          top: 'xsmall',
-          bottom: 'xsmall',
+        margin: {
           horizontal: 'small'
         },
         background: 'background-contrast',
@@ -1499,44 +1492,38 @@ export var generate = function generate(baseSpacing, scale) {
           return "\n          height: 100%;\n        ";
         }
       },
-      extend: function extend(_ref4) {
-        var plain = _ref4.plain,
-            focus = _ref4.focus,
-            reverse = _ref4.reverse,
-            icon = _ref4.icon,
-            theme = _ref4.theme,
-            readOnly = _ref4.readOnly;
-        return _extends({
-          paddingTop: '9px',
-          paddingBottom: '9px',
-          fontWeight: 400,
-          fontSize: 'inherit',
-          boxShadow: 'none !important',
+      placeholder: {
+        extend: function extend() {
+          return {
+            paddingLeft: '20px'
+          };
+        }
+      },
+      extend: function extend(_ref5) {
+        var plain = _ref5.plain,
+            reverse = _ref5.reverse,
+            icon = _ref5.icon,
+            theme = _ref5.theme,
+            readOnly = _ref5.readOnly;
+        return {
+          paddingTop: '11px',
+          paddingBottom: '11px',
           height: '100%',
-          paddingLeft: !reverse && icon ? '32px' : '16px',
+          paddingLeft: !reverse && icon ? theme.global.edgeSize.xlarge : theme.global.edgeSize.large,
           border: !plain ? {
-            border: "1px solid " + ("" + normalizeColor('light-3', theme))
+            border: theme.global.borderSize.xsmall + " solid " + ("" + normalizeColor('light-3', theme))
           } : 'inherit',
-          borderBottomWidth: '2px'
-        }, focus ? {
-          borderColor: 'transparent',
-          borderBottom: "2px solid " + (!readOnly && normalizeColor('accent-3', theme)),
-          background: "" + (!readOnly && normalizeColor('light-1', theme)),
-          borderBottomRightRadius: '0px',
-          borderBottomLeftRadius: '0px'
-        } : {});
-      },
-      error: {
-        icon: Info,
-        text: {
-          color: 'brand',
-          margin: {
-            vertical: 'small'
+          borderBottomWidth: theme.global.borderSize.small,
+          '&:focus': {
+            boxShadow: 'none',
+            borderColor: 'white',
+            borderBottom: theme.global.borderSize.small + " solid " + (!readOnly && normalizeColor('accent-3', theme)),
+            background: "" + (!readOnly && normalizeColor('light-1', theme)),
+            borderBottomRightRadius: '0px',
+            borderBottomLeftRadius: '0px'
           }
-        },
-        extend: "\n        border-bottom: 2px solid red;\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;"
+        };
       },
-      focus: "\n        border-color: transparent;\n        border-bottom: 2px solid " + statusColors.info + ";\n        background: " + lightColors[0] + ";\n        border-bottom-right-radius: 0px;\n        border-bottom-left-radius: 0px;\n      ",
       border: "1px solid " + lightColors[2] + ";" // disabled: { opacity: undefined },
       // placeholder: {},
 
@@ -1545,22 +1532,23 @@ export var generate = function generate(baseSpacing, scale) {
       wrapper: {
         contentWrap: {
           align: 'center',
-          justify: 'center'
+          justify: 'center',
+          elevation: 'xxlarge'
         },
         content: {
-          background: 'dark-1',
+          background: 'white',
           direction: 'row',
           pad: {
             horizontal: 'large',
             vertical: 'medium'
           },
-          round: 'small',
-          width: 'medium'
+          round: 'small' // width: 'medium',
+
         }
       },
       drop: {
-        isTooltip: true,
-        shadow: 'none'
+        isTooltip: true // shadow: 'none',
+
       }
     },
     tooptip: {
@@ -1622,7 +1610,7 @@ export var generate = function generate(baseSpacing, scale) {
       round: 'small',
       control: {
         extend: function extend(props) {
-          return css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              pad\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "])), normalizeColor('light-4', props.theme), normalizeColor('light-4', props.theme));
+          return css(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "])), normalizeColor('light-4', props.theme), normalizeColor('light-4', props.theme));
         }
       },
       button: {
@@ -1632,7 +1620,8 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'white',
           border: {
             width: '1px',
-            color: colors.brand
+            color: colors.brand,
+            radius: '0px'
           }
         },
         disabled: {
@@ -1687,7 +1676,8 @@ export var generate = function generate(baseSpacing, scale) {
         justify: 'center',
         direction: 'row',
         margin: 'none',
-        pad: 'none'
+        pad: 'none',
+        gap: 'none'
       },
       icons: {
         color: 'text-xweak'

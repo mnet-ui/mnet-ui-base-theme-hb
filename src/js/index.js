@@ -7,13 +7,11 @@ import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';
 
 const {
-  UpArrow, DownArrow, Tick, Info, Success, Block, Close,
+  UpArrow, DownArrow, Info, Success, Block, Close,
 } = HbAdminComponents;
 const {
   TickCircle, Error, AlertTriangle,
 } = NeoComponents;
-
-Tick.notSvg = true;
 
 const brandColor = '#3367D6';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
@@ -275,6 +273,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       font: {
+        ...fontSizing(0),
         family: "'Inter', sans-serif",
       },
       hover: {
@@ -523,6 +522,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: '3px',
       },
       check: {
+        thickness: '2px',
         extend: ({ checked }) => `
           ${checked && `background-color: ${colors.brand};`}
           border: unset;
@@ -530,11 +530,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           border-radius: 3px;
           color: white;
         `,
-        radius: '4px',
-        thickness: '4px',
       },
       color: {
-        light: 'neutral-3',
+        light: 'white',
         dark: 'neutral-3',
       },
       // extend: () => `
@@ -557,7 +555,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: colors.white,
       },
       icons: {
-        checked: Tick,
+        // checked: Tick,
       },
       size: `${baseSpacing}px`,
       toggle: {
@@ -677,7 +675,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     formField: {
       border: {
-        color: 'border',
+        color: 'white',
         error: {
           color: {
             dark: 'white',
@@ -717,11 +715,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'text-xweak',
         margin: { vertical: 'xsmall', left: 'medium' },
       },
-      labelWrap: {
-        margin: 'none',
-        width: 'xxsmall',
-        direction: 'row',
-      },
       label: {
         weight: 400,
         margin: {
@@ -744,18 +737,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       extend: {
         button: {
-          flex: 1,
+          // flex: 1,
         },
-        icon: Info,
-        iconProps: {
-          margin: { horizontal: 'small' },
-          size: 'large',
-        },
-      },
-      tooltip: {
-        extend: {
-          position: 'right-end',
-          background: '#FFFFFF',
+        input: {
+          boxShadow: 'none',
+          outline: 'none',
         },
         icon: Info,
         iconProps: {
@@ -764,13 +750,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       round: 'small',
-    },
-    mnet: {
-      global: css`
-        :focus {
-          outline: none;
-        }
-      `,
     },
     heading: {
       font: {
@@ -1029,6 +1008,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: 'small',
         },
       },
+      labelWrap: {
+        pad: { left: 'none' },
+      },
       searchbox: {
         textWrapper: {
           flex: 'grow',
@@ -1058,6 +1040,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         placeholder: {
           color: 'dark-4',
           size: 'medium',
+          // margin: { left: 'large' },
         },
         icon: {
           size: 'small',
@@ -1207,18 +1190,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     select: {
-      background: colors.white,
+      background: 'transparent',
       activeColor: 'light-1',
       container: {
         extend: null,
       },
       control: {
         open: undefined,
-        extend: {
-          'border-bottom': `2px solid ${lightColors[2]};`,
-          'text-align': 'left',
-          padding: '4px 10px 4px 0px',
-        },
+        extend: ({
+          theme, disabled, callerPlain: plain,
+        }) => ({
+          border: !plain && `1px solid ${normalizeColor('light-3', theme)}`,
+          input: {
+            // color: normalizeColor('dark-4', theme),
+            fontWeight: 400,
+            padding: `0px ${theme.global.edgeSize.xsmall}`,
+            opacity: disabled ? 0.5 : 1,
+          },
+          padding: `${theme.global.edgeSize.medium} 10px`,
+          background: 'white',
+          borderBottomWidth: !plain && theme.global.borderSize.small,
+        }),
       },
       options: {
         container: {
@@ -1233,10 +1225,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icons: {
         color: 'dark-2',
-        margin: 'none',
-        pad: {
-          top: 'xsmall',
-          bottom: 'xsmall',
+        margin: {
           horizontal: 'small',
         },
         background: 'background-contrast',
@@ -1367,50 +1356,33 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           height: 100%;
         `,
       },
-      extend: ({
-        plain, focus, reverse, icon, theme, readOnly,
-      }) => ({
-        paddingTop: '9px',
-        paddingBottom: '9px',
-        fontWeight: 400,
-        fontSize: 'inherit',
-        boxShadow: 'none !important',
-        height: '100%',
-        paddingLeft: !reverse && icon ? '32px' : '16px',
-        border: !plain ? { border: `1px solid ${`${normalizeColor('light-3', theme)}`}` } : 'inherit',
-        borderBottomWidth: '2px',
-        ...(focus
-          ? {
-            borderColor: 'transparent',
-            borderBottom: `2px solid ${
-              !readOnly && normalizeColor('accent-3', theme)
-            }`,
-            background: `${
-              !readOnly && normalizeColor('light-1', theme)
-            }`,
-            borderBottomRightRadius: '0px',
-            borderBottomLeftRadius: '0px',
-          }
-          : {}),
-      }),
-      error: {
-        icon: Info,
-        text: {
-          color: 'brand',
-          margin: { vertical: 'small' },
-        },
-        extend: `
-        border-bottom: 2px solid red;
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;`,
+      placeholder: {
+        extend: () => ({
+          paddingLeft: '20px',
+        }),
       },
-      focus: `
-        border-color: transparent;
-        border-bottom: 2px solid ${statusColors.info};
-        background: ${lightColors[0]};
-        border-bottom-right-radius: 0px;
-        border-bottom-left-radius: 0px;
-      `,
+      extend: ({
+        plain, reverse, icon, theme, readOnly,
+      }) => ({
+        paddingTop: '11px',
+        paddingBottom: '11px',
+        height: '100%',
+        paddingLeft: !reverse && icon ? theme.global.edgeSize.xlarge : theme.global.edgeSize.large,
+        border: !plain ? { border: `${theme.global.borderSize.xsmall} solid ${`${normalizeColor('light-3', theme)}`}` } : 'inherit',
+        borderBottomWidth: theme.global.borderSize.small,
+        '&:focus': {
+          boxShadow: 'none',
+          borderColor: 'white',
+          borderBottom: `${theme.global.borderSize.small} solid ${
+            !readOnly && normalizeColor('accent-3', theme)
+          }`,
+          background: `${
+            !readOnly && normalizeColor('light-1', theme)
+          }`,
+          borderBottomRightRadius: '0px',
+          borderBottomLeftRadius: '0px',
+        },
+      }),
       border: `1px solid ${lightColors[2]};`,
       // disabled: { opacity: undefined },
       // placeholder: {},
@@ -1420,18 +1392,19 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         contentWrap: {
           align: 'center',
           justify: 'center',
+          elevation: 'xxlarge',
         },
         content: {
-          background: 'dark-1',
+          background: 'white',
           direction: 'row',
           pad: { horizontal: 'large', vertical: 'medium' },
           round: 'small',
-          width: 'medium',
+          // width: 'medium',
         },
       },
       drop: {
         isTooltip: true,
-        shadow: 'none',
+        // shadow: 'none',
       },
     },
     tooptip: {
@@ -1488,7 +1461,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               display: flex;
               align-items: center;
               justify-content: center;
-              pad
             }
             &:first-child {
               border-radius: 4px 0 0 4px;
@@ -1509,6 +1481,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           border: {
             width: '1px',
             color: colors.brand,
+            radius: '0px',
           },
         },
         disabled: {
@@ -1564,6 +1537,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         direction: 'row',
         margin: 'none',
         pad: 'none',
+        gap: 'none',
       },
       icons: {
         color: 'text-xweak',
