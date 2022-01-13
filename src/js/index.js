@@ -5,6 +5,8 @@ import { HbAdminComponents, NeoComponents } from 'mnet-icons';
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';
+import { FormNext } from 'grommet-icons/icons/FormNext';
+import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
 
 const {
   UpArrow, DownArrow, Info, Success, Block, Close,
@@ -522,7 +524,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: '3px',
       },
       check: {
-        thickness: '2px',
+        thickness: '3px',
         extend: ({ checked }) => `
           ${checked && `background-color: ${colors.brand};`}
           border: unset;
@@ -1207,8 +1209,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             padding: `0px ${theme.global.edgeSize.xsmall}`,
             opacity: disabled ? 0.5 : 1,
           },
-          padding: `${theme.global.edgeSize.medium} 10px`,
-          background: 'white',
+          padding: '10px',
+          background: 'transparent',
           borderBottomWidth: !plain && theme.global.borderSize.small,
         }),
       },
@@ -1367,6 +1369,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         paddingTop: '11px',
         paddingBottom: '11px',
         height: '100%',
+        fontSize: 'inherit',
         paddingLeft: !reverse && icon ? theme.global.edgeSize.xlarge : theme.global.edgeSize.large,
         border: !plain ? { border: `${theme.global.borderSize.xsmall} solid ${`${normalizeColor('light-3', theme)}`}` } : 'inherit',
         borderBottomWidth: theme.global.borderSize.small,
@@ -1488,6 +1491,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           padding: 'none',
         },
         color: 'text-strong',
+        hover: {
+          background: {
+            color: undefined,
+          },
+          color: undefined,
+        },
         size: {
           small: {
             border: {
@@ -1541,6 +1550,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icons: {
         color: 'text-xweak',
+        previous: FormPrevious,
+        next: FormNext,
       },
     },
     notification: {

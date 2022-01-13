@@ -15,6 +15,10 @@ var _colors = require("grommet/utils/colors");
 
 var _mixins = require("grommet/utils/mixins");
 
+var _FormNext = require("grommet-icons/icons/FormNext");
+
+var _FormPrevious = require("grommet-icons/icons/FormPrevious");
+
 var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
@@ -602,7 +606,7 @@ var generate = function generate(baseSpacing, scale) {
         radius: '3px'
       },
       check: {
-        thickness: '2px',
+        thickness: '3px',
         extend: function extend(_ref) {
           var checked = _ref.checked;
           return "\n          " + (checked && "background-color: " + colors.brand + ";") + "\n          border: unset;\n          box-shadow: unset;\n          border-radius: 3px;\n          color: white;\n        ";
@@ -1341,8 +1345,8 @@ var generate = function generate(baseSpacing, scale) {
               padding: "0px " + theme.global.edgeSize.xsmall,
               opacity: disabled ? 0.5 : 1
             },
-            padding: theme.global.edgeSize.medium + " 10px",
-            background: 'white',
+            padding: '10px',
+            background: 'transparent',
             borderBottomWidth: !plain && theme.global.borderSize.small
           };
         }
@@ -1521,6 +1525,7 @@ var generate = function generate(baseSpacing, scale) {
           paddingTop: '11px',
           paddingBottom: '11px',
           height: '100%',
+          fontSize: 'inherit',
           paddingLeft: !reverse && icon ? theme.global.edgeSize.xlarge : theme.global.edgeSize.large,
           border: !plain ? {
             border: theme.global.borderSize.xsmall + " solid " + ("" + (0, _colors.normalizeColor)('light-3', theme))
@@ -1640,6 +1645,12 @@ var generate = function generate(baseSpacing, scale) {
           padding: 'none'
         },
         color: 'text-strong',
+        hover: {
+          background: {
+            color: undefined
+          },
+          color: undefined
+        },
         size: {
           small: {
             border: {
@@ -1692,7 +1703,9 @@ var generate = function generate(baseSpacing, scale) {
         gap: 'none'
       },
       icons: {
-        color: 'text-xweak'
+        color: 'text-xweak',
+        previous: _FormPrevious.FormPrevious,
+        next: _FormNext.FormNext
       }
     },
     notification: {
