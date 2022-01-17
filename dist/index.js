@@ -1568,7 +1568,8 @@ var generate = function generate(baseSpacing, scale) {
           round: 'small',
           margin: 'xsmall',
           extend: {
-            boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)'
+            boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)',
+            maxWidth: '450px'
           }
         }
       },
