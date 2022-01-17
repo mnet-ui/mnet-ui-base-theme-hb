@@ -1533,6 +1533,7 @@ export var generate = function generate(baseSpacing, scale) {
     },
     tip: {
       wrapper: {
+        showArrow: false,
         caret: {
           extend: {
             filter: 'drop-shadow(0px 4px 5px rgb(0 0 0 / 0.2))'
@@ -1560,29 +1561,6 @@ export var generate = function generate(baseSpacing, scale) {
       drop: {
         isTooltip: true // shadow: 'none',
 
-      }
-    },
-    tooptip: {
-      showArrow: false,
-      background: 'white',
-      color: 'dark-1',
-      tipSize: '5px',
-      round: 'small',
-      maxWidth: '20%',
-      dropProps: {
-        left: 'right',
-        top: 'bottom'
-      },
-      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
-      pad: {
-        horizontal: 'large',
-        vertical: 'medium'
-      },
-      titleProps: {
-        weight: 'bold',
-        margin: {
-          vertical: 'medium'
-        }
       }
     },
     mnetPagination: {
