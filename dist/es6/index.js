@@ -1533,6 +1533,11 @@ export var generate = function generate(baseSpacing, scale) {
     },
     tip: {
       wrapper: {
+        caret: {
+          extend: {
+            filter: 'drop-shadow(0px 4px 5px rgb(0 0 0 / 0.2))'
+          }
+        },
         contentWrap: {
           align: 'center',
           justify: 'center',
@@ -1545,8 +1550,11 @@ export var generate = function generate(baseSpacing, scale) {
             horizontal: 'large',
             vertical: 'medium'
           },
-          round: 'small' // width: 'medium',
-
+          round: 'small',
+          margin: 'xsmall',
+          extend: {
+            boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)'
+          }
         }
       },
       drop: {
