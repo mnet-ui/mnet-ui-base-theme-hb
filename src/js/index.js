@@ -1438,31 +1438,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       drop: {
-        isTooltip: true,
         // shadow: 'none',
-      },
-    },
-    mnetPagination: {
-      pad: { horizontal: 'large', vertical: 'small' },
-      background: 'white',
-      round: 'small',
-      border: {
-        color: 'light-3',
-      },
-      active: {
-        background: colors.brand,
-        color: 'white',
-      },
-      list: {
-        border: {
-          color: 'light-3',
-          side: 'right',
-        },
-        color: 'dark-1',
-      },
-      icon: {
-        bgColor: 'white',
-        pad: { horizontal: 'large' },
       },
     },
     pagination: {
