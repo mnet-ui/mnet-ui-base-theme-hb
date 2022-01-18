@@ -1361,17 +1361,39 @@ export var generate = function generate(baseSpacing, scale) {
       step: 20
     },
     "switch": {
-      padding: baseSpacing * 0.625 + "px",
+      radioButton: {
+        hover: {
+          border: {
+            color: {
+              dark: 'brand',
+              light: 'brand'
+            }
+          }
+        }
+      },
+      option: {
+        pad: 'medium',
+        extend: function extend(_ref5) {
+          var theme = _ref5.theme;
+          return {
+            borderRight: "1px solid " + normalizeColor('light-3', theme),
+            '&:hover': {
+              borderColor: normalizeColor('light-3', theme)
+            }
+          };
+        }
+      },
       background: {
-        active: 'accent-1',
-        inactive: 'dark-3',
+        active: 'light-1',
+        inactive: 'white',
         disabled: {// active: 'dark-2',
           // inactive: undefined,
         }
       },
       text: {
-        active: 'white',
-        inactive: 'dark-2',
+        weight: 400,
+        active: 'status-info',
+        inactive: 'black',
         disabled: {// active: 'dark-3',
           // inactive: undefined,
         }
@@ -1380,7 +1402,10 @@ export var generate = function generate(baseSpacing, scale) {
         direction: 'row',
         gap: 'none',
         round: 'small',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        height: 'xxsmall',
+        border: 'light-3',
+        weight: 400
       },
       disabled: undefined
     },
@@ -1501,12 +1526,12 @@ export var generate = function generate(baseSpacing, scale) {
           };
         }
       },
-      extend: function extend(_ref5) {
-        var plain = _ref5.plain,
-            reverse = _ref5.reverse,
-            icon = _ref5.icon,
-            theme = _ref5.theme,
-            readOnly = _ref5.readOnly;
+      extend: function extend(_ref6) {
+        var plain = _ref6.plain,
+            reverse = _ref6.reverse,
+            icon = _ref6.icon,
+            theme = _ref6.theme,
+            readOnly = _ref6.readOnly;
         return {
           paddingTop: '11px',
           paddingBottom: '11px',

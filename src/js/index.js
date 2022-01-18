@@ -1238,18 +1238,37 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       step: 20,
     },
     switch: {
-      padding: `${baseSpacing * 0.625}px`,
+      radioButton: {
+        hover: {
+          border: {
+            color: {
+              dark: 'brand',
+              light: 'brand',
+            },
+          },
+        },
+      },
+      option: {
+        pad: 'medium',
+        extend: ({ theme }) => ({
+          borderRight: `1px solid ${normalizeColor('light-3', theme)}`,
+          '&:hover': {
+            borderColor: normalizeColor('light-3', theme),
+          },
+        }),
+      },
       background: {
-        active: 'accent-1',
-        inactive: 'dark-3',
+        active: 'light-1',
+        inactive: 'white',
         disabled: {
           // active: 'dark-2',
           // inactive: undefined,
         },
       },
       text: {
-        active: 'white',
-        inactive: 'dark-2',
+        weight: 400,
+        active: 'status-info',
+        inactive: 'black',
         disabled: {
           // active: 'dark-3',
           // inactive: undefined,
@@ -1260,6 +1279,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         gap: 'none',
         round: 'small',
         overflow: 'hidden',
+        height: 'xxsmall',
+        border: 'light-3',
+        weight: 400,
       },
       disabled: undefined,
     },
