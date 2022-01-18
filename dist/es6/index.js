@@ -1363,12 +1363,7 @@ export var generate = function generate(baseSpacing, scale) {
     "switch": {
       radioButton: {
         hover: {
-          border: {
-            color: {
-              dark: 'brand',
-              light: 'brand'
-            }
-          }
+          border: 'none'
         }
       },
       option: {
