@@ -1011,7 +1011,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       labelWrap: {
-        pad: { left: 'none' },
+        pad: { left: 'none', vertical: 'small' },
       },
       searchbox: {
         textWrapper: {
@@ -1209,7 +1209,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             padding: `0px ${theme.global.edgeSize.xsmall}`,
             opacity: disabled ? 0.5 : 1,
           },
-          padding: '10px',
+          padding: '8px',
           background: 'transparent',
           borderBottomWidth: !plain && theme.global.borderSize.small,
         }),
