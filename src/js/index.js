@@ -1011,7 +1011,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       labelWrap: {
-        pad: { left: 'none', vertical: 'small' },
+        pad: { left: 'none' },
       },
       searchbox: {
         textWrapper: {
