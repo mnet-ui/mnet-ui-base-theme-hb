@@ -1123,7 +1123,8 @@ export var generate = function generate(baseSpacing, scale) {
       },
       labelWrap: {
         pad: {
-          left: 'none'
+          left: 'none',
+          vertical: 'small'
         }
       },
       searchbox: {
@@ -1331,7 +1332,7 @@ export var generate = function generate(baseSpacing, scale) {
               padding: "0px " + theme.global.edgeSize.xsmall,
               opacity: disabled ? 0.5 : 1
             },
-            padding: '10px',
+            padding: '8px',
             background: 'transparent',
             borderBottomWidth: !plain && theme.global.borderSize.small
           };
