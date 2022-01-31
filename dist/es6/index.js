@@ -1123,8 +1123,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       labelWrap: {
         pad: {
-          left: 'none',
-          vertical: 'small'
+          left: 'none'
         }
       },
       searchbox: {
