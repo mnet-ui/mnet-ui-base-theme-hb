@@ -11,8 +11,8 @@ Media.net Theme HB
 ## Usage
 
 ```
-import { MnetUIBase } from 'mnet-ui-base';
+import { Grommet } from 'grommet';
 import { hb } from 'mnet-ui-base-theme-hb';
 
-<MnetUIBase theme={hb} />
+<Grommet theme={hb} />
 ```
