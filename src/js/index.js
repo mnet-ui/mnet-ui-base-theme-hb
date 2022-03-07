@@ -16,7 +16,7 @@ const {
 } = NeoComponents;
 
 const brandColor = '#3367D6';
-const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
+const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3', '#FAFAFA'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#DB4545',
@@ -726,15 +726,19 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       margin: { bottom: 'small' },
       postfix: {
-        color: 'white',
-        background: 'dark-3',
+        // background: 'white',
+        color: 'dark-3',
         justify: 'center',
+        border: false,
+        margin: { horizontal: 'small' },
         pad: { horizontal: 'medium', vertical: 'medium' },
       },
       prefix: {
-        color: 'white',
-        background: 'dark-3',
+        // color: 'white',
+        color: 'dark-3',
         justify: 'center',
+        border: false,
+        margin: { horizontal: 'small' },
         pad: { horizontal: 'medium', vertical: 'medium' },
       },
       extend: {

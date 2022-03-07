@@ -35,7 +35,7 @@ var TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error,
     AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
 var brandColor = '#3367D6';
-var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3'];
+var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3', '#FAFAFA'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
   critical: '#DB4545',
@@ -833,18 +833,26 @@ var generate = function generate(baseSpacing, scale) {
         bottom: 'small'
       },
       postfix: {
-        color: 'white',
-        background: 'dark-3',
+        // background: 'white',
+        color: 'dark-3',
         justify: 'center',
+        border: false,
+        margin: {
+          horizontal: 'small'
+        },
         pad: {
           horizontal: 'medium',
           vertical: 'medium'
         }
       },
       prefix: {
-        color: 'white',
-        background: 'dark-3',
+        // color: 'white',
+        color: 'dark-3',
         justify: 'center',
+        border: false,
+        margin: {
+          horizontal: 'small'
+        },
         pad: {
           horizontal: 'medium',
           vertical: 'medium'
