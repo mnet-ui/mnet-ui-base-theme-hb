@@ -1096,12 +1096,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
           pad: 'medium',
           height: '100%',
-          extend: {
-            '*': {
-              border: 'none',
-              height: '100%',
-            },
-          },
+        },
+        formField: {
+          contentProps: { height: 'full', border: false },
+          height: 'full',
         },
         actions: {
           wrapper: {

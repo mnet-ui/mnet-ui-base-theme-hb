@@ -1216,13 +1216,14 @@ export var generate = function generate(baseSpacing, scale) {
             color: 'transparent'
           },
           pad: 'medium',
-          height: '100%',
-          extend: {
-            '*': {
-              border: 'none',
-              height: '100%'
-            }
-          }
+          height: '100%'
+        },
+        formField: {
+          contentProps: {
+            height: 'full',
+            border: false
+          },
+          height: 'full'
         },
         actions: {
           wrapper: {
