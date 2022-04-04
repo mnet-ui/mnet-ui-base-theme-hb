@@ -819,30 +819,40 @@ export var generate = function generate(baseSpacing, scale) {
         bottom: 'small'
       },
       postfix: {
-        // background: 'white',
-        color: 'dark-3',
+        color: 'white',
+        background: 'background-contrast',
         justify: 'center',
-        border: false,
-        margin: {
-          horizontal: 'small'
-        },
         pad: {
-          horizontal: 'medium',
+          horizontal: 'large',
           vertical: 'medium'
-        }
+        },
+        border: [{
+          side: 'horizontal',
+          color: 'border',
+          size: 'xsmall'
+        }, {
+          side: 'right',
+          color: 'border',
+          size: 'xsmall'
+        }]
       },
       prefix: {
-        // color: 'white',
-        color: 'dark-3',
+        color: 'white',
+        background: 'background-contrast',
         justify: 'center',
-        border: false,
-        margin: {
-          horizontal: 'small'
-        },
         pad: {
-          horizontal: 'medium',
+          horizontal: 'large',
           vertical: 'medium'
-        }
+        },
+        border: [{
+          side: 'horizontal',
+          color: 'border',
+          size: 'xsmall'
+        }, {
+          side: 'left',
+          color: 'border',
+          size: 'xsmall'
+        }]
       },
       extend: {
         button: {// flex: 1,
