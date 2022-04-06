@@ -251,7 +251,7 @@ var generate = function generate(baseSpacing, scale) {
           color: 'border'
         },
         disabled: {
-          opacity: 0.3
+          opacity: 0.5
         }
       },
       // The time to wait after the user stopped typing, measured in ms.
@@ -852,21 +852,24 @@ var generate = function generate(baseSpacing, scale) {
       },
       prefix: {
         color: 'white',
-        background: 'background-contrast',
+        background: 'transparent',
         justify: 'center',
         pad: {
           horizontal: 'large',
           vertical: 'medium'
-        },
-        border: [{
-          side: 'horizontal',
-          color: 'border',
-          size: 'xsmall'
-        }, {
-          side: 'left',
-          color: 'border',
-          size: 'xsmall'
-        }]
+        } // border: [
+        //   {
+        //     side: 'horizontal',
+        //     color: 'border',
+        //     size: 'xsmall',
+        //   },
+        //   {
+        //     side: 'left',
+        //     color: 'border',
+        //     size: 'xsmall',
+        //   },
+        // ],
+
       },
       extend: {
         button: {// flex: 1,

@@ -219,7 +219,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: 'border',
         },
         disabled: {
-          opacity: 0.3,
+          opacity: 0.5,
         },
       },
       // The time to wait after the user stopped typing, measured in ms.
@@ -727,39 +727,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       margin: { bottom: 'small' },
       postfix: {
         color: 'white',
-        background: 'background-contrast',
+        background: 'transparent',
         justify: 'center',
         pad: { horizontal: 'large', vertical: 'medium' },
-        border: [
-          {
-            side: 'horizontal',
-            color: 'border',
-            size: 'xsmall',
-          },
-          {
-            side: 'right',
-            color: 'border',
-            size: 'xsmall',
-          },
-        ],
       },
       prefix: {
         color: 'white',
-        background: 'background-contrast',
+        background: 'transparent',
         justify: 'center',
         pad: { horizontal: 'large', vertical: 'medium' },
-        border: [
-          {
-            side: 'horizontal',
-            color: 'border',
-            size: 'xsmall',
-          },
-          {
-            side: 'left',
-            color: 'border',
-            size: 'xsmall',
-          },
-        ],
       },
       extend: {
         button: {
