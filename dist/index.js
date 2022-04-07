@@ -834,21 +834,12 @@ var generate = function generate(baseSpacing, scale) {
       },
       postfix: {
         color: 'white',
-        background: 'background-contrast',
+        background: 'transparent',
         justify: 'center',
         pad: {
           horizontal: 'large',
           vertical: 'medium'
-        },
-        border: [{
-          side: 'horizontal',
-          color: 'border',
-          size: 'xsmall'
-        }, {
-          side: 'right',
-          color: 'border',
-          size: 'xsmall'
-        }]
+        }
       },
       prefix: {
         color: 'white',
@@ -857,19 +848,26 @@ var generate = function generate(baseSpacing, scale) {
         pad: {
           horizontal: 'large',
           vertical: 'medium'
-        } // border: [
-        //   {
-        //     side: 'horizontal',
-        //     color: 'border',
-        //     size: 'xsmall',
-        //   },
-        //   {
-        //     side: 'left',
-        //     color: 'border',
-        //     size: 'xsmall',
-        //   },
-        // ],
-
+        }
+      },
+      overlappedLabel: {
+        formField: {
+          extend: {
+            position: 'relative',
+            label: {
+              position: 'absolute',
+              left: baseSpacing * 0.5625 + "px",
+              top: "-" + baseSpacing * 0.75 + "px",
+              padding: '2px',
+              background: 'white',
+              fontSize: baseSpacing * 0.625 + "px",
+              zIndex: '1',
+              span: {
+                fontSize: baseSpacing * 0.625 + "px"
+              }
+            }
+          }
+        }
       },
       extend: {
         button: {// flex: 1,
