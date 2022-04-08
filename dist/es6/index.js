@@ -1201,7 +1201,14 @@ export var generate = function generate(baseSpacing, scale) {
             justify: 'center'
           }
         },
-        container: {}
+        container: {
+          extend: function extend(_ref4) {
+            var isEmpty = _ref4.isEmpty;
+            return {
+              padding: (isEmpty ? "" + baseSpacing / 1.6 : '0') + "px " + (isEmpty ? "" + baseSpacing : '0') + "px"
+            };
+          }
+        }
       },
       custom: {
         wrapper: {
@@ -1329,10 +1336,10 @@ export var generate = function generate(baseSpacing, scale) {
       },
       control: {
         open: undefined,
-        extend: function extend(_ref4) {
-          var theme = _ref4.theme,
-              disabled = _ref4.disabled,
-              plain = _ref4.callerPlain;
+        extend: function extend(_ref5) {
+          var theme = _ref5.theme,
+              disabled = _ref5.disabled,
+              plain = _ref5.callerPlain;
           return {
             border: !plain && "1px solid " + normalizeColor('light-3', theme),
             input: {
@@ -1378,8 +1385,8 @@ export var generate = function generate(baseSpacing, scale) {
       },
       option: {
         pad: 'medium',
-        extend: function extend(_ref5) {
-          var theme = _ref5.theme;
+        extend: function extend(_ref6) {
+          var theme = _ref6.theme;
           return {
             borderRight: "1px solid " + normalizeColor('light-3', theme),
             '&:hover': {
@@ -1531,12 +1538,12 @@ export var generate = function generate(baseSpacing, scale) {
           };
         }
       },
-      extend: function extend(_ref6) {
-        var plain = _ref6.plain,
-            reverse = _ref6.reverse,
-            icon = _ref6.icon,
-            theme = _ref6.theme,
-            readOnly = _ref6.readOnly;
+      extend: function extend(_ref7) {
+        var plain = _ref7.plain,
+            reverse = _ref7.reverse,
+            icon = _ref7.icon,
+            theme = _ref7.theme,
+            readOnly = _ref7.readOnly;
         return {
           paddingTop: '11px',
           paddingBottom: '11px',

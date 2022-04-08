@@ -1081,7 +1081,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
         },
         container: {
-
+          extend: ({ isEmpty }) => ({
+            padding: `${isEmpty ? `${baseSpacing / 1.6}` : '0'}px ${isEmpty ? `${baseSpacing}` : '0'}px`,
+          }),
         },
       },
       custom: {
