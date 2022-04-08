@@ -1080,6 +1080,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             justify: 'center',
           },
         },
+        container: {
+
+        },
       },
       custom: {
         wrapper: {

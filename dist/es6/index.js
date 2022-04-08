@@ -1200,7 +1200,8 @@ export var generate = function generate(baseSpacing, scale) {
             },
             justify: 'center'
           }
-        }
+        },
+        container: {}
       },
       custom: {
         wrapper: {
