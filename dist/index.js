@@ -7,7 +7,9 @@ var _polished = require("polished");
 
 var _styledComponents = require("styled-components");
 
-var _mnetIcons = require("mnet-icons");
+var _hb = require("mnet-icons/dist/hb");
+
+var _neo = require("mnet-icons/dist/neo");
 
 var _object = require("grommet/utils/object");
 
@@ -25,15 +27,6 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var UpArrow = _mnetIcons.HbAdminComponents.UpArrow,
-    DownArrow = _mnetIcons.HbAdminComponents.DownArrow,
-    Info = _mnetIcons.HbAdminComponents.Info,
-    Success = _mnetIcons.HbAdminComponents.Success,
-    Block = _mnetIcons.HbAdminComponents.Block,
-    Close = _mnetIcons.HbAdminComponents.Close;
-var TickCircle = _mnetIcons.NeoComponents.TickCircle,
-    Error = _mnetIcons.NeoComponents.Error,
-    AlertTriangle = _mnetIcons.NeoComponents.AlertTriangle;
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3', '#FAFAFA'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
@@ -865,7 +858,7 @@ var generate = function generate(baseSpacing, scale) {
           boxShadow: 'none',
           outline: 'none'
         },
-        icon: Info,
+        icon: _hb.Info,
         iconProps: {
           margin: {
             horizontal: 'small'
@@ -983,7 +976,7 @@ var generate = function generate(baseSpacing, scale) {
           color: 'dark-1'
         },
         close: {
-          icon: Close,
+          icon: _hb.Close,
           size: 'xxlarge',
           color: 'dark-2'
         }
@@ -1266,14 +1259,14 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         include: {
-          icon: Success,
+          icon: _hb.Success,
           extend: {
             color: 'status-ok',
             size: 'large'
           }
         },
         exclude: {
-          icon: Block,
+          icon: _hb.Block,
           extend: {
             color: 'status-error',
             size: 'large'
@@ -1386,8 +1379,8 @@ var generate = function generate(baseSpacing, scale) {
         },
         background: 'background-contrast',
         size: 'xlarge',
-        up: UpArrow,
-        down: DownArrow
+        up: _hb.UpArrow,
+        down: _hb.DownArrow
       },
       step: 20
     },
@@ -1704,17 +1697,17 @@ var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        closeIcon: Close,
+        closeIcon: _hb.Close,
         position: 'top-right',
         zIndex: 9999,
         width: '60%',
         timeout: 3000,
         icon: {
           size: 'xlarge',
-          "default": TickCircle,
-          ok: TickCircle,
-          error: Error,
-          warning: AlertTriangle,
+          "default": _neo.TickCircle,
+          ok: _neo.TickCircle,
+          error: _neo.Error,
+          warning: _neo.AlertTriangle,
           container: {
             margin: {
               right: 'medium'
@@ -1808,10 +1801,10 @@ var generate = function generate(baseSpacing, scale) {
         primary: 'accent-3'
       },
       icons: {
-        up: UpArrow,
-        down: DownArrow,
-        changeArrow: DownArrow,
-        close: Close
+        up: _hb.UpArrow,
+        down: _hb.DownArrow,
+        changeArrow: _hb.DownArrow,
+        close: _hb.Close
       }
     },
     upload: {

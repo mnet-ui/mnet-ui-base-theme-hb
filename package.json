@@ -13,7 +13,7 @@
     "url": "https://github.com/mnet-ui/mnet-ui-base-theme-hb.git"
   },
   "peerDependencies": {
-    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#temp-svg-icon",
     "grommet": "^2.19.1",
     "grommet-icons": "^4.7.0",
     "polished": "^3.4.1",
@@ -36,7 +36,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
-    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#temp-svg-icon",
     "grommet": "^2.19.1",
     "grommet-icons": "^4.7.0",
     "polished": "^3.4.1",
