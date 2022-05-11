@@ -251,7 +251,7 @@ var generate = function generate(baseSpacing, scale) {
           color: 'border'
         },
         disabled: {
-          opacity: 0.3
+          opacity: 0.5
         }
       },
       // The time to wait after the user stopped typing, measured in ms.
@@ -833,29 +833,40 @@ var generate = function generate(baseSpacing, scale) {
         bottom: 'small'
       },
       postfix: {
-        // background: 'white',
-        color: 'dark-3',
+        color: 'white',
+        background: 'transparent',
         justify: 'center',
-        border: false,
-        margin: {
-          horizontal: 'small'
-        },
         pad: {
-          horizontal: 'medium',
+          horizontal: 'large',
           vertical: 'medium'
         }
       },
       prefix: {
-        // color: 'white',
-        color: 'dark-3',
+        color: 'white',
+        background: 'transparent',
         justify: 'center',
-        border: false,
-        margin: {
-          horizontal: 'small'
-        },
         pad: {
-          horizontal: 'medium',
+          horizontal: 'large',
           vertical: 'medium'
+        }
+      },
+      overlappedLabel: {
+        formField: {
+          extend: {
+            position: 'relative',
+            label: {
+              position: 'absolute',
+              left: baseSpacing * 0.5625 + "px",
+              top: "-" + baseSpacing * 0.75 + "px",
+              padding: '2px',
+              background: 'white',
+              fontSize: baseSpacing * 0.625 + "px",
+              zIndex: '1',
+              span: {
+                fontSize: baseSpacing * 0.625 + "px"
+              }
+            }
+          }
         }
       },
       extend: {
