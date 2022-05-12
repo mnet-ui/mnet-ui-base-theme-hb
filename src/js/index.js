@@ -1,19 +1,15 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { HbAdminComponents, NeoComponents } from 'mnet-icons';
+import {
+  UpArrow, DownArrow, Info, Success, Block, Close,
+} from 'mnet-icons/dist/hb';
+import { TickCircle, Error, AlertTriangle } from 'mnet-icons/dist/neo';
 
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';
 import { FormNext } from 'grommet-icons/icons/FormNext';
 import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
-
-const {
-  UpArrow, DownArrow, Info, Success, Block, Close,
-} = HbAdminComponents;
-const {
-  TickCircle, Error, AlertTriangle,
-} = NeoComponents;
 
 const brandColor = '#3367D6';
 const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3', '#FAFAFA'];
