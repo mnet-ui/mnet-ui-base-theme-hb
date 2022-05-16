@@ -6,8 +6,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { UpArrow, DownArrow, Info, Success, Block, Close } from 'mnet-icons/dist/hb';
-import { TickCircle, Error, AlertTriangle } from 'mnet-icons/dist/neo';
+import { UpArrow } from 'mnet-icons/dist/HbAdmin/icons/UpArrow';
+import { DownArrow } from 'mnet-icons/dist/HbAdmin/icons/DownArrow';
+import { Info } from 'mnet-icons/dist/HbAdmin/icons/Info';
+import { Success } from 'mnet-icons/dist/HbAdmin/icons/Success';
+import { Block } from 'mnet-icons/dist/HbAdmin/icons/Block';
+import { Close } from 'mnet-icons/dist/HbAdmin/icons/Close';
+import { TickCircle } from 'mnet-icons/dist/Neo/icons/TickCircle';
+import { Error } from 'mnet-icons/dist/Neo/icons/Error';
+import { AlertTriangle } from 'mnet-icons/dist/Neo/icons/AlertTriangle';
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';

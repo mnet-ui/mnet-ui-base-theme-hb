@@ -2754,11 +2754,7 @@ mkdirp@^0.5.1:
 
 "mnet-icons@git+ssh://git@tree.mn:saumik.s/mnet-icons.git#tree-shaking-fix":
   version "0.0.1"
-  resolved "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#6027f543e42e20369dfcd0d3f8fa4c4656c6a4de"
-  dependencies:
-    prop-types "^15.7.2"
-    raw-loader "^4.0.1"
-    react-desc "^4.1.2"
+  resolved "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#f2eff0bc87103690048b8e50d4fdf5115293b7f3"
 
 ms@2.0.0:
   version "2.0.0"
