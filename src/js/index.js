@@ -1081,6 +1081,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               side: 'bottom',
               color: 'light-3',
             },
+            style: {
+              zIndex: 0,
+            },
           },
           text: {
             color: 'dark-1',

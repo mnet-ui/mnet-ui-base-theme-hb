@@ -1207,6 +1207,9 @@ var generate = function generate(baseSpacing, scale) {
             border: {
               side: 'bottom',
               color: 'light-3'
+            },
+            style: {
+              zIndex: 0
             }
           },
           text: {
