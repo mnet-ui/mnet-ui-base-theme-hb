@@ -1,5 +1,28 @@
 {
   "presets": [
     "./tools/grommet-babel-preset-env"
+  ],
+  "plugins": [
+    [
+      "transform-imports", 
+      {
+        "grommet-icons$": {
+          "transform": "grommet-icons/es6/icons/${member}",
+          "preventFullImport": true,
+          "skipDefaultConversion": true
+        },
+        "mnet-icons/dist/HbAdmin": {
+          "transform": "mnet-icons/dist/HbAdmin/icons/${member}",
+          "preventFullImport": true,
+          "skipDefaultConversion": true
+        },
+        "mnet-icons/dist/Neo": {
+          "transform": "mnet-icons/dist/Neo/icons/${member}",
+          "preventFullImport": true,
+          "skipDefaultConversion": true
+        }
+      }
+    ]
   ]
 }
+

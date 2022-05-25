@@ -6,21 +6,20 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { HbAdminComponents, NeoComponents } from 'mnet-icons';
+import { UpArrow } from "mnet-icons/dist/HbAdmin/icons/UpArrow";
+import { DownArrow } from "mnet-icons/dist/HbAdmin/icons/DownArrow";
+import { Info } from "mnet-icons/dist/HbAdmin/icons/Info";
+import { Success } from "mnet-icons/dist/HbAdmin/icons/Success";
+import { Block } from "mnet-icons/dist/HbAdmin/icons/Block";
+import { Close } from "mnet-icons/dist/HbAdmin/icons/Close";
+import { TickCircle } from "mnet-icons/dist/Neo/icons/TickCircle";
+import { Error } from "mnet-icons/dist/Neo/icons/Error";
+import { AlertTriangle } from "mnet-icons/dist/Neo/icons/AlertTriangle";
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';
-import { FormNext } from 'grommet-icons/icons/FormNext';
-import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
-var UpArrow = HbAdminComponents.UpArrow,
-    DownArrow = HbAdminComponents.DownArrow,
-    Info = HbAdminComponents.Info,
-    Success = HbAdminComponents.Success,
-    Block = HbAdminComponents.Block,
-    Close = HbAdminComponents.Close;
-var TickCircle = NeoComponents.TickCircle,
-    Error = NeoComponents.Error,
-    AlertTriangle = NeoComponents.AlertTriangle;
+import { FormNext } from "grommet-icons/es6/icons/FormNext";
+import { FormPrevious } from "grommet-icons/es6/icons/FormPrevious";
 var brandColor = '#3367D6';
 var accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC', '#EC7C7C', '#FFFDE3', '#FAFAFA'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
