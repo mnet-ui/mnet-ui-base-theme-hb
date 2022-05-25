@@ -6,17 +6,17 @@
     [
       "transform-imports", 
       {
-        "grommet-icons$": {
+        "grommet-icons": {
           "transform": "grommet-icons/es6/icons/${member}",
           "preventFullImport": true,
           "skipDefaultConversion": true
         },
-        "mnet-icons/dist/HbAdmin": {
+        "mnet-icons/HbAdmin": {
           "transform": "mnet-icons/dist/HbAdmin/icons/${member}",
           "preventFullImport": true,
           "skipDefaultConversion": true
         },
-        "mnet-icons/dist/Neo": {
+        "mnet-icons/Neo": {
           "transform": "mnet-icons/dist/Neo/icons/${member}",
           "preventFullImport": true,
           "skipDefaultConversion": true
