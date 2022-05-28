@@ -6,15 +6,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { UpArrow } from "mnet-icons/dist/HbAdmin/icons/UpArrow";
-import { DownArrow } from "mnet-icons/dist/HbAdmin/icons/DownArrow";
-import { Info } from "mnet-icons/dist/HbAdmin/icons/Info";
-import { Success } from "mnet-icons/dist/HbAdmin/icons/Success";
-import { Block } from "mnet-icons/dist/HbAdmin/icons/Block";
-import { Close } from "mnet-icons/dist/HbAdmin/icons/Close";
-import { TickCircle } from "mnet-icons/dist/Neo/icons/TickCircle";
-import { Error } from "mnet-icons/dist/Neo/icons/Error";
-import { AlertTriangle } from "mnet-icons/dist/Neo/icons/AlertTriangle";
+import { UpArrow } from "mnet-icons/dist/es6/icons/hb/UpArrow";
+import { DownArrow } from "mnet-icons/dist/es6/icons/hb/DownArrow";
+import { Info } from "mnet-icons/dist/es6/icons/hb/Info";
+import { Success } from "mnet-icons/dist/es6/icons/hb/Success";
+import { Block } from "mnet-icons/dist/es6/icons/hb/Block";
+import { Close } from "mnet-icons/dist/es6/icons/hb/Close";
+import { TickCircle } from "mnet-icons/dist/es6/icons/neo/TickCircle";
+import { Error } from "mnet-icons/dist/es6/icons/neo/Error";
+import { AlertTriangle } from "mnet-icons/dist/es6/icons/neo/AlertTriangle";
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';

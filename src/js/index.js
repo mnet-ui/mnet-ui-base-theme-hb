@@ -7,8 +7,8 @@ import {
   Success,
   Block,
   Close,
-} from 'mnet-icons/HbAdmin';
-import { TickCircle, Error, AlertTriangle } from 'mnet-icons/Neo';
+} from 'mnet-icons/hb';
+import { TickCircle, Error, AlertTriangle } from 'mnet-icons/neo';
 
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';

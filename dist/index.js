@@ -7,23 +7,23 @@ var _polished = require("polished");
 
 var _styledComponents = require("styled-components");
 
-var _UpArrow = require("mnet-icons/dist/HbAdmin/icons/UpArrow");
+var _UpArrow = require("mnet-icons/dist/es6/icons/hb/UpArrow");
 
-var _DownArrow = require("mnet-icons/dist/HbAdmin/icons/DownArrow");
+var _DownArrow = require("mnet-icons/dist/es6/icons/hb/DownArrow");
 
-var _Info = require("mnet-icons/dist/HbAdmin/icons/Info");
+var _Info = require("mnet-icons/dist/es6/icons/hb/Info");
 
-var _Success = require("mnet-icons/dist/HbAdmin/icons/Success");
+var _Success = require("mnet-icons/dist/es6/icons/hb/Success");
 
-var _Block = require("mnet-icons/dist/HbAdmin/icons/Block");
+var _Block = require("mnet-icons/dist/es6/icons/hb/Block");
 
-var _Close = require("mnet-icons/dist/HbAdmin/icons/Close");
+var _Close = require("mnet-icons/dist/es6/icons/hb/Close");
 
-var _TickCircle = require("mnet-icons/dist/Neo/icons/TickCircle");
+var _TickCircle = require("mnet-icons/dist/es6/icons/neo/TickCircle");
 
-var _Error = require("mnet-icons/dist/Neo/icons/Error");
+var _Error = require("mnet-icons/dist/es6/icons/neo/Error");
 
-var _AlertTriangle = require("mnet-icons/dist/Neo/icons/AlertTriangle");
+var _AlertTriangle = require("mnet-icons/dist/es6/icons/neo/AlertTriangle");
 
 var _object = require("grommet/utils/object");
 

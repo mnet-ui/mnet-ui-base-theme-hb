@@ -11,13 +11,13 @@
           "preventFullImport": true,
           "skipDefaultConversion": true
         },
-        "mnet-icons/HbAdmin": {
-          "transform": "mnet-icons/dist/HbAdmin/icons/${member}",
+        "mnet-icons/hb": {
+          "transform": "mnet-icons/dist/es6/icons/hb/${member}",
           "preventFullImport": true,
           "skipDefaultConversion": true
         },
-        "mnet-icons/Neo": {
-          "transform": "mnet-icons/dist/Neo/icons/${member}",
+        "mnet-icons/neo": {
+          "transform": "mnet-icons/dist/es6/icons/neo/${member}",
           "preventFullImport": true,
           "skipDefaultConversion": true
         }
