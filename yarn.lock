@@ -2799,9 +2799,9 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
-"mnet-icons@git+ssh://git@tree.mn:saumik.s/mnet-icons.git#bundle-ts":
+"mnet-icons@git+ssh://git@tree.mn:saumik.s/mnet-icons.git":
   version "0.0.1"
-  resolved "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#52236f9b1b1bc4c1b41b8ac3543de3d375120b66"
+  resolved "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#98011987ea930c13f494d4428113bc75c7cfaffe"
   dependencies:
     prop-types "^15.7.2"
     raw-loader "^4.0.1"
