@@ -15,7 +15,7 @@
   "peerDependencies": {
     "grommet": "^2.19.1",
     "grommet-icons": "^4.7.0",
-    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#export-testing",
     "polished": "^3.4.1",
     "styled-components": "^4.0.0"
   },
@@ -39,7 +39,7 @@
     "eslint-plugin-react": "^7.11.0",
     "grommet": "^2.19.1",
     "grommet-icons": "^4.7.0",
-    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#export-testing",
     "polished": "^3.4.1",
     "pre-commit": "^1.2.2",
     "react": "^16.5.2",
