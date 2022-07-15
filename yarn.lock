@@ -2801,11 +2801,7 @@ mkdirp@^0.5.1:
 
 "mnet-icons@git+ssh://git@tree.mn:saumik.s/mnet-icons.git#export-testing":
   version "0.0.1"
-  resolved "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#1627ea6cec981f1d2437b5f1ddfbbc921cc45918"
-  dependencies:
-    prop-types "^15.7.2"
-    raw-loader "^4.0.1"
-    react-desc "^4.1.2"
+  resolved "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#b76bbfe390a986ad4717838e6991d715ece8049e"
 
 ms@2.0.0:
   version "2.0.0"

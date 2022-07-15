@@ -6,8 +6,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { UpArrow, DownArrow, Info, Success, Block, Close } from 'mnet-icons/hb';
-import { TickCircle, Error } from 'mnet-icons/neo';
+import { UpArrow } from "mnet-icons/dist/es6/icons/hb/UpArrow";
+import { DownArrow } from "mnet-icons/dist/es6/icons/hb/DownArrow";
+import { Info } from "mnet-icons/dist/es6/icons/hb/Info";
+import { Success } from "mnet-icons/dist/es6/icons/hb/Success";
+import { Block } from "mnet-icons/dist/es6/icons/hb/Block";
+import { Close } from "mnet-icons/dist/es6/icons/hb/Close";
+import { TickCircle } from "mnet-icons/dist/es6/icons/neo/TickCircle";
+import { Error } from "mnet-icons/dist/es6/icons/neo/Error";
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';

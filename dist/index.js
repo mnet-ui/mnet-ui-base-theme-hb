@@ -7,9 +7,21 @@ var _polished = require("polished");
 
 var _styledComponents = require("styled-components");
 
-var _hb = require("mnet-icons/hb");
+var _UpArrow = require("mnet-icons/dist/es6/icons/hb/UpArrow");
 
-var _neo = require("mnet-icons/neo");
+var _DownArrow = require("mnet-icons/dist/es6/icons/hb/DownArrow");
+
+var _Info = require("mnet-icons/dist/es6/icons/hb/Info");
+
+var _Success = require("mnet-icons/dist/es6/icons/hb/Success");
+
+var _Block = require("mnet-icons/dist/es6/icons/hb/Block");
+
+var _Close = require("mnet-icons/dist/es6/icons/hb/Close");
+
+var _TickCircle = require("mnet-icons/dist/es6/icons/neo/TickCircle");
+
+var _Error = require("mnet-icons/dist/es6/icons/neo/Error");
 
 var _object = require("grommet/utils/object");
 
@@ -869,7 +881,7 @@ var generate = function generate(baseSpacing, scale) {
           boxShadow: 'none',
           outline: 'none'
         },
-        icon: _hb.Info,
+        icon: _Info.Info,
         iconProps: {
           margin: {
             horizontal: 'small'
@@ -987,7 +999,7 @@ var generate = function generate(baseSpacing, scale) {
           color: 'dark-1'
         },
         close: {
-          icon: _hb.Close,
+          icon: _Close.Close,
           size: 'xxlarge',
           color: 'dark-2'
         }
@@ -1273,14 +1285,14 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         include: {
-          icon: _hb.Success,
+          icon: _Success.Success,
           extend: {
             color: 'status-ok',
             size: 'large'
           }
         },
         exclude: {
-          icon: _hb.Block,
+          icon: _Block.Block,
           extend: {
             color: 'status-error',
             size: 'large'
@@ -1393,8 +1405,8 @@ var generate = function generate(baseSpacing, scale) {
         },
         background: 'background-contrast',
         size: 'xlarge',
-        up: _hb.UpArrow,
-        down: _hb.DownArrow
+        up: _UpArrow.UpArrow,
+        down: _DownArrow.DownArrow
       },
       step: 20
     },
@@ -1711,16 +1723,16 @@ var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        closeIcon: _hb.Close,
+        closeIcon: _Close.Close,
         position: 'top-right',
         zIndex: 9999,
         width: '60%',
         timeout: 3000,
         icon: {
           size: 'xlarge',
-          "default": _neo.TickCircle,
-          ok: _neo.TickCircle,
-          error: _neo.Error,
+          "default": _TickCircle.TickCircle,
+          ok: _TickCircle.TickCircle,
+          error: _Error.Error,
           warning: AlertTriangle,
           container: {
             margin: {
@@ -1815,10 +1827,10 @@ var generate = function generate(baseSpacing, scale) {
         primary: 'accent-3'
       },
       icons: {
-        up: _hb.UpArrow,
-        down: _hb.DownArrow,
-        changeArrow: _hb.DownArrow,
-        close: _hb.Close
+        up: _UpArrow.UpArrow,
+        down: _DownArrow.DownArrow,
+        changeArrow: _DownArrow.DownArrow,
+        close: _Close.Close
       }
     },
     upload: {
