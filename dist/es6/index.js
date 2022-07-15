@@ -14,6 +14,7 @@ import { Block } from "mnet-icons/dist/es6/icons/hb/Block";
 import { Close } from "mnet-icons/dist/es6/icons/hb/Close";
 import { TickCircle } from "mnet-icons/dist/es6/icons/neo/TickCircle";
 import { Error } from "mnet-icons/dist/es6/icons/neo/Error";
+import { AlertTriangle } from "mnet-icons/dist/es6/icons/neo/AlertTriangle";
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
 import { parseMetricToNum } from 'grommet/utils/mixins';

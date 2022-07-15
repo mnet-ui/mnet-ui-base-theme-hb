@@ -23,6 +23,8 @@ var _TickCircle = require("mnet-icons/dist/es6/icons/neo/TickCircle");
 
 var _Error = require("mnet-icons/dist/es6/icons/neo/Error");
 
+var _AlertTriangle = require("mnet-icons/dist/es6/icons/neo/AlertTriangle");
+
 var _object = require("grommet/utils/object");
 
 var _colors = require("grommet/utils/colors");
@@ -1733,7 +1735,7 @@ var generate = function generate(baseSpacing, scale) {
           "default": _TickCircle.TickCircle,
           ok: _TickCircle.TickCircle,
           error: _Error.Error,
-          warning: AlertTriangle,
+          warning: _AlertTriangle.AlertTriangle,
           container: {
             margin: {
               right: 'medium'
