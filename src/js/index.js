@@ -1234,7 +1234,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             padding: `0px ${theme.global.edgeSize.xsmall}`,
             opacity: disabled ? 0.5 : 1,
           },
-          padding: '8px',
+          padding: `${baseSpacing * 0.5 + 2}px ${baseSpacing * 0.5}px`,
           background: 'transparent',
           borderBottomWidth: !plain && theme.global.borderSize.small,
         }),
