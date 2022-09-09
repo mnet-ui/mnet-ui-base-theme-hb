@@ -114,6 +114,7 @@ const colors = {
   'selected-background': 'brand',
   'selected-text': 'text-strong',
   white: '#FFFFFF',
+  'error-scroll': '#EAC6C6',
 };
 
 const colorArray = (array, prefix) => array.forEach((color, index) => {
