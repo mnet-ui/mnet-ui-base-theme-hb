@@ -35,25 +35,7 @@ var _FormNext = require("grommet-icons/es6/icons/FormNext");
 
 var _FormPrevious = require("grommet-icons/es6/icons/FormPrevious");
 
-function _templateObject2() {
-  var data = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteralLoose(["\n          ", ";\n        "]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
+var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
@@ -963,6 +945,9 @@ var generate = function generate(baseSpacing, scale) {
       // when we scale the font size down
       weight: 600
     },
+    icon: {
+      size: undefined
+    },
     layer: {
       background: 'white',
       border: {
@@ -1368,7 +1353,7 @@ var generate = function generate(baseSpacing, scale) {
     rangeInput: {
       track: {
         height: '4px',
-        color: (0, _styledComponents.css)(_templateObject(), function (props) {
+        color: (0, _styledComponents.css)(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n          ", ";\n        "])), function (props) {
           return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
         })
       },
@@ -1660,7 +1645,7 @@ var generate = function generate(baseSpacing, scale) {
       round: 'small',
       control: {
         extend: function extend(props) {
-          return (0, _styledComponents.css)(_templateObject2(), (0, _colors.normalizeColor)('light-4', props.theme), (0, _colors.normalizeColor)('light-4', props.theme));
+          return (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n            border: 1px solid ", ";\n            border-right: none;\n            button {\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            }\n            &:first-child {\n              border-radius: 4px 0 0 4px;\n                        \n            }\n            &:last-child {\n              border-radius: 0 4px 4px 0;\n              border-right: 1px solid ", ";\n            }\n\n        "])), (0, _colors.normalizeColor)('light-4', props.theme), (0, _colors.normalizeColor)('light-4', props.theme));
         }
       },
       button: {
