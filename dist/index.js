@@ -19,11 +19,25 @@ var _Block = require("mnet-icons/dist/es6/icons/hb/Block");
 
 var _Close = require("mnet-icons/dist/es6/icons/hb/Close");
 
+var _RightArrow = require("mnet-icons/dist/es6/icons/hb/RightArrow");
+
+var _LeftArrow = require("mnet-icons/dist/es6/icons/hb/LeftArrow");
+
 var _TickCircle = require("mnet-icons/dist/es6/icons/neo/TickCircle");
 
 var _Error = require("mnet-icons/dist/es6/icons/neo/Error");
 
 var _AlertTriangle = require("mnet-icons/dist/es6/icons/neo/AlertTriangle");
+
+var _Help = require("mnet-icons/dist/es6/icons/neo/Help");
+
+var _Plus = require("mnet-icons/dist/es6/icons/neo/Plus");
+
+var _AscSort = require("mnet-icons/dist/es6/icons/neo/AscSort");
+
+var _DesSort = require("mnet-icons/dist/es6/icons/neo/DesSort");
+
+var _DefaultSort = require("mnet-icons/dist/es6/icons/neo/DefaultSort");
 
 var _object = require("grommet/utils/object");
 
@@ -1366,6 +1380,406 @@ var generate = function generate(baseSpacing, scale) {
         }
       }
     },
+    reporting: {
+      filters: {
+        menu: {
+          icons: {
+            color: 'brand',
+            size: 'xlarge',
+            icon: _Plus.Plus
+          },
+          item: {
+            disabled: {
+              extend: {
+                cursor: 'not-allowed'
+              }
+            },
+            hover: {
+              extend: function extend(_ref5) {
+                var theme = _ref5.theme;
+                return {
+                  color: (0, _colors.normalizeColor)('dark-1', theme)
+                };
+              }
+            },
+            extend: {
+              minWidth: baseSpacing * 10 + "px",
+              padding: baseSpacing / 4 + "px " + baseSpacing / 1.5 + "px",
+              fontSize: baseSpacing * 0.875 + "px"
+            }
+          },
+          list: {
+            extend: {
+              '&:hover': {
+                backgroundColor: 'transparent'
+              }
+            }
+          },
+          drop: {
+            maxHeight: baseSpacing * 12.5 + "px",
+            '& ::-webkit-scrollbar': {
+              width: '14px'
+            },
+            '& ::-webkit-scrollbar-thumb': {
+              border: '4px solid transparent',
+              borderRadius: '7px',
+              boxShadow: 'inset 0 0 0 10px',
+              color: darkColors[3]
+            },
+            '& ::-webkit-scrollbar-button': {
+              width: 0,
+              height: 0,
+              display: 'none'
+            },
+            '& ::-webkit-scrollbar-corner': {
+              backgroundColor: 'transparent'
+            }
+          }
+        },
+        tag: {
+          label: {
+            size: 'large',
+            margin: {
+              vertical: 'small'
+            }
+          },
+          state: {
+            disabled: {
+              cursor: 'not-allowed',
+              opacity: 0.4
+            }
+          },
+          selected: {
+            background: 'light-8',
+            pad: {
+              horizontal: 'large',
+              vertical: '0'
+            },
+            border: {
+              color: 'border'
+            },
+            round: 'small' // width: {
+            //   min: `${baseSpacing * 11.25}px`,
+            // },
+
+          },
+          subOpt: {
+            weight: 500,
+            size: 'large'
+          },
+          subOptNumber: {
+            margin: {
+              horizontal: 'medium'
+            },
+            pad: {
+              horizontal: 'small'
+            },
+            round: 'small',
+            background: 'brand',
+            extend: {
+              color: 'white',
+              fontWeight: 600
+            }
+          },
+          icons: {
+            "delete": _Close.Close,
+            disable: _Block.Block,
+            size: 'medium',
+            color: 'dark-3'
+          },
+          iconButtons: {
+            margin: {
+              left: baseSpacing / 2 + "px"
+            },
+            extend: {
+              paddingLeft: baseSpacing / 2 + "px"
+            }
+          },
+          options: {
+            time: {
+              wrapper: {
+                border: {
+                  side: 'vertical',
+                  color: 'border'
+                },
+                pad: {
+                  horizontal: 'medium'
+                },
+                background: 'white'
+              },
+              item: {
+                "switch": {
+                  container: {
+                    pad: '0',
+                    gap: 'medium'
+                  },
+                  option: {
+                    pad: {
+                      horizontal: 'small'
+                    },
+                    round: 'small'
+                  },
+                  text: {
+                    weight: 500,
+                    size: 'large',
+                    active: 'white',
+                    inactive: 'dark-3'
+                  }
+                }
+              }
+            }
+          },
+          dropdown: {
+            width: 'medium'
+          }
+        },
+        drop: {
+          selection: {
+            search: {
+              margin: '0',
+              extend: {
+                borderRadius: 0,
+                fontSize: baseSpacing * 0.875 + "px",
+                paddingLeft: baseSpacing * 2.25 + "px"
+              }
+            },
+            list: {
+              wrapper: {
+                border: {
+                  side: 'horizontal',
+                  size: 'xsmall'
+                },
+                height: {
+                  max: baseSpacing * 12.5 + "px"
+                },
+                extend: function extend(_ref6) {
+                  var theme = _ref6.theme;
+                  return {
+                    '::-webkit-scrollbar': {
+                      width: '14px'
+                    },
+                    '::-webkit-scrollbar-thumb': {
+                      border: '4px solid transparent',
+                      borderRadius: '7px',
+                      boxShadow: 'inset 0 0 0 10px',
+                      color: (0, _colors.normalizeColor)('dark-4', theme)
+                    },
+                    '::-webkit-scrollbar-button': {
+                      width: 0,
+                      height: 0,
+                      display: 'none'
+                    },
+                    '::-webkit-scrollbar-corner': {
+                      backgroundColor: 'transparent'
+                    }
+                  };
+                }
+              },
+              item: {
+                direction: 'row',
+                gap: baseSpacing / 2 + "px",
+                align: 'center',
+                margin: '0',
+                pad: {
+                  horizontal: 'medium',
+                  vertical: baseSpacing / 2 + "px"
+                },
+                extend: function extend(_ref7) {
+                  var theme = _ref7.theme;
+                  return {
+                    fontSize: baseSpacing * 0.875 + "px",
+                    '> label': {
+                      width: '100%'
+                    },
+                    '&:hover': {
+                      cursor: 'pointer',
+                      background: (0, _colors.normalizeColor)('active', theme)
+                    }
+                  };
+                }
+              },
+              icons: {
+                info: _Info.Info,
+                size: 'large',
+                color: 'accent-12'
+              }
+            },
+            incExc: {
+              wrapper: {
+                border: {
+                  size: 'xsmall',
+                  side: 'bottom',
+                  color: 'border'
+                },
+                margin: '0',
+                round: 'none',
+                overflow: 'hidden'
+              },
+              item: {
+                align: 'center',
+                pad: 'medium',
+                extend: function extend(_ref8) {
+                  var isActive = _ref8.isActive,
+                      theme = _ref8.theme;
+                  return {
+                    fontSize: baseSpacing * 0.875 + "px",
+                    fontWeight: '600',
+                    color: (0, _colors.normalizeColor)(isActive ? 'brand' : 'dark-1', theme),
+                    borderBottom: "3px solid " + (0, _colors.normalizeColor)(isActive ? 'brand' : 'transparent', theme)
+                  };
+                }
+              }
+            },
+            radioContainer: {
+              pad: 'medium',
+              item: {
+                gap: 'medium'
+              }
+            }
+          },
+          datepicker: {
+            container: {
+              border: {
+                side: 'bottom',
+                size: 'xsmall'
+              }
+            },
+            presets: {
+              wrapper: {
+                width: baseSpacing * 12.5 + "px",
+                border: {
+                  side: 'right',
+                  size: 'xsmall'
+                }
+              },
+              date: {
+                item: {
+                  "switch": {
+                    option: {
+                      width: '100%',
+                      pad: 'large',
+                      extend: function extend(_ref9) {
+                        var checked = _ref9.checked,
+                            theme = _ref9.theme;
+                        return {
+                          borderLeft: checked ? "3px solid " + (0, _colors.normalizeColor)('brand', theme) : '0',
+                          '&:hover': {
+                            background: (0, _colors.normalizeColor)('active', theme)
+                          }
+                        };
+                      }
+                    },
+                    container: {
+                      gap: 'none'
+                    },
+                    text: {
+                      weight: 600,
+                      size: 'large',
+                      active: 'brand',
+                      inactive: 'dark-1'
+                    },
+                    radioButton: {
+                      hover: {
+                        border: {
+                          color: {
+                            dark: 'brand',
+                            light: 'brand'
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                wrapper: {
+                  extend: function extend(_ref10) {
+                    var theme = _ref10.theme;
+                    return {
+                      'label, label>div': {
+                        width: '100%',
+                        margin: '0'
+                      },
+                      label: {
+                        borderBottom: "1px solid " + (0, _colors.normalizeColor)('border', theme)
+                      },
+                      input: {
+                        display: 'none'
+                      }
+                    };
+                  }
+                }
+              }
+            },
+            calendar: {
+              wrapper: {
+                pad: {
+                  horizontal: baseSpacing * 2 + "px",
+                  vertical: 'small'
+                }
+              },
+              selection: {
+                container: {
+                  align: 'center',
+                  pad: 'large',
+                  border: {
+                    side: 'bottom',
+                    size: 'xsmall'
+                  }
+                },
+                label: {
+                  color: 'dark-1',
+                  size: 'large'
+                }
+              },
+              header: {
+                container: {
+                  width: baseSpacing * 10 + "px",
+                  pad: {
+                    vertical: 'large'
+                  }
+                },
+                text: {
+                  size: 'large',
+                  color: 'dark-1',
+                  weight: 600
+                },
+                icons: {
+                  prev: _LeftArrow.LeftArrow,
+                  next: _RightArrow.RightArrow,
+                  color: 'dark-8',
+                  hover: function hover(_ref11) {
+                    var theme = _ref11.theme;
+                    return {
+                      background: (0, _colors.normalizeColor)('active', theme)
+                    };
+                  }
+                }
+              }
+            }
+          },
+          buttonPanel: {
+            container: {
+              pad: 'medium',
+              justify: 'start',
+              gap: 'xsmall'
+            },
+            button: {
+              secondary: false
+            }
+          }
+        }
+      },
+      dataTable: {
+        icons: {
+          size: 'large',
+          sort: {
+            "default": _DefaultSort.DefaultSort,
+            asc: _AscSort.AscSort,
+            desc: _DesSort.DesSort
+          },
+          tooltip: _Help.Help
+        }
+      }
+    },
     select: {
       background: 'transparent',
       activeColor: 'light-1',
@@ -1374,10 +1788,10 @@ var generate = function generate(baseSpacing, scale) {
       },
       control: {
         open: undefined,
-        extend: function extend(_ref5) {
-          var theme = _ref5.theme,
-              disabled = _ref5.disabled,
-              plain = _ref5.callerPlain;
+        extend: function extend(_ref12) {
+          var theme = _ref12.theme,
+              disabled = _ref12.disabled,
+              plain = _ref12.callerPlain;
           return {
             border: !plain && "1px solid " + (0, _colors.normalizeColor)('light-3', theme),
             input: {
@@ -1423,8 +1837,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       option: {
         pad: 'medium',
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref13) {
+          var theme = _ref13.theme;
           return {
             borderRight: "1px solid " + (0, _colors.normalizeColor)('light-3', theme),
             '&:hover': {
@@ -1576,12 +1990,12 @@ var generate = function generate(baseSpacing, scale) {
           };
         }
       },
-      extend: function extend(_ref7) {
-        var plain = _ref7.plain,
-            reverse = _ref7.reverse,
-            icon = _ref7.icon,
-            theme = _ref7.theme,
-            readOnly = _ref7.readOnly;
+      extend: function extend(_ref14) {
+        var plain = _ref14.plain,
+            reverse = _ref14.reverse,
+            icon = _ref14.icon,
+            theme = _ref14.theme,
+            readOnly = _ref14.readOnly;
         return {
           paddingTop: '11px',
           paddingBottom: '11px',
