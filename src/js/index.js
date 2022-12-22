@@ -823,6 +823,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
     },
+    icon: {
+      size: {
+        xsmall: fontSizing(-1.5)?.size,
+        small: fontSizing(-1)?.size,
+        medium: fontSizing(0)?.size, // 18px
+        large: fontSizing(1)?.size, // 22px
+        xlarge: fontSizing(2)?.size,
+        xxlarge: fontSizing(4)?.size,
+      },
+    },
     layer: {
       background: 'white',
       border: {

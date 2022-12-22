@@ -116,6 +116,8 @@ Object.keys(statusColors).forEach(function (color) {
   colors["status-" + color] = statusColors[color];
 });
 export var generate = function generate(baseSpacing, scale) {
+  var _fontSizing, _fontSizing2, _fontSizing3, _fontSizing4, _fontSizing5, _fontSizing6;
+
   if (baseSpacing === void 0) {
     baseSpacing = 16;
   }
@@ -922,6 +924,18 @@ export var generate = function generate(baseSpacing, scale) {
       responsiveBreakpoint: 'small',
       // when we scale the font size down
       weight: 600
+    },
+    icon: {
+      size: {
+        xsmall: (_fontSizing = fontSizing(-1.5)) == null ? void 0 : _fontSizing.size,
+        small: (_fontSizing2 = fontSizing(-1)) == null ? void 0 : _fontSizing2.size,
+        medium: (_fontSizing3 = fontSizing(0)) == null ? void 0 : _fontSizing3.size,
+        // 18px
+        large: (_fontSizing4 = fontSizing(1)) == null ? void 0 : _fontSizing4.size,
+        // 22px
+        xlarge: (_fontSizing5 = fontSizing(2)) == null ? void 0 : _fontSizing5.size,
+        xxlarge: (_fontSizing6 = fontSizing(4)) == null ? void 0 : _fontSizing6.size
+      }
     },
     layer: {
       background: 'white',
