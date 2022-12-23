@@ -1242,7 +1242,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         menu: {
           icons: {
             color: 'brand',
-            size: 'xlarge',
+            size: 'large',
             icon: Plus,
           },
           item: {
@@ -1294,7 +1294,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           label: {
             size: 'large',
             margin: {
-              vertical: 'small',
+              vertical: `${baseSpacing * 0.375}px`,
             },
           },
           state: {
@@ -1304,9 +1304,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             },
           },
           selected: {
-            background: 'light-8',
+            background: 'light-1',
             pad: {
-              horizontal: 'large',
+              horizontal: `${baseSpacing * 0.625}px`,
               vertical: '0',
             },
             border: {
@@ -1338,15 +1338,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           icons: {
             delete: Close,
             disable: Block,
-            size: 'medium',
+            size: 'xlarge',
             color: 'dark-3',
           },
           iconButtons: {
             margin: {
               left: `${baseSpacing / 2}px`,
-            },
-            extend: {
-              paddingLeft: `${baseSpacing / 2}px`,
             },
           },
           options: {
@@ -1363,21 +1360,32 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               },
               item: {
                 switch: {
+                  radioButton: {
+                    border: 'none',
+                  },
                   container: {
                     pad: '0',
                     gap: 'medium',
+                    border: false,
+                    height: `${baseSpacing * 2 - 2}px`,
                   },
                   option: {
                     pad: {
                       horizontal: 'small',
                     },
                     round: 'small',
+                    extend: {
+                      border: 'none',
+                    },
                   },
                   text: {
                     weight: 500,
                     size: 'large',
                     active: 'white',
-                    inactive: 'dark-3',
+                    inactive: 'dark-1',
+                    extend: {
+                      'line-height': '20px',
+                    },
                   },
                 },
               },
@@ -1432,8 +1440,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
                 align: 'center',
                 margin: '0',
                 pad: {
-                  horizontal: 'medium',
-                  vertical: `${baseSpacing / 2}px`,
+                  horizontal: `${baseSpacing * 0.625}px`,
+                  vertical: `${baseSpacing * 0.625}px`,
                 },
                 extend: ({ theme }) => ({
                   fontSize: `${baseSpacing * 0.875}px`,
@@ -1465,7 +1473,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               },
               item: {
                 align: 'center',
-                pad: 'medium',
+                pad: `${baseSpacing * 0.75}px`,
                 extend: ({ isActive, theme }) => ({
                   fontSize: `${baseSpacing * 0.875}px`,
                   fontWeight: '600',

@@ -1396,7 +1396,7 @@ var generate = function generate(baseSpacing, scale) {
         menu: {
           icons: {
             color: 'brand',
-            size: 'xlarge',
+            size: 'large',
             icon: _Plus.Plus
           },
           item: {
@@ -1451,7 +1451,7 @@ var generate = function generate(baseSpacing, scale) {
           label: {
             size: 'large',
             margin: {
-              vertical: 'small'
+              vertical: baseSpacing * 0.375 + "px"
             }
           },
           state: {
@@ -1461,9 +1461,9 @@ var generate = function generate(baseSpacing, scale) {
             }
           },
           selected: {
-            background: 'light-8',
+            background: 'light-1',
             pad: {
-              horizontal: 'large',
+              horizontal: baseSpacing * 0.625 + "px",
               vertical: '0'
             },
             border: {
@@ -1495,15 +1495,12 @@ var generate = function generate(baseSpacing, scale) {
           icons: {
             "delete": _Close.Close,
             disable: _Block.Block,
-            size: 'medium',
+            size: 'xlarge',
             color: 'dark-3'
           },
           iconButtons: {
             margin: {
               left: baseSpacing / 2 + "px"
-            },
-            extend: {
-              paddingLeft: baseSpacing / 2 + "px"
             }
           },
           options: {
@@ -1520,21 +1517,32 @@ var generate = function generate(baseSpacing, scale) {
               },
               item: {
                 "switch": {
+                  radioButton: {
+                    border: 'none'
+                  },
                   container: {
                     pad: '0',
-                    gap: 'medium'
+                    gap: 'medium',
+                    border: false,
+                    height: baseSpacing * 2 - 2 + "px"
                   },
                   option: {
                     pad: {
                       horizontal: 'small'
                     },
-                    round: 'small'
+                    round: 'small',
+                    extend: {
+                      border: 'none'
+                    }
                   },
                   text: {
                     weight: 500,
                     size: 'large',
                     active: 'white',
-                    inactive: 'dark-3'
+                    inactive: 'dark-1',
+                    extend: {
+                      'line-height': '20px'
+                    }
                   }
                 }
               }
@@ -1592,8 +1600,8 @@ var generate = function generate(baseSpacing, scale) {
                 align: 'center',
                 margin: '0',
                 pad: {
-                  horizontal: 'medium',
-                  vertical: baseSpacing / 2 + "px"
+                  horizontal: baseSpacing * 0.625 + "px",
+                  vertical: baseSpacing * 0.625 + "px"
                 },
                 extend: function extend(_ref7) {
                   var theme = _ref7.theme;
@@ -1628,7 +1636,7 @@ var generate = function generate(baseSpacing, scale) {
               },
               item: {
                 align: 'center',
-                pad: 'medium',
+                pad: baseSpacing * 0.75 + "px",
                 extend: function extend(_ref8) {
                   var isActive = _ref8.isActive,
                       theme = _ref8.theme;
