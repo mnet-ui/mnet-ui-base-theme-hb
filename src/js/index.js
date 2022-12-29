@@ -7,8 +7,19 @@ import {
   Success,
   Block,
   Close,
+  RightArrow,
+  LeftArrow,
 } from 'mnet-icons/hb';
-import { TickCircle, Error, AlertTriangle } from 'mnet-icons/neo';
+import {
+  TickCircle,
+  Error,
+  AlertTriangle,
+  Help,
+  Plus,
+  AscSort,
+  DesSort,
+  DefaultSort,
+} from 'mnet-icons/neo';
 
 import { deepFreeze } from 'grommet/utils/object';
 import { normalizeColor } from 'grommet/utils/colors';
@@ -1223,6 +1234,391 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       background: {
         invert: {
           color: 'light-4',
+        },
+      },
+    },
+    reporting: {
+      filters: {
+        menu: {
+          icons: {
+            color: 'brand',
+            size: 'large',
+            icon: Plus,
+          },
+          item: {
+            disabled: {
+              extend: {
+                cursor: 'not-allowed',
+              },
+            },
+            hover: {
+              extend: ({ theme }) => ({
+                color: normalizeColor('dark-1', theme),
+              }),
+            },
+            extend: {
+              minWidth: `${baseSpacing * 10}px`,
+              padding: `${baseSpacing / 4}px ${baseSpacing / 1.5}px`,
+              fontSize: `${baseSpacing * 0.875}px`,
+            },
+          },
+          list: {
+            extend: {
+              '&:hover': {
+                backgroundColor: 'transparent',
+              },
+            },
+          },
+          drop: {
+            maxHeight: `${baseSpacing * 12.5}px`,
+            '& ::-webkit-scrollbar': {
+              width: '14px',
+            },
+            '& ::-webkit-scrollbar-thumb': {
+              border: '4px solid transparent',
+              borderRadius: '7px',
+              boxShadow: 'inset 0 0 0 10px',
+              color: darkColors[3],
+            },
+            '& ::-webkit-scrollbar-button': {
+              width: 0,
+              height: 0,
+              display: 'none',
+            },
+            '& ::-webkit-scrollbar-corner': {
+              backgroundColor: 'transparent',
+            },
+          },
+        },
+        tag: {
+          label: {
+            size: 'large',
+            margin: {
+              vertical: `${baseSpacing * 0.375}px`,
+            },
+          },
+          state: {
+            disabled: {
+              cursor: 'not-allowed',
+              opacity: 0.4,
+            },
+          },
+          selected: {
+            background: 'light-1',
+            pad: {
+              horizontal: `${baseSpacing * 0.625}px`,
+              vertical: '0',
+            },
+            border: {
+              color: 'border',
+            },
+            round: 'small',
+            // width: {
+            //   min: `${baseSpacing * 11.25}px`,
+            // },
+          },
+          subOpt: {
+            weight: 500,
+            size: 'large',
+          },
+          subOptNumber: {
+            margin: {
+              horizontal: 'medium',
+            },
+            pad: {
+              horizontal: 'small',
+            },
+            round: 'small',
+            background: 'brand',
+            extend: {
+              color: 'white',
+              fontWeight: 600,
+            },
+          },
+          icons: {
+            delete: Close,
+            disable: Block,
+            size: 'xlarge',
+            color: 'dark-3',
+          },
+          iconButtons: {
+            margin: {
+              left: `${baseSpacing / 2}px`,
+            },
+          },
+          options: {
+            time: {
+              wrapper: {
+                border: {
+                  side: 'vertical',
+                  color: 'border',
+                },
+                pad: {
+                  horizontal: 'medium',
+                },
+                background: 'white',
+              },
+              item: {
+                switch: {
+                  radioButton: {
+                    border: 'none',
+                  },
+                  container: {
+                    pad: '0',
+                    gap: 'medium',
+                    border: false,
+                    height: `${baseSpacing * 2 - 2}px`,
+                  },
+                  option: {
+                    pad: {
+                      horizontal: 'small',
+                    },
+                    round: 'small',
+                    extend: {
+                      border: 'none',
+                    },
+                  },
+                  text: {
+                    weight: 500,
+                    size: 'large',
+                    active: 'white',
+                    inactive: 'dark-1',
+                    extend: {
+                      'line-height': '20px',
+                    },
+                  },
+                },
+              },
+            },
+          },
+          dropdown: {
+            width: 'medium',
+          },
+        },
+        drop: {
+          selection: {
+            search: {
+              margin: '0',
+              extend: {
+                borderRadius: 0,
+                fontSize: `${baseSpacing * 0.875}px`,
+                paddingLeft: `${baseSpacing * 2.25}px`,
+              },
+            },
+            list: {
+              wrapper: {
+                border: {
+                  side: 'horizontal',
+                  size: 'xsmall',
+                },
+                height: {
+                  max: `${baseSpacing * 12.5}px`,
+                },
+                extend: ({ theme }) => ({
+                  '::-webkit-scrollbar': {
+                    width: '14px',
+                  },
+                  '::-webkit-scrollbar-thumb': {
+                    border: '4px solid transparent',
+                    borderRadius: '7px',
+                    boxShadow: 'inset 0 0 0 10px',
+                    color: normalizeColor('dark-4', theme),
+                  },
+                  '::-webkit-scrollbar-button': {
+                    width: 0,
+                    height: 0,
+                    display: 'none',
+                  },
+                  '::-webkit-scrollbar-corner': {
+                    backgroundColor: 'transparent',
+                  },
+                }),
+              },
+              item: {
+                direction: 'row',
+                gap: `${baseSpacing / 2}px`,
+                align: 'center',
+                margin: '0',
+                pad: {
+                  horizontal: `${baseSpacing * 0.625}px`,
+                  vertical: `${baseSpacing * 0.625}px`,
+                },
+                extend: ({ theme }) => ({
+                  fontSize: `${baseSpacing * 0.875}px`,
+                  '> label': {
+                    width: '100%',
+                  },
+                  '&:hover': {
+                    cursor: 'pointer',
+                    background: normalizeColor('active', theme),
+                  },
+                }),
+              },
+              icons: {
+                info: Info,
+                size: 'large',
+                color: 'accent-12',
+              },
+            },
+            incExc: {
+              wrapper: {
+                border: {
+                  size: 'xsmall',
+                  side: 'bottom',
+                  color: 'border',
+                },
+                margin: '0',
+                round: 'none',
+                overflow: 'hidden',
+              },
+              item: {
+                align: 'center',
+                pad: `${baseSpacing * 0.75}px`,
+                extend: ({ isActive, theme }) => ({
+                  fontSize: `${baseSpacing * 0.875}px`,
+                  fontWeight: '600',
+                  color: normalizeColor(isActive ? 'brand' : 'dark-1', theme),
+                  borderBottom: `3px solid ${normalizeColor(isActive ? 'brand' : 'transparent', theme)}`,
+                }),
+              },
+            },
+            radioContainer: {
+              pad: 'medium',
+              item: {
+                gap: 'medium',
+              },
+            },
+          },
+          datepicker: {
+            container: {
+              border: {
+                side: 'bottom',
+                size: 'xsmall',
+              },
+            },
+            presets: {
+              wrapper: {
+                width: `${baseSpacing * 12.5}px`,
+                border: {
+                  side: 'right',
+                  size: 'xsmall',
+                },
+              },
+              date: {
+                item: {
+                  switch: {
+                    option: {
+                      width: '100%',
+                      pad: 'large',
+                      extend: ({ checked, theme }) => ({
+                        borderLeft: checked ? `3px solid ${normalizeColor('brand', theme)}` : '0',
+                        '&:hover': {
+                          background: normalizeColor('active', theme),
+                        },
+                      }),
+                    },
+                    container: {
+                      gap: 'none',
+                    },
+                    text: {
+                      weight: 600,
+                      size: 'large',
+                      active: 'brand',
+                      inactive: 'dark-1',
+                    },
+                    radioButton: {
+                      hover: {
+                        border: {
+                          color: {
+                            dark: 'brand',
+                            light: 'brand',
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                wrapper: {
+                  extend: ({ theme }) => ({
+                    'label, label>div': {
+                      width: '100%',
+                      margin: '0',
+                    },
+                    label: {
+                      borderBottom: `1px solid ${normalizeColor('border', theme)}`,
+                    },
+                    input: {
+                      display: 'none',
+                    },
+                  }),
+                },
+              },
+            },
+            calendar: {
+              wrapper: {
+                pad: {
+                  horizontal: `${baseSpacing * 2}px`,
+                  vertical: 'small',
+                },
+              },
+              selection: {
+                container: {
+                  align: 'center',
+                  pad: 'large',
+                  border: {
+                    side: 'bottom',
+                    size: 'xsmall',
+                  },
+                },
+                label: {
+                  color: 'dark-1',
+                  size: 'large',
+                },
+              },
+              header: {
+                container: {
+                  width: `${baseSpacing * 10}px`,
+                  pad: {
+                    vertical: 'large',
+                  },
+                },
+                text: {
+                  size: 'large',
+                  color: 'dark-1',
+                  weight: 600,
+                },
+                icons: {
+                  prev: LeftArrow,
+                  next: RightArrow,
+                  color: 'dark-8',
+                  hover: ({ theme }) => ({
+                    background: normalizeColor('active', theme),
+                  }),
+                },
+              },
+            },
+          },
+          buttonPanel: {
+            container: {
+              pad: 'medium',
+              justify: 'start',
+              gap: 'xsmall',
+            },
+            button: {
+              secondary: false,
+            },
+          },
+        },
+      },
+      dataTable: {
+        icons: {
+          size: 'large',
+          sort: {
+            default: DefaultSort,
+            asc: AscSort,
+            desc: DesSort,
+          },
+          tooltip: Help,
         },
       },
     },
