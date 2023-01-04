@@ -316,8 +316,8 @@ export var generate = function generate(baseSpacing, scale) {
           opacity: 'medium'
         },
         color: {
-          dark: 'light-2',
-          light: 'light-2'
+          dark: 'dark-1',
+          light: 'dark-1'
         }
       },
       input: {

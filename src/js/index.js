@@ -295,8 +295,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           opacity: 'medium',
         },
         color: {
-          dark: 'light-2',
-          light: 'light-2',
+          dark: 'dark-1',
+          light: 'dark-1',
         },
       },
       input: {
