@@ -2095,6 +2095,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
     },
+    breadcrumb: {
+      container: {
+        gap: 'small',
+        fontWeight: 600,
+        direction: 'row',
+        align: 'center',
+      },
+      link: {
+        color: 'brand',
+      },
+      icon: {
+        size: 'small',
+        color: 'dark-2',
+
+      },
+      item: {
+        direction: 'row',
+        align: 'center',
+        gap: 'xsmall',
+      },
+    },
   };
 
   return deepFreeze(result);

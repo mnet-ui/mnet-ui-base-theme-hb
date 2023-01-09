@@ -2304,6 +2304,26 @@ var generate = function generate(baseSpacing, scale) {
           height: 'medium'
         }
       }
+    },
+    breadcrumb: {
+      container: {
+        gap: 'small',
+        fontWeight: 600,
+        direction: 'row',
+        align: 'center'
+      },
+      link: {
+        color: 'brand'
+      },
+      icon: {
+        size: 'small',
+        color: 'dark-2'
+      },
+      item: {
+        direction: 'row',
+        align: 'center',
+        gap: 'xsmall'
+      }
     }
   };
   return (0, _object.deepFreeze)(result);
