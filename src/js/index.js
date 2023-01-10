@@ -2098,9 +2098,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     breadcrumb: {
       container: {
         gap: 'small',
-        fontWeight: 600,
         direction: 'row',
         align: 'center',
+        extend: {
+          fontWeight: 600,
+        },
       },
       link: {
         color: 'brand',
