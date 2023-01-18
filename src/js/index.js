@@ -9,6 +9,7 @@ import {
   Close,
   RightArrow,
   LeftArrow,
+  LongArrowDown,
 } from 'mnet-icons/hb';
 import {
   TickCircle,
@@ -2056,14 +2057,108 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     changelog: {
+      background: {
+        contrast: 'white',
+      },
       colors: {
-        primary: 'accent-3',
+        muted: 'dark-1',
+        primary: 'brand',
       },
       icons: {
         up: UpArrow,
         down: DownArrow,
-        changeArrow: DownArrow,
+        changeArrow: LongArrowDown,
         close: Close,
+        extend: {
+          changeArrow: {
+            size: 'xlarge',
+          },
+        },
+      },
+      width: { width: '60vw', min: '600px', max: '800px' },
+      groups: {
+        gap: 'large',
+      },
+      date: {
+        container: {
+          pad: {
+            horizontal: `${baseSpacing * 1.25}px`,
+            vertical: 'large',
+          },
+          margin: 'none',
+          border: false,
+        },
+        text: {
+          color: 'dark-2',
+        },
+      },
+      changelogItem: {
+        container: {
+          margin: { horizontal: `${baseSpacing * 1.25}px` },
+        },
+        itemWrapper: {
+          margin: { left: 'large', bottom: 'medium' },
+          border: true,
+          round: 'small',
+        },
+        grid: {
+          rows: ['auto'],
+          columns: ['1fr', 'auto', 'auto'],
+          areas: [
+            { name: 'title', start: [0, 0], end: [0, 0] },
+            { name: 'indicator', start: [2, 0], end: [2, 0] },
+            { name: 'time', start: [1, 0], end: [1, 0] },
+          ],
+          pad: { vertical: `${baseSpacing * 0.625}px` },
+        },
+        gridArea: {
+          title: {
+            pad: { horizontal: 'large' },
+          },
+          time: {
+            pad: { horizontal: 'large' },
+          },
+          indicator: {
+            pad: { horizontal: 'large' },
+          },
+        },
+        time: {
+          text: { size: `${baseFontSize - 2}px`, color: 'dark-1', margin: { top: 'small' } },
+        },
+        indicator: {
+          up: {
+            color: 'dark-1',
+            size: 'large',
+          },
+          down: {
+            color: 'dark-2',
+            size: 'large',
+          },
+        },
+        isOpen: {
+          grid: {
+            background: 'light-1',
+          },
+        },
+      },
+      collapsible: {
+        container: {
+          border: 'top',
+          background: 'white',
+        },
+        property: {
+          text: {
+            margin: { top: 'small', bottom: 'medium' },
+            color: 'dark-2',
+            size: `${baseFontSize - 1}px`,
+          },
+        },
+        changeArrowIconWrapper: {
+          margin: { vertical: 'medium' },
+        },
+        oldVal: {
+          color: 'dark-1',
+        },
       },
     },
     upload: {
