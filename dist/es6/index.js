@@ -954,7 +954,7 @@ export var generate = function generate(baseSpacing, scale) {
         zIndex: '15'
       },
       overlay: {
-        background: 'rgba(0, 0, 0, 0.5)'
+        background: 'rgba(0, 0, 0, 0.8)'
       },
       responsiveBreakpoint: 'small',
       // when Layer takes over the full screen
@@ -2332,6 +2332,17 @@ export var generate = function generate(baseSpacing, scale) {
             }
           }
         },
+        properties: {
+          text: {
+            color: 'dark-1',
+            weight: '600'
+          }
+        },
+        user: {
+          text: {
+            weight: '600'
+          }
+        },
         indicator: {
           up: {
             color: 'dark-1',
@@ -2369,7 +2380,11 @@ export var generate = function generate(baseSpacing, scale) {
           }
         },
         oldVal: {
-          color: 'dark-1'
+          color: 'dark-1',
+          weight: '600'
+        },
+        newVal: {
+          weight: '600'
         }
       }
     },

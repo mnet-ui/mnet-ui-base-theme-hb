@@ -854,7 +854,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         zIndex: '15',
       },
       overlay: {
-        background: 'rgba(0, 0, 0, 0.5)',
+        background: 'rgba(0, 0, 0, 0.8)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '1031',
@@ -2125,6 +2125,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         time: {
           text: { size: `${baseFontSize - 2}px`, color: 'dark-1', margin: { top: 'small' } },
         },
+        properties: {
+          text: { color: 'dark-1', weight: '600' },
+        },
+        user: {
+          text: { weight: '600' },
+        },
         indicator: {
           up: {
             color: 'dark-1',
@@ -2158,6 +2164,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         oldVal: {
           color: 'dark-1',
+          weight: '600',
+        },
+        newVal: {
+          weight: '600',
         },
       },
     },
