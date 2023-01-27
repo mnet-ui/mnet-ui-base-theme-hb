@@ -2288,11 +2288,35 @@ export var generate = function generate(baseSpacing, scale) {
         },
         itemWrapper: {
           margin: {
-            left: 'large',
-            bottom: 'medium'
+            left: 'large'
           },
-          border: true,
-          round: 'small'
+          border: [{
+            side: 'top',
+            size: '1px'
+          }, {
+            side: 'left',
+            size: '1px'
+          }, {
+            side: 'right',
+            size: '1px'
+          }],
+          round: {
+            corner: 'top',
+            size: 'small'
+          },
+          extend: function extend(_ref15) {
+            var isLast = _ref15.isLast,
+                isFirst = _ref15.isFirst,
+                theme = _ref15.theme;
+            return _extends({}, isLast ? {
+              borderBottom: "1px solid " + lightColors[2],
+              borderBottomLeftRadius: theme.global.edgeSize.small,
+              borderBottomRightRadius: theme.global.edgeSize.small
+            } : {}, !isFirst ? {
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0
+            } : {});
+          }
         },
         grid: {
           rows: ['auto'],
@@ -2370,7 +2394,8 @@ export var generate = function generate(baseSpacing, scale) {
       collapsible: {
         container: {
           border: 'top',
-          background: 'white'
+          background: 'white',
+          margin: 'none'
         },
         property: {
           text: {

@@ -2102,9 +2102,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: { horizontal: `${baseSpacing * 1.25}px` },
         },
         itemWrapper: {
-          margin: { left: 'large', bottom: 'medium' },
-          border: true,
-          round: 'small',
+          margin: { left: 'large' },
+          border: [{ side: 'top', size: '1px' }, { side: 'left', size: '1px' }, { side: 'right', size: '1px' }],
+          round: { corner: 'top', size: 'small' },
+          extend: ({ isLast, isFirst, theme }) => ({
+            ...(isLast ? {
+              borderBottom: `1px solid ${lightColors[2]}`,
+              borderBottomLeftRadius: theme.global.edgeSize.small,
+              borderBottomRightRadius: theme.global.edgeSize.small,
+            } : {}),
+            ...(!isFirst ? { borderTopLeftRadius: 0, borderTopRightRadius: 0 } : {}),
+          }),
         },
         grid: {
           rows: ['auto'],
@@ -2156,6 +2164,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         container: {
           border: 'top',
           background: 'white',
+          margin: 'none',
         },
         property: {
           text: {
