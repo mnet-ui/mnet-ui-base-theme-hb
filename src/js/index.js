@@ -2079,6 +2079,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       groups: {
         gap: 'large',
       },
+      header: {
+        container: {
+          pad: { horizontal: `${baseSpacing * 1.25}px`, vertical: 'large' },
+        },
+      },
       date: {
         container: {
           pad: {
