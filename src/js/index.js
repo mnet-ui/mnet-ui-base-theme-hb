@@ -2108,6 +2108,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         color: 'brand',
         font: { ...fontSizing(0.75) },
         pad: { right: 'medium' },
+        extend: {
+          textDecoration: 'underline',
+        },
       },
       icon: {
         size: 'medium',

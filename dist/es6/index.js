@@ -2290,6 +2290,9 @@ export var generate = function generate(baseSpacing, scale) {
         font: _extends({}, fontSizing(0.75)),
         pad: {
           right: 'medium'
+        },
+        extend: {
+          textDecoration: 'underline'
         }
       },
       icon: {
