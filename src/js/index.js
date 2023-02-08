@@ -2106,9 +2106,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       link: {
         color: 'brand',
+        font: { ...fontSizing(0.75) },
+        pad: { right: 'medium' },
       },
       icon: {
-        size: 'small',
+        size: 'medium',
         color: 'dark-2',
 
       },
@@ -2117,6 +2119,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         align: 'center',
         gap: 'xsmall',
       },
+    },
+    multipurposeSelect: {
+
     },
   };
 

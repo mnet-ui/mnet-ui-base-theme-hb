@@ -2279,15 +2279,21 @@ export var generate = function generate(baseSpacing, scale) {
     breadcrumb: {
       container: {
         gap: 'small',
-        fontWeight: 600,
         direction: 'row',
-        align: 'center'
+        align: 'center',
+        extend: {
+          fontWeight: 600
+        }
       },
       link: {
-        color: 'brand'
+        color: 'brand',
+        font: _extends({}, fontSizing(0.75)),
+        pad: {
+          right: 'medium'
+        }
       },
       icon: {
-        size: 'small',
+        size: 'medium',
         color: 'dark-2'
       },
       item: {
@@ -2295,7 +2301,8 @@ export var generate = function generate(baseSpacing, scale) {
         align: 'center',
         gap: 'xsmall'
       }
-    }
+    },
+    multipurposeSelect: {}
   };
   return deepFreeze(result);
 };
