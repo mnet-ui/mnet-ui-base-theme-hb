@@ -19,6 +19,7 @@ import {
   AscSort,
   DesSort,
   DefaultSort,
+  Clone,
 } from 'mnet-icons/neo';
 
 import { deepFreeze } from 'grommet/utils/object';
@@ -2124,6 +2125,91 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     multipurposeSelect: {
+      copy: {
+        icon: Clone,
+        color: 'dark-2',
+      },
+      arrow: {
+        icon: DownArrow,
+        color: 'dark-2',
+      },
+      remove: {
+        icon: Close,
+        size: 'medium',
+        color: 'dark-2',
+      },
+      input: {
+        extend: `
+        border : none;
+        &:focus{
+          outline: none;
+          box-shadow: none;
+          border-bottom: none;
+        }
+        `,
+      },
+
+      numberContainer: {
+        extend: ({ theme }) => `
+        border-radius : 40%;
+        background-color : ${normalizeColor('brand', theme)};
+        padding-inline : ${baseFontSize * 0.67}px;
+        padding-block : ${baseFontSize / 6}px;
+        color : white
+        `,
+      },
+      items: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'medium',
+        },
+        marginOfFirstElementFromTop: 'medium',
+        hover: {
+          color: 'brand',
+          fontWeight: '600',
+        },
+        extend: {
+          cursor: 'pointer',
+        },
+      },
+      clearButton: {
+        color: 'dark-1',
+        weight: '600',
+        hover: {
+          color: 'brand',
+        },
+      },
+      addButton: {
+        color: 'dark-1',
+        weight: '600',
+      },
+
+      dropContainer: {
+        extend: ({ theme }) => `
+        max-height : ${baseSpacing * 13.4}px; 
+        scrollbar-width: thin;
+        overflow-y: overlay;
+        scrollbar-color : ${normalizeColor('light-5', theme)} ${normalizeColor('light-1', theme,)}
+        &::-webkit-scrollbar-track{
+          -webkit-box-shadow: inset 0 0 0px
+            ${normalizeColor('light-9', theme)};
+        -moz-box-shadow: inset 0 0 0px
+           ${normalizeColor('light-9', theme)};
+        box-shadow: inset 0 0 0px
+          ${normalizeColor('light-9', theme)};
+        background: ${normalizeColor('light-1', theme)};
+        border-radius: ${baseFontSize * 1.67}px;
+        }
+        &::-webkit-scrollbar {
+          width: ${baseFontSize * 0.67}px;;
+          background-color: ${normalizeColor('light-1', theme)};
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: ${baseFontSize * 1.67}px;;
+          background: ${normalizeColor('light-5', theme)};
+        }
+        `,
+      },
 
     },
   };

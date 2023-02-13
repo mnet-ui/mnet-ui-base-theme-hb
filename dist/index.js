@@ -39,6 +39,8 @@ var _DesSort = require("mnet-icons/dist/es6/icons/neo/DesSort");
 
 var _DefaultSort = require("mnet-icons/dist/es6/icons/neo/DefaultSort");
 
+var _Clone = require("mnet-icons/dist/es6/icons/neo/Clone");
+
 var _object = require("grommet/utils/object");
 
 var _colors = require("grommet/utils/colors");
@@ -2334,7 +2336,61 @@ var generate = function generate(baseSpacing, scale) {
         gap: 'xsmall'
       }
     },
-    multipurposeSelect: {}
+    multipurposeSelect: {
+      copy: {
+        icon: _Clone.Clone,
+        color: 'dark-2'
+      },
+      arrow: {
+        icon: _DownArrow.DownArrow,
+        color: 'dark-2'
+      },
+      remove: {
+        icon: _Close.Close,
+        size: 'medium',
+        color: 'dark-2'
+      },
+      input: {
+        extend: "\n        border : none;\n        &:focus{\n          outline: none;\n          box-shadow: none;\n          border-bottom: none;\n        }\n        "
+      },
+      numberContainer: {
+        extend: function extend(_ref15) {
+          var theme = _ref15.theme;
+          return "\n        border-radius : 40%;\n        background-color : " + (0, _colors.normalizeColor)('brand', theme) + ";\n        padding-inline : " + baseFontSize * 0.67 + "px;\n        padding-block : " + baseFontSize / 6 + "px;\n        color : white\n        ";
+        }
+      },
+      items: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'medium'
+        },
+        marginOfFirstElementFromTop: 'medium',
+        hover: {
+          color: 'brand',
+          fontWeight: '600'
+        },
+        extend: {
+          cursor: 'pointer'
+        }
+      },
+      clearButton: {
+        color: 'dark-1',
+        weight: '600',
+        hover: {
+          color: 'brand'
+        }
+      },
+      addButton: {
+        color: 'dark-1',
+        weight: '600'
+      },
+      dropContainer: {
+        extend: function extend(_ref16) {
+          var theme = _ref16.theme;
+          return "\n        max-height : " + baseSpacing * 13.4 + "px; \n        scrollbar-width: thin;\n        overflow-y: overlay;\n        scrollbar-color : " + (0, _colors.normalizeColor)('light-5', theme) + " " + (0, _colors.normalizeColor)('light-1', theme) + "\n        &::-webkit-scrollbar-track{\n          -webkit-box-shadow: inset 0 0 0px\n            " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        -moz-box-shadow: inset 0 0 0px\n           " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        box-shadow: inset 0 0 0px\n          " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        background: " + (0, _colors.normalizeColor)('light-1', theme) + ";\n        border-radius: " + baseFontSize * 1.67 + "px;\n        }\n        &::-webkit-scrollbar {\n          width: " + baseFontSize * 0.67 + "px;;\n          background-color: " + (0, _colors.normalizeColor)('light-1', theme) + ";\n        }\n        &::-webkit-scrollbar-thumb {\n          border-radius: " + baseFontSize * 1.67 + "px;;\n          background: " + (0, _colors.normalizeColor)('light-5', theme) + ";\n        }\n        ";
+        }
+      }
+    }
   };
   return (0, _object.deepFreeze)(result);
 };
