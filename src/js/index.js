@@ -2128,14 +2128,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       copy: {
         icon: Clone,
         color: 'dark-2',
+        size: 'small',
       },
       arrow: {
         icon: DownArrow,
         color: 'dark-2',
+        size: 'small',
       },
       remove: {
         icon: Close,
-        size: 'medium',
+        size: 'small',
         color: 'dark-2',
       },
       input: {
