@@ -2309,23 +2309,29 @@ export var generate = function generate(baseSpacing, scale) {
     multipurposeSelect: {
       copy: {
         icon: Clone,
-        color: 'dark-2'
+        color: 'dark-2',
+        size: 'medium'
       },
       arrow: {
         icon: DownArrow,
-        color: 'dark-2'
+        color: 'dark-2',
+        size: 'small'
       },
       remove: {
         icon: Close,
         size: 'medium',
-        color: 'dark-2'
-      },
-      input: {
-        extend: "\n        border : none;\n        &:focus{\n          outline: none;\n          box-shadow: none;\n          border-bottom: none;\n        }\n        "
-      },
-      numberContainer: {
+        color: 'dark-2',
         extend: function extend(_ref15) {
           var theme = _ref15.theme;
+          return "\n        &:hover{\n          svg{\n            path{\n              fill : " + normalizeColor('brand', theme) + ";\n            }\n          }\n        }\n        \n        ";
+        }
+      },
+      input: {
+        extend: "\n        border : none;\n        &:focus{\n          outline: none;\n          box-shadow: none;\n        }\n        "
+      },
+      numberContainer: {
+        extend: function extend(_ref16) {
+          var theme = _ref16.theme;
           return "\n        border-radius : 40%;\n        background-color : " + normalizeColor('brand', theme) + ";\n        padding-inline : " + baseFontSize * 0.67 + "px;\n        padding-block : " + baseFontSize / 6 + "px;\n        color : white\n        ";
         }
       },
@@ -2335,29 +2341,60 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: 'medium'
         },
         marginOfFirstElementFromTop: 'medium',
-        hover: {
-          color: 'brand',
-          fontWeight: '600'
-        },
         extend: {
           cursor: 'pointer'
         }
       },
       clearButton: {
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          border: {
+            side: 'top',
+            size: 'xsmall'
+          }
+        },
         color: 'dark-1',
         weight: '600',
-        hover: {
-          color: 'brand'
+        extend: {
+          '&:hover': {
+            textDecoration: 'underline'
+          }
         }
       },
       addButton: {
-        color: 'dark-1',
-        weight: '600'
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          hoverIndicator: {
+            color: 'light-1'
+          },
+          extend: function extend(_ref17) {
+            var theme = _ref17.theme;
+            return "\n          color : " + normalizeColor('dark-1', theme) + ";\n          font-weight : 600;\n          &:hover{\n            color: " + normalizeColor('brand', theme) + "\n          }\n          ";
+          }
+        }
       },
       dropContainer: {
-        extend: function extend(_ref16) {
-          var theme = _ref16.theme;
+        extend: function extend(_ref18) {
+          var theme = _ref18.theme;
           return "\n        max-height : " + baseSpacing * 13.4 + "px; \n        scrollbar-width: thin;\n        overflow-y: overlay;\n        scrollbar-color : " + normalizeColor('light-5', theme) + " " + normalizeColor('light-1', theme) + "\n        &::-webkit-scrollbar-track{\n          -webkit-box-shadow: inset 0 0 0px\n            " + normalizeColor('light-9', theme) + ";\n        -moz-box-shadow: inset 0 0 0px\n           " + normalizeColor('light-9', theme) + ";\n        box-shadow: inset 0 0 0px\n          " + normalizeColor('light-9', theme) + ";\n        background: " + normalizeColor('light-1', theme) + ";\n        border-radius: " + baseFontSize * 1.67 + "px;\n        }\n        &::-webkit-scrollbar {\n          width: " + baseFontSize * 0.67 + "px;;\n          background-color: " + normalizeColor('light-1', theme) + ";\n        }\n        &::-webkit-scrollbar-thumb {\n          border-radius: " + baseFontSize * 1.67 + "px;;\n          background: " + normalizeColor('light-5', theme) + ";\n        }\n        ";
+        }
+      },
+      placeholder: {
+        color: 'dark-2'
+      },
+      iconContainer: {
+        border: {
+          side: 'left',
+          size: 'xsmall'
+        },
+        pad: {
+          horizontal: 'large'
         }
       }
     }

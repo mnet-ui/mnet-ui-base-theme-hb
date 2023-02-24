@@ -2128,7 +2128,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       copy: {
         icon: Clone,
         color: 'dark-2',
-        size: 'small',
+        size: 'medium',
       },
       arrow: {
         icon: DownArrow,
@@ -2137,8 +2137,18 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       remove: {
         icon: Close,
-        size: 'small',
+        size: 'medium',
         color: 'dark-2',
+        extend: ({ theme }) => `
+        &:hover{
+          svg{
+            path{
+              fill : ${normalizeColor('brand', theme)};
+            }
+          }
+        }
+        
+        `,
       },
       input: {
         extend: `
@@ -2146,7 +2156,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         &:focus{
           outline: none;
           box-shadow: none;
-          border-bottom: none;
         }
         `,
       },
@@ -2166,24 +2175,38 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           vertical: 'medium',
         },
         marginOfFirstElementFromTop: 'medium',
-        hover: {
-          color: 'brand',
-          fontWeight: '600',
-        },
         extend: {
           cursor: 'pointer',
         },
       },
       clearButton: {
+        container: {
+          pad: { horizontal: 'large', vertical: 'medium' },
+          border: { side: 'top', size: 'xsmall' },
+        },
         color: 'dark-1',
         weight: '600',
-        hover: {
-          color: 'brand',
+        extend: {
+          '&:hover': { textDecoration: 'underline' },
         },
       },
       addButton: {
-        color: 'dark-1',
-        weight: '600',
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium',
+          },
+          hoverIndicator: {
+            color: 'light-1',
+          },
+          extend: ({ theme }) => `
+          color : ${normalizeColor('dark-1', theme)};
+          font-weight : 600;
+          &:hover{
+            color: ${normalizeColor('brand', theme)}
+          }
+          `,
+        },
       },
 
       dropContainer: {
@@ -2191,7 +2214,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         max-height : ${baseSpacing * 13.4}px; 
         scrollbar-width: thin;
         overflow-y: overlay;
-        scrollbar-color : ${normalizeColor('light-5', theme)} ${normalizeColor('light-1', theme,)}
+        scrollbar-color : ${normalizeColor('light-5', theme)} ${normalizeColor(
+  'light-1',
+  theme,
+)}
         &::-webkit-scrollbar-track{
           -webkit-box-shadow: inset 0 0 0px
             ${normalizeColor('light-9', theme)};
@@ -2212,7 +2238,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         }
         `,
       },
-
+      placeholder: {
+        color: 'dark-2',
+      },
+      iconContainer: {
+        border: { side: 'left', size: 'xsmall' },
+        pad: { horizontal: 'large' },
+      },
     },
   };
 
