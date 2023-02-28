@@ -2184,10 +2184,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           pad: { horizontal: 'large', vertical: 'medium' },
           border: { side: 'top', size: 'xsmall' },
         },
-        color: 'dark-1',
-        weight: '600',
-        extend: {
-          '&:hover': { textDecoration: 'underline' },
+        text: {
+          color: 'dark-1',
+          weight: '600',
+          extend: {
+            '&:hover': { textDecoration: 'underline' },
+          },
         },
       },
       addButton: {
@@ -2244,6 +2246,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       iconContainer: {
         border: { side: 'left', size: 'xsmall' },
         pad: { horizontal: 'large' },
+        extend: () => `padding-left : ${baseSpacing}px;
+        padding-right : 0`,
       },
     },
   };
