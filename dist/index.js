@@ -2386,11 +2386,13 @@ var generate = function generate(baseSpacing, scale) {
             size: 'xsmall'
           }
         },
-        color: 'dark-1',
-        weight: '600',
-        extend: {
-          '&:hover': {
-            textDecoration: 'underline'
+        text: {
+          color: 'dark-1',
+          weight: '600',
+          extend: {
+            '&:hover': {
+              textDecoration: 'underline'
+            }
           }
         }
       },
@@ -2425,6 +2427,9 @@ var generate = function generate(baseSpacing, scale) {
         },
         pad: {
           horizontal: 'large'
+        },
+        extend: function extend() {
+          return "padding-left : " + baseSpacing + "px;\n        padding-right : 0";
         }
       }
     }
