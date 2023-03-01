@@ -2307,6 +2307,9 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     multipurposeSelect: {
+      outerContainer: {
+        extend: "\n        padding-block : " + baseSpacing * 0.625 + "px;\n        padding-inline : " + baseSpacing + "px;\n        "
+      },
       copy: {
         icon: Clone,
         color: 'dark-2',

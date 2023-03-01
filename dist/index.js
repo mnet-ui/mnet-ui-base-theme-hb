@@ -2337,6 +2337,9 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     multipurposeSelect: {
+      outerContainer: {
+        extend: "\n        padding-block : " + baseSpacing * 0.625 + "px;\n        padding-inline : " + baseSpacing + "px;\n        "
+      },
       copy: {
         icon: _Clone.Clone,
         color: 'dark-2',
