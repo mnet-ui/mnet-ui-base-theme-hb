@@ -2125,6 +2125,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     multipurposeSelect: {
+      outerContainer: {
+        extend: `
+        padding-block : ${baseSpacing * 0.625}px;
+        padding-inline : ${baseSpacing}px;
+        `,
+      },
       copy: {
         icon: Clone,
         color: 'dark-2',
