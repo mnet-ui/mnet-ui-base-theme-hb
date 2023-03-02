@@ -2288,7 +2288,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       link: {
         color: 'brand',
-        size: 'medium',
+        size: 'large',
         active: {
           color: 'dark-1'
         },

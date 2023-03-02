@@ -2107,7 +2107,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       link: {
         color: 'brand',
-        size: 'medium',
+        size: 'large',
         active: {
           color: 'dark-1',
         },
