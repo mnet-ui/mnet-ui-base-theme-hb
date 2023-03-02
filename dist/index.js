@@ -2374,7 +2374,6 @@ var generate = function generate(baseSpacing, scale) {
           horizontal: 'large',
           vertical: 'medium'
         },
-        marginOfFirstElementFromTop: 'medium',
         extend: {
           cursor: 'pointer'
         }
@@ -2416,6 +2415,9 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       dropContainer: {
+        pad: {
+          top: 'medium'
+        },
         extend: function extend(_ref18) {
           var theme = _ref18.theme;
           return "\n        max-height : " + baseSpacing * 13.4 + "px; \n        scrollbar-width: thin;\n        overflow-y: overlay;\n        scrollbar-color : " + (0, _colors.normalizeColor)('light-5', theme) + " " + (0, _colors.normalizeColor)('light-1', theme) + "\n        &::-webkit-scrollbar-track{\n          -webkit-box-shadow: inset 0 0 0px\n            " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        -moz-box-shadow: inset 0 0 0px\n           " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        box-shadow: inset 0 0 0px\n          " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        background: " + (0, _colors.normalizeColor)('light-1', theme) + ";\n        border-radius: " + baseFontSize * 1.67 + "px;\n        }\n        &::-webkit-scrollbar {\n          width: " + baseFontSize * 0.67 + "px;;\n          background-color: " + (0, _colors.normalizeColor)('light-1', theme) + ";\n        }\n        &::-webkit-scrollbar-thumb {\n          border-radius: " + baseFontSize * 1.67 + "px;;\n          background: " + (0, _colors.normalizeColor)('light-5', theme) + ";\n        }\n        ";

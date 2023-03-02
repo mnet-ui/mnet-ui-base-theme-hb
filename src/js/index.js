@@ -2183,7 +2183,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           horizontal: 'large',
           vertical: 'medium',
         },
-        marginOfFirstElementFromTop: 'medium',
         extend: {
           cursor: 'pointer',
         },
@@ -2221,6 +2220,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
 
       dropContainer: {
+        pad: {
+          top: 'medium',
+        },
         extend: ({ theme }) => `
         max-height : ${baseSpacing * 13.4}px; 
         scrollbar-width: thin;
