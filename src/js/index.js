@@ -2098,7 +2098,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     breadcrumb: {
       container: {
-        gap: 'small',
+        gap: 'medium',
         direction: 'row',
         align: 'center',
         extend: {
@@ -2115,7 +2115,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           textDecoration: 'underline',
         },
       },
-      icon: {
+      icons: {
+        icon: RightArrow,
         size: 'medium',
         color: 'dark-2',
 
@@ -2123,7 +2124,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       item: {
         direction: 'row',
         align: 'center',
-        gap: 'xsmall',
+        gap: 'medium',
       },
     },
     multipurposeSelect: {

@@ -2279,7 +2279,7 @@ export var generate = function generate(baseSpacing, scale) {
     },
     breadcrumb: {
       container: {
-        gap: 'small',
+        gap: 'medium',
         direction: 'row',
         align: 'center',
         extend: {
@@ -2296,14 +2296,15 @@ export var generate = function generate(baseSpacing, scale) {
           textDecoration: 'underline'
         }
       },
-      icon: {
+      icons: {
+        icon: RightArrow,
         size: 'medium',
         color: 'dark-2'
       },
       item: {
         direction: 'row',
         align: 'center',
-        gap: 'xsmall'
+        gap: 'medium'
       }
     },
     multipurposeSelect: {
