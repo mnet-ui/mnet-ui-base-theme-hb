@@ -2318,9 +2318,9 @@ var generate = function generate(baseSpacing, scale) {
       },
       link: {
         color: 'brand',
-        font: _extends({}, fontSizing(0.75)),
-        pad: {
-          right: 'medium'
+        size: 'medium',
+        active: {
+          color: 'dark-1'
         },
         extend: {
           textDecoration: 'underline'

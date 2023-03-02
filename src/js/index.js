@@ -2107,8 +2107,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       link: {
         color: 'brand',
-        font: { ...fontSizing(0.75) },
-        pad: { right: 'medium' },
+        size: 'medium',
+        active: {
+          color: 'dark-1',
+        },
         extend: {
           textDecoration: 'underline',
         },
