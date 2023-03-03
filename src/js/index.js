@@ -2134,30 +2134,32 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         padding-inline : ${baseSpacing}px;
         `,
       },
-      copy: {
-        icon: Clone,
-        color: 'dark-2',
-        size: 'medium',
-      },
-      arrow: {
-        icon: DownArrow,
-        color: 'dark-2',
-        size: 'small',
-      },
-      remove: {
-        icon: Close,
-        size: 'medium',
-        color: 'dark-2',
-        extend: ({ theme }) => `
-        &:hover{
-          svg{
-            path{
-              fill : ${normalizeColor('brand', theme)};
+      icons: {
+        copy: {
+          icon: Clone,
+          color: 'dark-2',
+          size: 'medium',
+        },
+        arrow: {
+          icon: DownArrow,
+          color: 'dark-2',
+          size: 'small',
+        },
+        remove: {
+          icon: Close,
+          size: 'medium',
+          color: 'dark-2',
+          extend: ({ theme }) => `
+          &:hover{
+            svg{
+              path{
+                fill : ${normalizeColor('brand', theme)};
+              }
             }
           }
-        }
-        
-        `,
+          
+          `,
+        },
       },
       input: {
         extend: `
@@ -2166,6 +2168,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           outline: none;
           box-shadow: none;
         }
+        padding-block : ${baseSpacing * 0.625};
         `,
       },
 

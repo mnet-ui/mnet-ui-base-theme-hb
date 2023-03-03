@@ -2311,27 +2311,29 @@ export var generate = function generate(baseSpacing, scale) {
       outerContainer: {
         extend: "\n        padding-block : " + baseSpacing * 0.625 + "px;\n        padding-inline : " + baseSpacing + "px;\n        "
       },
-      copy: {
-        icon: Clone,
-        color: 'dark-2',
-        size: 'medium'
-      },
-      arrow: {
-        icon: DownArrow,
-        color: 'dark-2',
-        size: 'small'
-      },
-      remove: {
-        icon: Close,
-        size: 'medium',
-        color: 'dark-2',
-        extend: function extend(_ref15) {
-          var theme = _ref15.theme;
-          return "\n        &:hover{\n          svg{\n            path{\n              fill : " + normalizeColor('brand', theme) + ";\n            }\n          }\n        }\n        \n        ";
+      icons: {
+        copy: {
+          icon: Clone,
+          color: 'dark-2',
+          size: 'medium'
+        },
+        arrow: {
+          icon: DownArrow,
+          color: 'dark-2',
+          size: 'small'
+        },
+        remove: {
+          icon: Close,
+          size: 'medium',
+          color: 'dark-2',
+          extend: function extend(_ref15) {
+            var theme = _ref15.theme;
+            return "\n          &:hover{\n            svg{\n              path{\n                fill : " + normalizeColor('brand', theme) + ";\n              }\n            }\n          }\n          \n          ";
+          }
         }
       },
       input: {
-        extend: "\n        border : none;\n        &:focus{\n          outline: none;\n          box-shadow: none;\n        }\n        "
+        extend: "\n        border : none;\n        &:focus{\n          outline: none;\n          box-shadow: none;\n        }\n        padding-block : " + baseSpacing * 0.625 + ";\n        "
       },
       numberContainer: {
         extend: function extend(_ref16) {
