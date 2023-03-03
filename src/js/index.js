@@ -2129,10 +2129,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     multipurposeSelect: {
       outerContainer: {
-        extend: `
-        padding-block : ${baseSpacing * 0.625}px;
-        padding-inline : ${baseSpacing}px;
-        `,
+        pad: {
+          vertical: `${baseSpacing * 0.625}px`,
+          horizontal: 'large',
+        },
       },
       icons: {
         copy: {
@@ -2255,7 +2255,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         `,
       },
       placeholder: {
-        color: 'dark-2',
+        extend: ({ theme }) => `
+        color : ${normalizeColor('dark-2', theme)}
+        `,
       },
       iconContainer: {
         border: { side: 'left', size: 'xsmall' },

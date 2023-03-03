@@ -2309,7 +2309,10 @@ export var generate = function generate(baseSpacing, scale) {
     },
     multipurposeSelect: {
       outerContainer: {
-        extend: "\n        padding-block : " + baseSpacing * 0.625 + "px;\n        padding-inline : " + baseSpacing + "px;\n        "
+        pad: {
+          vertical: baseSpacing * 0.625 + "px",
+          horizontal: 'large'
+        }
       },
       icons: {
         copy: {
@@ -2396,7 +2399,10 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       placeholder: {
-        color: 'dark-2'
+        extend: function extend(_ref19) {
+          var theme = _ref19.theme;
+          return "\n        color : " + normalizeColor('dark-2', theme) + "\n        ";
+        }
       },
       iconContainer: {
         border: {
