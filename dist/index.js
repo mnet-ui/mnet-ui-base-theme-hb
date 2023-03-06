@@ -2375,12 +2375,14 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       items: {
-        pad: {
-          horizontal: 'large',
-          vertical: 'medium'
-        },
-        extend: {
-          cursor: 'pointer'
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          extend: {
+            cursor: 'pointer'
+          }
         }
       },
       clearButton: {
@@ -2429,10 +2431,7 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       placeholder: {
-        extend: function extend(_ref19) {
-          var theme = _ref19.theme;
-          return "\n        color : " + (0, _colors.normalizeColor)('dark-2', theme) + "\n        ";
-        }
+        color: 'dark-2'
       },
       iconContainer: {
         border: {
@@ -2442,8 +2441,9 @@ var generate = function generate(baseSpacing, scale) {
         pad: {
           horizontal: 'large'
         },
-        extend: function extend() {
-          return "padding-left : " + baseSpacing + "px;\n        padding-right : 0";
+        extend: function extend(_ref19) {
+          var insideTextInput = _ref19.insideTextInput;
+          return insideTextInput ? "padding-left : " + baseSpacing + "px;\n              padding-right : 0" : null;
         }
       }
     }

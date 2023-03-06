@@ -2182,12 +2182,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         `,
       },
       items: {
-        pad: {
-          horizontal: 'large',
-          vertical: 'medium',
-        },
-        extend: {
-          cursor: 'pointer',
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium',
+          },
+          extend: {
+            cursor: 'pointer',
+          },
         },
       },
       clearButton: {
@@ -2255,15 +2257,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         `,
       },
       placeholder: {
-        extend: ({ theme }) => `
-        color : ${normalizeColor('dark-2', theme)}
-        `,
+        color: 'dark-2',
       },
       iconContainer: {
         border: { side: 'left', size: 'xsmall' },
         pad: { horizontal: 'large' },
-        extend: () => `padding-left : ${baseSpacing}px;
-        padding-right : 0`,
+        extend: ({ insideTextInput }) => (insideTextInput
+          ? `padding-left : ${baseSpacing}px;
+              padding-right : 0`
+          : null),
       },
     },
   };
