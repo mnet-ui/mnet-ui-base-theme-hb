@@ -2371,17 +2371,20 @@ var generate = function generate(baseSpacing, scale) {
         gridArea: {
           title: {
             pad: {
-              horizontal: 'large'
+              horizontal: 'large',
+              bottom: 'none'
             }
           },
           time: {
             pad: {
-              horizontal: 'large'
+              horizontal: 'large',
+              bottom: 'none'
             }
           },
           indicator: {
             pad: {
-              horizontal: 'large'
+              horizontal: 'large',
+              bottom: 'none'
             }
           }
         },

@@ -2126,13 +2126,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         gridArea: {
           title: {
-            pad: { horizontal: 'large' },
+            pad: { horizontal: 'large', bottom: 'none' },
           },
           time: {
-            pad: { horizontal: 'large' },
+            pad: { horizontal: 'large', bottom: 'none' },
           },
           indicator: {
-            pad: { horizontal: 'large' },
+            pad: { horizontal: 'large', bottom: 'none' },
           },
         },
         time: {
