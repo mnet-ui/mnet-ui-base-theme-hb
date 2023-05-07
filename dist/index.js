@@ -23,6 +23,8 @@ var _RightArrow = require("mnet-icons/dist/es6/icons/hb/RightArrow");
 
 var _LeftArrow = require("mnet-icons/dist/es6/icons/hb/LeftArrow");
 
+var _LongArrowDown = require("mnet-icons/dist/es6/icons/hb/LongArrowDown");
+
 var _TickCircle = require("mnet-icons/dist/es6/icons/neo/TickCircle");
 
 var _Error = require("mnet-icons/dist/es6/icons/neo/Error");
@@ -982,7 +984,7 @@ var generate = function generate(baseSpacing, scale) {
         zIndex: '15'
       },
       overlay: {
-        background: 'rgba(0, 0, 0, 0.5)'
+        background: 'rgba(0, 0, 0, 0.8)'
       },
       responsiveBreakpoint: 'small',
       // when Layer takes over the full screen
@@ -2261,14 +2263,195 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     changelog: {
+      background: {
+        contrast: 'white'
+      },
       colors: {
-        primary: 'accent-3'
+        muted: 'dark-1',
+        primary: 'brand'
       },
       icons: {
         up: _UpArrow.UpArrow,
         down: _DownArrow.DownArrow,
-        changeArrow: _DownArrow.DownArrow,
-        close: _Close.Close
+        changeArrow: _LongArrowDown.LongArrowDown,
+        close: _Close.Close,
+        extend: {
+          changeArrow: {
+            size: 'xlarge'
+          }
+        }
+      },
+      width: {
+        width: '60vw',
+        min: '600px',
+        max: '800px'
+      },
+      groups: {
+        gap: 'large'
+      },
+      header: {
+        container: {
+          pad: {
+            horizontal: baseSpacing * 1.25 + "px",
+            vertical: 'large'
+          }
+        }
+      },
+      date: {
+        container: {
+          pad: {
+            horizontal: baseSpacing * 1.25 + "px",
+            vertical: 'large'
+          },
+          margin: 'none',
+          border: false
+        },
+        text: {
+          color: 'dark-2'
+        }
+      },
+      changelogItem: {
+        container: {
+          margin: {
+            horizontal: baseSpacing * 1.25 + "px"
+          }
+        },
+        itemWrapper: {
+          margin: {
+            left: 'large'
+          },
+          border: [{
+            side: 'top',
+            size: '1px'
+          }, {
+            side: 'left',
+            size: '1px'
+          }, {
+            side: 'right',
+            size: '1px'
+          }],
+          round: {
+            corner: 'top',
+            size: 'small'
+          },
+          extend: function extend(_ref15) {
+            var isLast = _ref15.isLast,
+                isFirst = _ref15.isFirst,
+                theme = _ref15.theme;
+            return _extends({}, isLast ? {
+              borderBottom: "1px solid " + lightColors[2],
+              borderBottomLeftRadius: theme.global.edgeSize.small,
+              borderBottomRightRadius: theme.global.edgeSize.small
+            } : {}, !isFirst ? {
+              borderTopLeftRadius: 0,
+              borderTopRightRadius: 0
+            } : {});
+          }
+        },
+        grid: {
+          rows: ['auto'],
+          columns: ['1fr', 'auto', 'auto'],
+          areas: [{
+            name: 'title',
+            start: [0, 0],
+            end: [0, 0]
+          }, {
+            name: 'indicator',
+            start: [2, 0],
+            end: [2, 0]
+          }, {
+            name: 'time',
+            start: [1, 0],
+            end: [1, 0]
+          }],
+          pad: {
+            vertical: baseSpacing * 0.625 + "px"
+          }
+        },
+        gridArea: {
+          title: {
+            pad: {
+              horizontal: 'large',
+              bottom: 'none'
+            }
+          },
+          time: {
+            pad: {
+              horizontal: 'large',
+              bottom: 'none'
+            }
+          },
+          indicator: {
+            pad: {
+              horizontal: 'large',
+              bottom: 'none'
+            }
+          }
+        },
+        time: {
+          text: {
+            size: baseFontSize - 2 + "px",
+            color: 'dark-1',
+            margin: {
+              top: 'small'
+            }
+          }
+        },
+        properties: {
+          text: {
+            color: 'dark-1',
+            weight: '600'
+          }
+        },
+        user: {
+          text: {
+            weight: '600'
+          }
+        },
+        indicator: {
+          up: {
+            color: 'dark-1',
+            size: 'large'
+          },
+          down: {
+            color: 'dark-2',
+            size: 'large'
+          }
+        },
+        isOpen: {
+          grid: {
+            background: 'light-1'
+          }
+        }
+      },
+      collapsible: {
+        container: {
+          border: 'top',
+          background: 'white',
+          margin: 'none'
+        },
+        property: {
+          text: {
+            margin: {
+              top: 'small',
+              bottom: 'medium'
+            },
+            color: 'dark-2',
+            size: baseFontSize - 1 + "px"
+          }
+        },
+        changeArrowIconWrapper: {
+          margin: {
+            vertical: 'medium'
+          }
+        },
+        oldVal: {
+          color: 'dark-1',
+          weight: '600'
+        },
+        newVal: {
+          weight: '600'
+        }
       }
     },
     upload: {
