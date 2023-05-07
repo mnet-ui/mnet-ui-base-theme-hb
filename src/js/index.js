@@ -19,6 +19,7 @@ import {
   AscSort,
   DesSort,
   DefaultSort,
+  Clone,
 } from 'mnet-icons/neo';
 
 import { deepFreeze } from 'grommet/utils/object';
@@ -2093,6 +2094,178 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           overflow: { vertical: 'auto' },
           height: 'medium',
         },
+      },
+    },
+    breadcrumb: {
+      container: {
+        gap: 'medium',
+        direction: 'row',
+        align: 'center',
+        extend: {
+          fontWeight: 600,
+        },
+      },
+      link: {
+        color: 'brand',
+        size: 'large',
+        active: {
+          color: 'dark-1',
+        },
+        extend: {
+          textDecoration: 'underline',
+        },
+      },
+      icons: {
+        icon: RightArrow,
+        size: 'medium',
+        color: 'dark-2',
+
+      },
+      item: {
+        direction: 'row',
+        align: 'center',
+        gap: 'medium',
+      },
+    },
+    multipurposeSelect: {
+      outerContainer: {
+        pad: {
+          vertical: `${baseSpacing * 0.625}px`,
+          horizontal: 'large',
+        },
+      },
+      icons: {
+        copy: {
+          icon: Clone,
+          color: 'dark-2',
+          size: 'medium',
+        },
+        arrow: {
+          icon: DownArrow,
+          color: 'dark-2',
+          size: 'small',
+        },
+        remove: {
+          icon: Close,
+          size: 'medium',
+          color: 'dark-2',
+          extend: ({ theme }) => `
+          &:hover{
+            svg{
+              path{
+                fill : ${normalizeColor('brand', theme)};
+              }
+            }
+          }
+          
+          `,
+        },
+      },
+      input: {
+        extend: `
+        border : none;
+        &:focus{
+          outline: none;
+          box-shadow: none;
+        }
+        padding-block : ${baseSpacing * 0.625};
+        `,
+      },
+
+      numberContainer: {
+        extend: ({ theme }) => `
+        border-radius : 40%;
+        background-color : ${normalizeColor('brand', theme)};
+        padding-inline : ${baseFontSize * 0.67}px;
+        padding-block : ${baseFontSize / 6}px;
+        color : white
+        `,
+      },
+      items: {
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium',
+          },
+          extend: {
+            cursor: 'pointer',
+          },
+        },
+      },
+      clearButton: {
+        container: {
+          pad: { horizontal: 'large', vertical: 'medium' },
+          border: { side: 'top', size: 'xsmall' },
+        },
+        text: {
+          color: 'dark-1',
+          weight: '600',
+          extend: {
+            '&:hover': { textDecoration: 'underline' },
+          },
+        },
+      },
+      addButton: {
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium',
+          },
+          hoverIndicator: {
+            color: 'light-1',
+          },
+          extend: ({ theme }) => `
+          color : ${normalizeColor('dark-1', theme)};
+          font-weight : 600;
+          &:hover{
+            color: ${normalizeColor('brand', theme)}
+          }
+          `,
+        },
+      },
+
+      dropContainer: {
+        pad: {
+          top: 'medium',
+        },
+        extend: ({ theme }) => `
+        max-height : ${baseSpacing * 13.4}px; 
+        scrollbar-width: thin;
+        overflow-y: overlay;
+        scrollbar-color : ${normalizeColor('light-5', theme)} ${normalizeColor(
+  'light-1',
+  theme,
+)}
+        &::-webkit-scrollbar-track{
+          -webkit-box-shadow: inset 0 0 0px
+            ${normalizeColor('light-9', theme)};
+        -moz-box-shadow: inset 0 0 0px
+           ${normalizeColor('light-9', theme)};
+        box-shadow: inset 0 0 0px
+          ${normalizeColor('light-9', theme)};
+        background: ${normalizeColor('light-1', theme)};
+        border-radius: ${baseFontSize * 1.67}px;
+        }
+        &::-webkit-scrollbar {
+          width: ${baseFontSize * 0.67}px;;
+          background-color: ${normalizeColor('light-1', theme)};
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: ${baseFontSize * 1.67}px;;
+          background: ${normalizeColor('light-5', theme)};
+        }
+        `,
+      },
+      placeholder: {
+        color: 'dark-2',
+      },
+      iconContainer: {
+        border: { side: 'left', size: 'xsmall' },
+        pad: { horizontal: 'large' },
+        extend: ({ insideTextInput }) => (insideTextInput
+          ? `padding-left : ${baseSpacing}px;
+              padding-right : 0`
+          : null),
       },
     },
   };

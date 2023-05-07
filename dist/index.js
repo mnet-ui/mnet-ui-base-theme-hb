@@ -39,6 +39,8 @@ var _DesSort = require("mnet-icons/dist/es6/icons/neo/DesSort");
 
 var _DefaultSort = require("mnet-icons/dist/es6/icons/neo/DefaultSort");
 
+var _Clone = require("mnet-icons/dist/es6/icons/neo/Clone");
+
 var _object = require("grommet/utils/object");
 
 var _colors = require("grommet/utils/colors");
@@ -2302,6 +2304,146 @@ var generate = function generate(baseSpacing, scale) {
             vertical: 'auto'
           },
           height: 'medium'
+        }
+      }
+    },
+    breadcrumb: {
+      container: {
+        gap: 'medium',
+        direction: 'row',
+        align: 'center',
+        extend: {
+          fontWeight: 600
+        }
+      },
+      link: {
+        color: 'brand',
+        size: 'large',
+        active: {
+          color: 'dark-1'
+        },
+        extend: {
+          textDecoration: 'underline'
+        }
+      },
+      icons: {
+        icon: _RightArrow.RightArrow,
+        size: 'medium',
+        color: 'dark-2'
+      },
+      item: {
+        direction: 'row',
+        align: 'center',
+        gap: 'medium'
+      }
+    },
+    multipurposeSelect: {
+      outerContainer: {
+        pad: {
+          vertical: baseSpacing * 0.625 + "px",
+          horizontal: 'large'
+        }
+      },
+      icons: {
+        copy: {
+          icon: _Clone.Clone,
+          color: 'dark-2',
+          size: 'medium'
+        },
+        arrow: {
+          icon: _DownArrow.DownArrow,
+          color: 'dark-2',
+          size: 'small'
+        },
+        remove: {
+          icon: _Close.Close,
+          size: 'medium',
+          color: 'dark-2',
+          extend: function extend(_ref15) {
+            var theme = _ref15.theme;
+            return "\n          &:hover{\n            svg{\n              path{\n                fill : " + (0, _colors.normalizeColor)('brand', theme) + ";\n              }\n            }\n          }\n          \n          ";
+          }
+        }
+      },
+      input: {
+        extend: "\n        border : none;\n        &:focus{\n          outline: none;\n          box-shadow: none;\n        }\n        padding-block : " + baseSpacing * 0.625 + ";\n        "
+      },
+      numberContainer: {
+        extend: function extend(_ref16) {
+          var theme = _ref16.theme;
+          return "\n        border-radius : 40%;\n        background-color : " + (0, _colors.normalizeColor)('brand', theme) + ";\n        padding-inline : " + baseFontSize * 0.67 + "px;\n        padding-block : " + baseFontSize / 6 + "px;\n        color : white\n        ";
+        }
+      },
+      items: {
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          extend: {
+            cursor: 'pointer'
+          }
+        }
+      },
+      clearButton: {
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          border: {
+            side: 'top',
+            size: 'xsmall'
+          }
+        },
+        text: {
+          color: 'dark-1',
+          weight: '600',
+          extend: {
+            '&:hover': {
+              textDecoration: 'underline'
+            }
+          }
+        }
+      },
+      addButton: {
+        container: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          hoverIndicator: {
+            color: 'light-1'
+          },
+          extend: function extend(_ref17) {
+            var theme = _ref17.theme;
+            return "\n          color : " + (0, _colors.normalizeColor)('dark-1', theme) + ";\n          font-weight : 600;\n          &:hover{\n            color: " + (0, _colors.normalizeColor)('brand', theme) + "\n          }\n          ";
+          }
+        }
+      },
+      dropContainer: {
+        pad: {
+          top: 'medium'
+        },
+        extend: function extend(_ref18) {
+          var theme = _ref18.theme;
+          return "\n        max-height : " + baseSpacing * 13.4 + "px; \n        scrollbar-width: thin;\n        overflow-y: overlay;\n        scrollbar-color : " + (0, _colors.normalizeColor)('light-5', theme) + " " + (0, _colors.normalizeColor)('light-1', theme) + "\n        &::-webkit-scrollbar-track{\n          -webkit-box-shadow: inset 0 0 0px\n            " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        -moz-box-shadow: inset 0 0 0px\n           " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        box-shadow: inset 0 0 0px\n          " + (0, _colors.normalizeColor)('light-9', theme) + ";\n        background: " + (0, _colors.normalizeColor)('light-1', theme) + ";\n        border-radius: " + baseFontSize * 1.67 + "px;\n        }\n        &::-webkit-scrollbar {\n          width: " + baseFontSize * 0.67 + "px;;\n          background-color: " + (0, _colors.normalizeColor)('light-1', theme) + ";\n        }\n        &::-webkit-scrollbar-thumb {\n          border-radius: " + baseFontSize * 1.67 + "px;;\n          background: " + (0, _colors.normalizeColor)('light-5', theme) + ";\n        }\n        ";
+        }
+      },
+      placeholder: {
+        color: 'dark-2'
+      },
+      iconContainer: {
+        border: {
+          side: 'left',
+          size: 'xsmall'
+        },
+        pad: {
+          horizontal: 'large'
+        },
+        extend: function extend(_ref19) {
+          var insideTextInput = _ref19.insideTextInput;
+          return insideTextInput ? "padding-left : " + baseSpacing + "px;\n              padding-right : 0" : null;
         }
       }
     }
